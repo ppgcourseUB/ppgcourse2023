@@ -65,7 +65,7 @@ provided only a subset of the data.
 
 1.- To execute orthofinder, type this command:
 
-`orthofinder -f proteomes_parsed -t 2`
+`orthofinder -f proteomes_parsed`
 
 Where -f indicates the folder where the proteomes are found and -t indicates the number of threads
 available to you.
@@ -73,13 +73,15 @@ available to you.
 2.- While the program works, lets have a look to the options that orthofinder has. Open a new terminal
 and type orthofinder -h
 
+3.- Note that one of the options is -S which determines how the homology search will be done. Diamond is very fast, much faster than blast, but is less sensitive when running with distantly related species. Consider this when running orthoFinder.
+
 ## Exercise 3
 
-1.- OrthoFinder has few parameters, but the most important one of them is the inflation parameter. This parameter indicates whether the orthogroups are going to be smaller or bigger. By default it is set to 1.5. We are now going to run orthoFinder with a bigger inflation parameter. There is no need to re-calculate the diamond search, in order to re-use previously calculated results, run the following command:
+1.- OrthoFinder has few parameters, but the most important one of them is the inflation parameter. This parameter indicates whether the orthogroups are going to be smaller or bigger. By default it is set to 1.5. We are now going to run orthoFinder with a bigger inflation parameter. 
 
 `orthofinder -b folderName/OrthoFinder/Results_XXXX/ -I 3.0 -og`
 
-Note that we are using -b instead of -f and we are prividing previously calculated results. Also we are changing the inflation parameter using -I and setting it to 3.0. At this point we are only interested in comparing the orthogroups, the -og parameter will stop the run of orthoFinder after it calculates orthogroups. This is a time-saving trick if you want to assess different inflation parameters.
+Note that we are using -b instead of -f and we are prividing previously calculated results, this will avoid having to re-calculate the all-vs-all comparison. Also we are changing the inflation parameter using -I and setting it to 3.0. At this point we are only interested in comparing the orthogroups, the -og parameter will stop the run of orthoFinder after it calculates orthogroups. This is a time-saving trick if you want to assess different inflation parameters and how they affect your orthogroups.
 
 This will generate a second folder which will be called Results_XXX_1 where the new results of orthoFinder can be found.
 
@@ -125,58 +127,32 @@ Note that if you have a species tree before running orthoFinder it is more conve
 
 Additionally it is possible that in this toy example with very few species the change in species tree will have little effect on the prediction of orthologs, but this can change in more complicated scenarios)
 
-## Exercise 4
+4.- Other things that will affect the prediction of orthologs is how the gene trees are build. By default orthoFinder uses distance matrices and fasttree to build the gene trees. This, while fast, can give faulty gene trees when dealing with more complex datasets. Once you are sure that your species tree is correct and that you are satisfied with the orthogroups, it is recommended that you do the orthology prediction using multiple sequence alignments (mafft is implemented in orthoFinder) and make the gene trees using IqTREE (also implemented in orthoFinder).
 
-Until now orthofinder has been using distance matrices to build the gene trees, but, while fast, this is not the
-most accurate way to build them.
-
-1.- In order to change the way trees are build we can use the following command:
+In order to do the first, you can execute:
 
 `orthofinder -fg FolderRun -s speciesTree_file -t 2 -M msa`
 
--M indicates you want to build trees using mafft as a multiple sequence aligner and fasttree as a tree
-reconstruction program. Due to time constrains we will not run orthoFinder with iqtree, though it is advisable to do so if you have enough computational power. You would need to add -T iqtree to the command line.
+-M indicates you want to build trees using mafft as a multiple sequence aligner
 
-## Exercise 5
+Due to time constrains we will not run orthoFinder with iqtree. You would need to add -T iqtree to the command line.
 
-We have run Orthofinder in three different ways: the initial run in which we were using default parameters
-(initial run), a second run in which we corrected the rooting of the species tree and the final run where we
-used a more accurate tree reconstruction method. Now it is time to look through the results. Try to answer
-the following questions using the information found inside the different orthofinder folders.
+5.- Go to the Comparative_Genomics_Statistics, here you can find main statistics for the analysis you have run. Search for the following information:
 
-1.- Lets study the evolutionary events that affect protein G1LY09_AILME.
+5.1.- Which two species have the highest number of orthologs?
 
-1.1.- Search for the orthologs to this protein in the different runs. Have they been affected by the
-differences in the analysis?
+5.2.- Which kind of orthologous relationships are most common between bears (one-to-one? many-to-one?). Can you think of a scenario in which this could be different?
 
-![image](https://user-images.githubusercontent.com/9434530/176634125-90b05063-77e1-4d3b-991f-a460978293e5.png)
+6.- We will analyse the orthogroup OG0000001 which should contain protein A0A7N5K5T5_AILME. If for some reason it does not search for the orthogroup that contains this protein and analyse that one.
 
-1.2.- Repeat the same for the number of paralogs. Try to fill in this table:
+6.1.- Go to the first set of results and check how many members this family has. Can you tell only from the orthogroup information which proteins are orthologs and which ones are paralogs?
 
-![image](https://user-images.githubusercontent.com/9434530/176634263-6fb8a552-0c72-4fee-92a8-8a290e53a089.png)
+6.2.- Now go to the last results. Go to the Orthologues folder and search for the orthologs to A0A7N5K5T5_AILME. How many do you find?
 
-1.3.- To which orthogroup does this protein belong to?
+6.3.- Are they all one-to-one orthologs?
 
-1.4.- phylo.io offers the possibility to see two trees side by side so that you can compare them. Go to the
-compare window in phylo.io. Open on one side the Resolved Tree belonging to the orthogroup where your protein can be found for the first run and on the other side open the same tree for the second run. Can you
-see the differences that caused the different predictions?
+6.4.- Search for the gene tree of this family, copy the newick and visualize it in phylo.io. With the tree next to you, search your results for information on duplication events. How many duplication events can you find? Are any of them specific for a single species.
 
-1.5.- Repeat the comparison between the tree in the second run and in the third run.
-
-3.- We’re interested in studying the evolution of a given orthogroup (OG0000039). Scan the files to obtain
-the following information:
-
-3.1.- How many sequences are in each of the species within this orthogroup?
-
-3.2.- Are there any single copy orthologs in there?
-
-3.3.- How many duplication events were there in this orthogroup? Are you able to find where they
-happened?
-
-4.- Which two species have the highest number of one-to-one orthologs?
-
-5.- One of the questions we had when beginning this study was whether the polar bear was more closely
-related to the brown bear or to the american bear. Can you answer that question now?
-
+6.5.- Most of the duplications observed in the previous exercise were ancient, why do you think orthoFinder did not separate them? Were they separated in the analysis run with -I 3.0? If they were, and looking again to the gene tree, did the split make sense?
 
 
