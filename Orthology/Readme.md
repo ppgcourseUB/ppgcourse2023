@@ -99,7 +99,7 @@ you can find a list of different trees with different rooting points. Select the
 OrthoFinder allows you to re-run only parts of the analysis. In this case, we do not need to re-compute the
 orthogroups therefore we can start running orthofinder from there:
 
-orthofinder -fg FolderRun -s speciesTree_file -t 2
+`orthofinder -fg FolderRun -s speciesTree_file -t 2`
 
 * -fg indicates you want to re run an analysis from the orthogroups on.
 
@@ -116,7 +116,7 @@ most accurate way to build them.
 
 1.- In order to change the way trees are build we can use the following command:
 
-orthofinder -fg FolderRun -s speciesTree_file -t 2 -M msa
+`orthofinder -fg FolderRun -s speciesTree_file -t 2 -M msa`
 
 -M indicates you want to build trees using mafft as a multiple sequence aligner and fasttree as a tree
 reconstruction program.
