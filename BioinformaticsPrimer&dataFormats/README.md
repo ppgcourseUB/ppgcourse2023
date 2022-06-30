@@ -3,7 +3,7 @@
 Instructor: **Cinta Pegueroles Queralt**
 
 
-In this session we will leran som basic bash commands. First we will create the folders architecture that we will use in the two sessions:
+In this session we will learn some basic bash commands. First we will create the folders architecture that we will use in the two sessions:
 
 ```
 mkdir session1
