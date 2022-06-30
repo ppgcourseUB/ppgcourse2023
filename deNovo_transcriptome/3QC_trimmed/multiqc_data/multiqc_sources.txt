@@ -1,0 +1,5 @@
+Module	Section	Sample Name	Source
+FastQC	all_sections	reads_2.U	/home/cpegueroles/Documents/classes/PhylogenomicsCourse/2022/session2/QC_trimmed/reads_2.U_fastqc.zip
+FastQC	all_sections	reads_1.U	/home/cpegueroles/Documents/classes/PhylogenomicsCourse/2022/session2/QC_trimmed/reads_1.U_fastqc.zip
+FastQC	all_sections	reads_2.P	/home/cpegueroles/Documents/classes/PhylogenomicsCourse/2022/session2/QC_trimmed/reads_2.P_fastqc.zip
+FastQC	all_sections	reads_1.P	/home/cpegueroles/Documents/classes/PhylogenomicsCourse/2022/session2/QC_trimmed/reads_1.P_fastqc.zip
