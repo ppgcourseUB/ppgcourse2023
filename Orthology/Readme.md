@@ -21,7 +21,7 @@ We will work with a subset of four bear proteomes. The original proteomes can be
 * Ursus americanus (black bear): https://www.uniprot.org/UP000291022
 * Ailuropoda melanoleuca (giant panda, outgroup): https://www.uniprot.org/UP000008912
 
-You can find the subset of proteomes we are going to use in the folder data/starting/
+You can find the subset of proteomes we are going to use in the folder data/proteomes/
 
 ***
 
@@ -45,17 +45,9 @@ following command:
 
 2.2.- Now cut the headers for each proteome:
 
-`cat proteomes/fileName | cut -f1 -d “ “ >proteomes_parsed/fileName`
+`awk '{if ($0 ~ /^>/)  {split($0,a,"|"); split(a[3],b," "); print ">"b[1]} else { print;}}' proteomes/fileName >proteomes_parsed/fileName`
 
-Where you have to substitute fileName for each of the file names in the proteomes folder. The cat option
-reads a file, the | symbol is used to concatenate two different commands so that one thing is done after the
-other, usually it used the output of one command to do something. The cut option will cut every line in the
-file by a given term, in this case it is a space given by the -d option. Finally the -f 1 option indicates you
-only want to keep the first field.
-
-For instance:
-
-`cat proteomes/Amelanoleuca.fasta | cut -f1 -d ‘ ‘ >proteomes_parsed/Amelanoleuca.fasta`
+This small piece of code will parse your header and keep only one part of it which is unique for each protein. Make sure to name the output fileName with something short and descriptive of your species as OrthoFinder will be using it to identify each species.
 
 2.3.- Compare now the headers:
 
@@ -83,31 +75,55 @@ and type orthofinder -h
 
 ## Exercise 3
 
-We provided you with a dataset of four bear proteomes. Orthofinder automatically predicts which is the
-correct species tree and uses it for the prediction of orthologs. The first step, always, is to compare it to
-your current knowledge of the species tree of your species.
+1.- OrthoFinder has few parameters, but the most important one of them is the inflation parameter. This parameter indicates whether the orthogroups are going to be smaller or bigger. By default it is set to 1.5. We are now going to run orthoFinder with a bigger inflation parameter. There is no need to re-calculate the diamond search, in order to re-use previously calculated results, run the following command:
 
-1.- Check the species tree that has been automatically build by orthofinder. You can find it in the folder
-Species_tree within your orthofinder folder. You can visualize the tree using this website:
+`orthofinder -b folderName/OrthoFinder/Results_XXXX/ -I 3.0 -og`
+
+Note that we are using -b instead of -f and we are prividing previously calculated results. Also we are changing the inflation parameter using -I and setting it to 3.0. At this point we are only interested in comparing the orthogroups, the -og parameter will stop the run of orthoFinder after it calculates orthogroups. This is a time-saving trick if you want to assess different inflation parameters.
+
+This will generate a second folder which will be called Results_XXX_1 where the new results of orthoFinder can be found.
+
+2.- Focus on the folder called Orthogroups. In this folder you will find several files of interest:
+
+* Orthogroups.tsv: Will print all the orthogroups detected during the analysis
+* Orthogroups_UnassignedGenes.tsv: Genes that have not been assigned to an orthogroup will go to this file
+* Orthogroups_SingleCopyOrthologues.txt: This will give you a list of orthogroups that did not have duplications and in which all species are present
+
+3.- Now compare the results obtained by the two runs of orthoFinder and try and answer the following questions:
+
+3.1.- Are the number of orthogroups the same in both runs? How many orthogroups are in each of them?
+
+3.2.- Did the change in inflation parameter affect the detection of single copy genes?
+
+3.3.- Note that in order to do a good phylogenomics analysis you need to find groups of orthologous genes that are present in all species without duplications. Which file would give you this information and how many orthogroups can you use in each run?
+
+3.4.- Nowadays many reviewers are asking how the inflation parameter can affect your results. Can you think on a way to show which is the correct inflation parameter?
+
+## Exercise 4
+
+Orthogroups can contain duplications which means we can have a mix of orthologs and paralogs. OrthoFinder implements a method to distinguish between them, but to do that it needs a species tree as reference. OrthoFinder tries to calculate the species tree on its own. We will go back to using the first run of orthoFinder. In that folder you should see a folder called Species_tree and in there is a file called SpeciesTree_rooted.txt
+
+1.- Check the species tree that has been automatically build by orthofinder.
 
 http://phylo.io/
 
-Is there anything wrong with it?
+Based on your knowledge on how bears have evolved, do you see anything wrong with this species tree?
 
-2.- In the folder Species_tree, there is an additional folder called Potential_Rooted_Species_Trees/ where
-you can find a list of different trees with different rooting points. Select the properly rooted species tree.
-OrthoFinder allows you to re-run only parts of the analysis. In this case, we do not need to re-compute the
-orthogroups therefore we can start running orthofinder from there:
+2.- If the tree is not rooted correctly, re-root the tree by clicking on the branch and pressing on re-root (make sure you press on the branch and not on the species name!). Now export the newick (find the button on the upper right part of the image, press on export nwk). Save the file into your folder.
 
-`orthofinder -fg FolderRun -s speciesTree_file -t 2`
+3.- As before we are not going to re-run the whole pipeline. This time we will start from the pre-calculated orthogroups and will just change the species tree:
+
+`orthofinder -fg FolderRun -s speciesTree_file`
 
 * -fg indicates you want to re run an analysis from the orthogroups on.
 
 * -s indicates you will provide a user defined species tree
 
-* -t indicates the number of threads
+Running this will generate a new folder, which will contain the new results. 
 
-Running this will generate a second folder, which will contain the new results.
+Note that if you have a species tree before running orthoFinder it is more convenient to just provide it from the start using the -s option. Just make sure that the name of the proteome files are the same as the ones found in the species tree. 
+
+Additionally it is possible that in this toy example with very few species the change in species tree will have little effect on the prediction of orthologs, but this can change in more complicated scenarios)
 
 ## Exercise 4
 
@@ -119,12 +135,9 @@ most accurate way to build them.
 `orthofinder -fg FolderRun -s speciesTree_file -t 2 -M msa`
 
 -M indicates you want to build trees using mafft as a multiple sequence aligner and fasttree as a tree
-reconstruction program.
+reconstruction program. Due to time constrains we will not run orthoFinder with iqtree, though it is advisable to do so if you have enough computational power. You would need to add -T iqtree to the command line.
 
 ## Exercise 5
-
-The default options for multiple sequence alignment reconstruction and species tree reconstruction can be
-changed. The orthofinder manual explains how to do that.
 
 We have run Orthofinder in three different ways: the initial run in which we were using default parameters
 (initial run), a second run in which we corrected the rooting of the species tree and the final run where we
