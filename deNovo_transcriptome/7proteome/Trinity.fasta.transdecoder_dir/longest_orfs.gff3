@@ -1,0 +1,670 @@
+TRINITY_DN5_c0_g1_i2	transdecoder	gene	1	3601	.	+	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i2.p1;Name=ORF%20type%3Acomplete%20len%3A354%20%28%2B%29
+TRINITY_DN5_c0_g1_i2	transdecoder	mRNA	1	3601	.	+	.	ID=TRINITY_DN5_c0_g1_i2.p1;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i2.p1;Name=ORF%20type%3Acomplete%20len%3A354%20%28%2B%29
+TRINITY_DN5_c0_g1_i2	transdecoder	five_prime_UTR	1	252	.	+	.	ID=TRINITY_DN5_c0_g1_i2.p1.utr5p1;Parent=TRINITY_DN5_c0_g1_i2.p1
+TRINITY_DN5_c0_g1_i2	transdecoder	exon	1	3601	.	+	.	ID=TRINITY_DN5_c0_g1_i2.p1.exon1;Parent=TRINITY_DN5_c0_g1_i2.p1
+TRINITY_DN5_c0_g1_i2	transdecoder	CDS	253	1314	.	+	0	ID=cds.TRINITY_DN5_c0_g1_i2.p1;Parent=TRINITY_DN5_c0_g1_i2.p1
+TRINITY_DN5_c0_g1_i2	transdecoder	three_prime_UTR	1315	3601	.	+	.	ID=TRINITY_DN5_c0_g1_i2.p1.utr3p1;Parent=TRINITY_DN5_c0_g1_i2.p1
+
+TRINITY_DN5_c0_g1_i2	transdecoder	gene	1	3601	.	+	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i2.p2;Name=ORF%20type%3Acomplete%20len%3A165%20%28%2B%29
+TRINITY_DN5_c0_g1_i2	transdecoder	mRNA	1	3601	.	+	.	ID=TRINITY_DN5_c0_g1_i2.p2;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i2.p2;Name=ORF%20type%3Acomplete%20len%3A165%20%28%2B%29
+TRINITY_DN5_c0_g1_i2	transdecoder	five_prime_UTR	1	1150	.	+	.	ID=TRINITY_DN5_c0_g1_i2.p2.utr5p1;Parent=TRINITY_DN5_c0_g1_i2.p2
+TRINITY_DN5_c0_g1_i2	transdecoder	exon	1	3601	.	+	.	ID=TRINITY_DN5_c0_g1_i2.p2.exon1;Parent=TRINITY_DN5_c0_g1_i2.p2
+TRINITY_DN5_c0_g1_i2	transdecoder	CDS	1151	1645	.	+	0	ID=cds.TRINITY_DN5_c0_g1_i2.p2;Parent=TRINITY_DN5_c0_g1_i2.p2
+TRINITY_DN5_c0_g1_i2	transdecoder	three_prime_UTR	1646	3601	.	+	.	ID=TRINITY_DN5_c0_g1_i2.p2.utr3p1;Parent=TRINITY_DN5_c0_g1_i2.p2
+
+TRINITY_DN5_c0_g1_i2	transdecoder	gene	1	3601	.	+	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i2.p3;Name=ORF%20type%3Acomplete%20len%3A122%20%28%2B%29
+TRINITY_DN5_c0_g1_i2	transdecoder	mRNA	1	3601	.	+	.	ID=TRINITY_DN5_c0_g1_i2.p3;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i2.p3;Name=ORF%20type%3Acomplete%20len%3A122%20%28%2B%29
+TRINITY_DN5_c0_g1_i2	transdecoder	five_prime_UTR	1	2653	.	+	.	ID=TRINITY_DN5_c0_g1_i2.p3.utr5p1;Parent=TRINITY_DN5_c0_g1_i2.p3
+TRINITY_DN5_c0_g1_i2	transdecoder	exon	1	3601	.	+	.	ID=TRINITY_DN5_c0_g1_i2.p3.exon1;Parent=TRINITY_DN5_c0_g1_i2.p3
+TRINITY_DN5_c0_g1_i2	transdecoder	CDS	2654	3019	.	+	0	ID=cds.TRINITY_DN5_c0_g1_i2.p3;Parent=TRINITY_DN5_c0_g1_i2.p3
+TRINITY_DN5_c0_g1_i2	transdecoder	three_prime_UTR	3020	3601	.	+	.	ID=TRINITY_DN5_c0_g1_i2.p3.utr3p1;Parent=TRINITY_DN5_c0_g1_i2.p3
+
+TRINITY_DN5_c0_g1_i2	transdecoder	gene	1	3601	.	-	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i2.p4;Name=ORF%20type%3Acomplete%20len%3A116%20%28-%29
+TRINITY_DN5_c0_g1_i2	transdecoder	mRNA	1	3601	.	-	.	ID=TRINITY_DN5_c0_g1_i2.p4;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i2.p4;Name=ORF%20type%3Acomplete%20len%3A116%20%28-%29
+TRINITY_DN5_c0_g1_i2	transdecoder	five_prime_UTR	380	3601	.	-	.	ID=TRINITY_DN5_c0_g1_i2.p4.utr5p1;Parent=TRINITY_DN5_c0_g1_i2.p4
+TRINITY_DN5_c0_g1_i2	transdecoder	exon	1	3601	.	-	.	ID=TRINITY_DN5_c0_g1_i2.p4.exon1;Parent=TRINITY_DN5_c0_g1_i2.p4
+TRINITY_DN5_c0_g1_i2	transdecoder	CDS	32	379	.	-	0	ID=cds.TRINITY_DN5_c0_g1_i2.p4;Parent=TRINITY_DN5_c0_g1_i2.p4
+TRINITY_DN5_c0_g1_i2	transdecoder	three_prime_UTR	1	31	.	-	.	ID=TRINITY_DN5_c0_g1_i2.p4.utr3p1;Parent=TRINITY_DN5_c0_g1_i2.p4
+
+TRINITY_DN5_c0_g1_i2	transdecoder	gene	1	3601	.	-	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i2.p5;Name=ORF%20type%3A5prime_partial%20len%3A113%20%28-%29
+TRINITY_DN5_c0_g1_i2	transdecoder	mRNA	1	3601	.	-	.	ID=TRINITY_DN5_c0_g1_i2.p5;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i2.p5;Name=ORF%20type%3A5prime_partial%20len%3A113%20%28-%29
+TRINITY_DN5_c0_g1_i2	transdecoder	exon	1	3601	.	-	.	ID=TRINITY_DN5_c0_g1_i2.p5.exon1;Parent=TRINITY_DN5_c0_g1_i2.p5
+TRINITY_DN5_c0_g1_i2	transdecoder	CDS	3261	3599	.	-	0	ID=cds.TRINITY_DN5_c0_g1_i2.p5;Parent=TRINITY_DN5_c0_g1_i2.p5;5_prime_partial=true
+TRINITY_DN5_c0_g1_i2	transdecoder	three_prime_UTR	1	3260	.	-	.	ID=TRINITY_DN5_c0_g1_i2.p5.utr3p1;Parent=TRINITY_DN5_c0_g1_i2.p5
+
+TRINITY_DN5_c0_g1_i2	transdecoder	gene	1	3601	.	-	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i2.p6;Name=ORF%20type%3Acomplete%20len%3A107%20%28-%29
+TRINITY_DN5_c0_g1_i2	transdecoder	mRNA	1	3601	.	-	.	ID=TRINITY_DN5_c0_g1_i2.p6;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i2.p6;Name=ORF%20type%3Acomplete%20len%3A107%20%28-%29
+TRINITY_DN5_c0_g1_i2	transdecoder	five_prime_UTR	798	3601	.	-	.	ID=TRINITY_DN5_c0_g1_i2.p6.utr5p1;Parent=TRINITY_DN5_c0_g1_i2.p6
+TRINITY_DN5_c0_g1_i2	transdecoder	exon	1	3601	.	-	.	ID=TRINITY_DN5_c0_g1_i2.p6.exon1;Parent=TRINITY_DN5_c0_g1_i2.p6
+TRINITY_DN5_c0_g1_i2	transdecoder	CDS	477	797	.	-	0	ID=cds.TRINITY_DN5_c0_g1_i2.p6;Parent=TRINITY_DN5_c0_g1_i2.p6
+TRINITY_DN5_c0_g1_i2	transdecoder	three_prime_UTR	1	476	.	-	.	ID=TRINITY_DN5_c0_g1_i2.p6.utr3p1;Parent=TRINITY_DN5_c0_g1_i2.p6
+
+TRINITY_DN5_c0_g1_i4	transdecoder	gene	1	3513	.	+	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i4.p1;Name=ORF%20type%3Acomplete%20len%3A354%20%28%2B%29
+TRINITY_DN5_c0_g1_i4	transdecoder	mRNA	1	3513	.	+	.	ID=TRINITY_DN5_c0_g1_i4.p1;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i4.p1;Name=ORF%20type%3Acomplete%20len%3A354%20%28%2B%29
+TRINITY_DN5_c0_g1_i4	transdecoder	five_prime_UTR	1	164	.	+	.	ID=TRINITY_DN5_c0_g1_i4.p1.utr5p1;Parent=TRINITY_DN5_c0_g1_i4.p1
+TRINITY_DN5_c0_g1_i4	transdecoder	exon	1	3513	.	+	.	ID=TRINITY_DN5_c0_g1_i4.p1.exon1;Parent=TRINITY_DN5_c0_g1_i4.p1
+TRINITY_DN5_c0_g1_i4	transdecoder	CDS	165	1226	.	+	0	ID=cds.TRINITY_DN5_c0_g1_i4.p1;Parent=TRINITY_DN5_c0_g1_i4.p1
+TRINITY_DN5_c0_g1_i4	transdecoder	three_prime_UTR	1227	3513	.	+	.	ID=TRINITY_DN5_c0_g1_i4.p1.utr3p1;Parent=TRINITY_DN5_c0_g1_i4.p1
+
+TRINITY_DN5_c0_g1_i4	transdecoder	gene	1	3513	.	+	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i4.p2;Name=ORF%20type%3Acomplete%20len%3A165%20%28%2B%29
+TRINITY_DN5_c0_g1_i4	transdecoder	mRNA	1	3513	.	+	.	ID=TRINITY_DN5_c0_g1_i4.p2;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i4.p2;Name=ORF%20type%3Acomplete%20len%3A165%20%28%2B%29
+TRINITY_DN5_c0_g1_i4	transdecoder	five_prime_UTR	1	1062	.	+	.	ID=TRINITY_DN5_c0_g1_i4.p2.utr5p1;Parent=TRINITY_DN5_c0_g1_i4.p2
+TRINITY_DN5_c0_g1_i4	transdecoder	exon	1	3513	.	+	.	ID=TRINITY_DN5_c0_g1_i4.p2.exon1;Parent=TRINITY_DN5_c0_g1_i4.p2
+TRINITY_DN5_c0_g1_i4	transdecoder	CDS	1063	1557	.	+	0	ID=cds.TRINITY_DN5_c0_g1_i4.p2;Parent=TRINITY_DN5_c0_g1_i4.p2
+TRINITY_DN5_c0_g1_i4	transdecoder	three_prime_UTR	1558	3513	.	+	.	ID=TRINITY_DN5_c0_g1_i4.p2.utr3p1;Parent=TRINITY_DN5_c0_g1_i4.p2
+
+TRINITY_DN5_c0_g1_i4	transdecoder	gene	1	3513	.	+	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i4.p3;Name=ORF%20type%3Acomplete%20len%3A122%20%28%2B%29
+TRINITY_DN5_c0_g1_i4	transdecoder	mRNA	1	3513	.	+	.	ID=TRINITY_DN5_c0_g1_i4.p3;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i4.p3;Name=ORF%20type%3Acomplete%20len%3A122%20%28%2B%29
+TRINITY_DN5_c0_g1_i4	transdecoder	five_prime_UTR	1	2565	.	+	.	ID=TRINITY_DN5_c0_g1_i4.p3.utr5p1;Parent=TRINITY_DN5_c0_g1_i4.p3
+TRINITY_DN5_c0_g1_i4	transdecoder	exon	1	3513	.	+	.	ID=TRINITY_DN5_c0_g1_i4.p3.exon1;Parent=TRINITY_DN5_c0_g1_i4.p3
+TRINITY_DN5_c0_g1_i4	transdecoder	CDS	2566	2931	.	+	0	ID=cds.TRINITY_DN5_c0_g1_i4.p3;Parent=TRINITY_DN5_c0_g1_i4.p3
+TRINITY_DN5_c0_g1_i4	transdecoder	three_prime_UTR	2932	3513	.	+	.	ID=TRINITY_DN5_c0_g1_i4.p3.utr3p1;Parent=TRINITY_DN5_c0_g1_i4.p3
+
+TRINITY_DN5_c0_g1_i4	transdecoder	gene	1	3513	.	-	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i4.p4;Name=ORF%20type%3A5prime_partial%20len%3A113%20%28-%29
+TRINITY_DN5_c0_g1_i4	transdecoder	mRNA	1	3513	.	-	.	ID=TRINITY_DN5_c0_g1_i4.p4;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i4.p4;Name=ORF%20type%3A5prime_partial%20len%3A113%20%28-%29
+TRINITY_DN5_c0_g1_i4	transdecoder	exon	1	3513	.	-	.	ID=TRINITY_DN5_c0_g1_i4.p4.exon1;Parent=TRINITY_DN5_c0_g1_i4.p4
+TRINITY_DN5_c0_g1_i4	transdecoder	CDS	3173	3511	.	-	0	ID=cds.TRINITY_DN5_c0_g1_i4.p4;Parent=TRINITY_DN5_c0_g1_i4.p4;5_prime_partial=true
+TRINITY_DN5_c0_g1_i4	transdecoder	three_prime_UTR	1	3172	.	-	.	ID=TRINITY_DN5_c0_g1_i4.p4.utr3p1;Parent=TRINITY_DN5_c0_g1_i4.p4
+
+TRINITY_DN5_c0_g1_i4	transdecoder	gene	1	3513	.	-	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i4.p5;Name=ORF%20type%3Acomplete%20len%3A107%20%28-%29
+TRINITY_DN5_c0_g1_i4	transdecoder	mRNA	1	3513	.	-	.	ID=TRINITY_DN5_c0_g1_i4.p5;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i4.p5;Name=ORF%20type%3Acomplete%20len%3A107%20%28-%29
+TRINITY_DN5_c0_g1_i4	transdecoder	five_prime_UTR	710	3513	.	-	.	ID=TRINITY_DN5_c0_g1_i4.p5.utr5p1;Parent=TRINITY_DN5_c0_g1_i4.p5
+TRINITY_DN5_c0_g1_i4	transdecoder	exon	1	3513	.	-	.	ID=TRINITY_DN5_c0_g1_i4.p5.exon1;Parent=TRINITY_DN5_c0_g1_i4.p5
+TRINITY_DN5_c0_g1_i4	transdecoder	CDS	389	709	.	-	0	ID=cds.TRINITY_DN5_c0_g1_i4.p5;Parent=TRINITY_DN5_c0_g1_i4.p5
+TRINITY_DN5_c0_g1_i4	transdecoder	three_prime_UTR	1	388	.	-	.	ID=TRINITY_DN5_c0_g1_i4.p5.utr3p1;Parent=TRINITY_DN5_c0_g1_i4.p5
+
+TRINITY_DN5_c0_g1_i1	transdecoder	gene	1	3643	.	+	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i1.p1;Name=ORF%20type%3Acomplete%20len%3A368%20%28%2B%29
+TRINITY_DN5_c0_g1_i1	transdecoder	mRNA	1	3643	.	+	.	ID=TRINITY_DN5_c0_g1_i1.p1;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i1.p1;Name=ORF%20type%3Acomplete%20len%3A368%20%28%2B%29
+TRINITY_DN5_c0_g1_i1	transdecoder	five_prime_UTR	1	252	.	+	.	ID=TRINITY_DN5_c0_g1_i1.p1.utr5p1;Parent=TRINITY_DN5_c0_g1_i1.p1
+TRINITY_DN5_c0_g1_i1	transdecoder	exon	1	3643	.	+	.	ID=TRINITY_DN5_c0_g1_i1.p1.exon1;Parent=TRINITY_DN5_c0_g1_i1.p1
+TRINITY_DN5_c0_g1_i1	transdecoder	CDS	253	1356	.	+	0	ID=cds.TRINITY_DN5_c0_g1_i1.p1;Parent=TRINITY_DN5_c0_g1_i1.p1
+TRINITY_DN5_c0_g1_i1	transdecoder	three_prime_UTR	1357	3643	.	+	.	ID=TRINITY_DN5_c0_g1_i1.p1.utr3p1;Parent=TRINITY_DN5_c0_g1_i1.p1
+
+TRINITY_DN5_c0_g1_i1	transdecoder	gene	1	3643	.	+	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i1.p2;Name=ORF%20type%3Acomplete%20len%3A165%20%28%2B%29
+TRINITY_DN5_c0_g1_i1	transdecoder	mRNA	1	3643	.	+	.	ID=TRINITY_DN5_c0_g1_i1.p2;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i1.p2;Name=ORF%20type%3Acomplete%20len%3A165%20%28%2B%29
+TRINITY_DN5_c0_g1_i1	transdecoder	five_prime_UTR	1	1192	.	+	.	ID=TRINITY_DN5_c0_g1_i1.p2.utr5p1;Parent=TRINITY_DN5_c0_g1_i1.p2
+TRINITY_DN5_c0_g1_i1	transdecoder	exon	1	3643	.	+	.	ID=TRINITY_DN5_c0_g1_i1.p2.exon1;Parent=TRINITY_DN5_c0_g1_i1.p2
+TRINITY_DN5_c0_g1_i1	transdecoder	CDS	1193	1687	.	+	0	ID=cds.TRINITY_DN5_c0_g1_i1.p2;Parent=TRINITY_DN5_c0_g1_i1.p2
+TRINITY_DN5_c0_g1_i1	transdecoder	three_prime_UTR	1688	3643	.	+	.	ID=TRINITY_DN5_c0_g1_i1.p2.utr3p1;Parent=TRINITY_DN5_c0_g1_i1.p2
+
+TRINITY_DN5_c0_g1_i1	transdecoder	gene	1	3643	.	-	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i1.p3;Name=ORF%20type%3Acomplete%20len%3A130%20%28-%29
+TRINITY_DN5_c0_g1_i1	transdecoder	mRNA	1	3643	.	-	.	ID=TRINITY_DN5_c0_g1_i1.p3;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i1.p3;Name=ORF%20type%3Acomplete%20len%3A130%20%28-%29
+TRINITY_DN5_c0_g1_i1	transdecoder	five_prime_UTR	422	3643	.	-	.	ID=TRINITY_DN5_c0_g1_i1.p3.utr5p1;Parent=TRINITY_DN5_c0_g1_i1.p3
+TRINITY_DN5_c0_g1_i1	transdecoder	exon	1	3643	.	-	.	ID=TRINITY_DN5_c0_g1_i1.p3.exon1;Parent=TRINITY_DN5_c0_g1_i1.p3
+TRINITY_DN5_c0_g1_i1	transdecoder	CDS	32	421	.	-	0	ID=cds.TRINITY_DN5_c0_g1_i1.p3;Parent=TRINITY_DN5_c0_g1_i1.p3
+TRINITY_DN5_c0_g1_i1	transdecoder	three_prime_UTR	1	31	.	-	.	ID=TRINITY_DN5_c0_g1_i1.p3.utr3p1;Parent=TRINITY_DN5_c0_g1_i1.p3
+
+TRINITY_DN5_c0_g1_i1	transdecoder	gene	1	3643	.	+	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i1.p4;Name=ORF%20type%3Acomplete%20len%3A122%20%28%2B%29
+TRINITY_DN5_c0_g1_i1	transdecoder	mRNA	1	3643	.	+	.	ID=TRINITY_DN5_c0_g1_i1.p4;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i1.p4;Name=ORF%20type%3Acomplete%20len%3A122%20%28%2B%29
+TRINITY_DN5_c0_g1_i1	transdecoder	five_prime_UTR	1	2695	.	+	.	ID=TRINITY_DN5_c0_g1_i1.p4.utr5p1;Parent=TRINITY_DN5_c0_g1_i1.p4
+TRINITY_DN5_c0_g1_i1	transdecoder	exon	1	3643	.	+	.	ID=TRINITY_DN5_c0_g1_i1.p4.exon1;Parent=TRINITY_DN5_c0_g1_i1.p4
+TRINITY_DN5_c0_g1_i1	transdecoder	CDS	2696	3061	.	+	0	ID=cds.TRINITY_DN5_c0_g1_i1.p4;Parent=TRINITY_DN5_c0_g1_i1.p4
+TRINITY_DN5_c0_g1_i1	transdecoder	three_prime_UTR	3062	3643	.	+	.	ID=TRINITY_DN5_c0_g1_i1.p4.utr3p1;Parent=TRINITY_DN5_c0_g1_i1.p4
+
+TRINITY_DN5_c0_g1_i1	transdecoder	gene	1	3643	.	-	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i1.p5;Name=ORF%20type%3A5prime_partial%20len%3A113%20%28-%29
+TRINITY_DN5_c0_g1_i1	transdecoder	mRNA	1	3643	.	-	.	ID=TRINITY_DN5_c0_g1_i1.p5;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i1.p5;Name=ORF%20type%3A5prime_partial%20len%3A113%20%28-%29
+TRINITY_DN5_c0_g1_i1	transdecoder	exon	1	3643	.	-	.	ID=TRINITY_DN5_c0_g1_i1.p5.exon1;Parent=TRINITY_DN5_c0_g1_i1.p5
+TRINITY_DN5_c0_g1_i1	transdecoder	CDS	3303	3641	.	-	0	ID=cds.TRINITY_DN5_c0_g1_i1.p5;Parent=TRINITY_DN5_c0_g1_i1.p5;5_prime_partial=true
+TRINITY_DN5_c0_g1_i1	transdecoder	three_prime_UTR	1	3302	.	-	.	ID=TRINITY_DN5_c0_g1_i1.p5.utr3p1;Parent=TRINITY_DN5_c0_g1_i1.p5
+
+TRINITY_DN5_c0_g1_i1	transdecoder	gene	1	3643	.	-	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i1.p6;Name=ORF%20type%3Acomplete%20len%3A107%20%28-%29
+TRINITY_DN5_c0_g1_i1	transdecoder	mRNA	1	3643	.	-	.	ID=TRINITY_DN5_c0_g1_i1.p6;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i1.p6;Name=ORF%20type%3Acomplete%20len%3A107%20%28-%29
+TRINITY_DN5_c0_g1_i1	transdecoder	five_prime_UTR	840	3643	.	-	.	ID=TRINITY_DN5_c0_g1_i1.p6.utr5p1;Parent=TRINITY_DN5_c0_g1_i1.p6
+TRINITY_DN5_c0_g1_i1	transdecoder	exon	1	3643	.	-	.	ID=TRINITY_DN5_c0_g1_i1.p6.exon1;Parent=TRINITY_DN5_c0_g1_i1.p6
+TRINITY_DN5_c0_g1_i1	transdecoder	CDS	519	839	.	-	0	ID=cds.TRINITY_DN5_c0_g1_i1.p6;Parent=TRINITY_DN5_c0_g1_i1.p6
+TRINITY_DN5_c0_g1_i1	transdecoder	three_prime_UTR	1	518	.	-	.	ID=TRINITY_DN5_c0_g1_i1.p6.utr3p1;Parent=TRINITY_DN5_c0_g1_i1.p6
+
+TRINITY_DN5_c0_g1_i3	transdecoder	gene	1	1317	.	+	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i3.p1;Name=ORF%20type%3A3prime_partial%20len%3A356%20%28%2B%29
+TRINITY_DN5_c0_g1_i3	transdecoder	mRNA	1	1317	.	+	.	ID=TRINITY_DN5_c0_g1_i3.p1;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i3.p1;Name=ORF%20type%3A3prime_partial%20len%3A356%20%28%2B%29
+TRINITY_DN5_c0_g1_i3	transdecoder	five_prime_UTR	1	252	.	+	.	ID=TRINITY_DN5_c0_g1_i3.p1.utr5p1;Parent=TRINITY_DN5_c0_g1_i3.p1
+TRINITY_DN5_c0_g1_i3	transdecoder	exon	1	1317	.	+	.	ID=TRINITY_DN5_c0_g1_i3.p1.exon1;Parent=TRINITY_DN5_c0_g1_i3.p1
+TRINITY_DN5_c0_g1_i3	transdecoder	CDS	253	1317	.	+	0	ID=cds.TRINITY_DN5_c0_g1_i3.p1;Parent=TRINITY_DN5_c0_g1_i3.p1;3_prime_partial=true
+
+TRINITY_DN5_c0_g1_i3	transdecoder	gene	1	1317	.	-	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i3.p2;Name=ORF%20type%3Acomplete%20len%3A116%20%28-%29
+TRINITY_DN5_c0_g1_i3	transdecoder	mRNA	1	1317	.	-	.	ID=TRINITY_DN5_c0_g1_i3.p2;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i3.p2;Name=ORF%20type%3Acomplete%20len%3A116%20%28-%29
+TRINITY_DN5_c0_g1_i3	transdecoder	five_prime_UTR	380	1317	.	-	.	ID=TRINITY_DN5_c0_g1_i3.p2.utr5p1;Parent=TRINITY_DN5_c0_g1_i3.p2
+TRINITY_DN5_c0_g1_i3	transdecoder	exon	1	1317	.	-	.	ID=TRINITY_DN5_c0_g1_i3.p2.exon1;Parent=TRINITY_DN5_c0_g1_i3.p2
+TRINITY_DN5_c0_g1_i3	transdecoder	CDS	32	379	.	-	0	ID=cds.TRINITY_DN5_c0_g1_i3.p2;Parent=TRINITY_DN5_c0_g1_i3.p2
+TRINITY_DN5_c0_g1_i3	transdecoder	three_prime_UTR	1	31	.	-	.	ID=TRINITY_DN5_c0_g1_i3.p2.utr3p1;Parent=TRINITY_DN5_c0_g1_i3.p2
+
+TRINITY_DN5_c0_g1_i3	transdecoder	gene	1	1317	.	-	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i3.p3;Name=ORF%20type%3Acomplete%20len%3A107%20%28-%29
+TRINITY_DN5_c0_g1_i3	transdecoder	mRNA	1	1317	.	-	.	ID=TRINITY_DN5_c0_g1_i3.p3;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i3.p3;Name=ORF%20type%3Acomplete%20len%3A107%20%28-%29
+TRINITY_DN5_c0_g1_i3	transdecoder	five_prime_UTR	798	1317	.	-	.	ID=TRINITY_DN5_c0_g1_i3.p3.utr5p1;Parent=TRINITY_DN5_c0_g1_i3.p3
+TRINITY_DN5_c0_g1_i3	transdecoder	exon	1	1317	.	-	.	ID=TRINITY_DN5_c0_g1_i3.p3.exon1;Parent=TRINITY_DN5_c0_g1_i3.p3
+TRINITY_DN5_c0_g1_i3	transdecoder	CDS	477	797	.	-	0	ID=cds.TRINITY_DN5_c0_g1_i3.p3;Parent=TRINITY_DN5_c0_g1_i3.p3
+TRINITY_DN5_c0_g1_i3	transdecoder	three_prime_UTR	1	476	.	-	.	ID=TRINITY_DN5_c0_g1_i3.p3.utr3p1;Parent=TRINITY_DN5_c0_g1_i3.p3
+
+TRINITY_DN5_c0_g1_i3	transdecoder	gene	1	1317	.	-	.	ID=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i3.p4;Name=ORF%20type%3A5prime_partial%20len%3A100%20%28-%29
+TRINITY_DN5_c0_g1_i3	transdecoder	mRNA	1	1317	.	-	.	ID=TRINITY_DN5_c0_g1_i3.p4;Parent=TRINITY_DN5_c0_g1~~TRINITY_DN5_c0_g1_i3.p4;Name=ORF%20type%3A5prime_partial%20len%3A100%20%28-%29
+TRINITY_DN5_c0_g1_i3	transdecoder	exon	1	1317	.	-	.	ID=TRINITY_DN5_c0_g1_i3.p4.exon1;Parent=TRINITY_DN5_c0_g1_i3.p4
+TRINITY_DN5_c0_g1_i3	transdecoder	CDS	1017	1316	.	-	0	ID=cds.TRINITY_DN5_c0_g1_i3.p4;Parent=TRINITY_DN5_c0_g1_i3.p4;5_prime_partial=true
+TRINITY_DN5_c0_g1_i3	transdecoder	three_prime_UTR	1	1016	.	-	.	ID=TRINITY_DN5_c0_g1_i3.p4.utr3p1;Parent=TRINITY_DN5_c0_g1_i3.p4
+
+TRINITY_DN2_c0_g1_i4	transdecoder	gene	1	2077	.	-	.	ID=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i4.p1;Name=ORF%20type%3Acomplete%20len%3A578%20%28-%29
+TRINITY_DN2_c0_g1_i4	transdecoder	mRNA	1	2077	.	-	.	ID=TRINITY_DN2_c0_g1_i4.p1;Parent=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i4.p1;Name=ORF%20type%3Acomplete%20len%3A578%20%28-%29
+TRINITY_DN2_c0_g1_i4	transdecoder	five_prime_UTR	1997	2077	.	-	.	ID=TRINITY_DN2_c0_g1_i4.p1.utr5p1;Parent=TRINITY_DN2_c0_g1_i4.p1
+TRINITY_DN2_c0_g1_i4	transdecoder	exon	1	2077	.	-	.	ID=TRINITY_DN2_c0_g1_i4.p1.exon1;Parent=TRINITY_DN2_c0_g1_i4.p1
+TRINITY_DN2_c0_g1_i4	transdecoder	CDS	263	1996	.	-	0	ID=cds.TRINITY_DN2_c0_g1_i4.p1;Parent=TRINITY_DN2_c0_g1_i4.p1
+TRINITY_DN2_c0_g1_i4	transdecoder	three_prime_UTR	1	262	.	-	.	ID=TRINITY_DN2_c0_g1_i4.p1.utr3p1;Parent=TRINITY_DN2_c0_g1_i4.p1
+
+TRINITY_DN2_c0_g1_i4	transdecoder	gene	1	2077	.	-	.	ID=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i4.p2;Name=ORF%20type%3A5prime_partial%20len%3A107%20%28-%29
+TRINITY_DN2_c0_g1_i4	transdecoder	mRNA	1	2077	.	-	.	ID=TRINITY_DN2_c0_g1_i4.p2;Parent=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i4.p2;Name=ORF%20type%3A5prime_partial%20len%3A107%20%28-%29
+TRINITY_DN2_c0_g1_i4	transdecoder	exon	1	2077	.	-	.	ID=TRINITY_DN2_c0_g1_i4.p2.exon1;Parent=TRINITY_DN2_c0_g1_i4.p2
+TRINITY_DN2_c0_g1_i4	transdecoder	CDS	1755	2075	.	-	0	ID=cds.TRINITY_DN2_c0_g1_i4.p2;Parent=TRINITY_DN2_c0_g1_i4.p2;5_prime_partial=true
+TRINITY_DN2_c0_g1_i4	transdecoder	three_prime_UTR	1	1754	.	-	.	ID=TRINITY_DN2_c0_g1_i4.p2.utr3p1;Parent=TRINITY_DN2_c0_g1_i4.p2
+
+TRINITY_DN2_c0_g1_i8	transdecoder	gene	1	2364	.	-	.	ID=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i8.p1;Name=ORF%20type%3Acomplete%20len%3A512%20%28-%29
+TRINITY_DN2_c0_g1_i8	transdecoder	mRNA	1	2364	.	-	.	ID=TRINITY_DN2_c0_g1_i8.p1;Parent=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i8.p1;Name=ORF%20type%3Acomplete%20len%3A512%20%28-%29
+TRINITY_DN2_c0_g1_i8	transdecoder	five_prime_UTR	1799	2364	.	-	.	ID=TRINITY_DN2_c0_g1_i8.p1.utr5p1;Parent=TRINITY_DN2_c0_g1_i8.p1
+TRINITY_DN2_c0_g1_i8	transdecoder	exon	1	2364	.	-	.	ID=TRINITY_DN2_c0_g1_i8.p1.exon1;Parent=TRINITY_DN2_c0_g1_i8.p1
+TRINITY_DN2_c0_g1_i8	transdecoder	CDS	263	1798	.	-	0	ID=cds.TRINITY_DN2_c0_g1_i8.p1;Parent=TRINITY_DN2_c0_g1_i8.p1
+TRINITY_DN2_c0_g1_i8	transdecoder	three_prime_UTR	1	262	.	-	.	ID=TRINITY_DN2_c0_g1_i8.p1.utr3p1;Parent=TRINITY_DN2_c0_g1_i8.p1
+
+TRINITY_DN2_c0_g1_i2	transdecoder	gene	1	2213	.	-	.	ID=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i2.p1;Name=ORF%20type%3Acomplete%20len%3A356%20%28-%29
+TRINITY_DN2_c0_g1_i2	transdecoder	mRNA	1	2213	.	-	.	ID=TRINITY_DN2_c0_g1_i2.p1;Parent=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i2.p1;Name=ORF%20type%3Acomplete%20len%3A356%20%28-%29
+TRINITY_DN2_c0_g1_i2	transdecoder	five_prime_UTR	1648	2213	.	-	.	ID=TRINITY_DN2_c0_g1_i2.p1.utr5p1;Parent=TRINITY_DN2_c0_g1_i2.p1
+TRINITY_DN2_c0_g1_i2	transdecoder	exon	1	2213	.	-	.	ID=TRINITY_DN2_c0_g1_i2.p1.exon1;Parent=TRINITY_DN2_c0_g1_i2.p1
+TRINITY_DN2_c0_g1_i2	transdecoder	CDS	580	1647	.	-	0	ID=cds.TRINITY_DN2_c0_g1_i2.p1;Parent=TRINITY_DN2_c0_g1_i2.p1
+TRINITY_DN2_c0_g1_i2	transdecoder	three_prime_UTR	1	579	.	-	.	ID=TRINITY_DN2_c0_g1_i2.p1.utr3p1;Parent=TRINITY_DN2_c0_g1_i2.p1
+
+TRINITY_DN2_c0_g1_i2	transdecoder	gene	1	2213	.	-	.	ID=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i2.p2;Name=ORF%20type%3Acomplete%20len%3A107%20%28-%29
+TRINITY_DN2_c0_g1_i2	transdecoder	mRNA	1	2213	.	-	.	ID=TRINITY_DN2_c0_g1_i2.p2;Parent=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i2.p2;Name=ORF%20type%3Acomplete%20len%3A107%20%28-%29
+TRINITY_DN2_c0_g1_i2	transdecoder	five_prime_UTR	584	2213	.	-	.	ID=TRINITY_DN2_c0_g1_i2.p2.utr5p1;Parent=TRINITY_DN2_c0_g1_i2.p2
+TRINITY_DN2_c0_g1_i2	transdecoder	exon	1	2213	.	-	.	ID=TRINITY_DN2_c0_g1_i2.p2.exon1;Parent=TRINITY_DN2_c0_g1_i2.p2
+TRINITY_DN2_c0_g1_i2	transdecoder	CDS	263	583	.	-	0	ID=cds.TRINITY_DN2_c0_g1_i2.p2;Parent=TRINITY_DN2_c0_g1_i2.p2
+TRINITY_DN2_c0_g1_i2	transdecoder	three_prime_UTR	1	262	.	-	.	ID=TRINITY_DN2_c0_g1_i2.p2.utr3p1;Parent=TRINITY_DN2_c0_g1_i2.p2
+
+TRINITY_DN2_c0_g1_i3	transdecoder	gene	1	2433	.	-	.	ID=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i3.p1;Name=ORF%20type%3Acomplete%20len%3A535%20%28-%29
+TRINITY_DN2_c0_g1_i3	transdecoder	mRNA	1	2433	.	-	.	ID=TRINITY_DN2_c0_g1_i3.p1;Parent=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i3.p1;Name=ORF%20type%3Acomplete%20len%3A535%20%28-%29
+TRINITY_DN2_c0_g1_i3	transdecoder	five_prime_UTR	1868	2433	.	-	.	ID=TRINITY_DN2_c0_g1_i3.p1.utr5p1;Parent=TRINITY_DN2_c0_g1_i3.p1
+TRINITY_DN2_c0_g1_i3	transdecoder	exon	1	2433	.	-	.	ID=TRINITY_DN2_c0_g1_i3.p1.exon1;Parent=TRINITY_DN2_c0_g1_i3.p1
+TRINITY_DN2_c0_g1_i3	transdecoder	CDS	263	1867	.	-	0	ID=cds.TRINITY_DN2_c0_g1_i3.p1;Parent=TRINITY_DN2_c0_g1_i3.p1
+TRINITY_DN2_c0_g1_i3	transdecoder	three_prime_UTR	1	262	.	-	.	ID=TRINITY_DN2_c0_g1_i3.p1.utr3p1;Parent=TRINITY_DN2_c0_g1_i3.p1
+
+TRINITY_DN2_c0_g1_i5	transdecoder	gene	1	938	.	-	.	ID=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i5.p1;Name=ORF%20type%3A5prime_partial%20len%3A225%20%28-%29
+TRINITY_DN2_c0_g1_i5	transdecoder	mRNA	1	938	.	-	.	ID=TRINITY_DN2_c0_g1_i5.p1;Parent=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i5.p1;Name=ORF%20type%3A5prime_partial%20len%3A225%20%28-%29
+TRINITY_DN2_c0_g1_i5	transdecoder	exon	1	938	.	-	.	ID=TRINITY_DN2_c0_g1_i5.p1.exon1;Parent=TRINITY_DN2_c0_g1_i5.p1
+TRINITY_DN2_c0_g1_i5	transdecoder	CDS	263	937	.	-	0	ID=cds.TRINITY_DN2_c0_g1_i5.p1;Parent=TRINITY_DN2_c0_g1_i5.p1;5_prime_partial=true
+TRINITY_DN2_c0_g1_i5	transdecoder	three_prime_UTR	1	262	.	-	.	ID=TRINITY_DN2_c0_g1_i5.p1.utr3p1;Parent=TRINITY_DN2_c0_g1_i5.p1
+
+TRINITY_DN2_c0_g1_i9	transdecoder	gene	1	2008	.	-	.	ID=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i9.p1;Name=ORF%20type%3Acomplete%20len%3A555%20%28-%29
+TRINITY_DN2_c0_g1_i9	transdecoder	mRNA	1	2008	.	-	.	ID=TRINITY_DN2_c0_g1_i9.p1;Parent=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i9.p1;Name=ORF%20type%3Acomplete%20len%3A555%20%28-%29
+TRINITY_DN2_c0_g1_i9	transdecoder	five_prime_UTR	1928	2008	.	-	.	ID=TRINITY_DN2_c0_g1_i9.p1.utr5p1;Parent=TRINITY_DN2_c0_g1_i9.p1
+TRINITY_DN2_c0_g1_i9	transdecoder	exon	1	2008	.	-	.	ID=TRINITY_DN2_c0_g1_i9.p1.exon1;Parent=TRINITY_DN2_c0_g1_i9.p1
+TRINITY_DN2_c0_g1_i9	transdecoder	CDS	263	1927	.	-	0	ID=cds.TRINITY_DN2_c0_g1_i9.p1;Parent=TRINITY_DN2_c0_g1_i9.p1
+TRINITY_DN2_c0_g1_i9	transdecoder	three_prime_UTR	1	262	.	-	.	ID=TRINITY_DN2_c0_g1_i9.p1.utr3p1;Parent=TRINITY_DN2_c0_g1_i9.p1
+
+TRINITY_DN2_c0_g1_i9	transdecoder	gene	1	2008	.	-	.	ID=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i9.p2;Name=ORF%20type%3A5prime_partial%20len%3A107%20%28-%29
+TRINITY_DN2_c0_g1_i9	transdecoder	mRNA	1	2008	.	-	.	ID=TRINITY_DN2_c0_g1_i9.p2;Parent=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i9.p2;Name=ORF%20type%3A5prime_partial%20len%3A107%20%28-%29
+TRINITY_DN2_c0_g1_i9	transdecoder	exon	1	2008	.	-	.	ID=TRINITY_DN2_c0_g1_i9.p2.exon1;Parent=TRINITY_DN2_c0_g1_i9.p2
+TRINITY_DN2_c0_g1_i9	transdecoder	CDS	1686	2006	.	-	0	ID=cds.TRINITY_DN2_c0_g1_i9.p2;Parent=TRINITY_DN2_c0_g1_i9.p2;5_prime_partial=true
+TRINITY_DN2_c0_g1_i9	transdecoder	three_prime_UTR	1	1685	.	-	.	ID=TRINITY_DN2_c0_g1_i9.p2.utr3p1;Parent=TRINITY_DN2_c0_g1_i9.p2
+
+TRINITY_DN2_c0_g1_i1	transdecoder	gene	1	1857	.	-	.	ID=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i1.p1;Name=ORF%20type%3Acomplete%20len%3A399%20%28-%29
+TRINITY_DN2_c0_g1_i1	transdecoder	mRNA	1	1857	.	-	.	ID=TRINITY_DN2_c0_g1_i1.p1;Parent=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i1.p1;Name=ORF%20type%3Acomplete%20len%3A399%20%28-%29
+TRINITY_DN2_c0_g1_i1	transdecoder	five_prime_UTR	1777	1857	.	-	.	ID=TRINITY_DN2_c0_g1_i1.p1.utr5p1;Parent=TRINITY_DN2_c0_g1_i1.p1
+TRINITY_DN2_c0_g1_i1	transdecoder	exon	1	1857	.	-	.	ID=TRINITY_DN2_c0_g1_i1.p1.exon1;Parent=TRINITY_DN2_c0_g1_i1.p1
+TRINITY_DN2_c0_g1_i1	transdecoder	CDS	580	1776	.	-	0	ID=cds.TRINITY_DN2_c0_g1_i1.p1;Parent=TRINITY_DN2_c0_g1_i1.p1
+TRINITY_DN2_c0_g1_i1	transdecoder	three_prime_UTR	1	579	.	-	.	ID=TRINITY_DN2_c0_g1_i1.p1.utr3p1;Parent=TRINITY_DN2_c0_g1_i1.p1
+
+TRINITY_DN2_c0_g1_i1	transdecoder	gene	1	1857	.	-	.	ID=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i1.p2;Name=ORF%20type%3A5prime_partial%20len%3A107%20%28-%29
+TRINITY_DN2_c0_g1_i1	transdecoder	mRNA	1	1857	.	-	.	ID=TRINITY_DN2_c0_g1_i1.p2;Parent=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i1.p2;Name=ORF%20type%3A5prime_partial%20len%3A107%20%28-%29
+TRINITY_DN2_c0_g1_i1	transdecoder	exon	1	1857	.	-	.	ID=TRINITY_DN2_c0_g1_i1.p2.exon1;Parent=TRINITY_DN2_c0_g1_i1.p2
+TRINITY_DN2_c0_g1_i1	transdecoder	CDS	1535	1855	.	-	0	ID=cds.TRINITY_DN2_c0_g1_i1.p2;Parent=TRINITY_DN2_c0_g1_i1.p2;5_prime_partial=true
+TRINITY_DN2_c0_g1_i1	transdecoder	three_prime_UTR	1	1534	.	-	.	ID=TRINITY_DN2_c0_g1_i1.p2.utr3p1;Parent=TRINITY_DN2_c0_g1_i1.p2
+
+TRINITY_DN2_c0_g1_i1	transdecoder	gene	1	1857	.	-	.	ID=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i1.p3;Name=ORF%20type%3Acomplete%20len%3A107%20%28-%29
+TRINITY_DN2_c0_g1_i1	transdecoder	mRNA	1	1857	.	-	.	ID=TRINITY_DN2_c0_g1_i1.p3;Parent=TRINITY_DN2_c0_g1~~TRINITY_DN2_c0_g1_i1.p3;Name=ORF%20type%3Acomplete%20len%3A107%20%28-%29
+TRINITY_DN2_c0_g1_i1	transdecoder	five_prime_UTR	584	1857	.	-	.	ID=TRINITY_DN2_c0_g1_i1.p3.utr5p1;Parent=TRINITY_DN2_c0_g1_i1.p3
+TRINITY_DN2_c0_g1_i1	transdecoder	exon	1	1857	.	-	.	ID=TRINITY_DN2_c0_g1_i1.p3.exon1;Parent=TRINITY_DN2_c0_g1_i1.p3
+TRINITY_DN2_c0_g1_i1	transdecoder	CDS	263	583	.	-	0	ID=cds.TRINITY_DN2_c0_g1_i1.p3;Parent=TRINITY_DN2_c0_g1_i1.p3
+TRINITY_DN2_c0_g1_i1	transdecoder	three_prime_UTR	1	262	.	-	.	ID=TRINITY_DN2_c0_g1_i1.p3.utr3p1;Parent=TRINITY_DN2_c0_g1_i1.p3
+
+TRINITY_DN12_c0_g2_i5	transdecoder	gene	1	3914	.	+	.	ID=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i5.p1;Name=ORF%20type%3Acomplete%20len%3A1171%20%28%2B%29
+TRINITY_DN12_c0_g2_i5	transdecoder	mRNA	1	3914	.	+	.	ID=TRINITY_DN12_c0_g2_i5.p1;Parent=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i5.p1;Name=ORF%20type%3Acomplete%20len%3A1171%20%28%2B%29
+TRINITY_DN12_c0_g2_i5	transdecoder	five_prime_UTR	1	170	.	+	.	ID=TRINITY_DN12_c0_g2_i5.p1.utr5p1;Parent=TRINITY_DN12_c0_g2_i5.p1
+TRINITY_DN12_c0_g2_i5	transdecoder	exon	1	3914	.	+	.	ID=TRINITY_DN12_c0_g2_i5.p1.exon1;Parent=TRINITY_DN12_c0_g2_i5.p1
+TRINITY_DN12_c0_g2_i5	transdecoder	CDS	171	3683	.	+	0	ID=cds.TRINITY_DN12_c0_g2_i5.p1;Parent=TRINITY_DN12_c0_g2_i5.p1
+TRINITY_DN12_c0_g2_i5	transdecoder	three_prime_UTR	3684	3914	.	+	.	ID=TRINITY_DN12_c0_g2_i5.p1.utr3p1;Parent=TRINITY_DN12_c0_g2_i5.p1
+
+TRINITY_DN12_c0_g2_i5	transdecoder	gene	1	3914	.	-	.	ID=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i5.p2;Name=ORF%20type%3Acomplete%20len%3A198%20%28-%29
+TRINITY_DN12_c0_g2_i5	transdecoder	mRNA	1	3914	.	-	.	ID=TRINITY_DN12_c0_g2_i5.p2;Parent=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i5.p2;Name=ORF%20type%3Acomplete%20len%3A198%20%28-%29
+TRINITY_DN12_c0_g2_i5	transdecoder	five_prime_UTR	716	3914	.	-	.	ID=TRINITY_DN12_c0_g2_i5.p2.utr5p1;Parent=TRINITY_DN12_c0_g2_i5.p2
+TRINITY_DN12_c0_g2_i5	transdecoder	exon	1	3914	.	-	.	ID=TRINITY_DN12_c0_g2_i5.p2.exon1;Parent=TRINITY_DN12_c0_g2_i5.p2
+TRINITY_DN12_c0_g2_i5	transdecoder	CDS	122	715	.	-	0	ID=cds.TRINITY_DN12_c0_g2_i5.p2;Parent=TRINITY_DN12_c0_g2_i5.p2
+TRINITY_DN12_c0_g2_i5	transdecoder	three_prime_UTR	1	121	.	-	.	ID=TRINITY_DN12_c0_g2_i5.p2.utr3p1;Parent=TRINITY_DN12_c0_g2_i5.p2
+
+TRINITY_DN12_c0_g2_i5	transdecoder	gene	1	3914	.	-	.	ID=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i5.p3;Name=ORF%20type%3Acomplete%20len%3A181%20%28-%29
+TRINITY_DN12_c0_g2_i5	transdecoder	mRNA	1	3914	.	-	.	ID=TRINITY_DN12_c0_g2_i5.p3;Parent=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i5.p3;Name=ORF%20type%3Acomplete%20len%3A181%20%28-%29
+TRINITY_DN12_c0_g2_i5	transdecoder	five_prime_UTR	1547	3914	.	-	.	ID=TRINITY_DN12_c0_g2_i5.p3.utr5p1;Parent=TRINITY_DN12_c0_g2_i5.p3
+TRINITY_DN12_c0_g2_i5	transdecoder	exon	1	3914	.	-	.	ID=TRINITY_DN12_c0_g2_i5.p3.exon1;Parent=TRINITY_DN12_c0_g2_i5.p3
+TRINITY_DN12_c0_g2_i5	transdecoder	CDS	1004	1546	.	-	0	ID=cds.TRINITY_DN12_c0_g2_i5.p3;Parent=TRINITY_DN12_c0_g2_i5.p3
+TRINITY_DN12_c0_g2_i5	transdecoder	three_prime_UTR	1	1003	.	-	.	ID=TRINITY_DN12_c0_g2_i5.p3.utr3p1;Parent=TRINITY_DN12_c0_g2_i5.p3
+
+TRINITY_DN12_c0_g2_i2	transdecoder	gene	1	1288	.	+	.	ID=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i2.p1;Name=ORF%20type%3A3prime_partial%20len%3A402%20%28%2B%29
+TRINITY_DN12_c0_g2_i2	transdecoder	mRNA	1	1288	.	+	.	ID=TRINITY_DN12_c0_g2_i2.p1;Parent=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i2.p1;Name=ORF%20type%3A3prime_partial%20len%3A402%20%28%2B%29
+TRINITY_DN12_c0_g2_i2	transdecoder	five_prime_UTR	1	83	.	+	.	ID=TRINITY_DN12_c0_g2_i2.p1.utr5p1;Parent=TRINITY_DN12_c0_g2_i2.p1
+TRINITY_DN12_c0_g2_i2	transdecoder	exon	1	1288	.	+	.	ID=TRINITY_DN12_c0_g2_i2.p1.exon1;Parent=TRINITY_DN12_c0_g2_i2.p1
+TRINITY_DN12_c0_g2_i2	transdecoder	CDS	84	1286	.	+	0	ID=cds.TRINITY_DN12_c0_g2_i2.p1;Parent=TRINITY_DN12_c0_g2_i2.p1;3_prime_partial=true
+
+TRINITY_DN12_c0_g2_i2	transdecoder	gene	1	1288	.	-	.	ID=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i2.p2;Name=ORF%20type%3A3prime_partial%20len%3A210%20%28-%29
+TRINITY_DN12_c0_g2_i2	transdecoder	mRNA	1	1288	.	-	.	ID=TRINITY_DN12_c0_g2_i2.p2;Parent=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i2.p2;Name=ORF%20type%3A3prime_partial%20len%3A210%20%28-%29
+TRINITY_DN12_c0_g2_i2	transdecoder	five_prime_UTR	629	1288	.	-	.	ID=TRINITY_DN12_c0_g2_i2.p2.utr5p1;Parent=TRINITY_DN12_c0_g2_i2.p2
+TRINITY_DN12_c0_g2_i2	transdecoder	exon	1	1288	.	-	.	ID=TRINITY_DN12_c0_g2_i2.p2.exon1;Parent=TRINITY_DN12_c0_g2_i2.p2
+TRINITY_DN12_c0_g2_i2	transdecoder	CDS	2	628	.	-	0	ID=cds.TRINITY_DN12_c0_g2_i2.p2;Parent=TRINITY_DN12_c0_g2_i2.p2;3_prime_partial=true
+
+TRINITY_DN12_c0_g2_i2	transdecoder	gene	1	1288	.	-	.	ID=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i2.p3;Name=ORF%20type%3A5prime_partial%20len%3A124%20%28-%29
+TRINITY_DN12_c0_g2_i2	transdecoder	mRNA	1	1288	.	-	.	ID=TRINITY_DN12_c0_g2_i2.p3;Parent=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i2.p3;Name=ORF%20type%3A5prime_partial%20len%3A124%20%28-%29
+TRINITY_DN12_c0_g2_i2	transdecoder	exon	1	1288	.	-	.	ID=TRINITY_DN12_c0_g2_i2.p3.exon1;Parent=TRINITY_DN12_c0_g2_i2.p3
+TRINITY_DN12_c0_g2_i2	transdecoder	CDS	917	1288	.	-	0	ID=cds.TRINITY_DN12_c0_g2_i2.p3;Parent=TRINITY_DN12_c0_g2_i2.p3;5_prime_partial=true
+TRINITY_DN12_c0_g2_i2	transdecoder	three_prime_UTR	1	916	.	-	.	ID=TRINITY_DN12_c0_g2_i2.p3.utr3p1;Parent=TRINITY_DN12_c0_g2_i2.p3
+
+TRINITY_DN12_c0_g2_i4	transdecoder	gene	1	3097	.	+	.	ID=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i4.p1;Name=ORF%20type%3Acomplete%20len%3A968%20%28%2B%29
+TRINITY_DN12_c0_g2_i4	transdecoder	mRNA	1	3097	.	+	.	ID=TRINITY_DN12_c0_g2_i4.p1;Parent=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i4.p1;Name=ORF%20type%3Acomplete%20len%3A968%20%28%2B%29
+TRINITY_DN12_c0_g2_i4	transdecoder	five_prime_UTR	1	170	.	+	.	ID=TRINITY_DN12_c0_g2_i4.p1.utr5p1;Parent=TRINITY_DN12_c0_g2_i4.p1
+TRINITY_DN12_c0_g2_i4	transdecoder	exon	1	3097	.	+	.	ID=TRINITY_DN12_c0_g2_i4.p1.exon1;Parent=TRINITY_DN12_c0_g2_i4.p1
+TRINITY_DN12_c0_g2_i4	transdecoder	CDS	171	3074	.	+	0	ID=cds.TRINITY_DN12_c0_g2_i4.p1;Parent=TRINITY_DN12_c0_g2_i4.p1
+TRINITY_DN12_c0_g2_i4	transdecoder	three_prime_UTR	3075	3097	.	+	.	ID=TRINITY_DN12_c0_g2_i4.p1.utr3p1;Parent=TRINITY_DN12_c0_g2_i4.p1
+
+TRINITY_DN12_c0_g2_i4	transdecoder	gene	1	3097	.	-	.	ID=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i4.p2;Name=ORF%20type%3Acomplete%20len%3A198%20%28-%29
+TRINITY_DN12_c0_g2_i4	transdecoder	mRNA	1	3097	.	-	.	ID=TRINITY_DN12_c0_g2_i4.p2;Parent=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i4.p2;Name=ORF%20type%3Acomplete%20len%3A198%20%28-%29
+TRINITY_DN12_c0_g2_i4	transdecoder	five_prime_UTR	716	3097	.	-	.	ID=TRINITY_DN12_c0_g2_i4.p2.utr5p1;Parent=TRINITY_DN12_c0_g2_i4.p2
+TRINITY_DN12_c0_g2_i4	transdecoder	exon	1	3097	.	-	.	ID=TRINITY_DN12_c0_g2_i4.p2.exon1;Parent=TRINITY_DN12_c0_g2_i4.p2
+TRINITY_DN12_c0_g2_i4	transdecoder	CDS	122	715	.	-	0	ID=cds.TRINITY_DN12_c0_g2_i4.p2;Parent=TRINITY_DN12_c0_g2_i4.p2
+TRINITY_DN12_c0_g2_i4	transdecoder	three_prime_UTR	1	121	.	-	.	ID=TRINITY_DN12_c0_g2_i4.p2.utr3p1;Parent=TRINITY_DN12_c0_g2_i4.p2
+
+TRINITY_DN12_c0_g2_i4	transdecoder	gene	1	3097	.	-	.	ID=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i4.p3;Name=ORF%20type%3Acomplete%20len%3A181%20%28-%29
+TRINITY_DN12_c0_g2_i4	transdecoder	mRNA	1	3097	.	-	.	ID=TRINITY_DN12_c0_g2_i4.p3;Parent=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i4.p3;Name=ORF%20type%3Acomplete%20len%3A181%20%28-%29
+TRINITY_DN12_c0_g2_i4	transdecoder	five_prime_UTR	1547	3097	.	-	.	ID=TRINITY_DN12_c0_g2_i4.p3.utr5p1;Parent=TRINITY_DN12_c0_g2_i4.p3
+TRINITY_DN12_c0_g2_i4	transdecoder	exon	1	3097	.	-	.	ID=TRINITY_DN12_c0_g2_i4.p3.exon1;Parent=TRINITY_DN12_c0_g2_i4.p3
+TRINITY_DN12_c0_g2_i4	transdecoder	CDS	1004	1546	.	-	0	ID=cds.TRINITY_DN12_c0_g2_i4.p3;Parent=TRINITY_DN12_c0_g2_i4.p3
+TRINITY_DN12_c0_g2_i4	transdecoder	three_prime_UTR	1	1003	.	-	.	ID=TRINITY_DN12_c0_g2_i4.p3.utr3p1;Parent=TRINITY_DN12_c0_g2_i4.p3
+
+TRINITY_DN12_c0_g2_i3	transdecoder	gene	1	6584	.	+	.	ID=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i3.p1;Name=ORF%20type%3Acomplete%20len%3A1800%20%28%2B%29
+TRINITY_DN12_c0_g2_i3	transdecoder	mRNA	1	6584	.	+	.	ID=TRINITY_DN12_c0_g2_i3.p1;Parent=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i3.p1;Name=ORF%20type%3Acomplete%20len%3A1800%20%28%2B%29
+TRINITY_DN12_c0_g2_i3	transdecoder	five_prime_UTR	1	170	.	+	.	ID=TRINITY_DN12_c0_g2_i3.p1.utr5p1;Parent=TRINITY_DN12_c0_g2_i3.p1
+TRINITY_DN12_c0_g2_i3	transdecoder	exon	1	6584	.	+	.	ID=TRINITY_DN12_c0_g2_i3.p1.exon1;Parent=TRINITY_DN12_c0_g2_i3.p1
+TRINITY_DN12_c0_g2_i3	transdecoder	CDS	171	5570	.	+	0	ID=cds.TRINITY_DN12_c0_g2_i3.p1;Parent=TRINITY_DN12_c0_g2_i3.p1
+TRINITY_DN12_c0_g2_i3	transdecoder	three_prime_UTR	5571	6584	.	+	.	ID=TRINITY_DN12_c0_g2_i3.p1.utr3p1;Parent=TRINITY_DN12_c0_g2_i3.p1
+
+TRINITY_DN12_c0_g2_i3	transdecoder	gene	1	6584	.	-	.	ID=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i3.p2;Name=ORF%20type%3Acomplete%20len%3A198%20%28-%29
+TRINITY_DN12_c0_g2_i3	transdecoder	mRNA	1	6584	.	-	.	ID=TRINITY_DN12_c0_g2_i3.p2;Parent=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i3.p2;Name=ORF%20type%3Acomplete%20len%3A198%20%28-%29
+TRINITY_DN12_c0_g2_i3	transdecoder	five_prime_UTR	716	6584	.	-	.	ID=TRINITY_DN12_c0_g2_i3.p2.utr5p1;Parent=TRINITY_DN12_c0_g2_i3.p2
+TRINITY_DN12_c0_g2_i3	transdecoder	exon	1	6584	.	-	.	ID=TRINITY_DN12_c0_g2_i3.p2.exon1;Parent=TRINITY_DN12_c0_g2_i3.p2
+TRINITY_DN12_c0_g2_i3	transdecoder	CDS	122	715	.	-	0	ID=cds.TRINITY_DN12_c0_g2_i3.p2;Parent=TRINITY_DN12_c0_g2_i3.p2
+TRINITY_DN12_c0_g2_i3	transdecoder	three_prime_UTR	1	121	.	-	.	ID=TRINITY_DN12_c0_g2_i3.p2.utr3p1;Parent=TRINITY_DN12_c0_g2_i3.p2
+
+TRINITY_DN12_c0_g2_i3	transdecoder	gene	1	6584	.	-	.	ID=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i3.p3;Name=ORF%20type%3Acomplete%20len%3A181%20%28-%29
+TRINITY_DN12_c0_g2_i3	transdecoder	mRNA	1	6584	.	-	.	ID=TRINITY_DN12_c0_g2_i3.p3;Parent=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i3.p3;Name=ORF%20type%3Acomplete%20len%3A181%20%28-%29
+TRINITY_DN12_c0_g2_i3	transdecoder	five_prime_UTR	1547	6584	.	-	.	ID=TRINITY_DN12_c0_g2_i3.p3.utr5p1;Parent=TRINITY_DN12_c0_g2_i3.p3
+TRINITY_DN12_c0_g2_i3	transdecoder	exon	1	6584	.	-	.	ID=TRINITY_DN12_c0_g2_i3.p3.exon1;Parent=TRINITY_DN12_c0_g2_i3.p3
+TRINITY_DN12_c0_g2_i3	transdecoder	CDS	1004	1546	.	-	0	ID=cds.TRINITY_DN12_c0_g2_i3.p3;Parent=TRINITY_DN12_c0_g2_i3.p3
+TRINITY_DN12_c0_g2_i3	transdecoder	three_prime_UTR	1	1003	.	-	.	ID=TRINITY_DN12_c0_g2_i3.p3.utr3p1;Parent=TRINITY_DN12_c0_g2_i3.p3
+
+TRINITY_DN12_c0_g2_i3	transdecoder	gene	1	6584	.	-	.	ID=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i3.p4;Name=ORF%20type%3Acomplete%20len%3A101%20%28-%29
+TRINITY_DN12_c0_g2_i3	transdecoder	mRNA	1	6584	.	-	.	ID=TRINITY_DN12_c0_g2_i3.p4;Parent=TRINITY_DN12_c0_g2~~TRINITY_DN12_c0_g2_i3.p4;Name=ORF%20type%3Acomplete%20len%3A101%20%28-%29
+TRINITY_DN12_c0_g2_i3	transdecoder	five_prime_UTR	5994	6584	.	-	.	ID=TRINITY_DN12_c0_g2_i3.p4.utr5p1;Parent=TRINITY_DN12_c0_g2_i3.p4
+TRINITY_DN12_c0_g2_i3	transdecoder	exon	1	6584	.	-	.	ID=TRINITY_DN12_c0_g2_i3.p4.exon1;Parent=TRINITY_DN12_c0_g2_i3.p4
+TRINITY_DN12_c0_g2_i3	transdecoder	CDS	5691	5993	.	-	0	ID=cds.TRINITY_DN12_c0_g2_i3.p4;Parent=TRINITY_DN12_c0_g2_i3.p4
+TRINITY_DN12_c0_g2_i3	transdecoder	three_prime_UTR	1	5690	.	-	.	ID=TRINITY_DN12_c0_g2_i3.p4.utr3p1;Parent=TRINITY_DN12_c0_g2_i3.p4
+
+TRINITY_DN1_c0_g2_i2	transdecoder	gene	1	8817	.	-	.	ID=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i2.p1;Name=ORF%20type%3Acomplete%20len%3A2378%20%28-%29
+TRINITY_DN1_c0_g2_i2	transdecoder	mRNA	1	8817	.	-	.	ID=TRINITY_DN1_c0_g2_i2.p1;Parent=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i2.p1;Name=ORF%20type%3Acomplete%20len%3A2378%20%28-%29
+TRINITY_DN1_c0_g2_i2	transdecoder	five_prime_UTR	8583	8817	.	-	.	ID=TRINITY_DN1_c0_g2_i2.p1.utr5p1;Parent=TRINITY_DN1_c0_g2_i2.p1
+TRINITY_DN1_c0_g2_i2	transdecoder	exon	1	8817	.	-	.	ID=TRINITY_DN1_c0_g2_i2.p1.exon1;Parent=TRINITY_DN1_c0_g2_i2.p1
+TRINITY_DN1_c0_g2_i2	transdecoder	CDS	1449	8582	.	-	0	ID=cds.TRINITY_DN1_c0_g2_i2.p1;Parent=TRINITY_DN1_c0_g2_i2.p1
+TRINITY_DN1_c0_g2_i2	transdecoder	three_prime_UTR	1	1448	.	-	.	ID=TRINITY_DN1_c0_g2_i2.p1.utr3p1;Parent=TRINITY_DN1_c0_g2_i2.p1
+
+TRINITY_DN1_c0_g2_i2	transdecoder	gene	1	8817	.	-	.	ID=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i2.p2;Name=ORF%20type%3Acomplete%20len%3A219%20%28-%29
+TRINITY_DN1_c0_g2_i2	transdecoder	mRNA	1	8817	.	-	.	ID=TRINITY_DN1_c0_g2_i2.p2;Parent=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i2.p2;Name=ORF%20type%3Acomplete%20len%3A219%20%28-%29
+TRINITY_DN1_c0_g2_i2	transdecoder	five_prime_UTR	5039	8817	.	-	.	ID=TRINITY_DN1_c0_g2_i2.p2.utr5p1;Parent=TRINITY_DN1_c0_g2_i2.p2
+TRINITY_DN1_c0_g2_i2	transdecoder	exon	1	8817	.	-	.	ID=TRINITY_DN1_c0_g2_i2.p2.exon1;Parent=TRINITY_DN1_c0_g2_i2.p2
+TRINITY_DN1_c0_g2_i2	transdecoder	CDS	4382	5038	.	-	0	ID=cds.TRINITY_DN1_c0_g2_i2.p2;Parent=TRINITY_DN1_c0_g2_i2.p2
+TRINITY_DN1_c0_g2_i2	transdecoder	three_prime_UTR	1	4381	.	-	.	ID=TRINITY_DN1_c0_g2_i2.p2.utr3p1;Parent=TRINITY_DN1_c0_g2_i2.p2
+
+TRINITY_DN1_c0_g2_i2	transdecoder	gene	1	8817	.	+	.	ID=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i2.p3;Name=ORF%20type%3Acomplete%20len%3A168%20%28%2B%29
+TRINITY_DN1_c0_g2_i2	transdecoder	mRNA	1	8817	.	+	.	ID=TRINITY_DN1_c0_g2_i2.p3;Parent=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i2.p3;Name=ORF%20type%3Acomplete%20len%3A168%20%28%2B%29
+TRINITY_DN1_c0_g2_i2	transdecoder	five_prime_UTR	1	4418	.	+	.	ID=TRINITY_DN1_c0_g2_i2.p3.utr5p1;Parent=TRINITY_DN1_c0_g2_i2.p3
+TRINITY_DN1_c0_g2_i2	transdecoder	exon	1	8817	.	+	.	ID=TRINITY_DN1_c0_g2_i2.p3.exon1;Parent=TRINITY_DN1_c0_g2_i2.p3
+TRINITY_DN1_c0_g2_i2	transdecoder	CDS	4419	4922	.	+	0	ID=cds.TRINITY_DN1_c0_g2_i2.p3;Parent=TRINITY_DN1_c0_g2_i2.p3
+TRINITY_DN1_c0_g2_i2	transdecoder	three_prime_UTR	4923	8817	.	+	.	ID=TRINITY_DN1_c0_g2_i2.p3.utr3p1;Parent=TRINITY_DN1_c0_g2_i2.p3
+
+TRINITY_DN1_c0_g2_i2	transdecoder	gene	1	8817	.	+	.	ID=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i2.p4;Name=ORF%20type%3Acomplete%20len%3A124%20%28%2B%29
+TRINITY_DN1_c0_g2_i2	transdecoder	mRNA	1	8817	.	+	.	ID=TRINITY_DN1_c0_g2_i2.p4;Parent=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i2.p4;Name=ORF%20type%3Acomplete%20len%3A124%20%28%2B%29
+TRINITY_DN1_c0_g2_i2	transdecoder	five_prime_UTR	1	7831	.	+	.	ID=TRINITY_DN1_c0_g2_i2.p4.utr5p1;Parent=TRINITY_DN1_c0_g2_i2.p4
+TRINITY_DN1_c0_g2_i2	transdecoder	exon	1	8817	.	+	.	ID=TRINITY_DN1_c0_g2_i2.p4.exon1;Parent=TRINITY_DN1_c0_g2_i2.p4
+TRINITY_DN1_c0_g2_i2	transdecoder	CDS	7832	8203	.	+	0	ID=cds.TRINITY_DN1_c0_g2_i2.p4;Parent=TRINITY_DN1_c0_g2_i2.p4
+TRINITY_DN1_c0_g2_i2	transdecoder	three_prime_UTR	8204	8817	.	+	.	ID=TRINITY_DN1_c0_g2_i2.p4.utr3p1;Parent=TRINITY_DN1_c0_g2_i2.p4
+
+TRINITY_DN1_c0_g2_i2	transdecoder	gene	1	8817	.	+	.	ID=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i2.p5;Name=ORF%20type%3Acomplete%20len%3A119%20%28%2B%29
+TRINITY_DN1_c0_g2_i2	transdecoder	mRNA	1	8817	.	+	.	ID=TRINITY_DN1_c0_g2_i2.p5;Parent=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i2.p5;Name=ORF%20type%3Acomplete%20len%3A119%20%28%2B%29
+TRINITY_DN1_c0_g2_i2	transdecoder	five_prime_UTR	1	6519	.	+	.	ID=TRINITY_DN1_c0_g2_i2.p5.utr5p1;Parent=TRINITY_DN1_c0_g2_i2.p5
+TRINITY_DN1_c0_g2_i2	transdecoder	exon	1	8817	.	+	.	ID=TRINITY_DN1_c0_g2_i2.p5.exon1;Parent=TRINITY_DN1_c0_g2_i2.p5
+TRINITY_DN1_c0_g2_i2	transdecoder	CDS	6520	6876	.	+	0	ID=cds.TRINITY_DN1_c0_g2_i2.p5;Parent=TRINITY_DN1_c0_g2_i2.p5
+TRINITY_DN1_c0_g2_i2	transdecoder	three_prime_UTR	6877	8817	.	+	.	ID=TRINITY_DN1_c0_g2_i2.p5.utr3p1;Parent=TRINITY_DN1_c0_g2_i2.p5
+
+TRINITY_DN1_c0_g2_i1	transdecoder	gene	1	8757	.	-	.	ID=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i1.p1;Name=ORF%20type%3Acomplete%20len%3A2358%20%28-%29
+TRINITY_DN1_c0_g2_i1	transdecoder	mRNA	1	8757	.	-	.	ID=TRINITY_DN1_c0_g2_i1.p1;Parent=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i1.p1;Name=ORF%20type%3Acomplete%20len%3A2358%20%28-%29
+TRINITY_DN1_c0_g2_i1	transdecoder	five_prime_UTR	8523	8757	.	-	.	ID=TRINITY_DN1_c0_g2_i1.p1.utr5p1;Parent=TRINITY_DN1_c0_g2_i1.p1
+TRINITY_DN1_c0_g2_i1	transdecoder	exon	1	8757	.	-	.	ID=TRINITY_DN1_c0_g2_i1.p1.exon1;Parent=TRINITY_DN1_c0_g2_i1.p1
+TRINITY_DN1_c0_g2_i1	transdecoder	CDS	1449	8522	.	-	0	ID=cds.TRINITY_DN1_c0_g2_i1.p1;Parent=TRINITY_DN1_c0_g2_i1.p1
+TRINITY_DN1_c0_g2_i1	transdecoder	three_prime_UTR	1	1448	.	-	.	ID=TRINITY_DN1_c0_g2_i1.p1.utr3p1;Parent=TRINITY_DN1_c0_g2_i1.p1
+
+TRINITY_DN1_c0_g2_i1	transdecoder	gene	1	8757	.	-	.	ID=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i1.p2;Name=ORF%20type%3Acomplete%20len%3A219%20%28-%29
+TRINITY_DN1_c0_g2_i1	transdecoder	mRNA	1	8757	.	-	.	ID=TRINITY_DN1_c0_g2_i1.p2;Parent=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i1.p2;Name=ORF%20type%3Acomplete%20len%3A219%20%28-%29
+TRINITY_DN1_c0_g2_i1	transdecoder	five_prime_UTR	4979	8757	.	-	.	ID=TRINITY_DN1_c0_g2_i1.p2.utr5p1;Parent=TRINITY_DN1_c0_g2_i1.p2
+TRINITY_DN1_c0_g2_i1	transdecoder	exon	1	8757	.	-	.	ID=TRINITY_DN1_c0_g2_i1.p2.exon1;Parent=TRINITY_DN1_c0_g2_i1.p2
+TRINITY_DN1_c0_g2_i1	transdecoder	CDS	4322	4978	.	-	0	ID=cds.TRINITY_DN1_c0_g2_i1.p2;Parent=TRINITY_DN1_c0_g2_i1.p2
+TRINITY_DN1_c0_g2_i1	transdecoder	three_prime_UTR	1	4321	.	-	.	ID=TRINITY_DN1_c0_g2_i1.p2.utr3p1;Parent=TRINITY_DN1_c0_g2_i1.p2
+
+TRINITY_DN1_c0_g2_i1	transdecoder	gene	1	8757	.	+	.	ID=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i1.p3;Name=ORF%20type%3Acomplete%20len%3A168%20%28%2B%29
+TRINITY_DN1_c0_g2_i1	transdecoder	mRNA	1	8757	.	+	.	ID=TRINITY_DN1_c0_g2_i1.p3;Parent=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i1.p3;Name=ORF%20type%3Acomplete%20len%3A168%20%28%2B%29
+TRINITY_DN1_c0_g2_i1	transdecoder	five_prime_UTR	1	4358	.	+	.	ID=TRINITY_DN1_c0_g2_i1.p3.utr5p1;Parent=TRINITY_DN1_c0_g2_i1.p3
+TRINITY_DN1_c0_g2_i1	transdecoder	exon	1	8757	.	+	.	ID=TRINITY_DN1_c0_g2_i1.p3.exon1;Parent=TRINITY_DN1_c0_g2_i1.p3
+TRINITY_DN1_c0_g2_i1	transdecoder	CDS	4359	4862	.	+	0	ID=cds.TRINITY_DN1_c0_g2_i1.p3;Parent=TRINITY_DN1_c0_g2_i1.p3
+TRINITY_DN1_c0_g2_i1	transdecoder	three_prime_UTR	4863	8757	.	+	.	ID=TRINITY_DN1_c0_g2_i1.p3.utr3p1;Parent=TRINITY_DN1_c0_g2_i1.p3
+
+TRINITY_DN1_c0_g2_i1	transdecoder	gene	1	8757	.	+	.	ID=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i1.p4;Name=ORF%20type%3Acomplete%20len%3A124%20%28%2B%29
+TRINITY_DN1_c0_g2_i1	transdecoder	mRNA	1	8757	.	+	.	ID=TRINITY_DN1_c0_g2_i1.p4;Parent=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i1.p4;Name=ORF%20type%3Acomplete%20len%3A124%20%28%2B%29
+TRINITY_DN1_c0_g2_i1	transdecoder	five_prime_UTR	1	7771	.	+	.	ID=TRINITY_DN1_c0_g2_i1.p4.utr5p1;Parent=TRINITY_DN1_c0_g2_i1.p4
+TRINITY_DN1_c0_g2_i1	transdecoder	exon	1	8757	.	+	.	ID=TRINITY_DN1_c0_g2_i1.p4.exon1;Parent=TRINITY_DN1_c0_g2_i1.p4
+TRINITY_DN1_c0_g2_i1	transdecoder	CDS	7772	8143	.	+	0	ID=cds.TRINITY_DN1_c0_g2_i1.p4;Parent=TRINITY_DN1_c0_g2_i1.p4
+TRINITY_DN1_c0_g2_i1	transdecoder	three_prime_UTR	8144	8757	.	+	.	ID=TRINITY_DN1_c0_g2_i1.p4.utr3p1;Parent=TRINITY_DN1_c0_g2_i1.p4
+
+TRINITY_DN1_c0_g2_i1	transdecoder	gene	1	8757	.	+	.	ID=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i1.p5;Name=ORF%20type%3Acomplete%20len%3A119%20%28%2B%29
+TRINITY_DN1_c0_g2_i1	transdecoder	mRNA	1	8757	.	+	.	ID=TRINITY_DN1_c0_g2_i1.p5;Parent=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i1.p5;Name=ORF%20type%3Acomplete%20len%3A119%20%28%2B%29
+TRINITY_DN1_c0_g2_i1	transdecoder	five_prime_UTR	1	6459	.	+	.	ID=TRINITY_DN1_c0_g2_i1.p5.utr5p1;Parent=TRINITY_DN1_c0_g2_i1.p5
+TRINITY_DN1_c0_g2_i1	transdecoder	exon	1	8757	.	+	.	ID=TRINITY_DN1_c0_g2_i1.p5.exon1;Parent=TRINITY_DN1_c0_g2_i1.p5
+TRINITY_DN1_c0_g2_i1	transdecoder	CDS	6460	6816	.	+	0	ID=cds.TRINITY_DN1_c0_g2_i1.p5;Parent=TRINITY_DN1_c0_g2_i1.p5
+TRINITY_DN1_c0_g2_i1	transdecoder	three_prime_UTR	6817	8757	.	+	.	ID=TRINITY_DN1_c0_g2_i1.p5.utr3p1;Parent=TRINITY_DN1_c0_g2_i1.p5
+
+TRINITY_DN1_c0_g2_i1	transdecoder	gene	1	8757	.	-	.	ID=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i1.p6;Name=ORF%20type%3Acomplete%20len%3A104%20%28-%29
+TRINITY_DN1_c0_g2_i1	transdecoder	mRNA	1	8757	.	-	.	ID=TRINITY_DN1_c0_g2_i1.p6;Parent=TRINITY_DN1_c0_g2~~TRINITY_DN1_c0_g2_i1.p6;Name=ORF%20type%3Acomplete%20len%3A104%20%28-%29
+TRINITY_DN1_c0_g2_i1	transdecoder	five_prime_UTR	1766	8757	.	-	.	ID=TRINITY_DN1_c0_g2_i1.p6.utr5p1;Parent=TRINITY_DN1_c0_g2_i1.p6
+TRINITY_DN1_c0_g2_i1	transdecoder	exon	1	8757	.	-	.	ID=TRINITY_DN1_c0_g2_i1.p6.exon1;Parent=TRINITY_DN1_c0_g2_i1.p6
+TRINITY_DN1_c0_g2_i1	transdecoder	CDS	1454	1765	.	-	0	ID=cds.TRINITY_DN1_c0_g2_i1.p6;Parent=TRINITY_DN1_c0_g2_i1.p6
+TRINITY_DN1_c0_g2_i1	transdecoder	three_prime_UTR	1	1453	.	-	.	ID=TRINITY_DN1_c0_g2_i1.p6.utr3p1;Parent=TRINITY_DN1_c0_g2_i1.p6
+
+TRINITY_DN6_c0_g1_i1	transdecoder	gene	1	3823	.	+	.	ID=TRINITY_DN6_c0_g1~~TRINITY_DN6_c0_g1_i1.p1;Name=ORF%20type%3Acomplete%20len%3A648%20%28%2B%29
+TRINITY_DN6_c0_g1_i1	transdecoder	mRNA	1	3823	.	+	.	ID=TRINITY_DN6_c0_g1_i1.p1;Parent=TRINITY_DN6_c0_g1~~TRINITY_DN6_c0_g1_i1.p1;Name=ORF%20type%3Acomplete%20len%3A648%20%28%2B%29
+TRINITY_DN6_c0_g1_i1	transdecoder	five_prime_UTR	1	600	.	+	.	ID=TRINITY_DN6_c0_g1_i1.p1.utr5p1;Parent=TRINITY_DN6_c0_g1_i1.p1
+TRINITY_DN6_c0_g1_i1	transdecoder	exon	1	3823	.	+	.	ID=TRINITY_DN6_c0_g1_i1.p1.exon1;Parent=TRINITY_DN6_c0_g1_i1.p1
+TRINITY_DN6_c0_g1_i1	transdecoder	CDS	601	2544	.	+	0	ID=cds.TRINITY_DN6_c0_g1_i1.p1;Parent=TRINITY_DN6_c0_g1_i1.p1
+TRINITY_DN6_c0_g1_i1	transdecoder	three_prime_UTR	2545	3823	.	+	.	ID=TRINITY_DN6_c0_g1_i1.p1.utr3p1;Parent=TRINITY_DN6_c0_g1_i1.p1
+
+TRINITY_DN6_c0_g1_i2	transdecoder	gene	1	3776	.	+	.	ID=TRINITY_DN6_c0_g1~~TRINITY_DN6_c0_g1_i2.p1;Name=ORF%20type%3Acomplete%20len%3A606%20%28%2B%29
+TRINITY_DN6_c0_g1_i2	transdecoder	mRNA	1	3776	.	+	.	ID=TRINITY_DN6_c0_g1_i2.p1;Parent=TRINITY_DN6_c0_g1~~TRINITY_DN6_c0_g1_i2.p1;Name=ORF%20type%3Acomplete%20len%3A606%20%28%2B%29
+TRINITY_DN6_c0_g1_i2	transdecoder	five_prime_UTR	1	600	.	+	.	ID=TRINITY_DN6_c0_g1_i2.p1.utr5p1;Parent=TRINITY_DN6_c0_g1_i2.p1
+TRINITY_DN6_c0_g1_i2	transdecoder	exon	1	3776	.	+	.	ID=TRINITY_DN6_c0_g1_i2.p1.exon1;Parent=TRINITY_DN6_c0_g1_i2.p1
+TRINITY_DN6_c0_g1_i2	transdecoder	CDS	601	2418	.	+	0	ID=cds.TRINITY_DN6_c0_g1_i2.p1;Parent=TRINITY_DN6_c0_g1_i2.p1
+TRINITY_DN6_c0_g1_i2	transdecoder	three_prime_UTR	2419	3776	.	+	.	ID=TRINITY_DN6_c0_g1_i2.p1.utr3p1;Parent=TRINITY_DN6_c0_g1_i2.p1
+
+TRINITY_DN6_c0_g1_i3	transdecoder	gene	1	2802	.	+	.	ID=TRINITY_DN6_c0_g1~~TRINITY_DN6_c0_g1_i3.p1;Name=ORF%20type%3Acomplete%20len%3A605%20%28%2B%29
+TRINITY_DN6_c0_g1_i3	transdecoder	mRNA	1	2802	.	+	.	ID=TRINITY_DN6_c0_g1_i3.p1;Parent=TRINITY_DN6_c0_g1~~TRINITY_DN6_c0_g1_i3.p1;Name=ORF%20type%3Acomplete%20len%3A605%20%28%2B%29
+TRINITY_DN6_c0_g1_i3	transdecoder	five_prime_UTR	1	600	.	+	.	ID=TRINITY_DN6_c0_g1_i3.p1.utr5p1;Parent=TRINITY_DN6_c0_g1_i3.p1
+TRINITY_DN6_c0_g1_i3	transdecoder	exon	1	2802	.	+	.	ID=TRINITY_DN6_c0_g1_i3.p1.exon1;Parent=TRINITY_DN6_c0_g1_i3.p1
+TRINITY_DN6_c0_g1_i3	transdecoder	CDS	601	2415	.	+	0	ID=cds.TRINITY_DN6_c0_g1_i3.p1;Parent=TRINITY_DN6_c0_g1_i3.p1
+TRINITY_DN6_c0_g1_i3	transdecoder	three_prime_UTR	2416	2802	.	+	.	ID=TRINITY_DN6_c0_g1_i3.p1.utr3p1;Parent=TRINITY_DN6_c0_g1_i3.p1
+
+TRINITY_DN14_c0_g3_i1	transdecoder	gene	1	486	.	+	.	ID=TRINITY_DN14_c0_g3~~TRINITY_DN14_c0_g3_i1.p1;Name=ORF%20type%3A5prime_partial%20len%3A102%20%28%2B%29
+TRINITY_DN14_c0_g3_i1	transdecoder	mRNA	1	486	.	+	.	ID=TRINITY_DN14_c0_g3_i1.p1;Parent=TRINITY_DN14_c0_g3~~TRINITY_DN14_c0_g3_i1.p1;Name=ORF%20type%3A5prime_partial%20len%3A102%20%28%2B%29
+TRINITY_DN14_c0_g3_i1	transdecoder	exon	1	486	.	+	.	ID=TRINITY_DN14_c0_g3_i1.p1.exon1;Parent=TRINITY_DN14_c0_g3_i1.p1
+TRINITY_DN14_c0_g3_i1	transdecoder	CDS	1	306	.	+	0	ID=cds.TRINITY_DN14_c0_g3_i1.p1;Parent=TRINITY_DN14_c0_g3_i1.p1;5_prime_partial=true
+TRINITY_DN14_c0_g3_i1	transdecoder	three_prime_UTR	307	486	.	+	.	ID=TRINITY_DN14_c0_g3_i1.p1.utr3p1;Parent=TRINITY_DN14_c0_g3_i1.p1
+
+TRINITY_DN3_c0_g1_i5	transdecoder	gene	1	1029	.	+	.	ID=TRINITY_DN3_c0_g1~~TRINITY_DN3_c0_g1_i5.p1;Name=ORF%20type%3A5prime_partial%20len%3A104%20%28%2B%29
+TRINITY_DN3_c0_g1_i5	transdecoder	mRNA	1	1029	.	+	.	ID=TRINITY_DN3_c0_g1_i5.p1;Parent=TRINITY_DN3_c0_g1~~TRINITY_DN3_c0_g1_i5.p1;Name=ORF%20type%3A5prime_partial%20len%3A104%20%28%2B%29
+TRINITY_DN3_c0_g1_i5	transdecoder	exon	1	1029	.	+	.	ID=TRINITY_DN3_c0_g1_i5.p1.exon1;Parent=TRINITY_DN3_c0_g1_i5.p1
+TRINITY_DN3_c0_g1_i5	transdecoder	CDS	2	313	.	+	0	ID=cds.TRINITY_DN3_c0_g1_i5.p1;Parent=TRINITY_DN3_c0_g1_i5.p1;5_prime_partial=true
+TRINITY_DN3_c0_g1_i5	transdecoder	three_prime_UTR	314	1029	.	+	.	ID=TRINITY_DN3_c0_g1_i5.p1.utr3p1;Parent=TRINITY_DN3_c0_g1_i5.p1
+
+TRINITY_DN3_c0_g1_i4	transdecoder	gene	1	3030	.	-	.	ID=TRINITY_DN3_c0_g1~~TRINITY_DN3_c0_g1_i4.p1;Name=ORF%20type%3Acomplete%20len%3A313%20%28-%29
+TRINITY_DN3_c0_g1_i4	transdecoder	mRNA	1	3030	.	-	.	ID=TRINITY_DN3_c0_g1_i4.p1;Parent=TRINITY_DN3_c0_g1~~TRINITY_DN3_c0_g1_i4.p1;Name=ORF%20type%3Acomplete%20len%3A313%20%28-%29
+TRINITY_DN3_c0_g1_i4	transdecoder	five_prime_UTR	1621	3030	.	-	.	ID=TRINITY_DN3_c0_g1_i4.p1.utr5p1;Parent=TRINITY_DN3_c0_g1_i4.p1
+TRINITY_DN3_c0_g1_i4	transdecoder	exon	1	3030	.	-	.	ID=TRINITY_DN3_c0_g1_i4.p1.exon1;Parent=TRINITY_DN3_c0_g1_i4.p1
+TRINITY_DN3_c0_g1_i4	transdecoder	CDS	682	1620	.	-	0	ID=cds.TRINITY_DN3_c0_g1_i4.p1;Parent=TRINITY_DN3_c0_g1_i4.p1
+TRINITY_DN3_c0_g1_i4	transdecoder	three_prime_UTR	1	681	.	-	.	ID=TRINITY_DN3_c0_g1_i4.p1.utr3p1;Parent=TRINITY_DN3_c0_g1_i4.p1
+
+TRINITY_DN3_c0_g1_i4	transdecoder	gene	1	3030	.	-	.	ID=TRINITY_DN3_c0_g1~~TRINITY_DN3_c0_g1_i4.p2;Name=ORF%20type%3A3prime_partial%20len%3A112%20%28-%29
+TRINITY_DN3_c0_g1_i4	transdecoder	mRNA	1	3030	.	-	.	ID=TRINITY_DN3_c0_g1_i4.p2;Parent=TRINITY_DN3_c0_g1~~TRINITY_DN3_c0_g1_i4.p2;Name=ORF%20type%3A3prime_partial%20len%3A112%20%28-%29
+TRINITY_DN3_c0_g1_i4	transdecoder	five_prime_UTR	336	3030	.	-	.	ID=TRINITY_DN3_c0_g1_i4.p2.utr5p1;Parent=TRINITY_DN3_c0_g1_i4.p2
+TRINITY_DN3_c0_g1_i4	transdecoder	exon	1	3030	.	-	.	ID=TRINITY_DN3_c0_g1_i4.p2.exon1;Parent=TRINITY_DN3_c0_g1_i4.p2
+TRINITY_DN3_c0_g1_i4	transdecoder	CDS	3	335	.	-	0	ID=cds.TRINITY_DN3_c0_g1_i4.p2;Parent=TRINITY_DN3_c0_g1_i4.p2;3_prime_partial=true
+
+TRINITY_DN3_c0_g1_i4	transdecoder	gene	1	3030	.	-	.	ID=TRINITY_DN3_c0_g1~~TRINITY_DN3_c0_g1_i4.p3;Name=ORF%20type%3A5prime_partial%20len%3A109%20%28-%29
+TRINITY_DN3_c0_g1_i4	transdecoder	mRNA	1	3030	.	-	.	ID=TRINITY_DN3_c0_g1_i4.p3;Parent=TRINITY_DN3_c0_g1~~TRINITY_DN3_c0_g1_i4.p3;Name=ORF%20type%3A5prime_partial%20len%3A109%20%28-%29
+TRINITY_DN3_c0_g1_i4	transdecoder	exon	1	3030	.	-	.	ID=TRINITY_DN3_c0_g1_i4.p3.exon1;Parent=TRINITY_DN3_c0_g1_i4.p3
+TRINITY_DN3_c0_g1_i4	transdecoder	CDS	2703	3029	.	-	0	ID=cds.TRINITY_DN3_c0_g1_i4.p3;Parent=TRINITY_DN3_c0_g1_i4.p3;5_prime_partial=true
+TRINITY_DN3_c0_g1_i4	transdecoder	three_prime_UTR	1	2702	.	-	.	ID=TRINITY_DN3_c0_g1_i4.p3.utr3p1;Parent=TRINITY_DN3_c0_g1_i4.p3
+
+TRINITY_DN3_c0_g1_i2	transdecoder	gene	1	2204	.	-	.	ID=TRINITY_DN3_c0_g1~~TRINITY_DN3_c0_g1_i2.p1;Name=ORF%20type%3Acomplete%20len%3A313%20%28-%29
+TRINITY_DN3_c0_g1_i2	transdecoder	mRNA	1	2204	.	-	.	ID=TRINITY_DN3_c0_g1_i2.p1;Parent=TRINITY_DN3_c0_g1~~TRINITY_DN3_c0_g1_i2.p1;Name=ORF%20type%3Acomplete%20len%3A313%20%28-%29
+TRINITY_DN3_c0_g1_i2	transdecoder	five_prime_UTR	1621	2204	.	-	.	ID=TRINITY_DN3_c0_g1_i2.p1.utr5p1;Parent=TRINITY_DN3_c0_g1_i2.p1
+TRINITY_DN3_c0_g1_i2	transdecoder	exon	1	2204	.	-	.	ID=TRINITY_DN3_c0_g1_i2.p1.exon1;Parent=TRINITY_DN3_c0_g1_i2.p1
+TRINITY_DN3_c0_g1_i2	transdecoder	CDS	682	1620	.	-	0	ID=cds.TRINITY_DN3_c0_g1_i2.p1;Parent=TRINITY_DN3_c0_g1_i2.p1
+TRINITY_DN3_c0_g1_i2	transdecoder	three_prime_UTR	1	681	.	-	.	ID=TRINITY_DN3_c0_g1_i2.p1.utr3p1;Parent=TRINITY_DN3_c0_g1_i2.p1
+
+TRINITY_DN3_c0_g1_i2	transdecoder	gene	1	2204	.	-	.	ID=TRINITY_DN3_c0_g1~~TRINITY_DN3_c0_g1_i2.p2;Name=ORF%20type%3A3prime_partial%20len%3A112%20%28-%29
+TRINITY_DN3_c0_g1_i2	transdecoder	mRNA	1	2204	.	-	.	ID=TRINITY_DN3_c0_g1_i2.p2;Parent=TRINITY_DN3_c0_g1~~TRINITY_DN3_c0_g1_i2.p2;Name=ORF%20type%3A3prime_partial%20len%3A112%20%28-%29
+TRINITY_DN3_c0_g1_i2	transdecoder	five_prime_UTR	336	2204	.	-	.	ID=TRINITY_DN3_c0_g1_i2.p2.utr5p1;Parent=TRINITY_DN3_c0_g1_i2.p2
+TRINITY_DN3_c0_g1_i2	transdecoder	exon	1	2204	.	-	.	ID=TRINITY_DN3_c0_g1_i2.p2.exon1;Parent=TRINITY_DN3_c0_g1_i2.p2
+TRINITY_DN3_c0_g1_i2	transdecoder	CDS	3	335	.	-	0	ID=cds.TRINITY_DN3_c0_g1_i2.p2;Parent=TRINITY_DN3_c0_g1_i2.p2;3_prime_partial=true
+
+TRINITY_DN3_c0_g1_i2	transdecoder	gene	1	2204	.	-	.	ID=TRINITY_DN3_c0_g1~~TRINITY_DN3_c0_g1_i2.p3;Name=ORF%20type%3A5prime_partial%20len%3A109%20%28-%29
+TRINITY_DN3_c0_g1_i2	transdecoder	mRNA	1	2204	.	-	.	ID=TRINITY_DN3_c0_g1_i2.p3;Parent=TRINITY_DN3_c0_g1~~TRINITY_DN3_c0_g1_i2.p3;Name=ORF%20type%3A5prime_partial%20len%3A109%20%28-%29
+TRINITY_DN3_c0_g1_i2	transdecoder	exon	1	2204	.	-	.	ID=TRINITY_DN3_c0_g1_i2.p3.exon1;Parent=TRINITY_DN3_c0_g1_i2.p3
+TRINITY_DN3_c0_g1_i2	transdecoder	CDS	1877	2203	.	-	0	ID=cds.TRINITY_DN3_c0_g1_i2.p3;Parent=TRINITY_DN3_c0_g1_i2.p3;5_prime_partial=true
+TRINITY_DN3_c0_g1_i2	transdecoder	three_prime_UTR	1	1876	.	-	.	ID=TRINITY_DN3_c0_g1_i2.p3.utr3p1;Parent=TRINITY_DN3_c0_g1_i2.p3
+
+TRINITY_DN3_c0_g1_i1	transdecoder	gene	1	2998	.	-	.	ID=TRINITY_DN3_c0_g1~~TRINITY_DN3_c0_g1_i1.p1;Name=ORF%20type%3Acomplete%20len%3A313%20%28-%29
+TRINITY_DN3_c0_g1_i1	transdecoder	mRNA	1	2998	.	-	.	ID=TRINITY_DN3_c0_g1_i1.p1;Parent=TRINITY_DN3_c0_g1~~TRINITY_DN3_c0_g1_i1.p1;Name=ORF%20type%3Acomplete%20len%3A313%20%28-%29
+TRINITY_DN3_c0_g1_i1	transdecoder	five_prime_UTR	1621	2998	.	-	.	ID=TRINITY_DN3_c0_g1_i1.p1.utr5p1;Parent=TRINITY_DN3_c0_g1_i1.p1
+TRINITY_DN3_c0_g1_i1	transdecoder	exon	1	2998	.	-	.	ID=TRINITY_DN3_c0_g1_i1.p1.exon1;Parent=TRINITY_DN3_c0_g1_i1.p1
+TRINITY_DN3_c0_g1_i1	transdecoder	CDS	682	1620	.	-	0	ID=cds.TRINITY_DN3_c0_g1_i1.p1;Parent=TRINITY_DN3_c0_g1_i1.p1
+TRINITY_DN3_c0_g1_i1	transdecoder	three_prime_UTR	1	681	.	-	.	ID=TRINITY_DN3_c0_g1_i1.p1.utr3p1;Parent=TRINITY_DN3_c0_g1_i1.p1
+
+TRINITY_DN3_c0_g1_i1	transdecoder	gene	1	2998	.	+	.	ID=TRINITY_DN3_c0_g1~~TRINITY_DN3_c0_g1_i1.p2;Name=ORF%20type%3Acomplete%20len%3A113%20%28%2B%29
+TRINITY_DN3_c0_g1_i1	transdecoder	mRNA	1	2998	.	+	.	ID=TRINITY_DN3_c0_g1_i1.p2;Parent=TRINITY_DN3_c0_g1~~TRINITY_DN3_c0_g1_i1.p2;Name=ORF%20type%3Acomplete%20len%3A113%20%28%2B%29
+TRINITY_DN3_c0_g1_i1	transdecoder	five_prime_UTR	1	1943	.	+	.	ID=TRINITY_DN3_c0_g1_i1.p2.utr5p1;Parent=TRINITY_DN3_c0_g1_i1.p2
+TRINITY_DN3_c0_g1_i1	transdecoder	exon	1	2998	.	+	.	ID=TRINITY_DN3_c0_g1_i1.p2.exon1;Parent=TRINITY_DN3_c0_g1_i1.p2
+TRINITY_DN3_c0_g1_i1	transdecoder	CDS	1944	2282	.	+	0	ID=cds.TRINITY_DN3_c0_g1_i1.p2;Parent=TRINITY_DN3_c0_g1_i1.p2
+TRINITY_DN3_c0_g1_i1	transdecoder	three_prime_UTR	2283	2998	.	+	.	ID=TRINITY_DN3_c0_g1_i1.p2.utr3p1;Parent=TRINITY_DN3_c0_g1_i1.p2
+
+TRINITY_DN3_c0_g1_i1	transdecoder	gene	1	2998	.	-	.	ID=TRINITY_DN3_c0_g1~~TRINITY_DN3_c0_g1_i1.p3;Name=ORF%20type%3A3prime_partial%20len%3A112%20%28-%29
+TRINITY_DN3_c0_g1_i1	transdecoder	mRNA	1	2998	.	-	.	ID=TRINITY_DN3_c0_g1_i1.p3;Parent=TRINITY_DN3_c0_g1~~TRINITY_DN3_c0_g1_i1.p3;Name=ORF%20type%3A3prime_partial%20len%3A112%20%28-%29
+TRINITY_DN3_c0_g1_i1	transdecoder	five_prime_UTR	336	2998	.	-	.	ID=TRINITY_DN3_c0_g1_i1.p3.utr5p1;Parent=TRINITY_DN3_c0_g1_i1.p3
+TRINITY_DN3_c0_g1_i1	transdecoder	exon	1	2998	.	-	.	ID=TRINITY_DN3_c0_g1_i1.p3.exon1;Parent=TRINITY_DN3_c0_g1_i1.p3
+TRINITY_DN3_c0_g1_i1	transdecoder	CDS	3	335	.	-	0	ID=cds.TRINITY_DN3_c0_g1_i1.p3;Parent=TRINITY_DN3_c0_g1_i1.p3;3_prime_partial=true
+
+TRINITY_DN4_c0_g1_i1	transdecoder	gene	1	5528	.	-	.	ID=TRINITY_DN4_c0_g1~~TRINITY_DN4_c0_g1_i1.p1;Name=ORF%20type%3Acomplete%20len%3A591%20%28-%29
+TRINITY_DN4_c0_g1_i1	transdecoder	mRNA	1	5528	.	-	.	ID=TRINITY_DN4_c0_g1_i1.p1;Parent=TRINITY_DN4_c0_g1~~TRINITY_DN4_c0_g1_i1.p1;Name=ORF%20type%3Acomplete%20len%3A591%20%28-%29
+TRINITY_DN4_c0_g1_i1	transdecoder	five_prime_UTR	5506	5528	.	-	.	ID=TRINITY_DN4_c0_g1_i1.p1.utr5p1;Parent=TRINITY_DN4_c0_g1_i1.p1
+TRINITY_DN4_c0_g1_i1	transdecoder	exon	1	5528	.	-	.	ID=TRINITY_DN4_c0_g1_i1.p1.exon1;Parent=TRINITY_DN4_c0_g1_i1.p1
+TRINITY_DN4_c0_g1_i1	transdecoder	CDS	3733	5505	.	-	0	ID=cds.TRINITY_DN4_c0_g1_i1.p1;Parent=TRINITY_DN4_c0_g1_i1.p1
+TRINITY_DN4_c0_g1_i1	transdecoder	three_prime_UTR	1	3732	.	-	.	ID=TRINITY_DN4_c0_g1_i1.p1.utr3p1;Parent=TRINITY_DN4_c0_g1_i1.p1
+
+TRINITY_DN4_c0_g1_i1	transdecoder	gene	1	5528	.	-	.	ID=TRINITY_DN4_c0_g1~~TRINITY_DN4_c0_g1_i1.p2;Name=ORF%20type%3Acomplete%20len%3A357%20%28-%29
+TRINITY_DN4_c0_g1_i1	transdecoder	mRNA	1	5528	.	-	.	ID=TRINITY_DN4_c0_g1_i1.p2;Parent=TRINITY_DN4_c0_g1~~TRINITY_DN4_c0_g1_i1.p2;Name=ORF%20type%3Acomplete%20len%3A357%20%28-%29
+TRINITY_DN4_c0_g1_i1	transdecoder	five_prime_UTR	3529	5528	.	-	.	ID=TRINITY_DN4_c0_g1_i1.p2.utr5p1;Parent=TRINITY_DN4_c0_g1_i1.p2
+TRINITY_DN4_c0_g1_i1	transdecoder	exon	1	5528	.	-	.	ID=TRINITY_DN4_c0_g1_i1.p2.exon1;Parent=TRINITY_DN4_c0_g1_i1.p2
+TRINITY_DN4_c0_g1_i1	transdecoder	CDS	2458	3528	.	-	0	ID=cds.TRINITY_DN4_c0_g1_i1.p2;Parent=TRINITY_DN4_c0_g1_i1.p2
+TRINITY_DN4_c0_g1_i1	transdecoder	three_prime_UTR	1	2457	.	-	.	ID=TRINITY_DN4_c0_g1_i1.p2.utr3p1;Parent=TRINITY_DN4_c0_g1_i1.p2
+
+TRINITY_DN4_c0_g1_i1	transdecoder	gene	1	5528	.	+	.	ID=TRINITY_DN4_c0_g1~~TRINITY_DN4_c0_g1_i1.p3;Name=ORF%20type%3Acomplete%20len%3A183%20%28%2B%29
+TRINITY_DN4_c0_g1_i1	transdecoder	mRNA	1	5528	.	+	.	ID=TRINITY_DN4_c0_g1_i1.p3;Parent=TRINITY_DN4_c0_g1~~TRINITY_DN4_c0_g1_i1.p3;Name=ORF%20type%3Acomplete%20len%3A183%20%28%2B%29
+TRINITY_DN4_c0_g1_i1	transdecoder	five_prime_UTR	1	1640	.	+	.	ID=TRINITY_DN4_c0_g1_i1.p3.utr5p1;Parent=TRINITY_DN4_c0_g1_i1.p3
+TRINITY_DN4_c0_g1_i1	transdecoder	exon	1	5528	.	+	.	ID=TRINITY_DN4_c0_g1_i1.p3.exon1;Parent=TRINITY_DN4_c0_g1_i1.p3
+TRINITY_DN4_c0_g1_i1	transdecoder	CDS	1641	2189	.	+	0	ID=cds.TRINITY_DN4_c0_g1_i1.p3;Parent=TRINITY_DN4_c0_g1_i1.p3
+TRINITY_DN4_c0_g1_i1	transdecoder	three_prime_UTR	2190	5528	.	+	.	ID=TRINITY_DN4_c0_g1_i1.p3.utr3p1;Parent=TRINITY_DN4_c0_g1_i1.p3
+
+TRINITY_DN4_c0_g1_i1	transdecoder	gene	1	5528	.	+	.	ID=TRINITY_DN4_c0_g1~~TRINITY_DN4_c0_g1_i1.p4;Name=ORF%20type%3Acomplete%20len%3A162%20%28%2B%29
+TRINITY_DN4_c0_g1_i1	transdecoder	mRNA	1	5528	.	+	.	ID=TRINITY_DN4_c0_g1_i1.p4;Parent=TRINITY_DN4_c0_g1~~TRINITY_DN4_c0_g1_i1.p4;Name=ORF%20type%3Acomplete%20len%3A162%20%28%2B%29
+TRINITY_DN4_c0_g1_i1	transdecoder	five_prime_UTR	1	4216	.	+	.	ID=TRINITY_DN4_c0_g1_i1.p4.utr5p1;Parent=TRINITY_DN4_c0_g1_i1.p4
+TRINITY_DN4_c0_g1_i1	transdecoder	exon	1	5528	.	+	.	ID=TRINITY_DN4_c0_g1_i1.p4.exon1;Parent=TRINITY_DN4_c0_g1_i1.p4
+TRINITY_DN4_c0_g1_i1	transdecoder	CDS	4217	4702	.	+	0	ID=cds.TRINITY_DN4_c0_g1_i1.p4;Parent=TRINITY_DN4_c0_g1_i1.p4
+TRINITY_DN4_c0_g1_i1	transdecoder	three_prime_UTR	4703	5528	.	+	.	ID=TRINITY_DN4_c0_g1_i1.p4.utr3p1;Parent=TRINITY_DN4_c0_g1_i1.p4
+
+TRINITY_DN4_c0_g1_i1	transdecoder	gene	1	5528	.	+	.	ID=TRINITY_DN4_c0_g1~~TRINITY_DN4_c0_g1_i1.p5;Name=ORF%20type%3Acomplete%20len%3A142%20%28%2B%29
+TRINITY_DN4_c0_g1_i1	transdecoder	mRNA	1	5528	.	+	.	ID=TRINITY_DN4_c0_g1_i1.p5;Parent=TRINITY_DN4_c0_g1~~TRINITY_DN4_c0_g1_i1.p5;Name=ORF%20type%3Acomplete%20len%3A142%20%28%2B%29
+TRINITY_DN4_c0_g1_i1	transdecoder	five_prime_UTR	1	3199	.	+	.	ID=TRINITY_DN4_c0_g1_i1.p5.utr5p1;Parent=TRINITY_DN4_c0_g1_i1.p5
+TRINITY_DN4_c0_g1_i1	transdecoder	exon	1	5528	.	+	.	ID=TRINITY_DN4_c0_g1_i1.p5.exon1;Parent=TRINITY_DN4_c0_g1_i1.p5
+TRINITY_DN4_c0_g1_i1	transdecoder	CDS	3200	3625	.	+	0	ID=cds.TRINITY_DN4_c0_g1_i1.p5;Parent=TRINITY_DN4_c0_g1_i1.p5
+TRINITY_DN4_c0_g1_i1	transdecoder	three_prime_UTR	3626	5528	.	+	.	ID=TRINITY_DN4_c0_g1_i1.p5.utr3p1;Parent=TRINITY_DN4_c0_g1_i1.p5
+
+TRINITY_DN4_c0_g1_i2	transdecoder	gene	1	5399	.	-	.	ID=TRINITY_DN4_c0_g1~~TRINITY_DN4_c0_g1_i2.p1;Name=ORF%20type%3Acomplete%20len%3A973%20%28-%29
+TRINITY_DN4_c0_g1_i2	transdecoder	mRNA	1	5399	.	-	.	ID=TRINITY_DN4_c0_g1_i2.p1;Parent=TRINITY_DN4_c0_g1~~TRINITY_DN4_c0_g1_i2.p1;Name=ORF%20type%3Acomplete%20len%3A973%20%28-%29
+TRINITY_DN4_c0_g1_i2	transdecoder	five_prime_UTR	5377	5399	.	-	.	ID=TRINITY_DN4_c0_g1_i2.p1.utr5p1;Parent=TRINITY_DN4_c0_g1_i2.p1
+TRINITY_DN4_c0_g1_i2	transdecoder	exon	1	5399	.	-	.	ID=TRINITY_DN4_c0_g1_i2.p1.exon1;Parent=TRINITY_DN4_c0_g1_i2.p1
+TRINITY_DN4_c0_g1_i2	transdecoder	CDS	2458	5376	.	-	0	ID=cds.TRINITY_DN4_c0_g1_i2.p1;Parent=TRINITY_DN4_c0_g1_i2.p1
+TRINITY_DN4_c0_g1_i2	transdecoder	three_prime_UTR	1	2457	.	-	.	ID=TRINITY_DN4_c0_g1_i2.p1.utr3p1;Parent=TRINITY_DN4_c0_g1_i2.p1
+
+TRINITY_DN4_c0_g1_i2	transdecoder	gene	1	5399	.	+	.	ID=TRINITY_DN4_c0_g1~~TRINITY_DN4_c0_g1_i2.p2;Name=ORF%20type%3Acomplete%20len%3A183%20%28%2B%29
+TRINITY_DN4_c0_g1_i2	transdecoder	mRNA	1	5399	.	+	.	ID=TRINITY_DN4_c0_g1_i2.p2;Parent=TRINITY_DN4_c0_g1~~TRINITY_DN4_c0_g1_i2.p2;Name=ORF%20type%3Acomplete%20len%3A183%20%28%2B%29
+TRINITY_DN4_c0_g1_i2	transdecoder	five_prime_UTR	1	1640	.	+	.	ID=TRINITY_DN4_c0_g1_i2.p2.utr5p1;Parent=TRINITY_DN4_c0_g1_i2.p2
+TRINITY_DN4_c0_g1_i2	transdecoder	exon	1	5399	.	+	.	ID=TRINITY_DN4_c0_g1_i2.p2.exon1;Parent=TRINITY_DN4_c0_g1_i2.p2
+TRINITY_DN4_c0_g1_i2	transdecoder	CDS	1641	2189	.	+	0	ID=cds.TRINITY_DN4_c0_g1_i2.p2;Parent=TRINITY_DN4_c0_g1_i2.p2
+TRINITY_DN4_c0_g1_i2	transdecoder	three_prime_UTR	2190	5399	.	+	.	ID=TRINITY_DN4_c0_g1_i2.p2.utr3p1;Parent=TRINITY_DN4_c0_g1_i2.p2
+
+TRINITY_DN4_c0_g1_i2	transdecoder	gene	1	5399	.	+	.	ID=TRINITY_DN4_c0_g1~~TRINITY_DN4_c0_g1_i2.p3;Name=ORF%20type%3Acomplete%20len%3A162%20%28%2B%29
+TRINITY_DN4_c0_g1_i2	transdecoder	mRNA	1	5399	.	+	.	ID=TRINITY_DN4_c0_g1_i2.p3;Parent=TRINITY_DN4_c0_g1~~TRINITY_DN4_c0_g1_i2.p3;Name=ORF%20type%3Acomplete%20len%3A162%20%28%2B%29
+TRINITY_DN4_c0_g1_i2	transdecoder	five_prime_UTR	1	4087	.	+	.	ID=TRINITY_DN4_c0_g1_i2.p3.utr5p1;Parent=TRINITY_DN4_c0_g1_i2.p3
+TRINITY_DN4_c0_g1_i2	transdecoder	exon	1	5399	.	+	.	ID=TRINITY_DN4_c0_g1_i2.p3.exon1;Parent=TRINITY_DN4_c0_g1_i2.p3
+TRINITY_DN4_c0_g1_i2	transdecoder	CDS	4088	4573	.	+	0	ID=cds.TRINITY_DN4_c0_g1_i2.p3;Parent=TRINITY_DN4_c0_g1_i2.p3
+TRINITY_DN4_c0_g1_i2	transdecoder	three_prime_UTR	4574	5399	.	+	.	ID=TRINITY_DN4_c0_g1_i2.p3.utr3p1;Parent=TRINITY_DN4_c0_g1_i2.p3
+
+TRINITY_DN4_c0_g1_i2	transdecoder	gene	1	5399	.	+	.	ID=TRINITY_DN4_c0_g1~~TRINITY_DN4_c0_g1_i2.p4;Name=ORF%20type%3Acomplete%20len%3A142%20%28%2B%29
+TRINITY_DN4_c0_g1_i2	transdecoder	mRNA	1	5399	.	+	.	ID=TRINITY_DN4_c0_g1_i2.p4;Parent=TRINITY_DN4_c0_g1~~TRINITY_DN4_c0_g1_i2.p4;Name=ORF%20type%3Acomplete%20len%3A142%20%28%2B%29
+TRINITY_DN4_c0_g1_i2	transdecoder	five_prime_UTR	1	3199	.	+	.	ID=TRINITY_DN4_c0_g1_i2.p4.utr5p1;Parent=TRINITY_DN4_c0_g1_i2.p4
+TRINITY_DN4_c0_g1_i2	transdecoder	exon	1	5399	.	+	.	ID=TRINITY_DN4_c0_g1_i2.p4.exon1;Parent=TRINITY_DN4_c0_g1_i2.p4
+TRINITY_DN4_c0_g1_i2	transdecoder	CDS	3200	3625	.	+	0	ID=cds.TRINITY_DN4_c0_g1_i2.p4;Parent=TRINITY_DN4_c0_g1_i2.p4
+TRINITY_DN4_c0_g1_i2	transdecoder	three_prime_UTR	3626	5399	.	+	.	ID=TRINITY_DN4_c0_g1_i2.p4.utr3p1;Parent=TRINITY_DN4_c0_g1_i2.p4
+
+TRINITY_DN7_c0_g3_i2	transdecoder	gene	1	2500	.	-	.	ID=TRINITY_DN7_c0_g3~~TRINITY_DN7_c0_g3_i2.p1;Name=ORF%20type%3Acomplete%20len%3A737%20%28-%29
+TRINITY_DN7_c0_g3_i2	transdecoder	mRNA	1	2500	.	-	.	ID=TRINITY_DN7_c0_g3_i2.p1;Parent=TRINITY_DN7_c0_g3~~TRINITY_DN7_c0_g3_i2.p1;Name=ORF%20type%3Acomplete%20len%3A737%20%28-%29
+TRINITY_DN7_c0_g3_i2	transdecoder	five_prime_UTR	2436	2500	.	-	.	ID=TRINITY_DN7_c0_g3_i2.p1.utr5p1;Parent=TRINITY_DN7_c0_g3_i2.p1
+TRINITY_DN7_c0_g3_i2	transdecoder	exon	1	2500	.	-	.	ID=TRINITY_DN7_c0_g3_i2.p1.exon1;Parent=TRINITY_DN7_c0_g3_i2.p1
+TRINITY_DN7_c0_g3_i2	transdecoder	CDS	225	2435	.	-	0	ID=cds.TRINITY_DN7_c0_g3_i2.p1;Parent=TRINITY_DN7_c0_g3_i2.p1
+TRINITY_DN7_c0_g3_i2	transdecoder	three_prime_UTR	1	224	.	-	.	ID=TRINITY_DN7_c0_g3_i2.p1.utr3p1;Parent=TRINITY_DN7_c0_g3_i2.p1
+
+TRINITY_DN7_c0_g3_i2	transdecoder	gene	1	2500	.	+	.	ID=TRINITY_DN7_c0_g3~~TRINITY_DN7_c0_g3_i2.p2;Name=ORF%20type%3Acomplete%20len%3A125%20%28%2B%29
+TRINITY_DN7_c0_g3_i2	transdecoder	mRNA	1	2500	.	+	.	ID=TRINITY_DN7_c0_g3_i2.p2;Parent=TRINITY_DN7_c0_g3~~TRINITY_DN7_c0_g3_i2.p2;Name=ORF%20type%3Acomplete%20len%3A125%20%28%2B%29
+TRINITY_DN7_c0_g3_i2	transdecoder	five_prime_UTR	1	1956	.	+	.	ID=TRINITY_DN7_c0_g3_i2.p2.utr5p1;Parent=TRINITY_DN7_c0_g3_i2.p2
+TRINITY_DN7_c0_g3_i2	transdecoder	exon	1	2500	.	+	.	ID=TRINITY_DN7_c0_g3_i2.p2.exon1;Parent=TRINITY_DN7_c0_g3_i2.p2
+TRINITY_DN7_c0_g3_i2	transdecoder	CDS	1957	2331	.	+	0	ID=cds.TRINITY_DN7_c0_g3_i2.p2;Parent=TRINITY_DN7_c0_g3_i2.p2
+TRINITY_DN7_c0_g3_i2	transdecoder	three_prime_UTR	2332	2500	.	+	.	ID=TRINITY_DN7_c0_g3_i2.p2.utr3p1;Parent=TRINITY_DN7_c0_g3_i2.p2
+
+TRINITY_DN7_c0_g3_i1	transdecoder	gene	1	2422	.	-	.	ID=TRINITY_DN7_c0_g3~~TRINITY_DN7_c0_g3_i1.p1;Name=ORF%20type%3Acomplete%20len%3A711%20%28-%29
+TRINITY_DN7_c0_g3_i1	transdecoder	mRNA	1	2422	.	-	.	ID=TRINITY_DN7_c0_g3_i1.p1;Parent=TRINITY_DN7_c0_g3~~TRINITY_DN7_c0_g3_i1.p1;Name=ORF%20type%3Acomplete%20len%3A711%20%28-%29
+TRINITY_DN7_c0_g3_i1	transdecoder	five_prime_UTR	2358	2422	.	-	.	ID=TRINITY_DN7_c0_g3_i1.p1.utr5p1;Parent=TRINITY_DN7_c0_g3_i1.p1
+TRINITY_DN7_c0_g3_i1	transdecoder	exon	1	2422	.	-	.	ID=TRINITY_DN7_c0_g3_i1.p1.exon1;Parent=TRINITY_DN7_c0_g3_i1.p1
+TRINITY_DN7_c0_g3_i1	transdecoder	CDS	225	2357	.	-	0	ID=cds.TRINITY_DN7_c0_g3_i1.p1;Parent=TRINITY_DN7_c0_g3_i1.p1
+TRINITY_DN7_c0_g3_i1	transdecoder	three_prime_UTR	1	224	.	-	.	ID=TRINITY_DN7_c0_g3_i1.p1.utr3p1;Parent=TRINITY_DN7_c0_g3_i1.p1
+
+TRINITY_DN7_c0_g3_i1	transdecoder	gene	1	2422	.	+	.	ID=TRINITY_DN7_c0_g3~~TRINITY_DN7_c0_g3_i1.p2;Name=ORF%20type%3Acomplete%20len%3A125%20%28%2B%29
+TRINITY_DN7_c0_g3_i1	transdecoder	mRNA	1	2422	.	+	.	ID=TRINITY_DN7_c0_g3_i1.p2;Parent=TRINITY_DN7_c0_g3~~TRINITY_DN7_c0_g3_i1.p2;Name=ORF%20type%3Acomplete%20len%3A125%20%28%2B%29
+TRINITY_DN7_c0_g3_i1	transdecoder	five_prime_UTR	1	1878	.	+	.	ID=TRINITY_DN7_c0_g3_i1.p2.utr5p1;Parent=TRINITY_DN7_c0_g3_i1.p2
+TRINITY_DN7_c0_g3_i1	transdecoder	exon	1	2422	.	+	.	ID=TRINITY_DN7_c0_g3_i1.p2.exon1;Parent=TRINITY_DN7_c0_g3_i1.p2
+TRINITY_DN7_c0_g3_i1	transdecoder	CDS	1879	2253	.	+	0	ID=cds.TRINITY_DN7_c0_g3_i1.p2;Parent=TRINITY_DN7_c0_g3_i1.p2
+TRINITY_DN7_c0_g3_i1	transdecoder	three_prime_UTR	2254	2422	.	+	.	ID=TRINITY_DN7_c0_g3_i1.p2.utr3p1;Parent=TRINITY_DN7_c0_g3_i1.p2
+
+TRINITY_DN19_c0_g2_i1	transdecoder	gene	1	7175	.	-	.	ID=TRINITY_DN19_c0_g2~~TRINITY_DN19_c0_g2_i1.p1;Name=ORF%20type%3Acomplete%20len%3A1847%20%28-%29
+TRINITY_DN19_c0_g2_i1	transdecoder	mRNA	1	7175	.	-	.	ID=TRINITY_DN19_c0_g2_i1.p1;Parent=TRINITY_DN19_c0_g2~~TRINITY_DN19_c0_g2_i1.p1;Name=ORF%20type%3Acomplete%20len%3A1847%20%28-%29
+TRINITY_DN19_c0_g2_i1	transdecoder	five_prime_UTR	6855	7175	.	-	.	ID=TRINITY_DN19_c0_g2_i1.p1.utr5p1;Parent=TRINITY_DN19_c0_g2_i1.p1
+TRINITY_DN19_c0_g2_i1	transdecoder	exon	1	7175	.	-	.	ID=TRINITY_DN19_c0_g2_i1.p1.exon1;Parent=TRINITY_DN19_c0_g2_i1.p1
+TRINITY_DN19_c0_g2_i1	transdecoder	CDS	1314	6854	.	-	0	ID=cds.TRINITY_DN19_c0_g2_i1.p1;Parent=TRINITY_DN19_c0_g2_i1.p1
+TRINITY_DN19_c0_g2_i1	transdecoder	three_prime_UTR	1	1313	.	-	.	ID=TRINITY_DN19_c0_g2_i1.p1.utr3p1;Parent=TRINITY_DN19_c0_g2_i1.p1
+
+TRINITY_DN19_c0_g2_i1	transdecoder	gene	1	7175	.	+	.	ID=TRINITY_DN19_c0_g2~~TRINITY_DN19_c0_g2_i1.p2;Name=ORF%20type%3A3prime_partial%20len%3A117%20%28%2B%29
+TRINITY_DN19_c0_g2_i1	transdecoder	mRNA	1	7175	.	+	.	ID=TRINITY_DN19_c0_g2_i1.p2;Parent=TRINITY_DN19_c0_g2~~TRINITY_DN19_c0_g2_i1.p2;Name=ORF%20type%3A3prime_partial%20len%3A117%20%28%2B%29
+TRINITY_DN19_c0_g2_i1	transdecoder	five_prime_UTR	1	6825	.	+	.	ID=TRINITY_DN19_c0_g2_i1.p2.utr5p1;Parent=TRINITY_DN19_c0_g2_i1.p2
+TRINITY_DN19_c0_g2_i1	transdecoder	exon	1	7175	.	+	.	ID=TRINITY_DN19_c0_g2_i1.p2.exon1;Parent=TRINITY_DN19_c0_g2_i1.p2
+TRINITY_DN19_c0_g2_i1	transdecoder	CDS	6826	7173	.	+	0	ID=cds.TRINITY_DN19_c0_g2_i1.p2;Parent=TRINITY_DN19_c0_g2_i1.p2;3_prime_partial=true
+
+TRINITY_DN19_c0_g2_i1	transdecoder	gene	1	7175	.	-	.	ID=TRINITY_DN19_c0_g2~~TRINITY_DN19_c0_g2_i1.p3;Name=ORF%20type%3A5prime_partial%20len%3A109%20%28-%29
+TRINITY_DN19_c0_g2_i1	transdecoder	mRNA	1	7175	.	-	.	ID=TRINITY_DN19_c0_g2_i1.p3;Parent=TRINITY_DN19_c0_g2~~TRINITY_DN19_c0_g2_i1.p3;Name=ORF%20type%3A5prime_partial%20len%3A109%20%28-%29
+TRINITY_DN19_c0_g2_i1	transdecoder	exon	1	7175	.	-	.	ID=TRINITY_DN19_c0_g2_i1.p3.exon1;Parent=TRINITY_DN19_c0_g2_i1.p3
+TRINITY_DN19_c0_g2_i1	transdecoder	CDS	6847	7173	.	-	0	ID=cds.TRINITY_DN19_c0_g2_i1.p3;Parent=TRINITY_DN19_c0_g2_i1.p3;5_prime_partial=true
+TRINITY_DN19_c0_g2_i1	transdecoder	three_prime_UTR	1	6846	.	-	.	ID=TRINITY_DN19_c0_g2_i1.p3.utr3p1;Parent=TRINITY_DN19_c0_g2_i1.p3
+
+TRINITY_DN0_c0_g1_i1	transdecoder	gene	1	5494	.	-	.	ID=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i1.p1;Name=ORF%20type%3Acomplete%20len%3A430%20%28-%29
+TRINITY_DN0_c0_g1_i1	transdecoder	mRNA	1	5494	.	-	.	ID=TRINITY_DN0_c0_g1_i1.p1;Parent=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i1.p1;Name=ORF%20type%3Acomplete%20len%3A430%20%28-%29
+TRINITY_DN0_c0_g1_i1	transdecoder	five_prime_UTR	4872	5494	.	-	.	ID=TRINITY_DN0_c0_g1_i1.p1.utr5p1;Parent=TRINITY_DN0_c0_g1_i1.p1
+TRINITY_DN0_c0_g1_i1	transdecoder	exon	1	5494	.	-	.	ID=TRINITY_DN0_c0_g1_i1.p1.exon1;Parent=TRINITY_DN0_c0_g1_i1.p1
+TRINITY_DN0_c0_g1_i1	transdecoder	CDS	3582	4871	.	-	0	ID=cds.TRINITY_DN0_c0_g1_i1.p1;Parent=TRINITY_DN0_c0_g1_i1.p1
+TRINITY_DN0_c0_g1_i1	transdecoder	three_prime_UTR	1	3581	.	-	.	ID=TRINITY_DN0_c0_g1_i1.p1.utr3p1;Parent=TRINITY_DN0_c0_g1_i1.p1
+
+TRINITY_DN0_c0_g1_i1	transdecoder	gene	1	5494	.	+	.	ID=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i1.p2;Name=ORF%20type%3Acomplete%20len%3A159%20%28%2B%29
+TRINITY_DN0_c0_g1_i1	transdecoder	mRNA	1	5494	.	+	.	ID=TRINITY_DN0_c0_g1_i1.p2;Parent=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i1.p2;Name=ORF%20type%3Acomplete%20len%3A159%20%28%2B%29
+TRINITY_DN0_c0_g1_i1	transdecoder	five_prime_UTR	1	4560	.	+	.	ID=TRINITY_DN0_c0_g1_i1.p2.utr5p1;Parent=TRINITY_DN0_c0_g1_i1.p2
+TRINITY_DN0_c0_g1_i1	transdecoder	exon	1	5494	.	+	.	ID=TRINITY_DN0_c0_g1_i1.p2.exon1;Parent=TRINITY_DN0_c0_g1_i1.p2
+TRINITY_DN0_c0_g1_i1	transdecoder	CDS	4561	5037	.	+	0	ID=cds.TRINITY_DN0_c0_g1_i1.p2;Parent=TRINITY_DN0_c0_g1_i1.p2
+TRINITY_DN0_c0_g1_i1	transdecoder	three_prime_UTR	5038	5494	.	+	.	ID=TRINITY_DN0_c0_g1_i1.p2.utr3p1;Parent=TRINITY_DN0_c0_g1_i1.p2
+
+TRINITY_DN0_c0_g1_i1	transdecoder	gene	1	5494	.	+	.	ID=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i1.p3;Name=ORF%20type%3Acomplete%20len%3A152%20%28%2B%29
+TRINITY_DN0_c0_g1_i1	transdecoder	mRNA	1	5494	.	+	.	ID=TRINITY_DN0_c0_g1_i1.p3;Parent=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i1.p3;Name=ORF%20type%3Acomplete%20len%3A152%20%28%2B%29
+TRINITY_DN0_c0_g1_i1	transdecoder	five_prime_UTR	1	4661	.	+	.	ID=TRINITY_DN0_c0_g1_i1.p3.utr5p1;Parent=TRINITY_DN0_c0_g1_i1.p3
+TRINITY_DN0_c0_g1_i1	transdecoder	exon	1	5494	.	+	.	ID=TRINITY_DN0_c0_g1_i1.p3.exon1;Parent=TRINITY_DN0_c0_g1_i1.p3
+TRINITY_DN0_c0_g1_i1	transdecoder	CDS	4662	5117	.	+	0	ID=cds.TRINITY_DN0_c0_g1_i1.p3;Parent=TRINITY_DN0_c0_g1_i1.p3
+TRINITY_DN0_c0_g1_i1	transdecoder	three_prime_UTR	5118	5494	.	+	.	ID=TRINITY_DN0_c0_g1_i1.p3.utr3p1;Parent=TRINITY_DN0_c0_g1_i1.p3
+
+TRINITY_DN0_c0_g1_i1	transdecoder	gene	1	5494	.	-	.	ID=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i1.p4;Name=ORF%20type%3A5prime_partial%20len%3A145%20%28-%29
+TRINITY_DN0_c0_g1_i1	transdecoder	mRNA	1	5494	.	-	.	ID=TRINITY_DN0_c0_g1_i1.p4;Parent=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i1.p4;Name=ORF%20type%3A5prime_partial%20len%3A145%20%28-%29
+TRINITY_DN0_c0_g1_i1	transdecoder	exon	1	5494	.	-	.	ID=TRINITY_DN0_c0_g1_i1.p4.exon1;Parent=TRINITY_DN0_c0_g1_i1.p4
+TRINITY_DN0_c0_g1_i1	transdecoder	CDS	5059	5493	.	-	0	ID=cds.TRINITY_DN0_c0_g1_i1.p4;Parent=TRINITY_DN0_c0_g1_i1.p4;5_prime_partial=true
+TRINITY_DN0_c0_g1_i1	transdecoder	three_prime_UTR	1	5058	.	-	.	ID=TRINITY_DN0_c0_g1_i1.p4.utr3p1;Parent=TRINITY_DN0_c0_g1_i1.p4
+
+TRINITY_DN0_c0_g1_i1	transdecoder	gene	1	5494	.	+	.	ID=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i1.p5;Name=ORF%20type%3Acomplete%20len%3A134%20%28%2B%29
+TRINITY_DN0_c0_g1_i1	transdecoder	mRNA	1	5494	.	+	.	ID=TRINITY_DN0_c0_g1_i1.p5;Parent=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i1.p5;Name=ORF%20type%3Acomplete%20len%3A134%20%28%2B%29
+TRINITY_DN0_c0_g1_i1	transdecoder	five_prime_UTR	1	683	.	+	.	ID=TRINITY_DN0_c0_g1_i1.p5.utr5p1;Parent=TRINITY_DN0_c0_g1_i1.p5
+TRINITY_DN0_c0_g1_i1	transdecoder	exon	1	5494	.	+	.	ID=TRINITY_DN0_c0_g1_i1.p5.exon1;Parent=TRINITY_DN0_c0_g1_i1.p5
+TRINITY_DN0_c0_g1_i1	transdecoder	CDS	684	1085	.	+	0	ID=cds.TRINITY_DN0_c0_g1_i1.p5;Parent=TRINITY_DN0_c0_g1_i1.p5
+TRINITY_DN0_c0_g1_i1	transdecoder	three_prime_UTR	1086	5494	.	+	.	ID=TRINITY_DN0_c0_g1_i1.p5.utr3p1;Parent=TRINITY_DN0_c0_g1_i1.p5
+
+TRINITY_DN0_c0_g1_i1	transdecoder	gene	1	5494	.	+	.	ID=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i1.p6;Name=ORF%20type%3Acomplete%20len%3A131%20%28%2B%29
+TRINITY_DN0_c0_g1_i1	transdecoder	mRNA	1	5494	.	+	.	ID=TRINITY_DN0_c0_g1_i1.p6;Parent=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i1.p6;Name=ORF%20type%3Acomplete%20len%3A131%20%28%2B%29
+TRINITY_DN0_c0_g1_i1	transdecoder	five_prime_UTR	1	3849	.	+	.	ID=TRINITY_DN0_c0_g1_i1.p6.utr5p1;Parent=TRINITY_DN0_c0_g1_i1.p6
+TRINITY_DN0_c0_g1_i1	transdecoder	exon	1	5494	.	+	.	ID=TRINITY_DN0_c0_g1_i1.p6.exon1;Parent=TRINITY_DN0_c0_g1_i1.p6
+TRINITY_DN0_c0_g1_i1	transdecoder	CDS	3850	4242	.	+	0	ID=cds.TRINITY_DN0_c0_g1_i1.p6;Parent=TRINITY_DN0_c0_g1_i1.p6
+TRINITY_DN0_c0_g1_i1	transdecoder	three_prime_UTR	4243	5494	.	+	.	ID=TRINITY_DN0_c0_g1_i1.p6.utr3p1;Parent=TRINITY_DN0_c0_g1_i1.p6
+
+TRINITY_DN0_c0_g1_i3	transdecoder	gene	1	5435	.	-	.	ID=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i3.p1;Name=ORF%20type%3Acomplete%20len%3A430%20%28-%29
+TRINITY_DN0_c0_g1_i3	transdecoder	mRNA	1	5435	.	-	.	ID=TRINITY_DN0_c0_g1_i3.p1;Parent=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i3.p1;Name=ORF%20type%3Acomplete%20len%3A430%20%28-%29
+TRINITY_DN0_c0_g1_i3	transdecoder	five_prime_UTR	4872	5435	.	-	.	ID=TRINITY_DN0_c0_g1_i3.p1.utr5p1;Parent=TRINITY_DN0_c0_g1_i3.p1
+TRINITY_DN0_c0_g1_i3	transdecoder	exon	1	5435	.	-	.	ID=TRINITY_DN0_c0_g1_i3.p1.exon1;Parent=TRINITY_DN0_c0_g1_i3.p1
+TRINITY_DN0_c0_g1_i3	transdecoder	CDS	3582	4871	.	-	0	ID=cds.TRINITY_DN0_c0_g1_i3.p1;Parent=TRINITY_DN0_c0_g1_i3.p1
+TRINITY_DN0_c0_g1_i3	transdecoder	three_prime_UTR	1	3581	.	-	.	ID=TRINITY_DN0_c0_g1_i3.p1.utr3p1;Parent=TRINITY_DN0_c0_g1_i3.p1
+
+TRINITY_DN0_c0_g1_i3	transdecoder	gene	1	5435	.	+	.	ID=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i3.p2;Name=ORF%20type%3Acomplete%20len%3A166%20%28%2B%29
+TRINITY_DN0_c0_g1_i3	transdecoder	mRNA	1	5435	.	+	.	ID=TRINITY_DN0_c0_g1_i3.p2;Parent=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i3.p2;Name=ORF%20type%3Acomplete%20len%3A166%20%28%2B%29
+TRINITY_DN0_c0_g1_i3	transdecoder	five_prime_UTR	1	4560	.	+	.	ID=TRINITY_DN0_c0_g1_i3.p2.utr5p1;Parent=TRINITY_DN0_c0_g1_i3.p2
+TRINITY_DN0_c0_g1_i3	transdecoder	exon	1	5435	.	+	.	ID=TRINITY_DN0_c0_g1_i3.p2.exon1;Parent=TRINITY_DN0_c0_g1_i3.p2
+TRINITY_DN0_c0_g1_i3	transdecoder	CDS	4561	5058	.	+	0	ID=cds.TRINITY_DN0_c0_g1_i3.p2;Parent=TRINITY_DN0_c0_g1_i3.p2
+TRINITY_DN0_c0_g1_i3	transdecoder	three_prime_UTR	5059	5435	.	+	.	ID=TRINITY_DN0_c0_g1_i3.p2.utr3p1;Parent=TRINITY_DN0_c0_g1_i3.p2
+
+TRINITY_DN0_c0_g1_i3	transdecoder	gene	1	5435	.	+	.	ID=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i3.p3;Name=ORF%20type%3Acomplete%20len%3A151%20%28%2B%29
+TRINITY_DN0_c0_g1_i3	transdecoder	mRNA	1	5435	.	+	.	ID=TRINITY_DN0_c0_g1_i3.p3;Parent=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i3.p3;Name=ORF%20type%3Acomplete%20len%3A151%20%28%2B%29
+TRINITY_DN0_c0_g1_i3	transdecoder	five_prime_UTR	1	4661	.	+	.	ID=TRINITY_DN0_c0_g1_i3.p3.utr5p1;Parent=TRINITY_DN0_c0_g1_i3.p3
+TRINITY_DN0_c0_g1_i3	transdecoder	exon	1	5435	.	+	.	ID=TRINITY_DN0_c0_g1_i3.p3.exon1;Parent=TRINITY_DN0_c0_g1_i3.p3
+TRINITY_DN0_c0_g1_i3	transdecoder	CDS	4662	5114	.	+	0	ID=cds.TRINITY_DN0_c0_g1_i3.p3;Parent=TRINITY_DN0_c0_g1_i3.p3
+TRINITY_DN0_c0_g1_i3	transdecoder	three_prime_UTR	5115	5435	.	+	.	ID=TRINITY_DN0_c0_g1_i3.p3.utr3p1;Parent=TRINITY_DN0_c0_g1_i3.p3
+
+TRINITY_DN0_c0_g1_i3	transdecoder	gene	1	5435	.	-	.	ID=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i3.p4;Name=ORF%20type%3A5prime_partial%20len%3A151%20%28-%29
+TRINITY_DN0_c0_g1_i3	transdecoder	mRNA	1	5435	.	-	.	ID=TRINITY_DN0_c0_g1_i3.p4;Parent=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i3.p4;Name=ORF%20type%3A5prime_partial%20len%3A151%20%28-%29
+TRINITY_DN0_c0_g1_i3	transdecoder	exon	1	5435	.	-	.	ID=TRINITY_DN0_c0_g1_i3.p4.exon1;Parent=TRINITY_DN0_c0_g1_i3.p4
+TRINITY_DN0_c0_g1_i3	transdecoder	CDS	4982	5434	.	-	0	ID=cds.TRINITY_DN0_c0_g1_i3.p4;Parent=TRINITY_DN0_c0_g1_i3.p4;5_prime_partial=true
+TRINITY_DN0_c0_g1_i3	transdecoder	three_prime_UTR	1	4981	.	-	.	ID=TRINITY_DN0_c0_g1_i3.p4.utr3p1;Parent=TRINITY_DN0_c0_g1_i3.p4
+
+TRINITY_DN0_c0_g1_i3	transdecoder	gene	1	5435	.	+	.	ID=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i3.p5;Name=ORF%20type%3Acomplete%20len%3A134%20%28%2B%29
+TRINITY_DN0_c0_g1_i3	transdecoder	mRNA	1	5435	.	+	.	ID=TRINITY_DN0_c0_g1_i3.p5;Parent=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i3.p5;Name=ORF%20type%3Acomplete%20len%3A134%20%28%2B%29
+TRINITY_DN0_c0_g1_i3	transdecoder	five_prime_UTR	1	683	.	+	.	ID=TRINITY_DN0_c0_g1_i3.p5.utr5p1;Parent=TRINITY_DN0_c0_g1_i3.p5
+TRINITY_DN0_c0_g1_i3	transdecoder	exon	1	5435	.	+	.	ID=TRINITY_DN0_c0_g1_i3.p5.exon1;Parent=TRINITY_DN0_c0_g1_i3.p5
+TRINITY_DN0_c0_g1_i3	transdecoder	CDS	684	1085	.	+	0	ID=cds.TRINITY_DN0_c0_g1_i3.p5;Parent=TRINITY_DN0_c0_g1_i3.p5
+TRINITY_DN0_c0_g1_i3	transdecoder	three_prime_UTR	1086	5435	.	+	.	ID=TRINITY_DN0_c0_g1_i3.p5.utr3p1;Parent=TRINITY_DN0_c0_g1_i3.p5
+
+TRINITY_DN0_c0_g1_i3	transdecoder	gene	1	5435	.	+	.	ID=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i3.p6;Name=ORF%20type%3Acomplete%20len%3A131%20%28%2B%29
+TRINITY_DN0_c0_g1_i3	transdecoder	mRNA	1	5435	.	+	.	ID=TRINITY_DN0_c0_g1_i3.p6;Parent=TRINITY_DN0_c0_g1~~TRINITY_DN0_c0_g1_i3.p6;Name=ORF%20type%3Acomplete%20len%3A131%20%28%2B%29
+TRINITY_DN0_c0_g1_i3	transdecoder	five_prime_UTR	1	3849	.	+	.	ID=TRINITY_DN0_c0_g1_i3.p6.utr5p1;Parent=TRINITY_DN0_c0_g1_i3.p6
+TRINITY_DN0_c0_g1_i3	transdecoder	exon	1	5435	.	+	.	ID=TRINITY_DN0_c0_g1_i3.p6.exon1;Parent=TRINITY_DN0_c0_g1_i3.p6
+TRINITY_DN0_c0_g1_i3	transdecoder	CDS	3850	4242	.	+	0	ID=cds.TRINITY_DN0_c0_g1_i3.p6;Parent=TRINITY_DN0_c0_g1_i3.p6
+TRINITY_DN0_c0_g1_i3	transdecoder	three_prime_UTR	4243	5435	.	+	.	ID=TRINITY_DN0_c0_g1_i3.p6.utr3p1;Parent=TRINITY_DN0_c0_g1_i3.p6
+

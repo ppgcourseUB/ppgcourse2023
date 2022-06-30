@@ -1,0 +1,1 @@
+/home/cpegueroles/anaconda3/envs/transdecoder/opt/transdecoder/util/compute_base_probs.pl /home/cpegueroles/Documents/classes/PhylogenomicsCourse/2022/session2/trinity/Trinity.fasta 0 > /home/cpegueroles/Documents/classes/PhylogenomicsCourse/2022/session2/proteome/Trinity.fasta.transdecoder_dir/base_freqs.dat
