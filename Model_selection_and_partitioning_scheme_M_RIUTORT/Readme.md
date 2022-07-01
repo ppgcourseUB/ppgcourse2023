@@ -1,11 +1,16 @@
-EVOLUTIONARY MODELS AND PARTITION SCHEME SELECTION
-Instructor: Marta Riutort
+# EVOLUTIONARY MODELS AND PARTITION SCHEME SELECTION
 
-PartitionFinder available at http://www.robertlanfear.com/partitionfinder/
+Instructor: 
+
+Marta Riutort
+
+Software: 
+
+- PartitionFinder available at http://www.robertlanfear.com/partitionfinder/
 
 Other programs: 
 
-FigTree: Tree visualization and manipulation http://tree.bio.ed.ac.uk/software/figtree/
+- FigTree: Tree visualization and manipulation http://tree.bio.ed.ac.uk/software/figtree/
 
 
 You can find additional information about PartitionFinder in its web page (see above). There are a Tutorial, a google group and FAQ links. But it is specially important that you download and read the manual (http://www.robertlanfear.com/partitionfinder/assets/Manual_v2.1.x.pdf) Reading the manual of the programs does not only teach you how to use them. You will find information on all the options the program offers, how to use them and information on why to use them. So, it will help you take the most advantage from using the program and from your data.
