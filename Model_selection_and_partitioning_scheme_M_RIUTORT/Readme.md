@@ -1,8 +1,6 @@
 # EVOLUTIONARY MODELS AND PARTITION SCHEME SELECTION
 
-Instructor: 
-
-Marta Riutort
+Instructor: Marta Riutort
 
 Software: 
 
@@ -13,16 +11,16 @@ Other programs:
 - FigTree: Tree visualization and manipulation http://tree.bio.ed.ac.uk/software/figtree/
 
 
-You can find additional information about PartitionFinder in its web page (see above). There are a Tutorial, a google group and FAQ links. But it is specially important that you download and read the manual (http://www.robertlanfear.com/partitionfinder/assets/Manual_v2.1.x.pdf) Reading the manual of the programs does not only teach you how to use them. You will find information on all the options the program offers, how to use them and information on why to use them. So, it will help you take the most advantage from using the program and from your data.
+You can find additional information about PartitionFinder in its web page (see above). There are a Tutorial, a google group and FAQ links. But it is specially important that you download and read the manual (http://www.robertlanfear.com/partitionfinder/assets/Manual_v2.1.x.pdf). Reading the manual of the programs does not only teach you how to use them. You will find information on all the options the program offers, how to use them and information on why to use them. So, it will help you take the most advantage from using the program and from your data.
 
-Data files
+## Data files
 
-bears_phylo.phy the aligned dataset including 3 nuclear protein coding genes (CHRNA1, FES, IRBP, MC4R, RNASE1), 4 mitochondrial protein coding genes (cox1, cytb, nad1 and nad5) and two mitochondrial ribosomal genes (12S and 16S) with a total length of 11573bp.
-partition_finder.cfg we will modify the example given with the program to specify the options for our analysis. 
+**bears_phylo.phy**: the aligned dataset including 3 nuclear protein coding genes (CHRNA1, FES, IRBP, MC4R, RNASE1), 4 mitochondrial protein coding genes (cox1, cytb, nad1 and nad5) and two mitochondrial ribosomal genes (12S and 16S) with a total length of 11573bp.
+
+**partition_finder.cfg**:  we will modify the example given with the program to specify the options for our analysis. 
  
-OTUs included			names in file
-NC_003426 Ursus americanus 
-003426_Uam
+|OTUs included|names in file|
+|NC_003426 *Ursus americanus*|003426_Uam|
 NC_003427_Ursus_arctos
 003427_Uar
 NC_003428_Ursus_maritimus
