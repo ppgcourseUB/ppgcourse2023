@@ -19,6 +19,7 @@ You can find additional information about PartitionFinder in its web page (see a
 
 **partition_finder.cfg**:  we will modify the example given with the program to specify the options for our analysis. 
  
+| ------|----------|
 |OTUs included|names in file|
 |NC_003426 *Ursus americanus*|003426_Uam|
 NC_003427_Ursus_arctos
