@@ -290,6 +290,7 @@ Write in the following the list of partition schemes selected in each analysis a
 
 
 2. Rcluster search
+
 |Partitions|Evolutionary models|
 | -------- | ----------------- |
 |          |                   |
@@ -302,6 +303,7 @@ Write in the following the list of partition schemes selected in each analysis a
 
 
 3. Non --raxml command line, beast model option
+
 |Partitions|Evolutionary models|
 | -------- | ----------------- |
 |          |                   |
@@ -309,7 +311,7 @@ Write in the following the list of partition schemes selected in each analysis a
 |          |                   |
 |          |                   |
 |          |                   |
-|          |                   |s
+|          |                   |
 
 
 
