@@ -183,7 +183,7 @@ search = rcluster;
 
 ### Run the two first analyses
 
-To execute the program submit the job script *partition_finder.sh*.
+To execute the program you have to submit the job script *partition_finder.sh* using the `sbatch` command.
 Here you have the content of this script:
 
 ```
@@ -210,96 +210,106 @@ python PartitionFinder.py $FOLDER --raxml
 If all is ok, the program will generate within your user directory a folder named “analysis”. 
 Within this folder you will find a textfile called “best_scheme.txt”; here you will find the results and the partition scheme and models to apply in RAxML format so that you can directly use it in that program to infer your tree.
 
-> IMPORTANT NOTE: ONCE FINISHED THE SECOND ANALYSIS CHANGE THE NAME OF THE OUTPUT DIRECTORY SO THAT WHEN RUNNING THE THIRD ANALYSIS YOU DO NOT OVERWRITE THE SECOND ANALYSIS RESULTS
+> **IMPORTANT NOTE**: ONCE FINISHED THE SECOND ANALYSIS **CHANGE THE NAME** OF THE OUTPUT DIRECTORY **SO THAT WHEN RUNNING THE THIRD ANALYSIS YOU DO NOT OVERWRITE THE SECOND ANALYSIS RESULTS**
 
 
 ### Run the third analysis
 
-
-We must edit the partition_finder.cfg file again. Open the file you have in the ppgdata directory and do the following changes:
+We must edit the partition_finder.cfg file again. Open the file and do the following changes:
 
 COMMAND 3:
 
+```
 ## MODELS OF EVOLUTION: all | allx | mrbayes | beast | gamma | gammai | <list> ##
 ##              for PartitionFinderProtein: all_protein | <list> ##
 models = all;
+```
 
-Since you will use BEAST in some of the next classes, we will select beast so that PartitionFinder finds the best model amongst those that are found in the BEAST software. 
+Since you will use `BEAST` in some of the next classes, we will select "beast" so that `PartitionFinder` finds the best model amongst those that are found in the `BEAST` software. We will change to beast. 
 
-We will change to beast. 
-
+```
 ## MODELS OF EVOLUTION: all | allx | mrbayes | beast | gamma | gammai | <list> ##
 ##              for PartitionFinderProtein: all_protein | <list> ##
 models = beast;
-
+```
 
 COMMAND 6:
 
+Make sure command 6 is set to greedy.
+
+```
 ## SCHEMES, search: all | greedy | rcluster | hcluster | user ##
 [schemes]
 search = greedy;
+```
 
-Make sure command 6 is set to greedy.
+Now, you can submit again the job script *partition_finder.sh*. Change the job name to prevent log files from being overwritten. 
+Modified script *partition_finder.sh*:
 
+```
+#!/bin/bash
 
-Now move to the folder ppgscripts/partfinder
+##Script to run PartitionFinder in the cloud
 
-To execute the program at the prompt write:
+#SBATCH -p normal                
+#SBATCH -c 8                    
+#SBATCH --mem=6GB
+#SBATCH --job-name partitionfinder-job02               
+#SBATCH -o %j.out               
+#SBATCH -e %j.err               
 
+# setting some variables:
+FOLDER="DATA/input_files"
 
-python PartitionFinder.py “<InputFoldername>” 
+# running PartitionFinder
+python PartitionFinder.py $FOLDER
+```
 
-<InputFoldername> is the folder where the data file and the .cfg file are. Since that folder is in a different place you must indicate the path to arrive to it, in this case is: ~/ppgadata/
-
-We are not giving the ‘–-raxml’ command so now all models present in BEAST will be tested, which will take longer than in our previous analyses because raxml only offers GTR, GTRGAMMA and GTRGAMMA+I, while BEAST has a longer list of possibilities.
+> We are not giving the ‘–-raxml’ command so now all models present in `BEAST` will be tested, which will take longer than in our previous analyses because `RAxML` only offers "GTR", "GTRGAMMA" and "GTRGAMMA+I", while `BEAST` has a longer list of possibilities.
 
 While this third analysis is running, we are going to have a look to the results of the two previous analyses.
 
+### Results
 
-
-    E. Results
-
-
-Write in the following the list of partition schemes selected in each analysis and models assigned to them
+Write in the following the list of partition schemes selected in each analysis and models assigned to them:
 
 
 --raxml command line, all model option
+
 1. Greedy search
-Partitions
-Evolutionary models
 
-
-
-
-
-
-
-
-
-
+|Partitions|Evolutionary models|
+| -------- | ----------------- |
+|          |                   |
+|          |                   |
+|          |                   |
+|          |                   |
+|          |                   |
+|          |                   |
 
 
 
 2. Rcluster search
-Partitions
-Evolutionary models
-
-
-
-
-
-
-
-
-
-
-
+|Partitions|Evolutionary models|
+| -------- | ----------------- |
+|          |                   |
+|          |                   |
+|          |                   |
+|          |                   |
+|          |                   |
+|          |                   |
 
 
 
 3. Non --raxml command line, beast model option
-Partitions
-Evolutionary models
+|Partitions|Evolutionary models|
+| -------- | ----------------- |
+|          |                   |
+|          |                   |
+|          |                   |
+|          |                   |
+|          |                   |
+|          |                   |s
 
 
 
