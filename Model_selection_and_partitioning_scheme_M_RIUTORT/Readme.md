@@ -280,12 +280,12 @@ Write in the following the list of partition schemes selected in each analysis a
 
 |Partitions|Evolutionary models|
 | -------- | ----------------- |
-|          |                   |
-|          |                   |
-|          |                   |
-|          |                   |
-|          |                   |
-|   ...    |                   |
+|          |       !           |
+|          |       !           |
+|          |       !           |
+|          |       !           |
+|          |       !           |   
+|   ...    |       !           |
 
 
 
