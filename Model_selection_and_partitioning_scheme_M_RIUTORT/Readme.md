@@ -38,74 +38,72 @@ You can find additional information about PartitionFinder in its web page (see a
 |NC_011118_Ursus_thibetanus_thibetanus |011118_Uth   |
 |NNC_030174_Arctotherium_sp            |030174_Arc   |
 
-Objetive: Learn how to use PartitionFinder to evaluate the best partitioning scheme for our dataset and select the best model for each partition. 
+## Objetive
 
+Learn how to use PartitionFinder to evaluate the best partitioning scheme for our dataset and select the best model for each partition. 
 
+## Progress 
 
-Progress 
+The program requires the dataset to be in *phylip* format (the file you will use during the practice is already in the correct format). 
 
-The program requires the dataset to be in phylip format (the file you will download from the campus is already in the correct format). 
+We will perform two analyses varying some of the options in the program, we will first run two fast analyses and then set the third (**that takes more than one hour to run**), while the third analysis is running, we will comment the results. In all cases we will use a extreme scheme dividing all the protein coding genes by codons plus the two ribosomal genes (29 putative partitions in total).
 
-We will perform two analyses varying some of the options in the program, we will first run two fast analyses and then set the third (that takes more than one hour to run), while the third analysis is running, we will comment the results. In all cases we will use a extreme scheme dividing all the protein coding genes by codons plus the two ribosomal genes (29 putative partitions in total). 
+### Donwload files
 
+Files are in the directory DATA/PartitionFinder
 
-    A. Donwload files
+### Prepare command file
 
-In the campus search the section Phylogenomics Lab and within it the directory Data sets/PartitionFinder
-Download the two files (bears_phylo.phy and partiton_finder.cfg) and put them in the ppgdata directory in your computer.
+The file *partition_finder.cfg* includes the options we select to run the PartitionFinder program . Open this file with `nano` to make some modifications for the different runs we are going to perform:
 
-    B. Prepare command file
-
-
-The file partition_finder.cfg includes the options we select to run the PartitionFinder program 
-Open the file partition_finder.cfg to make some modifications for the different runs we are going to perform
-
-FOLLOW THE INSTRUCTIONS TO PREPARE THE FILE:
-
-        1. Modifications for the first run:
+1. Modifications for the first run:
 
 COMMAND 1: 
 
+```
 ## ALIGNMENT FILE ##
 alignment = test.phy;
+```
 
 This command indicates to the program the name of the file with the data. We must change it to the name of our data set:
 
+```
 ## ALIGNMENT FILE ##
 alignment = bears_phylo.phy
-
+```
 
 COMMAND 2:
 
+In this command we tell the program whether we want it to calculate branch lengths linked or unlinked for each subset of partitions. Only some inference programs support unlinked (MrBayes, RAxML, BEAST among them), this option requieres more paramters since each subset will have its own branchlengths (see the manual). We will leave it with the linked option
+
+```
 ## BRANCHLENGTHS: linked | unlinked ##
 branchlengths = linked;
 
-In this command we tell the program whether we want it to calculate branch lengths linked or unlinked for each subset of partitions. Only some inference programs support unlinked (MrBayes, RAxML, BEAST among them), this option requieres more paramters since each subset will have its own branchlengths (see the manual).
-
-We will leave it with the linked option
-
+```
 
 COMMAND 3:
 
+In this command we set the models we want to test, the more you include the slowest the program will become. You can select a list of models if you prefer, or (for some inference programs) you can select the program you are going to use for the inference of the tree and in this case PartitionFinder will only test the models that that program includes. In the case of RAxML it has to be set in the command line (see below) and then setting “all” in this command will only test the models RAxML includes. We will leave all at this step. 
+
+```
 ## MODELS OF EVOLUTION: all | allx | mrbayes | beast | gamma | gammai | <list> ##
 ##              for PartitionFinderProtein: all_protein | <list> ##
 models = all;
-
-In this command we set the models we want to test, the more you include the slowest the program will become. You can select a list of models if you prefer, or (for some inference programs) you can select the program you are going to use for the inference of the tree and in this case PartitionFinder will only test the models that that program includes. In the case of RAxML it has to be set in the command line (see below) and then setting “all” in this command will only test the models RAxML includes. 
-
-We will leave all at this step. 
-
+```
 
 COMMAND 4:
 
-# MODEL SELECCTION: AIC | AICc | BIC #
-model_selection = BIC;
-
 We will leave the option at BIC. 
 
+```
+# MODEL SELECCTION: AIC | AICc | BIC #
+model_selection = BIC;
+```
 
 COMNAND 5:
 
+```
 ## DATA BLOCKS: see manual for how to define ##
 [data_blocks]
 Gene1_pos1 = 1-789\3;
@@ -117,9 +115,11 @@ Gene2_pos3 = 792-1449\3;
 Gene3_pos1 = 1450-2208\3;
 Gene3_pos2 = 1451-2208\3;
 Gene3_pos3 = 1452-2208\3;
+```
 
 This is a very important command, here you define the data blocks you want to test (so the partitions!). We will set a subset for each codon position in the protein coding genes. Copy the following for our data set: 
 
+```
 ## DATA BLOCKS: see manual for how to define ##
 [data_blocks]
 DNA, CHRNA1_1= 1-362\3
@@ -151,59 +151,69 @@ DNA, mtNAD1_3 = 8790-9743\3
 DNA, mtNAD5_1 = 9744-11573\3
 DNA, mtNAD5_2 = 9745-11573\3
 DNA, mtNAD5_3 = 9746-11573\3
-
+```
 
 COMMAND 6:
 
+```
 ## SCHEMES, search: all | greedy | rcluster | hcluster | user ##
 [schemes]
 search = all;
+```
 
 With this command we set the searching strategy. A rough guide is to use ‘all’ for very small datasets (so never for phylogenomic studies), ‘greedy’ for datasets of ~10 loci, and ‘rcluster’ for datasets of 100’s of loci (however, rcluster is only available when you use the command line –raxml, see below, so only RAxML models will be tested). We are going to use the –raxml command line and will try two options ‘greedy’ and ‘rcluster’
 
-In the first run use greedy
+In the first run use greedy:
 
+```
 ## SCHEMES, search: all | greedy | rcluster | hcluster | user ##
 [schemes]
 search = greedy;
+```
 
-IMPORTANT NOTE: ONCE FINISHED CHANGE THE NAME OF THE OUTPUT DIRECTORY SO THAT WHEN RUNNING THE SECOND ANALYSIS YOU DO NOT OVERWRITE THE FIRST ANALYSIS RESULTS
+> **IMPORTANT NOTE:** ONCE FINISHED CHANGE THE NAME OF THE OUTPUT DIRECTORY SO THAT WHEN RUNNING THE SECOND ANALYSIS YOU DO NOT OVERWRITE THE FIRST ANALYSIS RESULTS
 
-        2. In a second run substitute greedy by rcluster
+In a second run substitute greedy by rcluster:
 
+```
 ## SCHEMES, search: all | greedy | rcluster | hcluster | user ##
 [schemes]
 search = rcluster;
+```
+
+### Run the two first analyses
+
+To execute the program submit the job script *partition_finder.sh*.
+Here you have the content of this script:
+
+```
+#!/bin/bash
+
+##Script to run PartitionFinder in the cloud
+
+#SBATCH -p normal                
+#SBATCH -c 8                    
+#SBATCH --mem=6GB
+#SBATCH --job-name partitionfinder-job01               
+#SBATCH -o %j.out               
+#SBATCH -e %j.err               
+
+# setting some variables:
+FOLDER="DATA/input_files"
+
+# running PartitionFinder
+python PartitionFinder.py $FOLDER --raxml
+```
+
+> We are giving the ‘–-raxml’ command so that only the models of RAxML will be tested, this is going to do the run faster and you will be able to see the results immediately. I have also run another analysis wihtout the –raxml option, with beast at models command and greedy at the Schemes commad (it took more than one hour to run) for you to compare the results.
+
+If all is ok, the program will generate within your user directory a folder named “analysis”. 
+Within this folder you will find a textfile called “best_scheme.txt”; here you will find the results and the partition scheme and models to apply in RAxML format so that you can directly use it in that program to infer your tree.
+
+> IMPORTANT NOTE: ONCE FINISHED THE SECOND ANALYSIS CHANGE THE NAME OF THE OUTPUT DIRECTORY SO THAT WHEN RUNNING THE THIRD ANALYSIS YOU DO NOT OVERWRITE THE SECOND ANALYSIS RESULTS
 
 
-    C. Run the two first analyses
-
-
-Now you have to open a terminal (Ctrl. Alt T) go to the directory ppgcourse and actívate the docker (if you haven’t done it before):
-
-At the prompt write: ./container-run.sh
-
-Remember that if you have already done this activation and closed the terminal then you have to use the alternative command: ./conatiner-restart.sh
-
-Now move to the folder ppgscripts/partfinder
-
-To execute the program at the prompt write:
-
-
-python PartitionFinder.py “<InputFoldername>” --raxml
-
-<InputFoldername> is the folder were the data file and the .cfg file are. Since that folder is in a different place you have to indicate the path to arrive to it, in this case is: ~/ppgadata/
-
-We are giving the ‘–-raxml’ command so that only the models of RAxML will be tested, this is going to do the run faster and you will be able to see the results immediately. I have also run another analysis wihtout the –raxml option, with beast at models command and greedy at the Schemes commad (it took more than one hour to run) for you to compare the results.
-
-If all the files are in the correct format and the command line is ok, the run will begin pimmediately and the program will generate within the ppgdata directory a folder named “analysis”. 
-Within this folder you will find a textfile called 
-“best_scheme.txt” here you will find the results and the partition scheme and models to apply in RAxML format so that you can directly use it in that program to infer your tree.
-
-IMPORTANT NOTE: ONCE FINISHED THE SECOND ANALYSIS CHANGE THE NAME OF THE OUTPUT DIRECTORY SO THAT WHEN RUNNING THE THIRD ANALYSIS YOU DO NOT OVERWRITE THE SECOND ANALYSIS RESULTS
-
-
-    D. Run the third analysis
+### Run the third analysis
 
 
 We must edit the partition_finder.cfg file again. Open the file you have in the ppgdata directory and do the following changes:
