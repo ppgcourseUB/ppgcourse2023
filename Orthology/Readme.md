@@ -127,9 +127,8 @@ This will generate a second folder which will be called *Results_XXX_1* where th
 
 Orthogroups can contain duplications which means we can have a mix of orthologs and paralogs. `OrthoFinder` implements a method to distinguish between them, but to do that it needs a species tree as reference. `OrthoFinder` tries to calculate the species tree on its own. We will go back to using the first run of the program. In that folder you should see a folder called *Species_tree* and in there is a file called *SpeciesTree_rooted.txt*
 
-1.- Check the species tree that has been automatically build by `OrthoFinder`. You can download the file to your personal computer and use `phylo.io` to visualize the tree:
-
-http://phylo.io/
+1.- Check the species tree that has been automatically build by `OrthoFinder`. You can download the file to your personal computer and use `phylo.io` (
+http://phylo.io/) to visualize the tree:
 
 ```ruby
 Based on your knowledge on how bears have evolved, do you see anything wrong with this species tree?
@@ -167,9 +166,11 @@ Due to time constrains we will not run `OrthoFinder` with `IQ-TREE`. You would n
 5.1.- Which two species have the highest number of orthologs?
 
 5.2.- Which kind of orthologous relationships are most common between bears (one-to-one? many-to-one?). Can you think of a scenario in which this could be different?
+```
 
-6.- We will analyse the orthogroup OG0000001 which should contain protein A0A7N5K5T5_AILME. If for some reason it does not search for the orthogroup that contains this protein and analyse that one.
+6. We will analyse the orthogroup OG0000001 which should contain protein A0A7N5K5T5_AILME. If for some reason it does not search for the orthogroup that contains this protein and analyse that one.
 
+```ruby
 6.1.- Go to the first set of results and check how many members this family has. Can you tell only from the orthogroup information which proteins are orthologs and which ones are paralogs?
 
 6.2.- Now go to the last results. Go to the Orthologues folder and search for the orthologs to A0A7N5K5T5_AILME. How many do you find?
