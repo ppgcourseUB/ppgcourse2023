@@ -131,7 +131,7 @@ Orthogroups can contain duplications which means we can have a mix of orthologs 
 http://phylo.io/) to visualize the tree:
 
 ```diff
-+ Based on your knowledge on how bears have evolved, do you see anything wrong with this species tree? +
+- Based on your knowledge on how bears have evolved, do you see anything wrong with this species tree?
 ```
 
 2.- If the tree is not rooted correctly, re-root the tree by clicking on the branch and pressing on re-root (make sure you press on the branch and not on the species name!). Now export the newick (find the button on the upper right part of the image, press on export nwk). Save the file into your folder.
@@ -162,7 +162,7 @@ Due to time constrains we will not run `OrthoFinder` with `IQ-TREE`. You would n
 
 5.- Go to the *Comparative_Genomics_Statistics*, here you can find main statistics for the analysis you have run. Search for the following information:
 
-```ruby
+```diff
 5.1.- Which two species have the highest number of orthologs?
 
 5.2.- Which kind of orthologous relationships are most common between bears (one-to-one? many-to-one?). Can you think of a scenario in which this could be different?
