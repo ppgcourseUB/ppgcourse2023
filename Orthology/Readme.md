@@ -66,6 +66,7 @@ provided only a subset of the data.
 1.- To execute `OrthoFinder`, submit the job script *orthofinder.run* using the command `sbatch`.
 Here you can see the contents of the script *orthofinder.run*:
 
+```bash
 !/bin/bash                                                                                                             
 
 ##This is a script to run orthofinder                                                        
@@ -82,6 +83,7 @@ module load orthofinder
 
 #running orthofinder
 orthofinder -f proteomes_parsed
+```
 
 > The flag -f indicates the folder where the proteomes are found and -t indicates the number of threads
 available to you.
