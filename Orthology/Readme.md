@@ -16,10 +16,10 @@ The input of the program will be a folder containing one file per proteome. Thes
 
 We will work with a subset of four bear proteomes. The original proteomes can be downloaded from UniProt:
 
-* Ursus arctos (brown bear): https://www.uniprot.org/UP000286642
-* Ursus maritimus (polar bear): https://www.uniprot.org/UP000261680
-* Ursus americanus (black bear): https://www.uniprot.org/UP000291022
-* Ailuropoda melanoleuca (giant panda, outgroup): https://www.uniprot.org/UP000008912
+* Ursus arctos (brown bear): https://www.uniprot.org/proteomes/UP000286642
+* Ursus maritimus (polar bear): https://www.uniprot.org/proteomes/UP000261680
+* Ursus americanus (black bear): https://www.uniprot.org/proteomes/UP000291022
+* Ailuropoda melanoleuca (giant panda, outgroup): https://www.uniprot.org/proteomes/UP000008912
 
 You can find the subset of proteomes we are going to use in the folder data/proteomes/
 
