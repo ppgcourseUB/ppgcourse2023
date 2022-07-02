@@ -130,8 +130,8 @@ Orthogroups can contain duplications which means we can have a mix of orthologs 
 1.- Check the species tree that has been automatically build by `OrthoFinder`. You can download the file to your personal computer and use `phylo.io` (
 http://phylo.io/) to visualize the tree:
 
-```ruby
-Based on your knowledge on how bears have evolved, do you see anything wrong with this species tree?
+```diff
++ Based on your knowledge on how bears have evolved, do you see anything wrong with this species tree? +
 ```
 
 2.- If the tree is not rooted correctly, re-root the tree by clicking on the branch and pressing on re-root (make sure you press on the branch and not on the species name!). Now export the newick (find the button on the upper right part of the image, press on export nwk). Save the file into your folder.
