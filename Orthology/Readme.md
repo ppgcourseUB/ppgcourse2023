@@ -113,14 +113,14 @@ This will generate a second folder which will be called *Results_XXX_1* where th
 
 3.- Now compare the results obtained by the two runs of `OrthoFinder` and try and answer the following questions:
 
-```ruby
-3.1.- Are the number of orthogroups the same in both runs? How many orthogroups are in each of them?
+```diff
++ 3.1. Are the number of orthogroups the same in both runs? How many orthogroups are in each of them?
 
-3.2.- Did the change in inflation parameter affect the detection of single copy genes?
++ 3.2. Did the change in inflation parameter affect the detection of single copy genes?
 
-3.3.- Note that in order to do a good phylogenomics analysis you need to find groups of orthologous genes that are present in all species without duplications. Which file would give you this information and how many orthogroups can you use in each run?
++ 3.3. Note that in order to do a good phylogenomics analysis you need to find groups of orthologous genes that are present in all species without duplications. Which file would give you this information and how many orthogroups can you use in each run?
 
-3.4.- Nowadays many reviewers are asking how the inflation parameter can affect your results. Can you think on a way to show which is the correct inflation parameter?
++ 3.4 Nowadays many reviewers are asking how the inflation parameter can affect your results. Can you think on a way to show which is the correct inflation parameter?
 ```
 
 ## Exercise 4
