@@ -114,13 +114,13 @@ This will generate a second folder which will be called *Results_XXX_1* where th
 3.- Now compare the results obtained by the two runs of `OrthoFinder` and try and answer the following questions:
 
 ```diff
-@@ 3.1. Are the number of orthogroups the same in both runs? How many orthogroups are in each of them?
+- 3.1. Are the number of orthogroups the same in both runs? How many orthogroups are in each of them?
 
-@@ 3.2. Did the change in inflation parameter affect the detection of single copy genes?
+- 3.2. Did the change in inflation parameter affect the detection of single copy genes?
 
-@@ 3.3. Note that in order to do a good phylogenomics analysis you need to find groups of orthologous genes that are present in all species without duplications. Which file would give you this information and how many orthogroups can you use in each run?
+- 3.3. Note that in order to do a good phylogenomics analysis you need to find groups of orthologous genes that are present in all species without duplications. Which file would give you this information and how many orthogroups can you use in each run?
 
-@@ 3.4 Nowadays many reviewers are asking how the inflation parameter can affect your results. Can you think on a way to show which is the correct inflation parameter?
+- 3.4 Nowadays many reviewers are asking how the inflation parameter can affect your results. Can you think on a way to show which is the correct inflation parameter?
 ```
 
 ## Exercise 4
@@ -163,23 +163,23 @@ Due to time constrains we will not run `OrthoFinder` with `IQ-TREE`. You would n
 5.- Go to the *Comparative_Genomics_Statistics*, here you can find main statistics for the analysis you have run. Search for the following information:
 
 ```diff
-5.1.- Which two species have the highest number of orthologs?
+- 5.1.- Which two species have the highest number of orthologs?
 
-5.2.- Which kind of orthologous relationships are most common between bears (one-to-one? many-to-one?). Can you think of a scenario in which this could be different?
+- 5.2.- Which kind of orthologous relationships are most common between bears (one-to-one? many-to-one?). Can you think of a scenario in which this could be different?
 ```
 
 6. We will analyse the orthogroup OG0000001 which should contain protein A0A7N5K5T5_AILME. If for some reason it does not search for the orthogroup that contains this protein and analyse that one.
 
 ```ruby
-6.1.- Go to the first set of results and check how many members this family has. Can you tell only from the orthogroup information which proteins are orthologs and which ones are paralogs?
+- 6.1.- Go to the first set of results and check how many members this family has. Can you tell only from the orthogroup information which proteins are orthologs and which ones are paralogs?
 
-6.2.- Now go to the last results. Go to the Orthologues folder and search for the orthologs to A0A7N5K5T5_AILME. How many do you find?
+- 6.2.- Now go to the last results. Go to the Orthologues folder and search for the orthologs to A0A7N5K5T5_AILME. How many do you find?
 
-6.3.- Are they all one-to-one orthologs?
+- 6.3.- Are they all one-to-one orthologs?
 
-6.4.- Search for the gene tree of this family, copy the newick and visualize it in phylo.io. With the tree next to you, search your results for information on duplication events. How many duplication events can you find? Are any of them specific for a single species.
+- 6.4.- Search for the gene tree of this family, copy the newick and visualize it in phylo.io. With the tree next to you, search your results for information on duplication events. How many duplication events can you find? Are any of them specific for a single species.
 
-6.5.- Most of the duplications observed in the previous exercise were ancient, why do you think orthoFinder did not separate them? Were they separated in the analysis run with -I 3.0? If they were, and looking again to the gene tree, did the split make sense?
+- 6.5.- Most of the duplications observed in the previous exercise were ancient, why do you think orthoFinder did not separate them? Were they separated in the analysis run with -I 3.0? If they were, and looking again to the gene tree, did the split make sense?
 ```
 
 
