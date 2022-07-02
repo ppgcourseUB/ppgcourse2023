@@ -1,14 +1,14 @@
 # ORTHOLOGY PREDICTION FOR PHYLOGENOMIC ANALYSES 
 
-The objective of this practice is to learn how to use [Orthofinder](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1832-y) to infer orthogroups that can then be used to do a phylogenomics analysis.
+The objective of this practice is to learn how to use [OrthoFinder](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1832-y) to infer orthogroups that can then be used to do a phylogenomics analysis.
 
 ***
 
 ## Software desrciption and hints
 
-For this practice we will use [Orthofinder](https://github.com/davidemms/OrthoFinder). You can find a full description on the program in the provided link. It is important to understand that OrthoFinder is a pipeline that uses different programs and that some of the steps can be performed by different programs. For instance, the first step is an all against all homology search that can be done using either BlastP or Diamond.
+For this practice we will use [OrthoFinder](https://github.com/davidemms/OrthoFinder). You can find a full description on the program in the provided link. It is important to understand that OrthoFinder is a pipeline that uses different programs and that some of the steps can be performed by different programs. For instance, the first step is an all against all homology search that can be done using either BlastP or Diamond.
 
-The input of the program will be a folder containing one file per proteome. These files need to contain fasta formated sequences of proteins and there needs to be a single file per species included in the analysis. Files need to have .fa, .faa, .fasta or similar for their termination, else orthofinder will not recognise them.
+The input of the program will be a folder containing one file per proteome. These files need to contain fasta formated sequences of proteins and there needs to be a single file per species included in the analysis. Files need to have .fa, .faa, .fasta or similar for their termination, else `OrthoFinder` will not recognise them.
 
 ***
 
@@ -27,7 +27,7 @@ You can find the subset of proteomes we are going to use in the folder data/prot
 
 ## Exercise 1
 
-1.- Download the data into your Desktop folder. Once there uncompress the file by typing:
+1.- Uncompress the file by typing:
 
 `tar -zxvf proteomes.tar.gz`
 
@@ -47,7 +47,7 @@ following command:
 
 `awk '{if ($0 ~ /^>/)  {split($0,a,"|"); split(a[3],b," "); print ">"b[1]} else { print;}}' proteomes/fileName >proteomes_parsed/fileName`
 
-This small piece of code will parse your header and keep only one part of it which is unique for each protein. Make sure to name the output fileName with something short and descriptive of your species as OrthoFinder will be using it to identify each species.
+This small piece of code will parse your header and keep only one part of it which is unique for each protein. Make sure to name the output *fileName* with something short and descriptive of your species as OrthoFinder will be using it to identify each species.
 
 2.3.- Compare now the headers:
 
@@ -60,39 +60,58 @@ Repeat that for each file and make sure you have four files in the proteomes_par
 
 ## Exercise 2
 
-We will run orthoFinder with the provided dataset and default values. To make sure it works quickly we
+We will run `OrthoFinder` with the provided dataset and default values. To make sure it works quickly we
 provided only a subset of the data.
 
-1.- To execute orthofinder, type this command:
+1.- To execute `OrthoFinder`, submit the job script *orthofinder.run* using the command `sbatch`.
+Here you can see the contents of the script *orthofinder.run*:
 
-`orthofinder -f proteomes_parsed`
+!/bin/bash                                                                                                             
 
-Where -f indicates the folder where the proteomes are found and -t indicates the number of threads
+##This is a script to run orthofinder                                                        
+
+#SBATCH -p normal                                                                                      
+#SBATCH -c 8                                                                                                     
+#SBATCH --mem=6GB                                                                                       
+#SBATCH --job-name orthofinder-job01                                                                            
+#SBATCH -o %j.out                                                          
+#SBATCH -e %j.err                                                      
+
+#module loadding. Check available modules with `module avail` 
+module load orthofinder
+
+#running orthofinder
+orthofinder -f proteomes_parsed
+
+> The flag -f indicates the folder where the proteomes are found and -t indicates the number of threads
 available to you.
 
-2.- While the program works, lets have a look to the options that orthofinder has. Open a new terminal
-and type orthofinder -h
+2.- While the program works, lets have a look to the options that `OrthoFinder` has. Open a new terminal
+and type `orthofinder -h`
 
-3.- Note that one of the options is -S which determines how the homology search will be done. Diamond is very fast, much faster than blast, but is less sensitive when running with distantly related species. Consider this when running orthoFinder.
+> Note that one of the options is `-S` which determines how the homology search will be done. `Diamond` is very fast, much faster than `Blast`, but is less sensitive when running with distantly related species. Consider this when running `OrthoFinder`.
 
 ## Exercise 3
 
-1.- OrthoFinder has few parameters, but the most important one of them is the inflation parameter. This parameter indicates whether the orthogroups are going to be smaller or bigger. By default it is set to 1.5. We are now going to run orthoFinder with a bigger inflation parameter. 
+1.- `OrthoFinder` has few parameters, but the most important one of them is the inflation parameter. This parameter indicates whether the orthogroups are going to be smaller or bigger. By default it is set to 1.5. We are now going to run `OrthoFinder` with a bigger inflation parameter. 
+
+Replace the running line in the script *orthofinder.run* with (**remember to also change job name!**):
 
 `orthofinder -b folderName/OrthoFinder/Results_XXXX/ -I 3.0 -og`
 
-Note that we are using -b instead of -f and we are prividing previously calculated results, this will avoid having to re-calculate the all-vs-all comparison. Also we are changing the inflation parameter using -I and setting it to 3.0. At this point we are only interested in comparing the orthogroups, the -og parameter will stop the run of orthoFinder after it calculates orthogroups. This is a time-saving trick if you want to assess different inflation parameters and how they affect your orthogroups.
+> Note that we are using `-b` instead of `-f` and we are prividing previously calculated results, this will avoid having to re-calculate the all-vs-all comparison. Also we are changing the inflation parameter using `-I` and setting it to 3.0. At this point we are only interested in comparing the orthogroups, the `-og` parameter will stop the run of orthoFinder after it calculates orthogroups. This is a time-saving trick if you want to assess different inflation parameters and how they affect your orthogroups.
 
-This will generate a second folder which will be called Results_XXX_1 where the new results of orthoFinder can be found.
+This will generate a second folder which will be called *Results_XXX_1* where the new results of `OrthoFinder` can be found.
 
-2.- Focus on the folder called Orthogroups. In this folder you will find several files of interest:
+2.- Focus on the folder called *Orthogroups*. In this folder you will find several files of interest:
 
-* Orthogroups.tsv: Will print all the orthogroups detected during the analysis
-* Orthogroups_UnassignedGenes.tsv: Genes that have not been assigned to an orthogroup will go to this file
-* Orthogroups_SingleCopyOrthologues.txt: This will give you a list of orthogroups that did not have duplications and in which all species are present
+* *Orthogroups.tsv*: Will print all the orthogroups detected during the analysis
+* *Orthogroups_UnassignedGenes.tsv*: Genes that have not been assigned to an orthogroup will go to this file
+* *Orthogroups_SingleCopyOrthologues.txt*: This will give you a list of orthogroups that did not have duplications and in which all species are present
 
-3.- Now compare the results obtained by the two runs of orthoFinder and try and answer the following questions:
+3.- Now compare the results obtained by the two runs of `OrthoFinder` and try and answer the following questions:
 
+```ruby
 3.1.- Are the number of orthogroups the same in both runs? How many orthogroups are in each of them?
 
 3.2.- Did the change in inflation parameter affect the detection of single copy genes?
@@ -100,45 +119,49 @@ This will generate a second folder which will be called Results_XXX_1 where the 
 3.3.- Note that in order to do a good phylogenomics analysis you need to find groups of orthologous genes that are present in all species without duplications. Which file would give you this information and how many orthogroups can you use in each run?
 
 3.4.- Nowadays many reviewers are asking how the inflation parameter can affect your results. Can you think on a way to show which is the correct inflation parameter?
+```
 
 ## Exercise 4
 
-Orthogroups can contain duplications which means we can have a mix of orthologs and paralogs. OrthoFinder implements a method to distinguish between them, but to do that it needs a species tree as reference. OrthoFinder tries to calculate the species tree on its own. We will go back to using the first run of orthoFinder. In that folder you should see a folder called Species_tree and in there is a file called SpeciesTree_rooted.txt
+Orthogroups can contain duplications which means we can have a mix of orthologs and paralogs. `OrthoFinder` implements a method to distinguish between them, but to do that it needs a species tree as reference. `OrthoFinder` tries to calculate the species tree on its own. We will go back to using the first run of the program. In that folder you should see a folder called *Species_tree* and in there is a file called *SpeciesTree_rooted.txt*
 
-1.- Check the species tree that has been automatically build by orthofinder.
+1.- Check the species tree that has been automatically build by `OrthoFinder`. You can download the file to your personal computer and use `phylo.io` to visualize the tree:
 
 http://phylo.io/
 
+```ruby
 Based on your knowledge on how bears have evolved, do you see anything wrong with this species tree?
+```
 
 2.- If the tree is not rooted correctly, re-root the tree by clicking on the branch and pressing on re-root (make sure you press on the branch and not on the species name!). Now export the newick (find the button on the upper right part of the image, press on export nwk). Save the file into your folder.
 
-3.- As before we are not going to re-run the whole pipeline. This time we will start from the pre-calculated orthogroups and will just change the species tree:
+3.- As before we are not going to re-run the whole pipeline. This time we will start from the pre-calculated orthogroups and will just change the species tree.
+
+Replace the running line in the script *orthofinder.run* with (**remember to also change job name!**):
 
 `orthofinder -fg FolderRun -s speciesTree_file`
 
-* -fg indicates you want to re run an analysis from the orthogroups on.
-
-* -s indicates you will provide a user defined species tree
+> In this case, the flag `-fg` indicates you want to re run an analysis from the orthogroups on, and `-s` indicates you will provide a user defined species tree
 
 Running this will generate a new folder, which will contain the new results. 
 
-Note that if you have a species tree before running orthoFinder it is more convenient to just provide it from the start using the -s option. Just make sure that the name of the proteome files are the same as the ones found in the species tree. 
+> Note that if you have a species tree before running `OrthoFinder` it is more convenient to just provide it from the start using the `-s` option. Just make sure that the name of the proteome files are the same as the ones found in the species tree. 
 
-Additionally it is possible that in this toy example with very few species the change in species tree will have little effect on the prediction of orthologs, but this can change in more complicated scenarios)
+Additionally it is possible that in this toy example with very few species the change in species tree will have little effect on the prediction of orthologs, but this can change in more complicated scenarios.
 
-4.- Other things that will affect the prediction of orthologs is how the gene trees are build. By default orthoFinder uses distance matrices and fasttree to build the gene trees. This, while fast, can give faulty gene trees when dealing with more complex datasets. Once you are sure that your species tree is correct and that you are satisfied with the orthogroups, it is recommended that you do the orthology prediction using multiple sequence alignments (mafft is implemented in orthoFinder) and make the gene trees using IqTREE (also implemented in orthoFinder).
+4.- Other things that will affect the prediction of orthologs is how the gene trees are build. By default orthoFinder uses distance matrices and fasttree to build the gene trees. This, while fast, can give faulty gene trees when dealing with more complex datasets. Once you are sure that your species tree is correct and that you are satisfied with the orthogroups, it is recommended that you do the orthology prediction using multiple sequence alignments (`mafft` is implemented in `OrthoFinder`) and make the gene trees using `IQ-TREE` (also implemented in `OrthoFinder`).
 
-In order to do the first, you can execute:
+In order to do the first, replace the running line in the script *orthofinder.run* with (**remember to also change job name!**):
 
 `orthofinder -fg FolderRun -s speciesTree_file -t 2 -M msa`
 
--M indicates you want to build trees using mafft as a multiple sequence aligner
+> Here, the flag `-M` indicates you want to build trees using mafft as a multiple sequence aligner
 
-Due to time constrains we will not run orthoFinder with iqtree. You would need to add -T iqtree to the command line.
+Due to time constrains we will not run `OrthoFinder` with `IQ-TREE`. You would need to add `-T iqtree` to the command.
 
-5.- Go to the Comparative_Genomics_Statistics, here you can find main statistics for the analysis you have run. Search for the following information:
+5.- Go to the *Comparative_Genomics_Statistics*, here you can find main statistics for the analysis you have run. Search for the following information:
 
+```ruby
 5.1.- Which two species have the highest number of orthologs?
 
 5.2.- Which kind of orthologous relationships are most common between bears (one-to-one? many-to-one?). Can you think of a scenario in which this could be different?
@@ -154,5 +177,6 @@ Due to time constrains we will not run orthoFinder with iqtree. You would need t
 6.4.- Search for the gene tree of this family, copy the newick and visualize it in phylo.io. With the tree next to you, search your results for information on duplication events. How many duplication events can you find? Are any of them specific for a single species.
 
 6.5.- Most of the duplications observed in the previous exercise were ancient, why do you think orthoFinder did not separate them? Were they separated in the analysis run with -I 3.0? If they were, and looking again to the gene tree, did the split make sense?
+```
 
 
