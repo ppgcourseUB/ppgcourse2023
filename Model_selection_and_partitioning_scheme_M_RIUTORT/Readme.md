@@ -183,7 +183,7 @@ search = rcluster;
 
 ### Run the two first analyses
 
-To execute the program you have to submit the job script *partition_finder.sh* using the `sbatch` command.
+To execute the program you have to submit the job script *partition_finder.run* using the `sbatch` command.
 Here you have the content of this script:
 
 ```
@@ -243,8 +243,8 @@ Make sure command 6 is set to greedy.
 search = greedy;
 ```
 
-Now, you can submit again the job script *partition_finder.sh*. Change the job name to prevent log files from being overwritten. 
-Modified script *partition_finder.sh*:
+Now, you can submit again the job script *partition_finder.run*. Change the job name to prevent log files from being overwritten. 
+Modified script *partition_finder.run*:
 
 ```
 #!/bin/bash
