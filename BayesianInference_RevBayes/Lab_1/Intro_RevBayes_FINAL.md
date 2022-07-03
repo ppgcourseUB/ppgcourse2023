@@ -98,8 +98,10 @@ x # print value of stochastic node 'x' ("1.256852")
 Vectors are containers that contain multiple variables of the same type. To create a vector with values
 
 ```
-Z <- v(1.0,2.0,3.0) # create a vector
-# or alternatively fill an empty vector one by one
+Z <- v(1.0,2.0,3.0) # create a vector "implicitly"
+Z # print the vector ("[ 1.000, 2.000, 3.000 ]")
+
+# or alternatively fill an empty vector one by one "explicitly
 Z[1] <- 1.0 # make the first element
 Z[2] <- 2.0 # make the second element
 Z[3] <- 3.0 # make the third element
@@ -127,7 +129,7 @@ q() # quitting RevBayes
 
 So far we've been using RevBayes *interactively*: by typing commands in line-by-line. Most often, however, we use *scripts*: a text file that contains a sequence of commands for the program to execute.
 
-You can "source" the contents of a script from RevBayes using the `source("name of file")` command (the quotation marks are critical!). Launch RevBayes with command  `rb` and source the "Intro.Rev" script that contains all commands above.
+You can *source* the contents of a script from RevBayes using the `source("name of file")` command (the quotation marks are critical!). Launch RevBayes with command  `rb` and source the `Intro.Rev` script that contains all commands above.
 
 ```
 source("Intro.Rev")
@@ -136,7 +138,7 @@ source("Intro.Rev")
 Alternatively, you can run the script file from the Terminal (outside RevBayes) with the command `rb`. OBS: In this case, we don't need the quotation marks!)
 
 ```
-rb "Intro.Rev"
+rb Intro.Rev
 ```
 
 ## Launching RevBayes with a bash file
