@@ -160,7 +160,7 @@ q()
 
 Once we quit RevBayes, we can visualize the output: the phylogeny and the clade statistical support (the *nodal posterior probabilities*), using the software *FigTree*, which you have used in previous classes. Open the file `bufo.trees` using FigTree and check clade support by clicking on *node labels: posterior* on the left pane.
 
-## Evaluating stationarity and mixing of the parameters
+## Evaluating stationarity and mixing of parameters
 
 We can also evaluate how well our MCMC analysis approximated the posterior distribution of each parameter in the model by using the software *Tracer*, which you know from previous classes. Open *Tracer* and read the output file `bufo.log`. Check the shape of the posterior distributions, the ESS values (should be > 200), and search for potential correlations between parameters.
 
