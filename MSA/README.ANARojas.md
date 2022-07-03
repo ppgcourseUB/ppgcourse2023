@@ -95,6 +95,9 @@ These proteins are usually multidomain, and also the subfamilies are distant, th
 
 `hmmalign -o OUTfile.fasta  <*.hmm> <YourBIG unaligned file>`.
 
+8.-  Visualise all the alignments using Jalview (https://www.jalview.org/) or Belvu (https://www.sanger.ac.uk/tool/seqtools/), and check for blosks of unalignable regions.
+
+
 
 
 ***
