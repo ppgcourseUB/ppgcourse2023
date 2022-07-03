@@ -12,7 +12,7 @@ Ana Rojas. Any question email me at a.rojas.m@csic.es
 - BLAST: https://blast.ncbi.nlm.nih.gov/Blast.cgi, we will use ALWAYS BLAST PROTEIN.
 - To retrieve the sequences: https://www.uniprot.org/
 
-== check if you have it istalled in the cluster: 
+==> check if you have it installed in the cluster: 
 - To make non redundant datasets: cd-hit http://weizhong-lab.ucsd.edu/cd-hit/ or http://weizhong-lab.ucsd.edu/cdhit-web-server/cgi-bin/index.cgi?cmd=cd-hit
 - Alignment method, mafft: https://mafft.cbrc.jp/alignment/software/source.html 
 - Alignment method,clustal omega: https://www.ebi.ac.uk/Tools/msa/clustalo/
@@ -38,7 +38,7 @@ Ana Rojas. Any question email me at a.rojas.m@csic.es
 
 ***
 
-## Exercise  1, BlockA
+## Exercise  1: BlockA, ALIGNING bear sequences.
 
 To get familiar with methods and visualisers.
 
@@ -50,6 +50,7 @@ To get familiar with methods and visualisers.
 
 
 A shell example will be this using MAFFT with default parameters:
+
 `(shopt -s failglob; for A in *.ufasta; do mafft ${A} > ${A}.mfft; done)`
 
 `(shopt -s failglob; for i in *.mfft; do  mv $i ${i%.ufasta.mfft}.mfft.fasta; done)`
@@ -63,7 +64,7 @@ A shell example will be this using MAFFT with default parameters:
 
 8.- Select any protein of the five alignments and IDENTIFY the proteins included in the alignment via BLAST or HMMER.
 
-## Exercise (or example, etc..) 2
+## Exercise 2: Block B, PROTEIN FAMILIES
 
 In this Block you are going to analyse TWO big superfamilies of proteins (GTPasas and Nuclear Receptors). These families are essential signalling proteins. We want to analyse the presence of these proteins in our Bears. 
 These proteins are usually multidomain, and also the subfamilies are distant, therefore posing a challenge for MSA.
@@ -100,14 +101,16 @@ These proteins are usually multidomain, and also the subfamilies are distant, th
 
 <br>**QUESTIONS (or other actions)**</br>
 - Are the sequences of your alignments in both blocks single/multidomain?
-- 
+
 - Which part of the sequence you have in your alignments?
-- 
+
 - How diverse are your alignments overall on each block?
-- 
+
 - which method works best for less similar sequences?
-- 
+
 - Does randomising sequence order affect the final alignment?
-- 
+
 - Why do I need to use a profile?
+
+- Have I recovered all the Bear sequences belonging to this protein families?
 
