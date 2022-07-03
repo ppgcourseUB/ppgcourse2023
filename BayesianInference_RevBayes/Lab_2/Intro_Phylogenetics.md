@@ -4,7 +4,7 @@ We are going to program a Bayesian inference phylogenetic analysis in RevBayes u
 
 ## Data description and access
 
-We are going to reconstruct the phylogeny of genus *Bufo* using a molecular dataset with three loci.
+We are going to reconstruct the phylogeny of genus *Bufo* using a molecular dataset with two loci.
 * First, create a folder on your home directory and name it `lab_2`. Inside this folder, create a second folder and name it `data`. Copy the *cytB.nex* and *16S.nex* files containing the sequences for these two mitochondrial markers from the pggcourse website into the `lab_2/data` folder. 
 * Additionally, copy the file `my_phylogenetics_analysis.Rev` in the `lab_2` folder; we will need it later.
  
@@ -21,9 +21,9 @@ Navigate to the `lab_2` directory. Launch RevBayes by typing `rb` into the comma
 
 ## Constructing the phylogenetic model *interactively*
 
-### Reading sequence data
+### Reading the sequence data
 
-We have special functions that read alignments in `.nexus` or `.fasta` formats (among others). We read the alignments of the _cytB_ and _16S_ genes using the `readDiscreteCharacterData` function:
+We have special functions that read alignments in `.nexus` or `.fasta` formats (among others). We read the alignments of the _cytb_ and _16s_ genes using the `readDiscreteCharacterData` function:
 
 ```
 # read in cytb and 16S data
@@ -31,7 +31,7 @@ data_cytb = readDiscreteCharacterData("data/cytb.nex")
 data_16s  = readDiscreteCharacterData("data/16s.nex")
 ```
 
-We "concatenate" the two datasets into a single alignment. We also extract some useful information from the alignment that we will need later.
+We *concatenate* the two datasets into a single alignment. We also extract some useful information from the alignment that we will need later.
 ```
 # concatenate them into one alignment
 data = concatenate(data_cytb, data_16s)
@@ -47,7 +47,7 @@ num_sites = data.nchar()
 ### Creating a vector of movement proposals for `MCMC`
 REMEMBER that in Bayesian Inference, a simulation approach called *Markov Chain Monte Carlo* is used to approximate the posterior probability of the phylogenetic model, as we cannot estimate this quantity analytically. For this, a composite *continuous-time Markov Chain* process (`CTMC`) with as many variables as parameters in the model is constructed, which has as its stationary distribution the posterior probability we wish to estimate. Using *Monte Carlo* simulations coupled with the *Metropolis-Hastings* algorithm, we update starting random values for each parameter in such a way that we approximate the stationary distribution by maximizing the likelihood in each step of the `CTMC` (climbing the "mountain") but occasionally allowing for a decrease in the (ln) Lk value. 
 
-To perform this *updating*, we need movement proposals for each parameter, whose type depend on the parameter itself, e.g., *sliding window* for uniform parameters, *scale values* for rate parameters. Each movement proposal is accompanied by a *weight*, a constant variable assigned a fixed value, which determines how often the parameter is updated during the MCMC analysis, the higher the weight , the more frequent the movement.
+To perform this *updating*, we need movement proposals for each parameter, whose type depend on the parameter itself, e.g., *sliding window* for uniform parameters, *scale values* for rate parameters. Each movement proposal is accompanied by a *weight*, a constant variable with an assigned fixed value, which determines how often the parameter is updated during the MCMC analysis: the higher the weight, the more frequent the movement.
 
 First, we create an empty vector, called `move_index`, which we will populate with the different *movement proposals* we need for each parameter in the model. The alternative option is to define a *move* after we define a parameter, but using this vector allows us to keep track of how many moves we have to create.
 
@@ -81,15 +81,15 @@ TL := sum(br_lens)
 ```
 
 ### Creating the phylogram
-A "phylogram" is a tree with branch lengths measured in the expected number of substitutions. We create a deterministic variable `phylogeny` to wrap the topology and branch lengths together into a phylogram using the function `treeAssembly`. Notice that because this is a deterministic node, we do not need to define movement proposals as with and stochastic variables `br_lens` and `topology`.
+A "phylogram" is a tree with branch lengths measured in the expected number of substitutions. We create a deterministic variable `phylogeny` to wrap the topology and branch lengths together into a phylogram using the function `treeAssembly`. Notice that because this is a deterministic node, we do not need to define movement proposals, as we did for the stochastic variables `br_lens` and `topology`.
 
 ```
 phylogeny := treeAssembly(topology, br_lens)
 ```
 ### Specifying the substitution model
-The last component of the model is the substitution model (the `Q matrix`), which comprises two different types of parameters: the _exchangeability rates_ (`er`) and the _stationary frequencies_ (`pi`). In this analysis, we will use the _GTR_ substitution model, in which there are six rates and four frequencies, 10 stochastic parameters. Notice that in a GTI (time-irreversible) model, there would four frequencies but 12 rates. 
+The last component of the model is the substitution model (the `Q matrix`), which comprises two different types of parameters: the _exchangeability rates_ (`er`) and the _stationary frequencies_ (`pi`). In this analysis, we will use the _GTR_ substitution model, in which there are six rates and four frequencies, 10 stochastic parameters. Notice that in a _GTI_ (time-irreversible) model, there would four frequencies but 12 rates. 
 
-We assign a prior *Dirichlet* distribution to the stationary frequencies, a multinomial distribution in which each frequency has its own prior but the sum of priors equals to 1. Below, all priors are made equally probable. We assign the same type of prior to the rates. Each prior is updated simultaneously with the same movement.
+We assign a prior *Dirichlet* distribution to the stationary frequencies, a multinomial distribution in which each frequency has its own prior but the sum of priors equals to 1. Below, all priors are made equally probable. We assign the same type of Dirichlet prior to the rate parameters. Each of these priors is updated simultaneously in the same movement proposal.
 
 Finally, we construct a deterministic variable, the `Q matrix` by wrapping together the `er` and `pi` parameters using the function `fnGTR`. 
 
@@ -105,9 +105,9 @@ Q := fnGTR(er, pi)
 
 ### Specifying the likelihood function for the `CTMC` process
 
-We construct a stochastic node, the `seq` variable, which is assigned a prior that is updated using the `dnPhyloCTMC` distribution; this function takes as values the *phylogeny* and *Q matrix* variables. We need to specify the type of data *DNA* because a CTMC can also be used with morphological data.
+We construct a stochastic node, the `seq` variable, and assign it a prior that is updated using the `dnPhyloCTMC` distribution; this function takes as arguments the *phylogeny* and *Q matrix* variable values. We need to specify the type of data (*DNA*) because a CTMC can also be used with morphological data.
 
-We them "clamp" the seq variable to the observed data, i.e., the alignment. This tells RevBayes to treat the random variable as an observation. OBS: If we want to sample from the prior, we comment out (#) the last line.
+We them "clamp" the seq variable to the observed data, i.e., the alignment. This tells RevBayes to treat the random variable as an observation. OBS: If we want to sample from the prior, we need to comment out (#) the last line.
 
 ```
 seq ~ dnPhyloCTMC(tree=phylogeny, Q=Q, type="DNA")
@@ -158,11 +158,11 @@ q()
 ```
 ## Visualizing the phylogeny and clade support
 
-Once, we quit RevBayes, we can visualize the output, the phylogeny and clade statistical support (the nodal posterior probabilities), using the software *FigTree*, which you have used in previous practices. Open the file `bufo.trees` using FigTree and check clade support clicking on *node values* on left window.
+Once we quit RevBayes, we can visualize the output: the phylogeny and the clade statistical support (the *nodal posterior probabilities*), using the software *FigTree*, which you have used in previous classes. Open the file `bufo.trees` using FigTree and check clade support by clicking on *node labels: posterior* on the left pane.
 
 ## Evaluating stationarity and mixing of the parameters
 
-We can also evaluate how well our MCMC analysis approximated the posterior distribution of all the parameters in the model by using the software *Tracer*, which you know from previous practices. Open *Tracer* and read the output file `bufo.log`. Check the shape of the posterior distributions, the ESS values (should be > 200), and search for potential correlations between parameters.
+We can also evaluate how well our MCMC analysis approximated the posterior distribution of each parameter in the model by using the software *Tracer*, which you know from previous classes. Open *Tracer* and read the output file `bufo.log`. Check the shape of the posterior distributions, the ESS values (should be > 200), and search for potential correlations between parameters.
 
 # Exercises
 
