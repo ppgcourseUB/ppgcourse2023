@@ -60,7 +60,7 @@ ln(1)             # natural logarithmic function
 sqrt(16)          # square root function
 power(2,2)        # power function: power(a,b) = a^b
 ```
-# Variables
+## Variables
 One of the most important features of RevBayes is the ability to declare and assign variables. There are three types of variables, called _constant_, _deterministic_, and _stochastic_ variables. Variables are also the "nodes" in the directed acyclical graphs that are used to create the RevBayes models.
 
 _Constant variables_ contain values that adopt fixed values. The left arrow (`<-`) creates a constant variable and automatically assign the following value to it. Here, we create the constant node `a` and assign a value of `1`. We can print the value by typing `a` and pressing enter.
