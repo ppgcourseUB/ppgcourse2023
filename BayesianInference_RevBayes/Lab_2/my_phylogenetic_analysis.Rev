@@ -1,0 +1,107 @@
+# We are going to run a MCMC phylogenetic chain
+
+# read in cytb and 16s data
+data_cytb = readDiscreteCharacterData("data/cytb.nex")
+data_16s = readDiscreteCharacterData("data/16s.nex")
+
+# concatenate them into one alignment
+data = concatenate(data_cytb, data_16s)
+
+# get some useful information about the data
+# As in R, data.nchar is a function "nchar" that retrieves the number of characters from "data"
+taxa = data.taxa()
+num_taxa = data.ntaxa()
+num_branches = 2 * num_taxa - 3
+num_sites = data.nchar()
+
+# make a "move index" variable. It creates an empty vector where we store the movements, one for each parameter.
+move_index = 0
+# Two options:
+# move_index++ # use the current value of move_index and then increase by 1
+# ++move_index # increase the move_index by 1 and then use the new value
+
+# We assume a uniform prior on topology.
+topology ~ dnUniformTopology(taxa)
+moves[++move_index] = mvNNI(topology, weight=10.0)
+moves[++move_index] = mvSPR(topology, weight=10.0)
+
+# specify prior on branch lengths
+for(i in 1:num_branches){
+br_lens[i] ~ dnExponential(10.0)
+moves[++move_index] = mvScale(br_lens[i], weight=1.0)
+}
+TL := sum(br_lens)
+
+# By using moves[++move_index], we can have a vector that stores the moves without need to specify them, one by one.
+# The move_index will be automatically updated with a new movement. By having **move_index, we are saying, create a
+# new element in the vector of movements a priori and then populate it.
+# Alternatively, we could do it parameter after parameter, in this case branch lengths up to 2n - 3, where n = number of taxa
+
+# br_lens[1] ~ dnExponential(10.0)
+# moves[1] = mvScale(br_lens[1], weight=1.0)
+
+# br_lens[2] ~ dnExponential(10.0)
+# moves[2] = mvScale(br_lens[2], weight=1.0)
+
+# br_lens[3] ~ dnExponential(10.0)
+# moves[3] = mvScale(br_lens[3], weight=1.0)
+
+# OBS: We assign larger "weight" value to topology movements because this is a more difficult parameter than others such as br_lens and substitution parameters
+# The acceptance rate for topology proposals is low (c. 5%), compared to 20% for other parameters. So we put more effort on these movements and assign a larger weight
+# We spend more time updating the topology parameter, doing NNI and SBR movements, than for any other parameter.
+
+# Create a deterministic node connecting topology and branch lengths
+
+phylogeny := treeAssembly(topology, br_lens)
+
+# Specify the substitution model
+
+# Stationary frequencies
+pi ~ dnDirichlet(v(1,1,1,1))
+moves[++move_index] = mvDirichletSimplex(pi, weight=1.0)
+
+# exchangeability rates
+er ~ dnDirichlet(v(1,1,1,1,1,1))
+moves[++move_index] = mvDirichletSimplex(er, weight=1.0)
+
+# Q matrix, which is dependent on r and pi, and therefore deterministic
+
+Q := fnGTR(er, pi)
+
+# Specify the likelihood function. We use the inbuilt function dnPhyloCTMC
+
+seq ~ dnPhyloCTMC(tree=phylogeny, Q=Q, type="DNA")
+
+# By clamping the observed data to the seq variable, we are telling RB to treat seq as an observation.
+seq.clamp(data) # attach the observed data
+
+
+# Running the analysis
+
+#########################
+# Make the model object #
+#########################
+my_model = model(Q)
+
+######################
+# Make the monitors. #
+######################
+monitors[1] = mnModel(filename="output_phylogenetic/bufo.log",printgen=100, separator = TAB)
+monitors[2] = mnFile(filename="output_phylogenetic/bufo.trees",printgen=100, separator = TAB, phylogeny)
+monitors[3] = mnScreen(printgen=100, TL)
+
+################
+# Run the MCMC #
+################
+analysis = mcmc(my_model, monitors, moves)
+analysis.run(generations=100000)
+
+###################
+# Summarize the tree distribution and estimate the MAP tree with PP values
+
+# start by reading in the tree trace
+treetrace = readTreeTrace("output_phylogenetic/bufo.trees", treetype="non-clock")
+map_tree = mapTree(treetrace,"output_phylogenetic/bufo_MAP.tree")
+
+# exit the program
+q()
