@@ -1,0 +1,60 @@
+# Intro. Rev
+# Some useful commands to learn the RevBayes language
+
+# Simple mathematical operators:
+1 + 1             # Addition
+5 * 5             # Multiplication
+2^3               # Exponentiation
+
+1 + 3; 4 / 2 # Multiple statements in one line
+
+
+
+# Math functions:
+exp(1)            # exponential function
+ln(1)             # natural logarithmic function
+sqrt(16)          # square root function
+power(2,2)        # power function: power(a,b) = a^b
+
+# Variables
+
+# variable assignment constant
+a <- 1 # assignment of constant variable 'a'
+a      # printing the value of 'a'
+
+
+
+# Variable assignment: deterministic
+b := exp(a)
+b # printing the value of 'b' ("2.718282")
+# Assigning another value to 'a' changes the value of 'b'
+a <- 2
+b # printing the new value of 'b' ("7.389056")
+
+
+# Variable assignment: stochastic
+# First, we assign a value to the lambda parameter governing the exponential distribution
+lambda <- 1.0
+# Next, we create the stochastic variable with values drawn from this exponential distribution
+x ~ dnExponential(lambda)
+x # print value of stochastic node 'x' ("1.256852") 
+
+
+## Vectors
+
+
+Z <- v(1.0,2.0,3.0) # create a vector
+# or alternatively fill an empty vector one by one
+Z[1] <- 1.0 # make the first element
+Z[2] <- 2.0 # make the second element
+Z[3] <- 3.0 # make the third element
+Z # print the vector ("[ 1.000, 2.000, 3.000 ]")
+
+
+## `for` Loops
+for (i in 1:100) {
+  i
+}
+
+
+# q() # quitting RevBayes
