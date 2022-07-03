@@ -148,7 +148,7 @@ Finally, we can use a bash file if we are running the script within a cluster. B
 rb Intro.Rev > output.txt
 exit
 ```
-To run this bash file, we can type
+To run this bash script, we can type:
 
 ```
 bash myScript.sh
