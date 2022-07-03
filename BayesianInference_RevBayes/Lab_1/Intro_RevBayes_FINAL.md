@@ -31,7 +31,7 @@ cp -p myScript.sh lab1/
 
 
 ## Launching RevBayes
-Navigate to your `Home/lab_1` directory. Launch RevBayes by typing `rb` into the command line. This should launch RevBayes and give you a command prompt (the `>` character); this means RevBayes is waiting for input.
+Navigate to your `lab_1` directory. Launch RevBayes by typing `rb` into the command line. This should launch RevBayes and give you a command prompt (the `>` character); this means RevBayes is waiting for input.
 
 The _working directory_ is the directory that RevBayes is currently working in. When you tell RevBayes to look up a file in a particular path, the path you provide is interpreted _relative_ to the working directory. You can print the current working directory using the `getwd()` command.
 
@@ -125,7 +125,7 @@ q() # quitting RevBayes
 
 ## Scripts
 
-So far we've been using RevBayes "interactively": by typing commands in line-by-line. Most often, however, we use "scripts": a text file that contains a sequence of commands for the program to execute.
+So far we've been using RevBayes *interactively*: by typing commands in line-by-line. Most often, however, we use *scripts*: a text file that contains a sequence of commands for the program to execute.
 
 You can "source" the contents of a script from RevBayes using the `source("name of file")` command (the quotation marks are critical!). Launch RevBayes with command  `rb` and source the "Intro.Rev" script that contains all commands above.
 
@@ -141,7 +141,7 @@ rb "Intro.Rev"
 
 ## Launching RevBayes with a bash file
 
-Finally, we can use a bash file if we are running the script within a cluster. Below is an example of a bash file to run the "Intro.Rev" script in RevBayes. Because we are running in a cluster, we need to include a command for the output to be saved. You can find this script `myScript.sh` in the `lab_1` folder.
+Finally, we can use a bash file if we are running the script within a cluster. Below is an example of a bash file to run the `Intro.Rev` script in RevBayes. Because we are running in a cluster, we need to include a command for the output to be saved. You can find this script `myScript.sh` in the `lab_1` folder.
 
 ```
 #!/bin/bash
