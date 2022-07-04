@@ -1,5 +1,7 @@
 # ORTHOLOGY PREDICTION FOR PHYLOGENOMIC ANALYSES 
 
+**Instructor**: Marina Marcet-Houben
+
 The objective of this practice is to learn how to use [OrthoFinder](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1832-y) to infer orthogroups that can then be used to do a phylogenomics analysis.
 
 ***
