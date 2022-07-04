@@ -49,11 +49,10 @@ Here you can see the contents of the script *orthofinder.run*:
 module load orthofinder
 
 #running orthofinder
-orthofinder -f proteomes_parsed
+orthofinder -f proteomes_parsed -og
 ```
 
-> The flag -f indicates the folder where the proteomes are found and -t indicates the number of threads
-available to you.
+> The flag -f indicates the folder where the proteomes are found. The -og option will tell orthoFinder to stop after inferring the orthogroups.
 
 2.- While the program works, lets have a look to the options that `OrthoFinder` has. Open a new terminal
 and type `orthofinder -h`
