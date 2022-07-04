@@ -14,4 +14,4 @@ module load transdecoder # [update with the version installed in the cluster]
 
 # jobs to launch
 
-TransDecoder.LongOrfs -t ./4trinity/Trinity.fasta 
+TransDecoder.LongOrfs -t ./4trinity/Trinity.fasta --output_dir ./7proteome/
