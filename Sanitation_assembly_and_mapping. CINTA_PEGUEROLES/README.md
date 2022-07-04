@@ -128,7 +128,7 @@ for file in ./2trimmed_data/*fq.gz;
 
 To launch fastQC_loop.sh script in the cluster write on the terminal:
 ```
-sbatch scripts/fastqc_loop.run
+sbatch scripts/fastQC_loop.run
 ```
 Use "s_jobs" command to check the state of the process. To check the results you need to download the files on a local computer. WARNING: mind to change the paths accordingly
 ```
