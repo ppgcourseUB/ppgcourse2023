@@ -109,10 +109,38 @@ module load clustal-omega
 (shopt -s failglob; for i in ./BlockA/groups_to_align/*.clustalo; do  mv $i ${i%.ufasta.clustalo}.clustalo.fasta; done)
 ```
 
-4.- Select 5 alignments of your choice (from most similar to more divergent), and randomise the order of your sequences within the group and repeat step number 3. 
+4.- Select 3 alignments of your choice (from most similar to more divergent), and randomise the order of your sequences within the group (see below) and repeat step number 3. 
+
+To randmise the order you have several options:
+
+---- using the bbmap package
 
 To randomise files you can: `shuffle.sh in=file.fa out=shuffled.fa`  
+
 To extract the 1% of files you can `reformat.sh in=file.fa out=sampled.fa samplerate=0.01`
+
+----- 
+An alternative using awk. 
+
+0.- You need to count the number of sequences in advance: type ` grep ">" FILE.fa| wc`, this gives you the number of sequences of your files.
+Example if the fasta file to randomize (order of sequences) has 10 sequences: `example.fa`.
+
+Before randomising, sequences  need to be lienarised first:
+
+type `cat example.fa | awk '/^>/ {printf("%s%s\t",(N>0?"\n":""),$0);N++;next;} {printf("%s",$0);} END {printf("\n");}'`. 
+
+1.- You need to shuffle the lines.
+
+For MacOX, which does not have `shuf` command, do the following: `brew install randomize-lines`, and use the command `rl`.
+
+For Linux, use the command `shuf`.
+
+2.- Type the following command to create your randomised files.
+
+For MacOX ==> `cat example.fa | awk '/^>/ {printf("%s%s\t",(N>0?"\n":""),$0);N++;next;} {printf("%s",$0);} END {printf("\n");}' | rl -c 10 | head -n 10 | awk '{printf("%s\n%s\n",$1,$2)}' > example_random.fa` 
+
+For Linux,==>  `cat example.fa | awk '/^>/ {printf("%s%s\t",(N>0?"\n":""),$0);N++;next;} {printf("%s",$0);} END {printf("\n");}' | shuf | head -n 10 | awk '{printf("%s\n%s\n",$1,$2)}' > example_random.fa`
+
 
 
 5.- Visualise all the alignments using Jalview (https://www.jalview.org/) or Belvu (https://www.sanger.ac.uk/tool/seqtools/) [*local work*]. **Remember that to do that you must download the data from your personal computers first. In your local folder, type `scp -r user@host:/folder_to_download.`**
