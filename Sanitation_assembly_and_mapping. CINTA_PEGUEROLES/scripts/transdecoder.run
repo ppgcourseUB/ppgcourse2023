@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# define names
+#SBATCH --job-name=transdecoder
+#SBATCH --error transdecoder-%j.err
+#SBATCH --output transdecoder-%j.out
+
+# memory and CPUs request
+#SBATCH --mem=6G
+#SBATCH --cpus-per-task=8
+
+# module load
+module load transdecoder # [update with the version installed in the cluster]
+
+# jobs to launch
+
+TransDecoder.LongOrfs -t ./4trinity/Trinity.fasta 

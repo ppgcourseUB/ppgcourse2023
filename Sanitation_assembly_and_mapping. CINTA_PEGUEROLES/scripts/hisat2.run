@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# define names
+#SBATCH --job-name=hisat2
+#SBATCH --error hisat2-%j.err
+#SBATCH --output hisat2-%j.out
+
+# memory and CPUs request
+#SBATCH --mem=6G
+#SBATCH --cpus-per-task=8
+
+# module load
+module load hisat2
+
+# jobs to launch
+hisat2-build ./4trinity/Trinity.fasta ./4trinity/Trinity
+hisat2 -p 10 -x ./4trinity/Trinity -1 ./2trimmed_data/reads_1.P.fq.gz -2 ./2trimmed_data/reads_2.P.fq.gz -S ./6QC_trinity/reads.sam &> ./6QC_trinity/reads.sam.info

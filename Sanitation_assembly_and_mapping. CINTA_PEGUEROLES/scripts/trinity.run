@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# define names
+#SBATCH --job-name=trinity
+#SBATCH --error trinity-%j.err
+#SBATCH --output trinity-%j.out
+
+# memory and CPUs request
+#SBATCH --mem=6G
+#SBATCH --cpus-per-task=8
+
+# module load
+module load trinity 
+
+# jobs to launch
+Trinity --left ./2trimmed_data/reads_1.P.fq.gz --right ./2trimmed_data/reads_2.P.fq.gz --seqType fq --normalize_reads --normalize_max_read_cov 30 --max_memory 6G --CPU 8 --output ./4trinity
