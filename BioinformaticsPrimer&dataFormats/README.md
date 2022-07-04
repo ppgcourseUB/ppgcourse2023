@@ -7,10 +7,7 @@ In this session we will learn some basic bash commands. First we will create the
 
 ```
 mkdir session1
-mkdir session2
-cd session2
-mkdir 0data
-cd ../session1
+cd session1
 ```
 
 ### Downloading data:
