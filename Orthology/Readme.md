@@ -137,12 +137,12 @@ Due to time constrains we will not run `OrthoFinder` with `IQ-TREE`. You would n
 
 6. We will analyse the orthogroup OG0000001 which should contain protein A0A7N5K5T5_AILME. If for some reason it does not search for the orthogroup that contains this protein and analyse that one.
 
-``diff
+```diff
 - 6.1.- Go to the first set of results and check how many members this family has. Can you tell only from the orthogroup information which proteins are orthologs and which ones are paralogs?
 
 - 6.2.- Now go to the last results. Go to the Orthologues folder and search for the orthologs to A0A7N5K5T5_AILME. How many do you find?
 
-- 6.3.- Are they all one-to-one orthologs?
+- 6.3.- Are they all one-to-one orthologs? ```
 
 - 6.4.- Search for the gene tree of this family, copy the newick and visualize it in phylo.io. With the tree next to you, search your results for information on duplication events. How many duplication events can you find? Are any of them specific for a single species.
 
