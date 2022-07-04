@@ -283,7 +283,7 @@ We will use `transdecoder` to get our predicted proteome. First, we will create 
 First we will create/edit a bash script to run `transdecoder` software (*transdecoder.run*):
 
 ```
-mkdir 6proteome
+mkdir 7proteome
 ```
 
 ```
