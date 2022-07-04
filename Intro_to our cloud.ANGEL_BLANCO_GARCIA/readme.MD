@@ -23,7 +23,9 @@ You can access the cluster by connecting to the login node.You can only access t
 
 * **Command line access**: Needed for launching jobs on the cluster. Use any relatively recent ssh client:
     - **Linux**: open any terminal program and type (replace 'user' and 'loginnodeaddress' accordingly):
-    `ssh user@loginnodeaddress`
+ 
+    `> ssh user@loginnodeaddress`
+    
     - **Windows**:
         - Using **[WSL](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux)** (Windows Subsystem for Linux): open the command line application an type the previous ssh command)
         - Using alternative free programs:
@@ -57,13 +59,13 @@ Depending on each case, the data needed for your jobs may need to be downloaded 
 
 Each specific software that you run in a SLURM job may need one or mode modules to be loaded. Use the '*module load*' command to **load a module**:
 
-```
+```bash
 > module load fastqc
 ```
 
 You can **search for modules** with the '*module spider*' command (you can search for partial names):
 
-```
+```bash
 > module spider trimmo
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -80,7 +82,7 @@ You can **search for modules** with the '*module spider*' command (you can searc
 
 You can use '*module list*' to *get a list of your currently loaded modules*:
 
-```
+```bash
 > module list
 
 Currently Loaded Modules:
@@ -92,8 +94,8 @@ Currently Loaded Modules:
 
 To **unload a module** use '*module unload*':
 
-```
-module unload fastqc
+```bash
+> module unload fastqc
 ```
 
 Sometimes you would need to unload all your loaded modules to ensure there are no module incompatibilities before loading a specific module. You can **unload all your loaded modules** with '*module purge*'.
@@ -108,7 +110,7 @@ You can submit jobs to SLURM directly with a command, or use the batch mode whic
 
 Next you can see an example of a batch file for submitting a job that submits *Orthofinder* to SLURM:
 
-```
+```bash
 !/bin/bash                                                                                                             
 
 ##This is a script to run orthofinder                                                        
@@ -132,16 +134,16 @@ Some relevant bits in this script:
 
 * '**-p**' : SLURM option to set the partition (roughly equivalent to queue with other similar software)
 * '**-c**' :  SLURM option to set the CPUs (in this case threads, simultaneous tasks inside the same program process) that SLURM will allocate. It must be bigger or equal to the particular value set for the specific command line of the program you are going to run in this job.
-* '**--job-name**' : SLURM option to set a name for the job, so you can identify more easily
-* '**--mem**' : SLURM option to allocate an amout of RAM memory for the job.
-* '**-o**' : File for the the job's output messages. Not that % translates to the number identifier of the job, which is an integer that will be showed to you when you submit the job
-* '**-e**' : File for the job's error messages (if any). Note that % is used again.
+* '**--job-name**' : SLURM option to set a name for the job, so you can identify it more easily.
+* '**--mem**' : SLURM option to allocate an amout of RAM for the job.
+* '**-o**' : File for the the job's output messages. Note that '***%***' translates to the number identifier of the job, which is an integer that will be showed to you when you submit the job
+* '**-e**' : File for the job's error messages (if any). Note that '%' is used again.
 
 Next, you have other commands that may be needed to run correctly the program specified below. In this case we load the needed modules directly from this script. For instance. We could also set other needed environment variables, create directories for the results (**mkdir**), create files with some content for input or configuration of the program, remove temporary files that could have been left from other runs...
 
 And finally, we have the actual main command we want to run, in this case:
 
-```
+```bash
 orthofinder -f proteomes -og -t 8
 ```
 
@@ -154,39 +156,40 @@ This is just a simple example, but there are many other SLURM options that can b
 
 To **submit a job** based on a batch file, the '***sbatch***' command is used, followed by the name (including path if needed) of the run script:
 
-```
+```bash
 > sbatch orthofinder.run
 ```
 
 After hitting enter SLURM will show you the job ID.
 
-#### **Checking your submitthed jobs**
+#### **Checking your submitted jobs**
 
 Once the job is submitted, you **can check its state in several ways**. Just 2 examples:
 
 * **default simple *squeue* query**:
 
-```
+```bash
 > squeue
 
 JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
    92    normal orthofin     alex  R       0:14      1 ip-192-168-1-101
 ```
+If there are many jobs on this list, you can show only your user's jobs adding the '***-u***' parameter followed by your user name.
 
 * **complex *squeue* query** (we can specify a list of individual information fields and format to be displayed), including the **CPUs allocated** for the job:
 
-```
+```bash
 >squeue -o"%.7i %.9P %.8j %.8u %.2t %.10M %.6D %C"
 
 JOBID PARTITION     NAME     USER ST       TIME  NODES CPUS
     94    normal orthofin     alex  R       0:02      1 8
 ```
 
-Note that the state of the jobs in these cases is 'R', which means running. If the sate is 'W', it would mean that there are no resources available on any node to run the job. SLURM will keep it waiting until there are resources available, and then run it.
+Note that the state of the jobs in these cases is 'R', which means running. If the sate is 'PD', it would mean that there are no resources available on any node to run the job. SLURM will keep it waiting until there are resources available, and then run it.
 
 You can **check the state of the computing nodes** with a query like this for example:
 
-```
+```bash
 > sinfo -lNe
 
 NODELIST          NODES PARTITION       STATE CPUS    S:C:T MEMORY TMP_DISK WEIGHT AVAIL_FE REASON              
