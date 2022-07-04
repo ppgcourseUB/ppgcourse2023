@@ -26,19 +26,21 @@ Any question email me at a.rojas.m@csic.es
 
 ## Data description and access
 
-`MSA/BlockA/groups_to_align/*.ufasta`
+`MSA/BlockA/groups_to_align/*.ufasta`         <== Groups of alignments, first identify proteins.
 
-`MSA/BlockB/queries/GTP_query2launch.txt`
+`MSA/BlockB/queries/GTP_query2launch.txt`      <== Queries to extract hits from BLAST
 
-`MSA/BlockB/queries/NR_query2launch.txt`
+`MSA/BlockB/queries/NR_query2launch.txt`       <== Queries to extract hits from BLAST
 
-`MSA/BlockB/templates/GTP_template_aln.hmm`
+`MSA/BlockB/templates/GTP_template_aln.hmm`     <== A hmm profile of a region of Small GTPases
 
-`MSA/BlockB/templates/GTP_template_aln.ufasta`
+`MSA/BlockB/templates/GTP_template_aln.ufasta`  <== Full sequences of GTPases 
 
-`MSA/BlockB/templates/NR_template_aln.hmm`
+`MSA/BlockB/templates/NR_template_aln.hmm`      <== A hmm profile of a region of Nuclear Receptors
 
-`MSA/BlockB/templates/NR_template_aln.ufasta`
+`MSA/BlockB/templates/NR_template_aln.ufasta`   <== Full sequences  Nuclear Receptors
+
+`example.fa` example file to test how to randomise sequences' order using awk.
 
 ***
 
