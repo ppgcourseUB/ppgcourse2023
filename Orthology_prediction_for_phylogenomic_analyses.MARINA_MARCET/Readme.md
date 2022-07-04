@@ -110,32 +110,32 @@ This will generate a second folder which will be called *Results_Jul06_1* where 
 
 ## Exercise 3
 
-Orthogroups can contain duplications which means we can have a mix of orthologs and paralogs. `OrthoFinder` implements a method to distinguish between them, but to do that it needs a species tree as reference. `OrthoFinder` tries to calculate the species tree on its own. We will go back to using the first run of the program. In that folder you should see a folder called *Species_tree* and in there is a file called *SpeciesTree_rooted.txt*
+Orthogroups can contain duplications which means we can have a mix of orthologs and paralogs. `OrthoFinder` implements a method to distinguish between them. This time we will ask `OrthoFinder` to start from the orthogroups and to finish the process till the end.
+
+Replace the running line in the script *orthofinder.run* with (**remember to also change job name!**):
+
+`orthofinder -fg proteomes/OrthoFinder/Results_Jul06/`
+
+> In this case the -fg option is telling `OrthoFinder` to use the orthogroups previously calculated to run the analaysis for orthology
+
+Now, to correctly predict orthologous relationships a species tree is needed as reference. `OrthoFinder` tries to calculate the species tree on its own but you should always make sure the tree it has inferred is correct and rooted properly. Go to the results folder (proteomes/OrthoFinder/Results_Jul06_3) where you should see a folder called *Species_tree* and in there is a file called *SpeciesTree_rooted.txt*
 
 1.- Check the species tree that has been automatically build by `OrthoFinder`. You can download the file to your personal computer and use `phylo.io` (
 http://phylo.io/) to visualize the tree:
 
 ```diff
-- Based on your knowledge on how bears have evolved, do you see anything wrong with this species tree?
+- Based on your knowledge on how bears have evolved, is the tree correct?
 ```
 
-2.- If the tree is not rooted correctly, re-root the tree by clicking on the branch and pressing on re-root (make sure you press on the branch and not on the species name!). Now export the newick (find the button on the upper right part of the image, press on export nwk). Save the file into your folder.
-
-3.- As before we are not going to re-run the whole pipeline. This time we will start from the pre-calculated orthogroups and will just change the species tree.
+2.- If the tree is not rooted correctly, re-root the tree by clicking on the branch and pressing on re-root (make sure you press on the branch and not on the species name!). Now export the newick (find the button on the upper right part of the image, press on export nwk). Save the file into your folder and run orthofinder again with the option -s speciesTree_file.
 
 Replace the running line in the script *orthofinder.run* with (**remember to also change job name!**):
 
 `orthofinder -fg proteomes/OrthoFinder/Results_Jul06/ -s speciesTree_file`
 
-> In this case, the flag `-fg` indicates you want to re-run an analysis from the orthogroups on, and `-s` indicates you will provide a user defined species tree
-
-Running this will generate a new folder, which will contain the new results. 
-
 > Note that if you have a species tree before running `OrthoFinder` it is more convenient to just provide it from the start using the `-s` option. Just make sure that the name of the proteome files are the same as the ones found in the species tree. 
 
-Additionally it is possible that in this toy example with very few species the change in species tree will have little effect on the prediction of orthologs, but this can change in more complicated scenarios.
-
-4.- Other things that will affect the prediction of orthologs is how the gene trees are build. By default orthoFinder uses distance matrices and fasttree to build the gene trees. This, while fast, can give faulty gene trees when dealing with more complex datasets. Once you are sure that your species tree is correct and that you are satisfied with the orthogroups, it is recommended that you do the orthology prediction using multiple sequence alignments (`mafft` is implemented in `OrthoFinder`) and make the gene trees using `IQ-TREE` (also implemented in `OrthoFinder`).
+3.- Other things that will affect the prediction of orthologs is how the gene trees are build. By default orthoFinder uses distance matrices and fasttree to build the gene trees. This, while fast, can give faulty gene trees when dealing with more complex datasets. Once you are sure that your species tree is correct and that you are satisfied with the orthogroups, it is recommended that you do the orthology prediction using multiple sequence alignments (`mafft` is implemented in `OrthoFinder`) and make the gene trees using `IQ-TREE` (also implemented in `OrthoFinder`).
 
 In order to do the first, replace the running line in the script *orthofinder.run* with (**remember to also change job name!**):
 
@@ -145,26 +145,26 @@ In order to do the first, replace the running line in the script *orthofinder.ru
 
 Due to time constrains we will not run `OrthoFinder` with `IQ-TREE`. You would need to add `-T iqtree` to the command. 
 
-5.- Go to the *Comparative_Genomics_Statistics*, here you can find main statistics for the analysis you have run. Search for the following information:
+4.- Go to the *Comparative_Genomics_Statistics*, here you can find main statistics for the analysis you have run. Search for the following information:
 
 ```diff
-- 5.1.- Which two species have the highest number of orthologs?
+- 4.1.- Which two species have the highest number of orthologs?
 
-- 5.2.- Which kind of orthologous relationships are most common between bears (one-to-one? many-to-one?). Can you think of a scenario in which this could be different?
+- 4.2.- Which kind of orthologous relationships are most common between bears (one-to-one? many-to-one?). Can you think of a scenario in which this could be different?
 ```
 
-6. We will analyse the orthogroup OG0000001 which should contain protein A0A7N5K5T5_AILME. If for some reason it does not search for the orthogroup that contains this protein and analyse that one.
+5. We will analyse the orthogroup OG0000001 which should contain protein A0A7N5K5T5_AILME. If for some reason it does not search for the orthogroup that contains this protein and analyse that one.
 
 ```diff
-- 6.1.- Go to the first set of results and check how many members this family has. Can you tell only from the orthogroup information which proteins are orthologs and which ones are paralogs?
+- 5.1.- Go to the first set of results and check how many members this family has. Can you tell only from the orthogroup information which proteins are orthologs and which ones are paralogs?
 
-- 6.2.- Now go to the last results. Go to the Orthologues folder and search for the orthologs to A0A7N5K5T5_AILME. How many do you find?
+- 5.2.- Now go to the last results. Go to the Orthologues folder and search for the orthologs to A0A7N5K5T5_AILME. How many do you find?
 
-- 6.3.- Are they all one-to-one orthologs? ```
+- 5.3.- Are they all one-to-one orthologs? ```
 
-- 6.4.- Search for the gene tree of this family, copy the newick and visualize it in phylo.io. With the tree next to you, search your results for information on duplication events. How many duplication events can you find? Are any of them specific for a single species.
+- 5.4.- Search for the gene tree of this family, copy the newick and visualize it in phylo.io. With the tree next to you, search your results for information on duplication events. How many duplication events can you find? Are any of them specific for a single species.
 
-- 6.5.- Most of the duplications observed in the previous exercise were ancient, why do you think orthoFinder did not separate them? Were they separated in the analysis run with -I 3.0? If they were, and looking again to the gene tree, did the split make sense?
+- 5.5.- Most of the duplications observed in the previous exercise were ancient, why do you think orthoFinder did not separate them? Were they separated in the analysis run with -I 3.0? If they were, and looking again to the gene tree, did the split make sense?
 ```
 
 
