@@ -49,13 +49,12 @@ Here you can see the contents of the script *orthofinder.run*:
 module load orthofinder
 
 #running orthofinder
-orthofinder -f proteomes_parsed -og
+orthofinder -f proteomes_parsed -og -t 8 -a 2
 ```
 
-> The flag -f indicates the folder where the proteomes are found. The -og option will tell orthoFinder to stop after inferring the orthogroups.
+> The flag -f indicates the folder where the proteomes are found. The -og option will tell orthoFinder to stop after inferring the orthogroups. You can adapt the program for multi-threading using the -t (homology searches) and -a (analysis) options. Note that if you do not specify orthoFinder will take all resources available.
 
-2.- While the program works, lets have a look to the options that `OrthoFinder` has. Open a new terminal
-and type `orthofinder -h`
+2.- While the program works, lets have a look to the options that `OrthoFinder` has. Type `orthofinder -h`
 
 > Note that one of the options is `-S` which determines how the homology search will be done. `Diamond` is very fast, much faster than `Blast`, but is less sensitive when running with distantly related species. Consider this when running `OrthoFinder`.
 
@@ -108,7 +107,7 @@ Replace the running line in the script *orthofinder.run* with (**remember to als
 
 `orthofinder -fg FolderRun -s speciesTree_file`
 
-> In this case, the flag `-fg` indicates you want to re run an analysis from the orthogroups on, and `-s` indicates you will provide a user defined species tree
+> In this case, the flag `-fg` indicates you want to re-run an analysis from the orthogroups on, and `-s` indicates you will provide a user defined species tree
 
 Running this will generate a new folder, which will contain the new results. 
 
@@ -120,11 +119,11 @@ Additionally it is possible that in this toy example with very few species the c
 
 In order to do the first, replace the running line in the script *orthofinder.run* with (**remember to also change job name!**):
 
-`orthofinder -fg FolderRun -s speciesTree_file -t 2 -M msa`
+`orthofinder -fg FolderRun -s speciesTree_file -t 8 -M msa`
 
 > Here, the flag `-M` indicates you want to build trees using mafft as a multiple sequence aligner
 
-Due to time constrains we will not run `OrthoFinder` with `IQ-TREE`. You would need to add `-T iqtree` to the command.
+Due to time constrains we will not run `OrthoFinder` with `IQ-TREE`. You would need to add `-T iqtree` to the command. 
 
 5.- Go to the *Comparative_Genomics_Statistics*, here you can find main statistics for the analysis you have run. Search for the following information:
 
