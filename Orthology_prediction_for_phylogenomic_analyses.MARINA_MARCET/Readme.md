@@ -51,7 +51,7 @@ Here you can see the contents of the script *orthofinder.run*:
 module load orthofinder
 
 #running orthofinder
-orthofinder -f proteomes_parsed -og -t 8 -a 2
+orthofinder -f proteomes -og -t 8 -a 2
 ```
 
 > The flag -f indicates the folder where the proteomes are found. The -og option will tell `OrthoFinder` to stop after inferring the orthogroups. You can adapt the program for multi-threading using the -t and -a options.
@@ -88,11 +88,11 @@ Go to the folder and focus on the folder called *Orthogroups*. In this folder yo
 
 Replace the running line in the script *orthofinder.run* with (**remember to also change job name!**):
 
-`orthofinder -b folderName/OrthoFinder/Results_XXXX/ -I 3.0 -og`
+`orthofinder -b proteomes/OrthoFinder/Results_Jul06/ -I 3.0 -og`
 
 > Note that we are using `-b` instead of `-f` and we are providing previously calculated results, this will avoid having to re-calculate the all-vs-all comparison. Also we are changing the inflation parameter using `-I` and setting it to 3.0. At this point we are only interested in comparing the orthogroups, the `-og` parameter will stop the run of orthoFinder after it calculates orthogroups. This is a time-saving trick if you want to assess different inflation parameters and how they affect your orthogroups.
 
-This will generate a second folder which will be called *Results_XXX_1* where the new results of `OrthoFinder` can be found.
+This will generate a second folder which will be called *Results_Jul06_1* where the new results of `OrthoFinder` can be found.
 
 2.- Repeat this step with an inflation parameter of 5.0
 
@@ -125,7 +125,7 @@ http://phylo.io/) to visualize the tree:
 
 Replace the running line in the script *orthofinder.run* with (**remember to also change job name!**):
 
-`orthofinder -fg FolderRun -s speciesTree_file`
+`orthofinder -fg proteomes/OrthoFinder/Results_Jul06/ -s speciesTree_file`
 
 > In this case, the flag `-fg` indicates you want to re-run an analysis from the orthogroups on, and `-s` indicates you will provide a user defined species tree
 
@@ -139,7 +139,7 @@ Additionally it is possible that in this toy example with very few species the c
 
 In order to do the first, replace the running line in the script *orthofinder.run* with (**remember to also change job name!**):
 
-`orthofinder -fg FolderRun -s speciesTree_file -t 8 -M msa`
+`orthofinder -fg proteomes/OrthoFinder/Results_Jul06/ -s speciesTree_file -t 8 -M msa`
 
 > Here, the flag `-M` indicates you want to build trees using mafft as a multiple sequence aligner
 
