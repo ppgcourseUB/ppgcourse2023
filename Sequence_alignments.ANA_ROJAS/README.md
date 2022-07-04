@@ -15,6 +15,7 @@ Any question email me at a.rojas.m@csic.es
 - Taxonomy ids of the species to work: Ursus (taxid:9639) species and Ailuropod (taxid:9645) for BLAST searches 
 - BLAST: https://blast.ncbi.nlm.nih.gov/Blast.cgi, we will use ALWAYS BLAST PROTEIN.
 - To retrieve the sequences: https://www.uniprot.org/
+- To randomise and extract proteins: bbmap package (https://sourceforge.net/projects/bbmap/)
 
 ==> installed in the cluster: 
 - To make non redundant datasets: cd-hit http://weizhong-lab.ucsd.edu/cd-hit/ or http://weizhong-lab.ucsd.edu/cdhit-web-server/cgi-bin/index.cgi?cmd=cd-hit
@@ -109,6 +110,10 @@ module load clustal-omega
 ```
 
 4.- Select 5 alignments of your choice (from most similar to more divergent), and randomise the order of your sequences within the group and repeat step number 3. 
+
+To randomise files you can: `shuffle.sh in=file.fa out=shuffled.fa`  
+To extract the 1% of files you can `reformat.sh in=file.fa out=sampled.fa samplerate=0.01`
+
 
 5.- Visualise all the alignments using Jalview (https://www.jalview.org/) or Belvu (https://www.sanger.ac.uk/tool/seqtools/) [*local work*]. **Remember that to do that you must download the data from your personal computers first. In your local folder, type `scp -r user@host:/folder_to_download.`**
 
