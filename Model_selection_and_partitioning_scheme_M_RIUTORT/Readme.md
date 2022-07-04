@@ -20,23 +20,24 @@ You can find additional information about PartitionFinder in its web page (see a
 **partition_finder.cfg**:  we will modify the example given with the program to specify the options for our analysis. 
  
 
-|OTUs included                         |names in file|
-| ------------------------------------ |-------------|
-|NC_003426 *Ursus americanus*          |003426_Uam   |
-|NC_003427_Ursus_arctos                |003427_Uar   |
-|NC_003428_Ursus_maritimus             |003428_Uma   |
-|NC_008753_Ursus_thibetanus_mupinensis |008753_Uth   |
-|NC_009331_Ursus_thibetanus_formosanus |009331_Uth   |
-|NC_009492_Ailuropoda_melanoleuca      |009492_Ail   |
-|NC_009968_Helarctos_malayanus         |009968_Hel   |
-|NC_009969_Tremarctos_ornatus          |009969_Tre   |
-|NC_009970_Melursus_ursinus            |009970_Mel   |
-|NC_009971_Ursus_thibetanus            |009971_Uth   |
-|NC_011112_Ursus_spelaeus              |011112_Usp   |
-|NC_011116_Arctodus_simus              |011116_Arc   |
-|NC_011117_Ursus_thibetanus_ussuricus  |011117_Uth   |
-|NC_011118_Ursus_thibetanus_thibetanus |011118_Uth   |
-|NNC_030174_Arctotherium_sp            |030174_Arc   |
+|OTUs included                         |
+| ------------------------------------ |
+|Ailuropoda_melanoleuca                |
+|Arctodus_simus                        |
+|Arctotherium_sp                       |
+Helarctos_malayanus
+Melursus_ursinus
+Tremarctos_ornatus
+Ursus americanus
+Ursus_arctos
+Ursus_maritimus
+Ursus_spelaeus
+Ursus_thibetanus
+Ursus_thibetanus_mupinensis
+Ursus_thibetanus_formosanus
+Ursus_thibetanus_ussuricus
+Ursus_thibetanus_thibetanus
+
 
 ## Objetive
 
