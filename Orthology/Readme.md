@@ -68,7 +68,7 @@ Replace the running line in the script *orthofinder.run* with (**remember to als
 
 `orthofinder -b folderName/OrthoFinder/Results_XXXX/ -I 3.0 -og`
 
-> Note that we are using `-b` instead of `-f` and we are prividing previously calculated results, this will avoid having to re-calculate the all-vs-all comparison. Also we are changing the inflation parameter using `-I` and setting it to 3.0. At this point we are only interested in comparing the orthogroups, the `-og` parameter will stop the run of orthoFinder after it calculates orthogroups. This is a time-saving trick if you want to assess different inflation parameters and how they affect your orthogroups.
+> Note that we are using `-b` instead of `-f` and we are providing previously calculated results, this will avoid having to re-calculate the all-vs-all comparison. Also we are changing the inflation parameter using `-I` and setting it to 3.0. At this point we are only interested in comparing the orthogroups, the `-og` parameter will stop the run of orthoFinder after it calculates orthogroups. This is a time-saving trick if you want to assess different inflation parameters and how they affect your orthogroups.
 
 This will generate a second folder which will be called *Results_XXX_1* where the new results of `OrthoFinder` can be found.
 
