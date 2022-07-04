@@ -63,7 +63,7 @@ gunzip testProt.fa
     
 Copy the first 1000 lines of the GTF file in a folder 
 ```
-gunzip -c Ailuropoda_melanoleuca.ASM200744v2.106.gtf.gz|-1000 > test.gtf 
+gunzip -c Ailuropoda_melanoleuca.ASM200744v2.106.gtf.gz | head -1000 > test.gtf 
 ```
 How many genes contains this file?
 ```
