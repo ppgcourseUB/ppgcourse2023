@@ -26,6 +26,7 @@ Now we will perform the quality control (QC) of the RNAseq data using the softwa
 ```
 mkdir 1QC
 ```
+
 First we will create/edit a bash script to run `FastQC` software in the cluster (*fastqc.run*):
 
 ```
@@ -46,10 +47,12 @@ module load fastqc
 # jobs to launch
 fastqc -t 8 ./0data/reads.left.fq.gz ./0data/reads.right.fq.gz -o ./1QC
 ```
+
 To launch `FastQC` script in the cluster write on the terminal:
 ```
-sbatch fastqc.run
+sbatch scripts/fastqc.run
 ```
+
 Use "s_jobs" command to check the state of the process. To check the results you need to download the files on a local computer. WARNING: mind to change the paths accordingly
 ```
 scp -r user@cluster:/my_CLUSTER_path_to_practice_folder/* my_LOCAL_path_to_practice/
@@ -63,9 +66,10 @@ First, we will create a folder for the trimmed sequences:
 
 ```
 mkdir 2trimmed_data
-
 ```
+
 Then we will create/edit a bash script to run Trimmomatic software in the cluster (*trimseq.run*).
+
 ```
 #!/bin/bash
 
@@ -87,7 +91,7 @@ trimmomatic PE -threads 8 ./0data/reads.left.fq.gz ./0data/reads.right.fq.gz ./2
 
 To launch the Trimmomatic script in the cluster write on the terminal:
 ```
-sbatch trimSeq.run
+sbatch scripts/trimSeq.run
 ```
 Use "s_jobs" command to check the state of the process. `
 
@@ -123,7 +127,7 @@ for file in ./2trimmed_data/*fq.gz;
 
 To launch fastQC_loop.sh script in the cluster write on the terminal:
 ```
-sbatch fastqc_loop.run
+sbatch scripts/fastqc_loop.run
 ```
 Use "s_jobs" command to check the state of the process. To check the results you need to download the files on a local computer. WARNING: mind to change the paths accordingly
 ```
@@ -142,6 +146,7 @@ mkdir 4trinity #will contain the de novo transcriptome
 **To minimize module compatibility issues, we strongly recommend to do a `module purge` before loading `trinity` module. This module will load a huge number of tools and dependencies.**
 
 We will create/edit a bash script to run `trinity` software (*trinity.run*) to obtain a <em>de novo</em> transcriptome.
+
 ```
 #!/bin/bash
 
@@ -155,15 +160,14 @@ We will create/edit a bash script to run `trinity` software (*trinity.run*) to o
 #SBATCH --cpus-per-task=8
 
 # module load
-module load trinity 
+module load Trinity 
 
 # jobs to launch
 Trinity --left ./2trimmed_data/reads_1.P.fq.gz --right ./2trimmed_data/reads_2.P.fq.gz --seqType fq --normalize_reads --normalize_max_read_cov 30 --max_memory 6G --CPU 8 --output ./4trinity
-
 ```
 To launch the trinity script in the cluster write on the terminal:
 ```
-sbatch trinity.run
+sbatch scripts/trinity.run
 ```
 Use "s_jobs" command to check the state of the process. 
 
@@ -176,6 +180,7 @@ mkdir 5cdhit
 ```
 
 First we will create/edit a bash script to run cd-hit software (*cd-hit.run*):
+
 ```
 #!/bin/bash
 
@@ -189,14 +194,14 @@ First we will create/edit a bash script to run cd-hit software (*cd-hit.run*):
 #SBATCH --cpus-per-task=8
 
 # module load
-module load cd-hit
+module load cdhit
 
-cd-hit-est -i ./4trinity/Trinity.fasta -o ./5cdhit/Trinity_cdhit.fasta -c 0.9 -M 50 -T 5 > ./5cdhit/Trinity_cdhit.err
+cd-hit-est -i ./4trinity/Trinity.fasta -o ./5cdhit/Trinity_cdhit.fasta -c 0.9 -M 0 -T 8 > ./5cdhit/Trinity_cdhit.err
 
 ```
 To launch the script in the cluster write on the terminal:
 ```
-sbatch cdhit.sh
+sbatch scripts/cd-hit.run
 ```
 
 ### 3. Post-processing
@@ -225,15 +230,16 @@ First we will create/edit a bash script to run the stats (*trinityQC.run*) to ob
 #SBATCH --cpus-per-task=8
 
 # module load
-module load trinity
+module load Trinity
 
 # jobs to launch
-path_to/TrinityStats.pl ./4trinity/Trinity.fasta > ./6QC_trinity/Trinity_assembly.metrics
-path_to/TrinityStats.pl ./5cdhit/Trinity_cdhit.fasta > ./6QC_trinity/Trinity_cdhit_assembly.metrics
+/opt/ohpc/pub/eb/software/Trinity/2.10.0-foss-2019b-Python-3.7.4/trinityrnaseq-v2.10.0/util/TrinityStats.pl ./4trinity/Trinity.fasta > ./6QC_trinity/Trinity_assembly.metrics
+/opt/ohpc/pub/eb/software/Trinity/2.10.0-foss-2019b-Python-3.7.4/trinityrnaseq-v2.10.0/util/TrinityStats.pl ./5cdhit/Trinity_cdhit.fasta > ./6QC_trinity/Trinity_cdhit_assembly.metrics
+
 ```
 To launch the script in the cluster write on the terminal:
 ```
-sbatch trinityQC.run
+sbatch scripts/trinityQC.run
 ```
 
 ### 3.2. Representation of reads
@@ -257,11 +263,16 @@ First we will create/edit a bash script to run `hisat2` software (*hisat2.run*).
 
 # module load
 module load hisat2
+module load python
 
 # jobs to launch
-hisat2-build ./trinity/Trinity.fasta ./4trinity/Trinity
-
+hisat2-build ./4trinity/Trinity.fasta ./4trinity/Trinity
 hisat2 -p 10 -x ./4trinity/Trinity -1 ./2trimmed_data/reads_1.P.fq.gz -2 ./2trimmed_data/reads_2.P.fq.gz -S ./6QC_trinity/reads.sam &> ./6QC_trinity/reads.sam.info
+```
+
+To launch the script in the cluster write on the terminal:
+```
+sbatch scripts/hisat2.run
 ```
 
 ### 3.3. From ncl to aa: TransDECODER
@@ -273,6 +284,7 @@ First we will create/edit a bash script to run `transdecoder` software (*transde
 ```
 mkdir 6proteome
 ```
+
 ```
 #!/bin/bash
 
@@ -286,15 +298,16 @@ mkdir 6proteome
 #SBATCH --cpus-per-task=8
 
 # module load
-module load transdecoder
+module load transdecoder # [update with the version installed in the cluster]
 
 # jobs to launch
+
 TransDecoder.LongOrfs -t ./4trinity/Trinity.fasta 
 ```
 
 To launch the script in the cluster write on the terminal:
 ```
-sbatch transdecoder.run
+sbatch scripts/transdecoder.run
 ```
 
 #### Bibliography
