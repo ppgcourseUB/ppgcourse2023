@@ -21,44 +21,11 @@ We will work with a subset of four bear proteomes. The original proteomes can be
 * Ursus americanus (black bear): https://www.uniprot.org/proteomes/UP000291022
 * Ailuropoda melanoleuca (giant panda, outgroup): https://www.uniprot.org/proteomes/UP000008912
 
-You can find the subset of proteomes we are going to use in the folder data/proteomes/
+You can find the subset of proteomes we are going to use in the folder proteomes/
 
 ***
 
 ## Exercise 1
-
-1.- Uncompress the file by typing:
-
-`tar -zxvf proteomes.tar.gz`
-
-Have a look at the files:
-
-`head proteomes/*`
-
-2.- Headers in uniprot contain a lot of information, and while that can be useful, it can become a problem
-farther down the pipeline. As such it is better to deal with it from the start. For each of the files execute the
-following command:
-
-2.1.- Create a new folder where we will put the parsed files:
-
-`mkdir proteomes_parsed/`
-
-2.2.- Now cut the headers for each proteome:
-
-`awk '{if ($0 ~ /^>/)  {split($0,a,"|"); split(a[3],b," "); print ">"b[1]} else { print;}}' proteomes/fileName >proteomes_parsed/fileName`
-
-This small piece of code will parse your header and keep only one part of it which is unique for each protein. Make sure to name the output *fileName* with something short and descriptive of your species as OrthoFinder will be using it to identify each species.
-
-2.3.- Compare now the headers:
-
-`head -n1 proteomes/Amelanoleuca.fasta`
-
-`head -n1 proteomes_parsed/Amelanoleuca.fasta`
-
-Repeat that for each file and make sure you have four files in the proteomes_parsed folder.
-
-
-## Exercise 2
 
 We will run `OrthoFinder` with the provided dataset and default values. To make sure it works quickly we
 provided only a subset of the data.
@@ -93,7 +60,7 @@ and type `orthofinder -h`
 
 > Note that one of the options is `-S` which determines how the homology search will be done. `Diamond` is very fast, much faster than `Blast`, but is less sensitive when running with distantly related species. Consider this when running `OrthoFinder`.
 
-## Exercise 3
+## Exercise 2
 
 1.- `OrthoFinder` has few parameters, but the most important one of them is the inflation parameter. This parameter indicates whether the orthogroups are going to be smaller or bigger. By default it is set to 1.5. We are now going to run `OrthoFinder` with a bigger inflation parameter. 
 
@@ -123,7 +90,7 @@ This will generate a second folder which will be called *Results_XXX_1* where th
 - 3.4 Nowadays many reviewers are asking how the inflation parameter can affect your results. Can you think on a way to show which is the correct inflation parameter?
 ```
 
-## Exercise 4
+## Exercise 3
 
 Orthogroups can contain duplications which means we can have a mix of orthologs and paralogs. `OrthoFinder` implements a method to distinguish between them, but to do that it needs a species tree as reference. `OrthoFinder` tries to calculate the species tree on its own. We will go back to using the first run of the program. In that folder you should see a folder called *Species_tree* and in there is a file called *SpeciesTree_rooted.txt*
 
