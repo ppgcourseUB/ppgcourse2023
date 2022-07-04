@@ -52,11 +52,33 @@ module load orthofinder
 orthofinder -f proteomes_parsed -og -t 8 -a 2
 ```
 
-> The flag -f indicates the folder where the proteomes are found. The -og option will tell orthoFinder to stop after inferring the orthogroups. You can adapt the program for multi-threading using the -t (homology searches) and -a (analysis) options. Note that if you do not specify orthoFinder will take all resources available.
+> The flag -f indicates the folder where the proteomes are found. The -og option will tell `OrthoFinder` to stop after inferring the orthogroups. You can adapt the program for multi-threading using the -t and -a options.
 
 2.- While the program works, lets have a look to the options that `OrthoFinder` has. Type `orthofinder -h`
 
 > Note that one of the options is `-S` which determines how the homology search will be done. `Diamond` is very fast, much faster than `Blast`, but is less sensitive when running with distantly related species. Consider this when running `OrthoFinder`.
+
+3.- Once `OrthoFinder` has finished, you will find that in the folder proteomes there will be a new folder called OrthoFinder and within it will be a file called Results_Jul06. The results of `OrthoFinder` can be found there sorted in different folders. New runs of `OrthoFinder` will generate new folders called Results_Jul06_1, Results_Jul06_2, ... 
+
+Go to the folder and focus on the folder called *Orthogroups*. In this folder you will find several files of interest:
+
+* *Orthogroups.tsv*: Will print all the orthogroups detected during the analysis
+* *Orthogroups_UnassignedGenes.tsv*: Genes that have not been assigned to an orthogroup will go to this file
+* *Orthogroups_SingleCopyOrthologues.txt*: This will give you a list of orthogroups that did not have duplications and in which all species are present.
+
+```diff
+- 3.1.- How many orthologous groups has orthoFinder been able to build?
+
+- 3.2.- How many genes have been left outside the orthologous groups?
+```
+
+4.- Now go to the folder *Comparative_Genomics_Statistics*. In this folder you will find files summarizing the statistics of orthogroups for the different species.
+
+```diff
+- 4.1.- How many genes have been placed within the orthogroups? And which percentage do they represent from the total?
+
+- 4.2.- Which is the species with the highest percentage of genes that are species specific? Do you think this is due to a biological reason?
+```
 
 ## Exercise 2
 
@@ -70,22 +92,18 @@ Replace the running line in the script *orthofinder.run* with (**remember to als
 
 This will generate a second folder which will be called *Results_XXX_1* where the new results of `OrthoFinder` can be found.
 
-2.- Focus on the folder called *Orthogroups*. In this folder you will find several files of interest:
+2.- Repeat this step with an inflation parameter of 5.0
 
-* *Orthogroups.tsv*: Will print all the orthogroups detected during the analysis
-* *Orthogroups_UnassignedGenes.tsv*: Genes that have not been assigned to an orthogroup will go to this file
-* *Orthogroups_SingleCopyOrthologues.txt*: This will give you a list of orthogroups that did not have duplications and in which all species are present
-
-3.- Now compare the results obtained by the two runs of `OrthoFinder` and try and answer the following questions:
+3.- Now compare the results obtained by the three runs of `OrthoFinder` and try and answer the following questions:
 
 ```diff
-- 3.1. Are the number of orthogroups the same in both runs? How many orthogroups are in each of them?
+- 3.1.- Are the number of orthogroups the same in all three runs? How many orthogroups are in each of them?
 
-- 3.2. Did the change in inflation parameter affect the detection of single copy genes?
+- 3.2.- Did the change in inflation parameter affect the detection of single copy genes?
 
-- 3.3. Note that in order to do a good phylogenomics analysis you need to find groups of orthologous genes that are present in all species without duplications. Which file would give you this information and how many orthogroups can you use in each run?
+- 3.3.- Note that in order to do a good phylogenomics analysis you need to find groups of orthologous genes that are present in all species without duplications. Which file would give you this information and how many orthogroups can you use in each run?
 
-- 3.4 Nowadays many reviewers are asking how the inflation parameter can affect your results. Can you think on a way to show which is the correct inflation parameter?
+- 3.4.- Orthogroups have a direct impact on orthology prediction. Depending on the analysis you are running, a reviewer may ask how the inflation parameter can affect your results. Can you think on a way to show which is the correct inflation parameter?
 ```
 
 ## Exercise 3
