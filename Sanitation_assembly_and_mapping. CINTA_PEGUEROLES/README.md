@@ -18,6 +18,7 @@ mkdir 0data
 cd 0data
 wget https://github.com/trinityrnaseq/trinityrnaseq/raw/devel/sample_data/test_Trinity_Assembly/reads.left.fq.gz
 wget https://github.com/trinityrnaseq/trinityrnaseq/raw/devel/sample_data/test_Trinity_Assembly/reads.right.fq.gz
+cd ..
 ```
 
 ### 1.1. Quality control of RNAseq data
