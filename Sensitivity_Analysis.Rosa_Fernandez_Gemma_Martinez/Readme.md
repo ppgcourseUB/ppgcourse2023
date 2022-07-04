@@ -14,7 +14,7 @@ All files for this hands-on class are in the folder **`Bear_dataset_SensitivityA
 
 As mentioned in the first class, the scientific question we will try to answer today is the following:
 
- ![question](https://github.com/ppgcourseUB/ppgcourse2022/tree/main/Sensitivity_Analysis.Rosa_Fernandez_Gemma_Martinez/img/question.png)
+ ![question](img/question.png)
 
 ***
 
@@ -115,7 +115,7 @@ To obtain the 10 **worst** genes run:
 
 Let’s analyze conflict between individual gene trees to see which phylogenetic hypothesis is the most robustly supported.
 
- ![topologies](https://github.com/ppgcourseUB/ppgcourse2022/tree/main/Sensitivity_Analysis.Rosa_Fernandez_Gemma_Martinez/img/topologies.png)
+ ![topologies](img/topologies.png)
 
 We have selected 50 orthologous groups and have run individual gene trees with IQ-TREE. Let’s have a look at them here: **`Bear_dataset_SensitivityAnalyses/PHYLIP` (.tree files)**
 
