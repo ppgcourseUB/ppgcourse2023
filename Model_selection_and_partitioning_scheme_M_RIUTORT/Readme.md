@@ -124,11 +124,11 @@ This is a very important command, here you define the data blocks you want to te
 ## DATA BLOCKS: see manual for how to define ##
 [data_blocks]
 DNA, CHRNA1_1= 1-362\3
-DNA, CHRNA1_2 = 1-362\3
-DNA, CHRNA1_3 = 1-362\3
+DNA, CHRNA1_2 = 2-362\3
+DNA, CHRNA1_3 = 3-362\3
 DNA, FES_1 = 364-831\3
 DNA, FES_2 = 365-831\3
-DNA, FES_3 = 363-831\3
+DNA, FES_3 = 366-831\3
 DNA, IRBP_1 = 832-2111\3
 DNA, IRBP_2 = 833-2111\3
 DNA, IRBP_3 = 834-2111\3
