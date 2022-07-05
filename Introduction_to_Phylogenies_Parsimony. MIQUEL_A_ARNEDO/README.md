@@ -287,11 +287,12 @@ export - boots.tre; proc/;
 
 Alternatively, to avoid collapsing the RAM with very suboptimal trres, conduct the suboptimal search step by step, as follows:
 
-```
-> hold 1000 ; sub 1 ; find * ; <enter>
-> hold 2000 ; sub 3 ; find *; <enter>
-> hold 4000 ; sub 5 ; find * ; <enter>
-> bsupport ; 
+*hold 1000 ; sub 1 ; find * ; <enter>*
+*hold 2000 ; sub 3 ; find *; <enter>*
+*hold 4000 ; sub 5 ; find * ; <enter>*
+*bsupport;*
+
+	
 >ttags-;
 >ttags=;
 >hold 10000;
