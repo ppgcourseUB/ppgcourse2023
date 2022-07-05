@@ -36,7 +36,7 @@ provided only a subset of the data.
 Here you can see the contents of the script *orthofinder.run*:
 
 ```bash
-!/bin/bash                                                                                                             
+#!/bin/bash                                                                                                             
 
 ##This is a script to run orthofinder                                                        
 
