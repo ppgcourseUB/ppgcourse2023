@@ -22,7 +22,7 @@ First, we will find which is the best substitution model for our data using the 
 
 `cd model_selection`
 
-If you take at look at the **`model_selection.sh`** file you can see the whole list of models that we are going to test:
+If you take at look at the **`model_finder.sh`** file you can see the whole list of models that we are going to test:
 
 `iqtree2 -s 50_genes.fa -m MF -mset LG+F+G,WAG+F+G,JTT+F+G,GTR20 -madd LG+C20+F+G,LG+C10+F+G,LG+C30+F+G,LG+C40+F+G,LG+C50+F+G,LG+C60+F+G,C10,C20,C30,C40,C50,C60,EX2,EX3,EHO,LG4M,LG4X`
 
