@@ -56,7 +56,7 @@ orthofinder -f proteomes -og -t 8 -a 2
 
 > The flag -f indicates the folder where the proteomes are found. The -og option will tell `OrthoFinder` to stop after inferring the orthogroups. You can adapt the program for multi-threading using the -t and -a options.
 
-2.- While the program works, lets have a look to the options that `OrthoFinder` has. Type `orthofinder -h`
+2.- While the program works, lets have a look to the options that `OrthoFinder` has. Type `module load orthofinder` and then `orthofinder -h`
 
 > Note that one of the options is `-S` which determines how the homology search will be done. `Diamond` is very fast, much faster than `Blast`, but is less sensitive when running with distantly related species. Consider this when running `OrthoFinder`.
 
