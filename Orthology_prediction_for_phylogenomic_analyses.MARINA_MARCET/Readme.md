@@ -137,26 +137,38 @@ Replace the running line in the script *launch_orthofinder.run* with (**remember
 
 > Other things that will affect the prediction of orthologs is how the gene trees are build. By default orthoFinder uses distance matrices and fastME to build the gene trees. This, while fast, can give faulty gene trees when dealing with more complex datasets. Once you are sure that your species tree is correct and that you are satisfied with the orthogroups, it is recommended that you do the orthology prediction using multiple sequence alignments (`mafft` is implemented in `OrthoFinder`) and make the gene trees using `IQ-TREE` (also implemented in `OrthoFinder`). Due to time constraints we are not going to run these, but you can find the pre-calculated results in the results folder.
 
-3.- Go to the *Comparative_Genomics_Statistics*, here you can find main statistics for the analysis you have run. Search for the following information:
+## Exercise 4
+
+We are now going to play a bit with the data we have generated in the different runs and to explore the orthology results
+
+1.- Go to the *Comparative_Genomics_Statistics*, here you can find main statistics for the analysis you have run. Search for the following information:
 
 ```diff
-- 3.1.- Which two species have the highest number of orthologs?
+- 1.1.- Which two species have the highest number of orthologs?
 
-- 3.2.- Which kind of orthologous relationships are most common between bears (one-to-one? many-to-one?). Can you think of a scenario in which this could be different?
+- 1.2.- Which kind of orthologous relationships are most common between bears (one-to-one? many-to-one?). Can you think of a scenario in which this could be different?
 ```
 
-4. We will analyse the orthogroup OG0000001 which should contain protein A0A7N5K5T5_AILME. If for some reason it does not search for the orthogroup that contains this protein and analyse that one.
+2.- We will analyse the orthogroup OG0000001 which should contain protein A0A7N5K5T5_AILME. If for some reason it does not search for the orthogroup that contains this protein and analyse that one.
 
 ```diff
-- 4.1.- Go to the first set of results and check how many members this family has. Can you tell only from the orthogroup information which proteins are orthologs and which ones are paralogs?
+- 2.1.- Go to the first set of results and check how many members this family has. Can you tell only from the orthogroup information which proteins are orthologs and which ones are paralogs?
 
-- 4.2.- Now go to the last results. Go to the Orthologues folder and search for the orthologs to A0A7N5K5T5_AILME. How many do you find?
+- 2.2.- Now go to the last results. Go to the Orthologues folder and search for the orthologs to A0A7N5K5T5_AILME. How many do you find?
 
-- 4.3.- Are they all one-to-one orthologs? ```
+- 2.3.- Are they all one-to-one orthologs? ```
 
-- 4.4.- Search for the gene tree of this family, copy the newick and visualize it in phylo.io. With the tree next to you, search your results for information on duplication events. How many duplication events can you find? Are any of them specific for a single species.
+- 2.4.- Search for the gene tree of this family, copy the newick and visualize it in phylo.io. With the tree next to you, search your results for information on duplication events. How many duplication events can you find? Are any of them specific for a single species.
 
-- 4.5.- Most of the duplications observed in the previous exercise were ancient, why do you think orthoFinder did not separate them? Were they separated in the analysis run with -I 3.0? If they were, and looking again to the gene tree, did the split make sense?
+- 2.5.- Most of the duplications observed in the previous exercise were ancient, why do you think orthoFinder did not separate them? Were they separated in the analysis run with -I 3.0? If they were, and looking again to the gene tree, did the split make sense?
 ```
 
+3.- Go to the results folder we downloaded, and uncompress the results for the datasets withTrees, withTrees_MSA and withTree_iqtree. To uncompress you can use this command:
 
+`tar -zxvf results/Results_withTrees_MSA.tar.gz`
+
+```diff
+- 3.1.- For the three methods of building trees, check whether the orthologs of A0A7N5K5T5_AILME are consistent across runs
+
+- 3.2.- Check the gene trees that contain this sequence in each run (remember you can use phylo.io to visualize trees). Can you find a good reason as to why orthology predictions changed?
+```
