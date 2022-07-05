@@ -54,7 +54,7 @@ We will use the concatenated alignment of our 50 genes and use the model we obta
 
 2.- Modify the **`ultrafast_iqtree.sh`** script to include the best substitution model where it says **MODEL**. You can use any command-line tool you know (such as nano or vim) or any text editor.
 
-`iqtree2 -s 50_genes.fa -m MODEL -B 1000 -T AUTO`
+`iqtree -s 50_genes.fa -m MODEL -bb 1000 -nt 8`
 
 Once modified, you are ready to run the analysis:
 
@@ -70,7 +70,7 @@ More information on the ultrafast bootstrap in: http://www.iqtree.org/doc/Tutori
 
 2.- Modify the **`shalrt_iqtree.sh`** script to include the best substitution model where it says **MODEL**.
 
-`iqtree2 -s 50_genes.fa -m MODEL -alrt 1000 -T AUTO`
+`iqtree -s 50_genes.fa -m MODEL -alrt 1000 -nt 8`
 
 For executing the analysis run:
 
@@ -90,7 +90,7 @@ We will use the concatenated alignment of our 50 genes and use the model we obta
 
 2.- Modify the **`non_parametric_iqtree.sh`** script to include the best substitution model where it says **MODEL**.
 
-`iqtree2 -s 50_genes.fa -m MODEL -b 50 -T AUTO`
+`iqtree -s 50_genes.fa -m MODEL -b 50 nt 8`
 
 For executing the analysis run:
 
