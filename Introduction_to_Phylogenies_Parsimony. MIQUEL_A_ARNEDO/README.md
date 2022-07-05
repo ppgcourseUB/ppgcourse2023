@@ -32,9 +32,9 @@ Finally, there is a TNT wiki (http://tnt.insectmuseum.org) where you can find ad
 
 We will investigate the phylogenetic relationships of bears—Family [Ursidae](http://tolweb.org/Ursidae/16015) by using a concatenated matrix of 6 mtDNA genes, namely cox1, cytb, nad1, nad5, 16S and 12S and and 5 nuclear genes, MC$R, RNASE1, CHRNA1, FES, IRBP, obtained from Genbank.
 
-TNTA uses it own format. Supposedly, also accepts NEXUS format, although it is a little bit picky! (e.g. use the simple NEXUS format in Mesquite). Having the sequences in fasta format as well will help to recode the gaps as absence/presence characters.
+TNT uses it own format. Supposedly, also accepts NEXUS format, although it is a little bit picky! (e.g. use the simple NEXUS format in Mesquite). Having the sequences in fasta format as well will help you to recode the gaps as absence/presence characters (with Seqedit).
 
-Below you will find the instruction to conduct some basic analyses using parsimony as an optimality criterion for phylogenetic inference. We have included the intstructions and commands for running analyses using the graphic interface (only available for Windows) and the terminal (Linux, MAC and windows).
+Below you will find the instruction to conduct some basic analyses using parsimony as an optimality criterion for phylogenetic inference. We have included the instructions and commands for running analyses using the terminal (Linux, MAC and windows).
 
 You can find complete information on the commands used by TNT at http://phylo.wikidot.com/tntwiki#TNT_scripts
 
