@@ -148,7 +148,7 @@ To submit the job:
 sbatch bbmap.run 
 ```
 
-> Remember to replace the input files in the script with the correct ones!
+> **Remember to replace the input files in the script with the correct ones!**
 
 ----- 
 An alternative using awk. 
@@ -172,7 +172,7 @@ For MacOX ==> `cat example.fa | awk '/^>/ {printf("%s%s\t",(N>0?"\n":""),$0);N++
 
 For Linux,==>  `cat example.fa | awk '/^>/ {printf("%s%s\t",(N>0?"\n":""),$0);N++;next;} {printf("%s",$0);} END {printf("\n");}' | shuf | head -n 10 | awk '{printf("%s\n%s\n",$1,$2)}' > example_random.fa`
 
-5.- Visualise all the alignments using Jalview (https://www.jalview.org/) or Belvu (https://www.sanger.ac.uk/tool/seqtools/) [*local work*]. **Remember that to do that you must download the data from your personal computers first. In your local folder, type `scp -r user@host:/folder_to_download.`**
+5.- Visualise all the alignments using Jalview (https://www.jalview.org/) or Belvu (https://www.sanger.ac.uk/tool/seqtools/) [*local work*]. **Remember that to do that you must download the data from your personal computers first. See above.**
 
 8.- Select any protein of the five alignments and IDENTIFY the proteins included in the alignment via BLAST or HMMER search (local work).
 
@@ -204,7 +204,7 @@ In this Block you are going to analyse TWO big superfamilies of proteins (GTPasa
 
 6.- Identify regions well-aligned, trim by hand regions not suitable for the alignment. Cut them visualy and save the short alignment. 
 
-7.- Alternatively you could fit your sequences to the `hmmer` profiles available in the templates to check for regions which do not belong to our sequences of interest. This option can be only made via command line. Here you have a template script (**finish filling the running line with the correct file names and paths**) with: 
+7.- Alternatively you could fit your sequences to the `hmmer` profiles available in the templates to check for regions which do not belong to our sequences of interest. This option can be only made via command line. Here you have a template script with: 
 
 ```
 #!/bin/bash
@@ -224,6 +224,10 @@ module load hmmer
 # jobs to launch
 hmmalign -o OUTfile.fasta  <*.hmm> <YourBIG unaligned file>
 ```
+
+Run the script with `sbatch`
+
+> **Finish filling the running line with the correct file names and paths!**
 
 8.-  Visualise all the alignments using Jalview (https://www.jalview.org/) or Belvu (https://www.sanger.ac.uk/tool/seqtools/), and check for blosks of unalignable regions [*local work*].
 
