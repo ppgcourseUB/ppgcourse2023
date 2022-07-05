@@ -2,18 +2,19 @@
 
 **Instructor:** Miquel A. Arnedo
 
+## Software
+
 TNT is available at http://www.lillo.org.ar/phylogeny/tnt/
 
 OTHER PROGRAMS: 
-+ Mesquite Matrix and tree manipulation http://mesquiteproject.wikispaces.com/installation
-+ FigTree: Tree visualization and manipulation http://tree.bio.ed.ac.uk/software/figtree/
-+ Sequence Matrix. Assemble multigene/multitaxon phylogenetic datasets easily
- http://www.ggvaidya.com/taxondna/
++ Mesquite Matrix and tree manipulation - http://www.mesquiteproject.org/Installation.html
++ FigTree: Tree visualization and manipulation - http://tree.bio.ed.ac.uk/software/figtree/
++ Sequence Matrix: Assemble multigene/multitaxon phylogenetic datasets easily - http://www.ggvaidya.com/taxondna/
 
 CODING GAPS AS ABSENCE/PRESENCE DATA
 SeqState: http://bioinfweb.info/Software/SeqState
 
-NOTICE: TNT comes in two flavours, command line with executables for Widows, Linux and Mac OSX and with a Shell with windows only for Windows. If you want to run the version with windows on Mac OSX or Linux you will need a Windows emulator (Parallels, VirtualBOX) or WINE (highly recommended)
+> NOTICE that TNT comes in two flavours, command line with executables for Widows, Linux and Mac OSX and with a Shell with windows only for Windows. If you want to run the version with windows on Mac OSX or Linux you will need a Windows emulator (Parallels, VirtualBOX) or WINE (highly recommended)
 
 For this exercise we will use the command line executables
 Download TNT form the website link above.
