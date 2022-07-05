@@ -58,6 +58,7 @@ TAXNAME +N: increases the length of the taxa lables to N characters
 
 For the terminal commands we used some of the explanations provided by by [Alexander Schmidt-Lebuhn](https://www.anbg.gov.au/cpbr/staff/schmidt-lebuhn-alexander_staff.html) available at http://phylobotanist.blogspot.com/2015/03/parsimony-analysis-in-tnt-using-command.html
  
+ Although you can run any analyses in TNT using sequential commands, the easiest and fastest way is to wrap up colleciton of comands in small scripts. Name them using the extension .run. You can run the scriots form TNT using ```run file_name.run```. See the examples provided in the **data** folder.
 
 ## A. Search for the shortest tree with TNT
 
@@ -253,13 +254,6 @@ ttags -;
 4. Start searching for suboptimal trees
 5. Calculate Bremer supports
 
-Alternatively, to avoid collapsing the RAM with very suboptimal trres, conduct the suboptimal search step by step, as follows:
-
-*hold 1000 ; sub 1 ; find * ; <enter>*</br>
-*hold 2000 ; sub 3 ; find * ; <enter>*</br>
-*hold 4000 ; sub 5 ; find * ; <enter>*</br>
-*bsupport;*
-
 An example for assessing Bremer support to  tree nodes. Perform branch-swapping, using pre-existing trees as starting point. Alternatively, start by running a new, simple run, eg: mult 1000 =tbr h 10;
 ```
 ttags-;
@@ -275,7 +269,16 @@ ttags ;
 export – bremer.tre;
 ttags-;
 ```
-> **TIP: TNT allows you to write small scripts to automate certain tasks. As an example, there is a script that calculates Partition Bremer Support  (pbsup.run) written by Carlos Peña and available at https://github.com/carp420/pbsup.run.
+Alternatively, to avoid collapsing the RAM with very suboptimal trres, conduct the suboptimal search step by step, as follows:
+```
+*hold 1000 ; sub 1 ; find * ; <enter>*</br>
+*hold 2000 ; sub 3 ; find * ; <enter>*</br>
+*hold 4000 ; sub 5 ; find * ; <enter>*</br>
+collapse=3;
+*bsupport;*
+```
+
+To conduct Partition Bremer Support you can use a TNT script (pbsup.run) written by Carlos Peña and available at https://github.com/carp420/pbsup.run. Please refer to that github site to conduct the analysis.
 
  
 ## F. Partial analyses
