@@ -19,9 +19,9 @@ SeqState: http://bioinfweb.info/Software/SeqState
 For this exercise we will use the command line executables
 Download TNT form the website link above.
 
-These are some wikis and websites that can help you
-http://phylo.wikidot.com/tntwiki
-http://phylobotanist.blogspot.com/2015/03/parsimony-analysis-in-tnt-using-command.html
+These are some wikis and websites that can help you:
++ http://phylo.wikidot.com/tntwiki 
++ http://phylobotanist.blogspot.com/2015/03/parsimony-analysis-in-tnt-using-command.html
 
 You can find additional information about TNT in its web page (see above). There is a general description for running the program in Windows in a powerpoint presentation (QuickTutorial). You can get online help from all instructions with the help command. Examples of scripts come with the download zip. 
 Finally, there is a TNT wiki (http://tnt.insectmuseum.org) where you can find additional information and wiki tutorials and a command list at http://phylo.wikidot.com/tntwiki#TNT_scripts
