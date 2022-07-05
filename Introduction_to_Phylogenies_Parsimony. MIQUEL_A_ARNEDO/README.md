@@ -61,7 +61,7 @@ For the terminal commands we used some of the explanations provided by by Alexan
 
 TNT includes three different search strategies, namely implicit enumeration (exhaustive search, it does guarantee the shortest tree, but there is a taxa limit, ~15), heuristic (do not guarantee finding the shortest tree) and new search strategy, optimised algorithm for heuristic searchers of large data matrices (e.g. >100 taxa).
 	
-* 1. A useful feature in TNT is the possibility of create a log file where all commands, analyses and results can be saved for future review. Start logging the analysis output into a text file with log filename.
+- 1. A useful feature in TNT is the possibility of create a log file where all commands, analyses and results can be saved for future review. Start logging the analysis output into a text file with log filename.
 
 ```
 > log file_name_log.out;
