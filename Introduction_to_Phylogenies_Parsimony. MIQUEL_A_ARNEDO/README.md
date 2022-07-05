@@ -164,13 +164,13 @@ ttags -;
 TNT considers the **GAPS as 5th state by default**. If you want to treat them as missing data (for example if you have recoded them as absence/presence data), **before** opening the matrix select:
 
 ```
->nstates NOGAPS;
+nstates NOGAPS;
 ```
 
 • To get back to gaps as 5th state
 
 ```
-> nstates GAPS;
+nstates GAPS;
 ```
 
 • To tret gaps as **absence/presence characters**, you have to recode them first. We can use the program **SeqState** (graphic interface in Java, mutliplatform)
@@ -210,34 +210,39 @@ Proceed as explained for tree searching to find the shortest tree
 
 ## C. Implied weights (Goloboff 1993)
 
-1. If you want to change the value of K, first select the value (weighting function, any value from 1 to 100, the higher the lesser weighted against is homoplasy. Then check using implied weights box. 
-2. Search for fittest tree using the abovementioned searh strategies for parsimony
-3. If you want to know what the actual length of the fittest tree is found use
+If you want to change the value of K, first select the value (weighting function, any value from 1 to 100, the higher the lesser homoplasy is weighted against. Then check using implied weights box. 
 
 ```
-> piwe=10;
-## implements maximum implied weight as optimality criterion, with K=10;
-> fit;
-##reports the fit of the tree(s)
->length;
-##reports the actual number of steps of the tree(s)
+piwe=50;
+```
+Search for fittest tree using the abovementioned searh strategies for parsimony
+```
+fit;
+```
+reports the fit of the tree(s)
+If you want to know what the actual length of the fittest tree is found use
+```
+length;
+```
+To desactivate implied weights
+```
 piwe-; 
-##desactivates
 ```
  
+## D. Node support: resampling
 
-## D. Node support: Bootstrap
+You can use different resampling methods: boot=bootstrap, jak=jackknife, sym=symetrical resampling (recommended when using differential weighting)
 
+An example of a assesing node support using jackknife
 ```
->ttags -;
->ttags =;
->resample boot replications 1000 [ mult 15 =tbr hold 20 ];
-##you can use different resampling methods: boot=bootstrap, jak=jackknife, sym=symetrical resampling
+ttags -;
+ttags =;
+resample jak replications 1000 [ mult 15 =tbr hold 20 ];
 keep 1 ;
 ttags );
 ttags ;
 export - boots.tre; proc/;
->ttags -;
+ttags -;
 ```
 
 ## E.  Node support: Bremer support
@@ -255,44 +260,41 @@ Alternatively, to avoid collapsing the RAM with very suboptimal trres, conduct t
 *hold 4000 ; sub 5 ; find * ; <enter>*</br>
 *bsupport;*
 
+An example for assessing Bremer support to  tree nodes. Perform branch-swapping, using pre-existing trees as starting point. Alternatively, start by running a new, simple run, eg: mult 1000 =tbr h 10;
 ```
->ttags-;
->ttags=;
->hold 10000;
-> sub 50;
-> bbreak = tbr ;
-##Perform branch-swapping, using pre-existing trees as starting point. Alternatively make a new, simple run, eg: mult 1000 =tbr h 10;
-> bsupport;
->keep 1;
->ttags );
->ttags ;
->export – bremer.tre;
->ttags-;
+ttags-;
+ttags=;
+hold 10000;
+sub 50;
+bbreak = tbr ;
+collapse=3;
+bsupport;
+keep 1;
+ttags );
+ttags ;
+export – bremer.tre;
+ttags-;
 ```
+> **TIP: TNT allows you to write small scripts to automate certain tasks. As an example, there is a script that calculates Partition Bremer Support  (pbsup.run) written by Carlos Peña and available at https://github.com/carp420/pbsup.run.
 
-> TIP: TNT allows you to write small scripts to automate certain tasks. As an example, there is a script that calculates Partition Bremer Support  (pbsup.run) written by Carlos Peña and available at https://github.com/carp420/pbsup.run.
-
-Please refer to https://github.com/carlosp420/pbsup.run for any additional information about this routine.
  
 ## F. Partial analyses
 
 1. To analyse only part of the characters
 
-```
->blocks;
-##; Displays the defined partitions
-##*; Saves partitions
-##= Nn Disables all characters that are not listed in Nn (if the list is headed by the "&", only the shared partitions are kept active)
-```
+```blocks;``` Displays the defined partitions
+```blocks*; ```Saves partitions
+```blocks= Nn;``` Disables all characters that are not listed in Nn (if the list is headed by the "&", only the shared partitions are kept active)
+
 
 ## G. ILD incongruence test
 
-1. The Incongruence Length Difference (ILD) test can detect cases of inconsistency between data partitions and can be implemented in TNT through the ILD.run script (http://phylo.wikidot.com/tntwiki#TNT_scripts). Please, note that the script can only compare two partitions simultaneously.
+The Incongruence Length Difference (ILD) test can detect cases of inconsistency between data partitions and can be implemented in TNT through the ILDtntk.run script (http://phylo.wikidot.com/tntwiki#TNT_scripts). Please, note that the script can only compare two partitions simultaneously.
 
 ```
 > run ildtntk.run XX YY ZZ;
-##runs the script, if the script is not in the same folder as the TNT executable, then write the full path
-##XX: defines the number of characters of the first partition. 
-##YY: the number of replications to do, the more the better, minimum 1000, but you can use 99 to speed up the analysis
-##ZZ the search algorithms to use when calculating length for each partition in each replication (default: 1 random addition sequence + SPR), e.g: mult 15 =tbr hold 20
 ```
+runs the script, if the script is not in the same folder as the TNT executable, then write the full path
+XX: defines the number of characters of the first partition. 
+YY: the number of replications to do, the more the better, minimum 1000, but you can use 99 to speed up the analysis
+ZZ the search algorithms to use when calculating length for each partition in each replication (default: 1 random addition sequence + SPR), e.g: mult 15 =tbr hold 20
