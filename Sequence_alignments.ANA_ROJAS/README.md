@@ -115,13 +115,32 @@ module load clustal-omega
 
 4.- Select 3 alignments of your choice (from most similar to more divergent), and randomise the order of your sequences within the group (see below) and repeat step number 3. 
 
-To randmise the order you have several options:
+To randomise the order you have several options:
 
 ---- using the bbmap package
 
-To randomise files you can: `shuffle.sh in=file.fa out=shuffled.fa`  
+```
+#!/bin/bash
 
-To extract the 1% of files you can `reformat.sh in=file.fa out=sampled.fa samplerate=0.01`
+# define names
+#SBATCH --job-name=bbmap
+#SBATCH --error bbmap-%j.err
+#SBATCH --output bbmap-%j.out
+
+# memory and CPUs request
+#SBATCH --mem=6G
+#SBATCH --cpus-per-task=8
+
+# module load
+module load Java
+module load bbmap
+
+# jobs to launch
+# to randomise
+shuffle.sh in=file.fa out=shuffled.fa
+# to extract the 1% of files
+reformat.sh in=file.fa out=sampled.fa samplerate=0.01
+```
 
 ----- 
 An alternative using awk. 
@@ -144,8 +163,6 @@ For Linux, use the command `shuf`.
 For MacOX ==> `cat example.fa | awk '/^>/ {printf("%s%s\t",(N>0?"\n":""),$0);N++;next;} {printf("%s",$0);} END {printf("\n");}' | rl -c 10 | head -n 10 | awk '{printf("%s\n%s\n",$1,$2)}' > example_random.fa` 
 
 For Linux,==>  `cat example.fa | awk '/^>/ {printf("%s%s\t",(N>0?"\n":""),$0);N++;next;} {printf("%s",$0);} END {printf("\n");}' | shuf | head -n 10 | awk '{printf("%s\n%s\n",$1,$2)}' > example_random.fa`
-
-
 
 5.- Visualise all the alignments using Jalview (https://www.jalview.org/) or Belvu (https://www.sanger.ac.uk/tool/seqtools/) [*local work*]. **Remember that to do that you must download the data from your personal computers first. In your local folder, type `scp -r user@host:/folder_to_download.`**
 
