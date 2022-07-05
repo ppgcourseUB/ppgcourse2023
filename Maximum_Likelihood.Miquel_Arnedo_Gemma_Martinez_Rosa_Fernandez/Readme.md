@@ -90,7 +90,7 @@ We will use the concatenated alignment of our 50 genes and use the model we obta
 
 2.- Modify the **`non_parametric_iqtree.sh`** script to include the best substitution model where it says **MODEL**.
 
-`iqtree -s 50_genes.fa -m MODEL -b 50 nt 8`
+`iqtree -s 50_genes.fa -m MODEL -b 50 -nt 8`
 
 For executing the analysis run:
 
@@ -131,7 +131,7 @@ Go to the folder:
 
 Modify the **`topology_test_model.sh`** script to include the best substitution model where it says **MODEL**. You can use any command-line tool you know (such as nano or vim) or any text editor.
 
-`iqtree2 -s 50_genes.fa -z ../bear_species_trees_topologies.tre -m MODEL`
+`iqtree -s 50_genes.fa -z ../bear_species_trees_topologies.tre -m MODEL`
 
 For executing the analysis run:
 
@@ -145,7 +145,7 @@ Go to the folder:
 
 If you look at the **`topology_test_parsimony.sh`** file you can see the command you are executing.
 
-`iqtree2 -s 50_genes.fa -z ../bear_species_trees_topologies.tre -n 0`
+`iqtree -s 50_genes.fa -z ../bear_species_trees_topologies.tre -n 0`
 
 For executing the analysis run:
 
@@ -159,7 +159,7 @@ Go to the folder:
 
 Modify the **`topology_test_using_tree.sh`** script to include a previously reconstructed tree where it says **PREVIOUS_TREE**.
 
-`iqtree2 -s 50_genes.fa -z ../bear_species_trees_topologies.tre -te PREVIOUS_TREE`
+`iqtree -s 50_genes.fa -z ../bear_species_trees_topologies.tre -te PREVIOUS_TREE`
 
 For executing the analysis run:
 
