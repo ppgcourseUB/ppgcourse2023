@@ -28,6 +28,8 @@ Any question email me at a.rojas.m@csic.es
 
 `MSA/BlockA/groups_to_align/*.ufasta`         <== Groups of alignments, first identify proteins.
 
+`MSA/BlockA/*.tfa`                             <== Groups of alignments, first identify proteins.
+
 `MSA/BlockB/queries/GTP_query2launch.txt`      <== Queries to extract hits from BLAST
 
 `MSA/BlockB/queries/NR_query2launch.txt`       <== Queries to extract hits from BLAST
@@ -50,7 +52,7 @@ To get familiar with methods and visualisers.
 
 0.- Select All groups from `MSA/BlockA/groups_to_align/*.ufasta`
 
-1.- Run CD-HIT via command line (*you can prepare a job script to submit with `sbatch` like in the previous practical session*) or via web [*local work*] to generate non redundant sets (set -c 0.7). 
+1.- Run CD-HIT via command line (*you can prepare a job script to submit with `sbatch` like in the previous practical session*) or via web [*local work*] to generate non redundant sets (set -c 0.7), play with different -c ranges (i.e. -c 0.9, -c 0.8, -c 0.6).
 
 > **Remember that to work locally with these and other files during the course you must download the data FROM your personal computers first. This can be done by typing `scp -r user@host:/folder_to_download` in your terminal or using a FTP client like [FileZilla](https://filezilla-project.org/).**
 
@@ -149,6 +151,8 @@ For Linux,==>  `cat example.fa | awk '/^>/ {printf("%s%s\t",(N>0?"\n":""),$0);N+
 
 8.- Select any protein of the five alignments and IDENTIFY the proteins included in the alignment via BLAST or HMMER search (local work).
 
+9.- REPEAT ALL the steps above from stetp 1, with 4 selected alignments of your choice `*.tfa`.
+
 ## Exercise 2: Block B, PROTEIN FAMILIES
 
 In this Block you are going to analyse TWO big superfamilies of proteins (GTPasas and Nuclear Receptors). These families are essential signalling proteins. We want to analyse the presence of these proteins in our Bears. These proteins are usually multidomain, and also the subfamilies are distant, therefore posing a challenge for MSA.
@@ -203,6 +207,8 @@ hmmalign -o OUTfile.fasta  <*.hmm> <YourBIG unaligned file>
 
 <br>**QUESTIONS (or other actions)**</br>
 - Are the sequences of your alignments in both blocks single/multidomain?
+
+- What happened with the CD-HIT results for BEAR and other alignments?
 
 - Which part of the sequence you have in your alignments?
 
