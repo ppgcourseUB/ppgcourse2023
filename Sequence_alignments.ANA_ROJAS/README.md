@@ -142,6 +142,14 @@ shuffle.sh in=file.fa out=shuffled.fa
 reformat.sh in=file.fa out=sampled.fa samplerate=0.01
 ```
 
+To submit the job:
+
+```
+sbatch bbmap.run 
+```
+
+> Remember to replace the input files in the script with the correct ones!
+
 ----- 
 An alternative using awk. 
 
