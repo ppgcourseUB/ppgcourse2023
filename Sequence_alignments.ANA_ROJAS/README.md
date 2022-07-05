@@ -54,7 +54,7 @@ To get familiar with methods and visualisers.
 
 1.- Run CD-HIT via command line (*you can prepare a job script to submit with `sbatch` like in the previous practical session*) or via web [*local work*] to generate non redundant sets (set -c 0.7), play with different -c ranges (i.e. -c 0.9, -c 0.8, -c 0.6).
 
-> **Remember that to work locally with these and other files during the course you must download or upload the data ALWAYS FROM your personal computers first. This can be done by typing `scp -r user@host:/home/user/folder_to_download  <destinationfolder>` in your terminal (`scp -r <folder to upload>  user@host:/home/user/destinationfolder`, to upload a folder to the server), and without the `-r` if you transfer a file, or using a FTP client like [FileZilla](https://filezilla-project.org/).**
+> **Remember that to work locally with these and other files during the course you must download or upload the data ALWAYS FROM your personal computers. to download a folder (whithout `-r` for a file) type: `scp -r user@host:/home/user/folder_to_download  <destinationfolder>` in your terminal. To upload a folder to the server(whithout `-r` for a file) type: `scp -r <folder to upload>  user@host:/home/user/destinationfolder`. Alternatively, you can also use a FTP client like [FileZilla](https://filezilla-project.org/).**
 
 2.- Write a small code to run an alignment method for each group. 
 
