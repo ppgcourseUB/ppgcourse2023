@@ -71,7 +71,7 @@ Go to the folder and focus on the folder called *Orthogroups*. In this folder yo
 ```diff
 - 3.1.- How many orthologous groups has orthoFinder been able to build?
 
-- 3.2.- How many genes have been left outside the orthologous groups?
+- 3.2.- How many genes are not grouped with another one in a group?
 ```
 
 4.- Now go to the folder *Comparative_Genomics_Statistics*. In this folder you will find files summarizing the statistics of orthogroups for the different species.
@@ -120,8 +120,7 @@ Replace the running line in the script *launch_orthofinder.run* with (**remember
 
 Now, to correctly predict orthologous relationships a species tree is needed as reference. `OrthoFinder` tries to calculate the species tree on its own but you should always make sure the tree it has inferred is correct and rooted properly. Go to the results folder (proteomes/OrthoFinder/Results_Jul06_3) where you should see a folder called *Species_tree* and in there is a file called *SpeciesTree_rooted.txt*
 
-1.- Check the species tree that has been automatically build by `OrthoFinder`. You can download the file to your personal computer and use `phylo.io` (
-http://phylo.io/) to visualize the tree:
+1.- Check the species tree that has been automatically build by `OrthoFinder`. You can download the file to your personal computer and use `phylo.io` (https://beta.phylo.io/viewer/) to visualize the tree:
 
 ```diff
 - Based on your knowledge on how bears have evolved, is the tree correct?
@@ -170,5 +169,5 @@ We are now going to play a bit with the data we have generated in the different 
 ```diff
 - 3.1.- For the three methods of building trees, check whether the orthologs of A0A7N5K5T5_AILME are consistent across runs
 
-- 3.2.- Check the gene trees that contain this sequence in each run (remember you can use phylo.io to visualize trees). Can you find a good reason as to why orthology predictions changed?
+- 3.2.- Check the gene trees that contain this sequence in each run (remember you can use [phylo.io](https://beta.phylo.io/viewer/) to visualize trees. The compare option is very useful in this case). Can you find a good reason as to why orthology predictions changed?
 ```
