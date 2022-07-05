@@ -26,7 +26,7 @@ These are some wikis and websites that can help you:
 You can find additional information about TNT in its web page (see above). There is a general description for running the program in Windows in a powerpoint presentation (QuickTutorial). You can get online help from all instructions with the help command. Examples of scripts come with the download zip. 
 Finally, there is a TNT wiki (http://tnt.insectmuseum.org) where you can find additional information and wiki tutorials and a command list at http://phylo.wikidot.com/tntwiki#TNT_scripts
 
-Data files
+## Data files
 
 We will investigate the phylogenetic relationships of bears—Family Ursidae, http://tolweb.org/Ursidae/16015—by using a concatenated matrix of 6 mtDNA genes, namely cox1, cytb, nad1, nad5, 16S and 12S and and 5 nuclear genes (MC$R, RNASE1, CHRNA1, FES, IRBP), obtained from Genbank.
 
