@@ -30,7 +30,7 @@ We are including the most common site-homogeneous models and almost all the mixt
 
 2.- For executing the analysis run:
 
-`sbatch model_selection.sh`
+`sbatch model_finder.sh`
 
 3.- Check the 50_genes.fa.iqtree file.
 
