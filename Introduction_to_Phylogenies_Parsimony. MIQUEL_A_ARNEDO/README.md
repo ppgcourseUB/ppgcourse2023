@@ -194,12 +194,15 @@ ttags -;
 ## B. Implementing alternative gap treatments
 
 TNT considers the GAPS as 5th state by default. If you want to treat them as missing data (for example if you have recoded them as absence/presence data), before opening the matrix select:
+
+```
 >nstates NOGAPS;
+```
 
 • To get back to gaps as 5th state
 
 ```
->nstates GAPS;
+> nstates GAPS;
 ```
 
 • To tret gaps as absence/presence characters, you have to recode them first. We can use the program SeqState (graphic interface in Java, mutliplatform)
