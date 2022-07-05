@@ -176,7 +176,7 @@ TNT includes a “one-shot analysis” that can be run with the script "aquickie
 
 To run it from the command line type
 
->proc filename.tnt ; aquickie ; [enter].
+*>proc filename.tnt ; aquickie ; [enter].*
 
 ```
 > xmult=hits 10 noupdate nocss replic 10 ratchet 10 fuse 1 drift 5 hold 100 noautoconst keepall;
