@@ -1,0 +1,16 @@
+#!/bin/bash                                                                                                             
+
+##This is a script to run orthofinder                                                        
+
+#SBATCH -p normal                                                                                      
+#SBATCH -c 8                                                                                                     
+#SBATCH --mem=6GB                                                                                       
+#SBATCH --job-name orthofinder-job01                                                                            
+#SBATCH -o %j.out                                                          
+#SBATCH -e %j.err                                                      
+
+#module loadding. Check available modules with `module avail` 
+module load orthofinder
+
+#running orthofinder
+orthofinder -f proteomes -t 8 -a 2
