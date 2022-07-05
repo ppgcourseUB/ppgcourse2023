@@ -120,7 +120,7 @@ Let’s analyze conflict between individual gene trees to see which phylogenetic
 We have selected 50 orthologous groups and have run individual gene trees with IQ-TREE. Let’s have a look at them here: **`Bear_dataset_SensitivityAnalyses/PHYLIP` (.tree files)**
 
 
-1.- ASTRAL-III needs all gene trees in the same file. For that, let’s concatenate them: cat *trees>bears_allTrees.tre
+1.- ASTRAL-III needs all gene trees in the same file. For that, let’s concatenate them: `cat *trees>bears_allTrees.tre`
 
 Let’s move them to the ASTRAL folder:
 
