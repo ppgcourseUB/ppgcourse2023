@@ -1,12 +1,13 @@
-PARSIMONY: exercises for TNT
-Instructor: Miquel A. Arnedo
+# PARSIMONY: exercises for TNT
 
-TNT available at http://www.lillo.org.ar/phylogeny/tnt/
+**Instructor:** Miquel A. Arnedo
+
+TNT is available at http://www.lillo.org.ar/phylogeny/tnt/
 
 OTHER PROGRAMS: 
-Mesquite Matrix and tree manipulation http://mesquiteproject.wikispaces.com/installation
-FigTree: Tree visualization and manipulation http://tree.bio.ed.ac.uk/software/figtree/
-Sequence Matrix. Assemble multigene/multitaxon phylogenetic datasets easily
++ Mesquite Matrix and tree manipulation http://mesquiteproject.wikispaces.com/installation
++ FigTree: Tree visualization and manipulation http://tree.bio.ed.ac.uk/software/figtree/
++ Sequence Matrix. Assemble multigene/multitaxon phylogenetic datasets easily
  http://www.ggvaidya.com/taxondna/
 
 CODING GAPS AS ABSENCE/PRESENCE DATA
