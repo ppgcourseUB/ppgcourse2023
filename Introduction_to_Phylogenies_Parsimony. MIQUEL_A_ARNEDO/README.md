@@ -4,17 +4,17 @@
 
 ## Software
 
-TNT is available at http://www.lillo.org.ar/phylogeny/tnt/
+<ins>**TNT**</ins> is available at http://www.lillo.org.ar/phylogeny/tnt/
 
-OTHER PROGRAMS: 
-+ Mesquite Matrix and tree manipulation - http://www.mesquiteproject.org/Installation.html
-+ FigTree: Tree visualization and manipulation - http://tree.bio.ed.ac.uk/software/figtree/
-+ Sequence Matrix: Assemble multigene/multitaxon phylogenetic datasets easily - http://www.ggvaidya.com/taxondna/
+**OTHER PROGRAMS:** 
++ <ins>**Mesquite:</ins>** Matrix and tree manipulation - http://www.mesquiteproject.org/Installation.html
++ <ins>**FigTree:</ins>** Tree visualization and manipulation - http://tree.bio.ed.ac.uk/software/figtree/
++ <ins>**Sequence Matrix:</ins>** Assemble multigene/multitaxon phylogenetic datasets easily - http://www.ggvaidya.com/taxondna/
 
-CODING GAPS AS ABSENCE/PRESENCE DATA:
-+ SeqState: http://bioinfweb.info/Software/SeqState
+**CODING GAPS AS ABSENCE/PRESENCE DATA:**
++ <ins>**SeqState:</ins>** http://bioinfweb.info/Software/SeqState
 
-> NOTICE that TNT comes in two flavours, command line with executables for Widows, Linux and Mac OSX and with a Shell with windows only for Windows. If you want to run the version with windows on Mac OSX or Linux you will need a Windows emulator (Parallels, VirtualBOX) or WINE (highly recommended)
+> **NOTICE that TNT comes in two flavours, command line with executables for Widows, Linux and Mac OSX and with a Shell with windows only for Windows. If you want to run the version with windows on Mac OSX or Linux you will need a Windows emulator (Parallels, VirtualBOX) or WINE (highly recommended)**
 
 For this exercise we will use the command line executables
 Download TNT form the website link above.
@@ -22,6 +22,8 @@ Download TNT form the website link above.
 These are some wikis and websites that can help you:
 + http://phylo.wikidot.com/tntwiki 
 + http://phylobotanist.blogspot.com/2015/03/parsimony-analysis-in-tnt-using-command.html
+
+---
 
 You can find additional information about TNT in its web page (see above). There is a general description for running the program in Windows in a powerpoint presentation (QuickTutorial). You can get online help from all instructions with the help command. Examples of scripts come with the download zip. 
 Finally, there is a TNT wiki (http://tnt.insectmuseum.org) where you can find additional information and wiki tutorials and a command list at http://phylo.wikidot.com/tntwiki#TNT_scripts
@@ -36,30 +38,30 @@ Below you will find the instruction to conduct some basic analyses using parsimo
 
 You can find complete information on the commands used by TNT at http://phylo.wikidot.com/tntwiki#TNT_scripts
 
-Some interesting commands:
+**Some interesting commands:**
 
 ```
 RDIR set path for "run" files
 STATS.RUN: Script that calculates RI and CI. 
 XWIPE: Remove data set from memory (allows changing settings) 
-BEST:    filter trees, discarding suboptimal 
-    		N   keep trees up to N steps (weighted) worse than best 
-  		  -   invert the selection criterion 
- 		   [   discard trees not fulfilling constraints of monophyly 
-  		  ]   discard trees fulfilling them 
- 		   *   collapse the trees before comparing 
+BEST: filter trees, discarding suboptimal 
+N   keep trees up to N steps (weighted) worse than best 
+-   invert the selection criterion 
+[   discard trees not fulfilling constraints of monophyly 
+]   discard trees fulfilling them 
+*   collapse the trees before comparing 
 KEEP N number of trees in memeory
 CDIR: changes local directory
 TAXNAME +N: increases the length of the taxa lables to N characters
 ```
 
 
-For the terminal commands we used some of the explanations provided by by Alexander Schmidt-Lebuhn available at http://phylobotanist.blogspot.com/2015/03/parsimony-analysis-in-tnt-using-command.html
+For the terminal commands we used some of the explanations provided by by [Alexander Schmidt-Lebuhn](https://www.anbg.gov.au/cpbr/staff/schmidt-lebuhn-alexander_staff.html) available at http://phylobotanist.blogspot.com/2015/03/parsimony-analysis-in-tnt-using-command.html
  
 
 ## A. Search for the shortest tree with TNT
 
-TNT includes three different search strategies, namely implicit enumeration (exhaustive search, it does guarantee the shortest tree, but there is a taxa limit, ~15), heuristic (do not guarantee finding the shortest tree) and new search strategy, optimised algorithm for heuristic searchers of large data matrices (e.g. >100 taxa).
+TNT includes three different search strategies, namely **implicit enumeration** (exhaustive search, it does guarantee the shortest tree, but there is a taxa limit, ~15), **heuristic** (do not guarantee finding the shortest tree) and **new search strategy**, optimised algorithm for heuristic searchers of large data matrices (e.g. >100 taxa).
 	
 1. A useful feature in TNT is the possibility of create a log file where all commands, analyses and results can be saved for future review. Start logging the analysis output into a text file with log filename.
 
@@ -83,14 +85,14 @@ TNT includes three different search strategies, namely implicit enumeration (exh
 ##you can abbreviate the commands to the mimum unambiguos letter , here p input_file_name.tnt
 ```
 
-+ For exhaustive searches
++ For <ins>**exhaustive searches</ins>**
 
 ```
 >IENUM;
 ##search algorithm, results guaranteed to be optimal but feasible only for small data sets (<15 terminals)
 ```
 
-+ For heuristic searches
++ For <ins>**heuristic searches</ins>**
 
 4. Set the maximum number of trees to be stored in RAM (at least, the product of the number of RAS by the number of trees kept by replication)
 5. Select the search strategy (ej: RAS+TBR)
@@ -161,7 +163,7 @@ export> consensus_tree.tre ;
 ttags -;
 ##save the consensus tree with branch lengs in nexus format 
 ```
-+ For New technology Search
++ For <ins>**New technology Search</ins>**
 
 This is a collection of strategies that can be combined in different ways. A possible example:
 • Check driven search
@@ -174,9 +176,9 @@ TNT includes a “one-shot analysis” that can be run with the script "aquickie
 
 To run it from the command line type
 
-```
 >proc filename.tnt ; aquickie ; [enter].
 
+```
 > xmult=hits 10 noupdate nocss replic 10 ratchet 10 fuse 1 drift 5 hold 100 noautoconst keepall;
 >bbreak = tbr ;
 >nelsen * ;
@@ -190,10 +192,9 @@ ttags -;
 ##conducts a new technology tree search combining ratchet, fues, drift and automatic stopping criteria, runs an additonal round of branch swapping on shortest trees, makes the consensus and save it in NEXUS with branch lenthgs 
 ```
  
-
 ## B. Implementing alternative gap treatments
 
-TNT considers the GAPS as 5th state by default. If you want to treat them as missing data (for example if you have recoded them as absence/presence data), before opening the matrix select:
+TNT considers the **GAPS as 5th state by default**. If you want to treat them as missing data (for example if you have recoded them as absence/presence data), **before** opening the matrix select:
 
 ```
 >nstates NOGAPS;
@@ -205,32 +206,27 @@ TNT considers the GAPS as 5th state by default. If you want to treat them as mis
 > nstates GAPS;
 ```
 
-• To tret gaps as absence/presence characters, you have to recode them first. We can use the program SeqState (graphic interface in Java, mutliplatform)
+• To tret gaps as **absence/presence characters**, you have to recode them first. We can use the program **SeqState** (graphic interface in Java, mutliplatform)
 
-SeqState
+<ins>**SeqState</ins>**
 
 1. Double click on the SeqState java executable
 2. Go to the top menu
 
-```
-File> Load FASTA File
-```
+*File> Load FASTA File*
 
 3. Navigate to the file that you want to open (NOTICE: SeqState opens either NEXUS or FASTA format, however out of experience FASTA works better)
 4. On the top menu, go to
 
-```
-IndelCoder> Simmons and Ochoterena (2000) – Simple coding
-```
+*IndelCoder> Simmons and Ochoterena (2000) – Simple coding*
 
-It will automatically generate an output file in NEXUS format with name “input_file_name_sic.nex”
+It will automatically generate an output file in NEXUS format with name “input_file_name**_sic.nex**”
 
 > **ATTENTION, this format is not directly readable by TNT, we must edit it using a standard text editor, to convert it into TNT format. Please, not that note DNA, protein and numeric coding can coexist in the same matrix, but they have to be entered sequentially and the format specify with the following notation: &[dna], &[num], &[prot] for DNA sequence data, morphology/binary and aminoacid, respectively.**
 
-In our example we will make the following changes:
+**In our example we will make the following changes:**
 
-```
-xread
+```xread
 number_of_chars number_of_taxa
 &[dna]
 ‘DNA matrices’
@@ -247,9 +243,9 @@ Proceed as explained for tree searching to find the shortest tree
 
 ## C. Implied weights (Goloboff 1993)
 
-1.	If you want to change the value of K, first select the value (weighting function, any value from 1 to 100, the higher the lesser weighted against is homoplasy. Then check using implied weights box. 
-2.	Search for fittest tree using the abovementioned searh strategies for parsimony
-3.	If you want to know what the actual length of the fittest tree is found use
+1. If you want to change the value of K, first select the value (weighting function, any value from 1 to 100, the higher the lesser weighted against is homoplasy. Then check using implied weights box. 
+2. Search for fittest tree using the abovementioned searh strategies for parsimony
+3. If you want to know what the actual length of the fittest tree is found use
 
 ```
 > piwe=10;
