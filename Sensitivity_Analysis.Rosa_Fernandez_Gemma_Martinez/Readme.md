@@ -122,7 +122,7 @@ We have selected 50 orthologous groups and have run individual gene trees with I
 
 1.- ASTRAL-III needs all gene trees in the same file. For that, let’s concatenate them: 
 
-**`cat *trees>bears_allTrees.tre`**
+**`cat *tree>bears_allTrees.tre`**
 
 Let’s move them to the ASTRAL folder:
 
