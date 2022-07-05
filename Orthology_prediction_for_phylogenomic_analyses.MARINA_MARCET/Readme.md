@@ -32,8 +32,8 @@ You can find the subset of proteomes we are going to use in the folder proteomes
 We will run `OrthoFinder` with the provided dataset and default values. To make sure it works quickly we
 provided only a subset of the data.
 
-1.- To execute `OrthoFinder`, submit the job script *orthofinder.run* using the command `sbatch`.
-Here you can see the contents of the script *orthofinder.run*:
+1.- To execute `OrthoFinder`, submit the job script *launch_orthofinder.run* using the command `sbatch`.
+Here you can see the contents of the script *launch_orthofinder.run*:
 
 ```bash
 #!/bin/bash                                                                                                             
@@ -86,7 +86,7 @@ Go to the folder and focus on the folder called *Orthogroups*. In this folder yo
 
 1.- `OrthoFinder` has few parameters, but the most important one of them is the inflation parameter. This parameter indicates whether the orthogroups are going to be smaller or bigger. By default it is set to 1.5. We are now going to run `OrthoFinder` with a bigger inflation parameter. 
 
-Replace the running line in the script *orthofinder.run* with (**remember to also change job name!**):
+Replace the running line in the script *launch_orthofinder.run* with (**remember to also change job name!**):
 
 `orthofinder -b proteomes/OrthoFinder/Results_Jul06/ -I 3.0 -og`
 
@@ -112,7 +112,7 @@ This will generate a second folder which will be called *Results_Jul06_1* where 
 
 Orthogroups can contain duplications which means we can have a mix of orthologs and paralogs. `OrthoFinder` implements a method to distinguish between them. This time we will ask `OrthoFinder` to start from the orthogroups and to finish the process till the end.
 
-Replace the running line in the script *orthofinder.run* with (**remember to also change job name!**):
+Replace the running line in the script *launch_orthofinder.run* with (**remember to also change job name!**):
 
 `orthofinder -fg proteomes/OrthoFinder/Results_Jul06/`
 
@@ -129,7 +129,7 @@ http://phylo.io/) to visualize the tree:
 
 2.- If the tree is not rooted correctly, re-root the tree by clicking on the branch and pressing on re-root (make sure you press on the branch and not on the species name!). Now export the newick (find the button on the upper right part of the image, press on export nwk). Save the file into your folder and run orthofinder again with the option -s speciesTree_file.
 
-Replace the running line in the script *orthofinder.run* with (**remember to also change job name!**):
+Replace the running line in the script *launch_orthofinder.run* with (**remember to also change job name!**):
 
 `orthofinder -fg proteomes/OrthoFinder/Results_Jul06/ -s speciesTree_file`
 
