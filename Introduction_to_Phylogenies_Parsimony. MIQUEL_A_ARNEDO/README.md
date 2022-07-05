@@ -65,25 +65,18 @@ TNT includes three different search strategies, namely **implicit enumeration** 
 	
 1. A useful feature in TNT is the possibility of create a log file where all commands, analyses and results can be saved for future review. Start logging the analysis output into a text file with log filename.
 
-```
-> log file_name_log.out;
-> log /;
-#to close it
-```
+```log file_name_log.out;```, and ```log /;```to close it
+
 
 2. TNT is set to a ridiculously low memory usage and will thus generally throw an error if you attempt to import a large matrix
 
-```
->mxram 2000;
-##Enter mxram 200 to set memory usage to 200 MB or whatever is realistic and necessary
-```
+Enter mxram 200 to set memory usage to 200 MB or whatever is realistic and necessary```mxram 2000;```
+
 
 3. Read data matrix: 
 
-```
->procedure input_file_name.tnt; 
-##you can abbreviate the commands to the mimum unambiguos letter , here p input_file_name.tnt
-```
+```procedure input_file_name.tnt; ```you can abbreviate the commands to the mimum unambiguos letter , here p input_file_name.tnt
+
 
 + For <ins>**exhaustive searches</ins>**
 
