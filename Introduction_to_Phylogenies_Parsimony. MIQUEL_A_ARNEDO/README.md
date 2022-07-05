@@ -75,87 +75,61 @@ Enter mxram 200 to set memory usage to 200 MB or whatever is realistic and neces
 
 3. Read data matrix: 
 
-```procedure input_file_name.tnt; ```you can abbreviate the commands to the mimum unambiguos letter , here p input_file_name.tnt
+```procedure input_file_name.tnt; ```you can abbreviate the commands to the mimum unambiguos letter , here  ```p input_file_name.tnt; ```
 
 
 + For <ins>**exhaustive searches</ins>**
 
-```
->IENUM;
-##search algorithm, results guaranteed to be optimal but feasible only for small data sets (<15 terminals)
-```
+```IENUM;```search algorithm, results guaranteed to be optimal but feasible only for small data sets (<15 terminals)
+
 
 + For <ins>**heuristic searches</ins>**
 
-4. Set the maximum number of trees to be stored in RAM (at least, the product of the number of RAS by the number of trees kept by replication)
-5. Select the search strategy (ej: RAS+TBR)
-6. Start searching
+1. Set the maximum number of trees to be stored in RAM (at least, the product of the number of RAS by the number of trees kept by replication) ```hold 1000;```
+2. Select the search strategy (ej: RAS+TBR) ```mult 1000 =tbr h 10;```
 
-```
->hold 1000;
->mult 1000 =tbr h 10;
-```
+TNT reports the number of trees found and the steps (Best Score), and the number pf replicates (rpls) that found the shortest tree. If the repls that found the Best score tree are less than 20% of the total repls. increase the number of repls. (e.g. by an order of magnitude). If any of the rpls. has reached the maximum number of Tree to save per replication (overflow) then, conduct a new round of searching but selecting the trees in RAM
 
-7. TNT reports the number of trees found and the steps (Best Score), and the number pf replicates (rpls) that found the shortest tree. 
-8. If the repls that found the Best score tree are less than 20% of the total repls. increase the number of repls. (e.g. by an order of magnitude) 
-9. If any of the rpls. has reach the maximum number of Tree to save per replication (overflow) then, conduct a new round of searching but selecting the trees in RAM
-10. To visualize trees:
+To visualize trees:```tplot;```
+```tplot N;:```cshow tree(s) N
+```tplot *N;:``` show tree(s) N in parenthetical notation
+```naked=;``` show tree diagrams without numbers (default)
+```naked-;``` show tree diagrams with numbers 
 
-```
->tplot;
-##N    show tree(s) N, *N   show tree(s) N in parenthetical notation. 
->naked=;
-## =   show tree diagrams without numbers (default),   -   with
-```
+Repeat the operation to return to the previous screen or press esc
 
-11. Repeat the operation to return to the previous screen or press esc
+To select outgroup (in case it is not the first taxon in the matrix):
 
-12. To select outgroup (in case it is not the first taxon in the matrix):
+```outgroup N;``` where N is the order of the taxon
+```taxname=;```turns on the name labes, so you can use the terminal name instead
+```outgroup NC_009492_Ailuropoda_melanoleuc;```
+```reroot;``` enforces the new root
 
-```
->outgroup N;
-##where N is the order of the taxon
->taxname=;
-##turns on the name labes, so you can use the terminal name instead
->outgroup NC_009492_Ailuropoda_melanoleuc;
->reroot;
-## enforces the new root
-```
-
-13. To save the trees in a file
+To save the trees in a file
 14. The file remains open and will store any other tree obtained.
 15. If you want to stop saving trees, close the file
 
-```
->tsave file_name.tre;
-##open tree files (with + at the end, append)
->save;
-##save trees to file (previously opened with "tsave"), 
->save N;
-##save N tree(s) 
->save /
-##close tree file
-```
+```tsave file_name.tre;``` open tree files (with + at the end, append)
+```save;```save trees to file (previously opened with "tsave"), 
+```save N;``` save N tree(s)
+```save /``` close tree file
 
-16. If you found more than one shortest tree, make the consensus
+If you found more than one shortest tree, make the consensus
 
-```
->nelsen*;
-##Calculate strict consensus tree, * keep consensus as last tree in memory
-```
+```nelsen*;```Calculate strict consensus tree, * keep consensus as last tree in memory
 
-17. Alternatively, export the tree in NEXUS format to open them with FIGTREE. We will use the command line. Write the instruction taxname =; To record the names of the taxa instead of numbers, and then export file_name;
+Alternatively, export the tree in NEXUS format to open them with FIGTREE. We will use the command line. Write the instruction taxname =; To record the names of the taxa instead of numbers, and then export file_name;
 
+```tchoose /;``` select last memory tree, discard the rest 
+to save the consensus tree with branch lengs in nexus format 
 ```
-> tchoose /;
-##select last memory tree, discard the rest 
 ttags = ;
 blength *;
 ttags );
 export> consensus_tree.tre ;
 ttags -;
-##save the consensus tree with branch lengs in nexus format 
 ```
+
 + For <ins>**New technology Search</ins>**
 
 This is a collection of strategies that can be combined in different ways. A possible example:
@@ -169,8 +143,9 @@ TNT includes a “one-shot analysis” that can be run with the script "aquickie
 
 To run it from the command line type
 
-*>proc filename.tnt ; aquickie ; [enter].*
+```proc filename.tnt ; aquickie ;```
 
+Below you can fins an example of a combination of different search strategies optimised for large datasets (>100 taxa). It conducts a new technology tree search combining ratchet, fuse, drift and automatic stopping criteria, runs an additonal round of branch swapping on shortest trees, makes the consensus and save it in NEXUS with branch lenthgs 
 ```
 > xmult=hits 10 noupdate nocss replic 10 ratchet 10 fuse 1 drift 5 hold 100 noautoconst keepall;
 >bbreak = tbr ;
@@ -182,7 +157,6 @@ ttags );
 ttags ;
 export> consensus_tree.tre ;
 ttags -;
-##conducts a new technology tree search combining ratchet, fues, drift and automatic stopping criteria, runs an additonal round of branch swapping on shortest trees, makes the consensus and save it in NEXUS with branch lenthgs 
 ```
  
 ## B. Implementing alternative gap treatments
