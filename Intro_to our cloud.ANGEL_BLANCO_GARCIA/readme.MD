@@ -22,7 +22,7 @@ The infrastructure you will be using runs on a public cloud provider, and has be
 You can access the cluster by connecting to the login node.You can only access the cluster using SSH and other related secure protocols. You will receive by email the information about the name/address of this login node and your login credentials (username and password).
 
 * **Command line access**: Needed for launching jobs on the cluster. Use any relatively recent ssh client:
-    - **Linux**: open any terminal program and type (replace 'user' and 'loginnodeaddress' accordingly):
+    - **Linux**: open any terminal program and type (replace '*user*' and '*loginnodeaddress*' accordingly):
  
     `> ssh user@loginnodeaddress`
     
