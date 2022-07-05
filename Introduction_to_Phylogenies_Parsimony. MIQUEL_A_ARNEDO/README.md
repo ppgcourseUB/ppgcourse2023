@@ -263,7 +263,7 @@ piwe-;
 ```
  
 
-## . Node support: Bootstrap
+## D. Node support: Bootstrap
 
 ```
 >ttags -;
