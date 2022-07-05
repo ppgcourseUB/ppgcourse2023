@@ -57,15 +57,17 @@ TAXNAME +N: increases the length of the taxa lables to N characters
 For the terminal commands we used some of the explanations provided by by Alexander Schmidt-Lebuhn available at http://phylobotanist.blogspot.com/2015/03/parsimony-analysis-in-tnt-using-command.html
  
 
-A.	Search for the shortest tree with TNT
+## A. Search for the shortest tree with TNT
 
 TNT includes three different search strategies, namely implicit enumeration (exhaustive search, it does guarantee the shortest tree, but there is a taxa limit, ~15), heuristic (do not guarantee finding the shortest tree) and new search strategy, optimised algorithm for heuristic searchers of large data matrices (e.g. >100 taxa).
 	
-1.	A useful feature in TNT is the possibility of create a log file where all commands, analyses and results can be saved for future review. Start logging the analysis output into a text file with log filename.
-> log file_name_log.out;
+* 1. A useful feature in TNT is the possibility of create a log file where all commands, analyses and results can be saved for future review. Start logging the analysis output into a text file with log filename.
 
+```
+> log file_name_log.out;
 > log /;
 #to close it
+```
 
 2.	TNT is set to a ridiculously low memory usage and will thus generally throw an error if you attempt to import a large matrix
 
