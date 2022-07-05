@@ -8,7 +8,7 @@
 
 **OTHER PROGRAMS:** 
 + <ins>**Mesquite:</ins>** Matrix and tree manipulation - http://www.mesquiteproject.org/Installation.html
-+ <ins>**FigTree:</ins>** Tree visualization and manipulation - http://tree.bio.ed.ac.uk/software/figtree/
++ <ins>**FigTree:</ins>** Tree visualization and manipulation - https://github.com/rambaut/figtree/releases
 + <ins>**Sequence Matrix:</ins>** Assemble multigene/multitaxon phylogenetic datasets easily - http://www.ggvaidya.com/taxondna/
 
 **CODING GAPS AS ABSENCE/PRESENCE DATA:**
