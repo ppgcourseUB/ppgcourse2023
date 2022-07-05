@@ -11,8 +11,8 @@ OTHER PROGRAMS:
 + FigTree: Tree visualization and manipulation - http://tree.bio.ed.ac.uk/software/figtree/
 + Sequence Matrix: Assemble multigene/multitaxon phylogenetic datasets easily - http://www.ggvaidya.com/taxondna/
 
-CODING GAPS AS ABSENCE/PRESENCE DATA
-SeqState: http://bioinfweb.info/Software/SeqState
+CODING GAPS AS ABSENCE/PRESENCE DATA:
++ SeqState: http://bioinfweb.info/Software/SeqState
 
 > NOTICE that TNT comes in two flavours, command line with executables for Widows, Linux and Mac OSX and with a Shell with windows only for Windows. If you want to run the version with windows on Mac OSX or Linux you will need a Windows emulator (Parallels, VirtualBOX) or WINE (highly recommended)
 
@@ -38,6 +38,7 @@ You can find complete information on the commands used by TNT at http://phylo.wi
 
 Some interesting commands:
 
+```
 RDIR set path for "run" files
 STATS.RUN: Script that calculates RI and CI. 
 XWIPE: Remove data set from memory (allows changing settings) 
@@ -50,6 +51,8 @@ BEST:    filter trees, discarding suboptimal
 KEEP N number of trees in memeory
 CDIR: changes local directory
 TAXNAME +N: increases the length of the taxa lables to N characters
+```
+
 
 For the terminal commands we used some of the explanations provided by by Alexander Schmidt-Lebuhn available at http://phylobotanist.blogspot.com/2015/03/parsimony-analysis-in-tnt-using-command.html
  
