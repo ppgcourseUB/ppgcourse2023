@@ -1,7 +1,7 @@
 #!/bin/sh
 #SBATCH -n 1
-#SBATCH -c 10
-#SBATCH --mem=10G
+#SBATCH -c 8
+#SBATCH --mem=6G
 #SBATCH -o slurm.%j.%x.out
 #SBATCH -e slurm.%j.%x.err
 #SBATCH --time=0-5:0
