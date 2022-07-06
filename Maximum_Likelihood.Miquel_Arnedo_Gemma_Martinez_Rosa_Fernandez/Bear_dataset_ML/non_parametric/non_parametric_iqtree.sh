@@ -6,7 +6,7 @@
 #SBATCH -e slurm.%j.%x.err
 #SBATCH --time=0-5:0
 
-module load cesga/2020
-module load iq-tree/2.1.2
+#module load 
+module load iq-tree
 
-iqtree2 -s 50_genes.fa -m MODEL -b 50 -T AUTO
+iqtree -s 50_genes.fa -m MODEL -b 50 -nt 8
