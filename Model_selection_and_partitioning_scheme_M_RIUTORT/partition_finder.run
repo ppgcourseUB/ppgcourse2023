@@ -1,0 +1,19 @@
+#!/bin/bash
+
+##Script to run PartitionFinder in the cloud
+
+#SBATCH -p normal                
+#SBATCH -c 8                    
+#SBATCH --mem=6GB
+#SBATCH --job-name partitionfinder-job01               
+#SBATCH -o %j.out               
+#SBATCH -e %j.err               
+
+# setting some variables:
+FOLDER="DATA/input_files"
+
+# loading the modules
+module load partitionfinder
+
+# running PartitionFinder
+PartitionFinder.py $FOLDER --raxml
