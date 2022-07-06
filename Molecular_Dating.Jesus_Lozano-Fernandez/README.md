@@ -119,6 +119,21 @@ Compare the values of the age of the *extant_mrca* of the analysis under the pri
 * Click on Node Bars and Display the *age_95%_HPD*, so you’ll be able to be the 95% Highest Posterior Density interval over the nodes. You can play with the bar width and the Font size to make the figure to look clearer.
 * Lastly, add an *Scale Axis* and select a *Reverse axis*, so the present time will be on the right and the past time will be on the left.
 
--  ![question](img/Tracer_NodeVsPrior.png)
+-  ![question](img/bears_nodedate.mcc.tre.JPG)
 
 - **Which is the Posterior Probability of the node leading to Ursinae and does agree the 95% HPD seeing here with the one in Tracer ?**
+
+***
+
+## TOTAL EVIDENCE
+* *Based on the 5th exercise ‘Estimating speciation times using total-evidence dating’*
+
+https://revbayes.github.io/tutorials/dating/tefbd
+
+https://revbayes.github.io/tutorials/fbd/#Intro-FBD [an extended analysis]
+
+## Background
+
+In this exercise, we will combine different types of data from 18 species of extant and extinct bears to estimate a posterior distribution of calibrated time trees for this group. We have molecular sequence data for eight species, which represent all of the eight living bears. There is also available molecular sequence data for two recently extincted species, the sub-fossil specimens (*Arctodus simus*, *Ursus spelaeus*), but we haven’t included them for simplicity.
+
+The sequence alignment is the same as the we used one before and the morphological character matrix unites 18 taxa (both fossil and extant) with 62 binary (states 0 or 1) characters (Abella et al. 2012). For the fossil species, occurrence times are obtained from the literature or fossil databases. The fossil species used in this analysis are listed in ‘bears_taxa.tsv’ along with the age range for the species and relevant citation.
