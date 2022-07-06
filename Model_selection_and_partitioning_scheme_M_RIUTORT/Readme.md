@@ -247,8 +247,7 @@ Make sure command 6 is set to greedy.
 search = greedy;
 ```
 
-Now, you can submit again the job script *partition_finder.run*. Change the job name to prevent log files from being overwritten. 
-Modified script *partition_finder.run*:
+Now, you can submit the a job script named *partition_finder2.run*:
 
 ```
 #!/bin/bash
@@ -272,7 +271,7 @@ module load partitionfinder
 PartitionFinder.py $FOLDER
 ```
 
-> We are not giving the ‘–-raxml’ command so now all models present in `BEAST` will be tested, which will take longer than in our previous analyses because `RAxML` only offers "GTR", "GTRGAMMA" and "GTRGAMMA+I", while `BEAST` has a longer list of possibilities.
+> Notice that we are not giving the ‘–-raxml’ command so now all models present in `BEAST` will be tested, which will take longer than in our previous analyses because `RAxML` only offers "GTR", "GTRGAMMA" and "GTRGAMMA+I", while `BEAST` has a longer list of possibilities.
 
 While this third analysis is running, we are going to have a look to the results of the two previous analyses.
 
