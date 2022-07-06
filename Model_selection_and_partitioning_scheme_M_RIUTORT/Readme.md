@@ -45,13 +45,13 @@ The program requires the dataset to be in *phylip* format (the file you will use
 
 We will perform two analyses varying some of the options in the program, we will first run two fast analyses and then set the third (**that takes more than one hour to run**), while the third analysis is running, we will comment the results. In all cases we will use a extreme scheme dividing all the protein coding genes by codons plus the two ribosomal genes (29 putative partitions in total).
 
-### Donwload files
+### Files 
 
 Files are in the directory DATA/PartitionFinder
 
 ### Prepare command file
 
-The file *partition_finder.cfg* includes the options we select to run the PartitionFinder program . Open this file with `nano` to make some modifications for the different runs we are going to perform:
+The file *partition_finder.cfg* includes the options we select to run the PartitionFinder program . Open this file with `nano` to make some modifications for the different runs we are going to perform (for using nano in the cloud first load the module):
 
 1. Modifications for the first run:
 
