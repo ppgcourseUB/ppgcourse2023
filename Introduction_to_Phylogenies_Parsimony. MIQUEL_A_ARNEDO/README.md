@@ -58,7 +58,11 @@ TAXNAME +N: increases the length of the taxa lables to N characters
 
 For the terminal commands we used some of the explanations provided by by [Alexander Schmidt-Lebuhn](https://www.anbg.gov.au/cpbr/staff/schmidt-lebuhn-alexander_staff.html) available at http://phylobotanist.blogspot.com/2015/03/parsimony-analysis-in-tnt-using-command.html
  
- Although you can run any analyses in TNT using sequential commands, the easiest and fastest way is to wrap up series of commands in small scripts using a text editor. Then, name them using the extension .run. You can run the scripts within TNT using ```run file_name.run```. See the examples provided in the **data** folder.
+**Although you can run any analyses in TNT using sequential commands, the easiest and fastest way is to wrap up series of commands in small scripts using a text editor**. Then, name them using the extension .run. You can run the scripts within TNT using ```run file_name.run```. 
+Read your matrix:  
+```proc your_matrix```
+and try
+```aquickie```
 
 ## A. Search for the shortest tree with TNT
 
