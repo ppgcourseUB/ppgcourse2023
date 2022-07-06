@@ -16,4 +16,4 @@ FOLDER="DATA/input_files"
 module load partitionfinder
 
 # running PartitionFinder
-PartitionFinder.py $FOLDER
+PartitionFinder.py $FOLDER -p 8
