@@ -43,7 +43,7 @@ Learn how to use PartitionFinder to evaluate the best partitioning scheme for ou
 
 The program requires the dataset to be in *phylip* format (the file you will use during the practice is already in the correct format). 
 
-We will perform two analyses varying some of the options in the program, we will first run two fast analyses and then set the third (**that takes more than one hour to run**), while the third analysis is running, we will comment the results. In all cases we will use a extreme scheme dividing all the protein coding genes by codons plus the two ribosomal genes (29 putative partitions in total).
+We will perform two analyses varying some of the options in the program, we will first run two fast analyses and then set the third (that takes a little longer to run), while the third analysis is running, we will comment the results. In all cases we will use a extreme scheme dividing all the protein coding genes by codons plus the two ribosomal genes (29 putative partitions in total).
 
 ### Files 
 
