@@ -10,20 +10,14 @@ We are going to implement a **NODE CALIBRATED** divergence time estimation and a
 
 ***
 
-In this session, I will introduce you to [RevBayes](https://revbayes.github.io), an interactive environment for all types of Bayesian Inference analyses.
+## NODE DATING
 
-You can download RevBayes for your own use from [Downloads](https://revbayes.github.io/download). This includes compiled executables for Windows and MacOSX, and a singularity image for Linux. Users can also compile from the source code, which might be a good idea since this is the most up to date.
-The RevBayes website also posts incredibly detailed [Tutorials](https://revbayes.github.io/tutorials/), including the theory behind the methods. READ THEM!
-
-## Software description and hints
-
-* RevBayes is a "command line" program, which means that it does not have a graphic user interface, and we must interact with it through the Terminal/Console.
-* Mathematical and operational functions in RevBayes are written in the object-oriented programming language C++. This makes RevBayes computationally efficient for even the most complex analyses.
+* *Based on the 3rd exercise ‘Estimating speciation times using node dating’*
+https://revbayes.github.io/tutorials/dating/nodedate
 * Additionally, RevBayes uses a scripting language to call functions and provide arguments: the `Rev` language. It is similar to `R` but more heavily scripted.
-* RevBayes is a multi-purpose software, meaning that, in addition to phylogenetics, it can be used for molecular dating, trait evolution, diversification analysis, biogeography, epidemiology, etc.
 
 
-## Data description and access
+## Background
 
 First, create a folder on your home directory and name it `lab_1`
 Copy the `Intro.Rev` file from the pggcourse lab materials folder into the `lab_1` folder. 
