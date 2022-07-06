@@ -301,4 +301,5 @@ runs the script, if the script is not in the same folder as the TNT executable, 
 XX: defines the number of characters of the first partition. 
 YY: the number of replications to do, the more the better, minimum 1000, but you can use 99 to speed up the analysis
 ZZ the search algorithms to use when calculating length for each partition in each replication (default: 1 random addition sequence + SPR), e.g:
+
 ```mult 15 =tbr hold 20```
