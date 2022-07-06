@@ -86,3 +86,7 @@ When both analyses are finished, let’s check at the newly generated **`ouput`*
 * `bears_nodedate_prior.mcc.tre` # *Maximum Clade Credibility tree under prior*
 * `bears_nodedate_prior.trees` # *sampled trees under the prior*
 
+
+* 3- Analysing results with [**Tracer**](http://tree.bio.ed.ac.uk/software/tracer/)
+Evaluate and Summarize Your Results
+In this section, we will evaluate the *mixing* and *convergence* of our MCMC simulation using the program **Tracer**.
