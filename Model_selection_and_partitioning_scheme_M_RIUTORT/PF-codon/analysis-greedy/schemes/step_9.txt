@@ -1,0 +1,77 @@
+Scheme Name       : step_9
+Scheme lnL        : -28759.007080078125
+Scheme BIC        : 58237.3490982
+Number of params  : 80
+Number of sites   : 8036
+Number of subsets : 5
+
+Subset | Best Model | # sites    | subset id                        | Partition names                                                                                     
+1      | GTR+I+G    | 1213       | d66fae82a4bd5a642534d78fe67f316a | cox1_1, nad1_1, cytb_1                                                                              
+2      | GTR+I+G    | 1819       | 978d2fa5763cdb5037a965c23f479286 | nad5_2, nad1_2, cytb_2, cox1_2                                                                      
+3      | GTR+G      | 515        | 5e8f1419214b5de46432338aefdb3264 | cox1_3                                                                                              
+4      | GTR+I+G    | 1304       | 30e1a90dd9a2e01fa99c2fa7810e6609 | nad1_3, nad5_3, cytb_3                                                                              
+5      | GTR+I+G    | 3185       | 7374f63d44bd4ddf788c7dafb92c4377 | nad5_1, 16s, 12s                                                                                    
+
+
+Scheme Description in PartitionFinder format
+Scheme_step_9 = (cox1_1, nad1_1, cytb_1) (nad5_2, nad1_2, cytb_2, cox1_2) (cox1_3) (nad1_3, nad5_3, cytb_3) (nad5_1, 16s, 12s);
+
+Nexus formatted character sets
+begin sets;
+	charset Subset1 = 1-1545\3 2686-3639\3 1546-2685\3;
+	charset Subset2 = 3641-5457\3 2687-3639\3 1547-2685\3 2-1545\3;
+	charset Subset3 = 3-1545\3;
+	charset Subset4 = 2688-3639\3 3642-5457\3 1548-2685\3;
+	charset Subset5 = 3640-5457\3 5458-7049 7050-8036;
+	charpartition PartitionFinder = Group1:Subset1, Group2:Subset2, Group3:Subset3, Group4:Subset4, Group5:Subset5;
+end;
+
+
+Nexus formatted character sets for IQtree
+Warning: the models written in the charpartition are just the best model found in this analysis. Not all models are available in IQtree, so you may need to set up specific model lists for your analysis
+
+#nexus
+begin sets;
+	charset Subset1 = 1-1545\3 2686-3639\3 1546-2685\3;
+	charset Subset2 = 3641-5457\3 2687-3639\3 1547-2685\3 2-1545\3;
+	charset Subset3 = 3-1545\3;
+	charset Subset4 = 2688-3639\3 3642-5457\3 1548-2685\3;
+	charset Subset5 = 3640-5457\3 5458-7049 7050-8036;
+	charpartition PartitionFinder = GTR+I+G:Subset1, GTR+I+G:Subset2, GTR+G:Subset3, GTR+I+G:Subset4, GTR+I+G:Subset5;
+end;
+
+
+RaxML-style partition definitions
+Warning: RAxML allows for only a single model of rate heterogeneity in partitioned analyses. I.e. all partitions must be assigned one of three types of model: No heterogeneity (e.g. GTR); +G (e.g. GTR+G); or +I+G (e.g. GTR+I+G). If the best models for your datasetcontain different types of model for different subsets you will need to decide on the best rate heterogeneity model before you run RAxML. If you prefer to do things more rigorously, you can run separate PartitionFinder analyses for each type of rate heterogenetity Then choose the scheme with the lowest AIC/AICc/BIC score. Note that these re-runs will be quick!
+
+DNA, Subset1 = 1-1545\3, 2686-3639\3, 1546-2685\3
+DNA, Subset2 = 3641-5457\3, 2687-3639\3, 1547-2685\3, 2-1545\3
+DNA, Subset3 = 3-1545\3
+DNA, Subset4 = 2688-3639\3, 3642-5457\3, 1548-2685\3
+DNA, Subset5 = 3640-5457\3, 5458-7049, 7050-8036
+
+
+MrBayes block for partition definitions
+Warning: MrBayes only allows a relatively small collection of models. If any model in your analysis is not one that is included in MrBayes (e.g. by setting nst = 1, 2, or 6 for DNA sequences; or is not in the available list of protein models for MrBayes)then this MrBayes block will just set that model to nst = 6 for DNA, or 'wag' for Protein. Similarly, the only additional parameters that this MrBayes block will include are +I and +G. Other  parameters, such as +F and +X, are ignored. If you want to use this MrBayes block for your analysis, please make sure to check it carefully before you use it we've done our best to make it accurate, but there may be errors that remain!
+
+begin mrbayes;
+
+	charset Subset1 = 1-1545\3 2686-3639\3 1546-2685\3;
+	charset Subset2 = 3641-5457\3 2687-3639\3 1547-2685\3 2-1545\3;
+	charset Subset3 = 3-1545\3;
+	charset Subset4 = 2688-3639\3 3642-5457\3 1548-2685\3;
+	charset Subset5 = 3640-5457\3 5458-7049 7050-8036;
+
+	partition PartitionFinder = 5:Subset1, Subset2, Subset3, Subset4, Subset5;
+	set partition=PartitionFinder;
+
+	lset applyto=(1) nst=6 rates=invgamma;
+	lset applyto=(2) nst=6 rates=invgamma;
+	lset applyto=(3) nst=6 rates=gamma;
+	lset applyto=(4) nst=6 rates=invgamma;
+	lset applyto=(5) nst=6 rates=invgamma;
+
+	prset applyto=(all) ratepr=variable;
+	unlink statefreq=(all) revmat=(all) shape=(all) pinvar=(all) tratio=(all);
+
+end;

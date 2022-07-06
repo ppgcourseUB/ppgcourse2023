@@ -1,0 +1,10 @@
+Model selection results for subset: 30e1a90dd9a2e01fa99c2fa7810e6609
+Subset alignment stored here: ./analysis/phylofiles/30e1a90dd9a2e01fa99c2fa7810e6609.phy
+This subset contains the following data_blocks: nad5_3, cytb_3, nad1_3
+Number of columns in subset: 1304
+Models are organised according to their AICc scores
+
+Model           | Parameters      | lnL             | AICc             | AIC             | BIC            
+GTR+I+G         | 10              | -8506.993       | 17034.156        | 17033.986       | 17085.719      
+GTR+G           | 9               | -8522.695       | 17063.53         | 17063.39        | 17109.95       
+GTR             | 8               | -8545.3         | 17106.71         | 17106.6         | 17147.984      

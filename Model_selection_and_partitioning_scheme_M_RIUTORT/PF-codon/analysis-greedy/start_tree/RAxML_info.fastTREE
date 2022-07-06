@@ -1,0 +1,177 @@
+
+
+WARNING: RAxML is not checking sequences for duplicate seqs and sites with missing data!
+
+
+
+This is RAxML version 8.2.9 released by Alexandros Stamatakis on July 20 2016.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Sarah Lutteropp   (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+Charlie Taylor    (UF)
+
+
+Alignment has 1882 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 0.41%
+
+RAxML experimental very fast tree search
+
+Using 14 distinct models/data partitions with joint branch length optimization
+
+
+All free model parameters will be estimated by RAxML
+GAMMA model of rate heteorgeneity, ML estimate of alpha-parameter
+
+GAMMA Model parameters will be estimated up to an accuracy of 10.0000000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 47
+Name: Subset1
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+Partition: 1
+Alignment Patterns: 19
+Name: Subset2
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+Partition: 2
+Alignment Patterns: 313
+Name: Subset3
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+Partition: 3
+Alignment Patterns: 76
+Name: Subset4
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+Partition: 4
+Alignment Patterns: 25
+Name: Subset5
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+Partition: 5
+Alignment Patterns: 222
+Name: Subset6
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+Partition: 6
+Alignment Patterns: 50
+Name: Subset7
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+Partition: 7
+Alignment Patterns: 20
+Name: Subset8
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+Partition: 8
+Alignment Patterns: 186
+Name: Subset9
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+Partition: 9
+Alignment Patterns: 115
+Name: Subset10
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+Partition: 10
+Alignment Patterns: 74
+Name: Subset11
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+Partition: 11
+Alignment Patterns: 326
+Name: Subset12
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+Partition: 12
+Alignment Patterns: 225
+Name: Subset13
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+Partition: 13
+Alignment Patterns: 184
+Name: Subset14
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+
+RAxML was called as follows:
+
+/ppgscripts/partfinder/programs/raxml_pthreads.linux -f E -s ./analysis/start_tree/filtered_source.phy -m GTRGAMMA -O -n fastTREE -# 1 -p 123456789 -q ./analysis/start_tree/partitions.txt -e 10 -w /ppgdata/analysis/start_tree -T 2 
+
+
+Time after init : 0.058781
+Time after init and starting tree: 0.109185
+Time after init, starting tree, mod opt: 1.908350
+Partion 0 number of Cats: 1
+Partion 1 number of Cats: 1
+Partion 2 number of Cats: 1
+Partion 3 number of Cats: 1
+Partion 4 number of Cats: 1
+Partion 5 number of Cats: 1
+Partion 6 number of Cats: 1
+Partion 7 number of Cats: 1
+Partion 8 number of Cats: 1
+Partion 9 number of Cats: 1
+Partion 10 number of Cats: 1
+Partion 11 number of Cats: 1
+Partion 12 number of Cats: 1
+Partion 13 number of Cats: 1
+LH after SPRs -29386.490679, after NNI -29385.955695
+LH after SPRs -29385.955279, after NNI -29385.954781
+RAxML fast tree written to file: /ppgdata/analysis/start_tree/RAxML_fastTree.fastTREE
+
+Model parameters (binary file format) written to: /ppgdata/analysis/start_tree/RAxML_binaryModelParameters.fastTREE
+Total execution time: 4.142899
+Good bye ... 

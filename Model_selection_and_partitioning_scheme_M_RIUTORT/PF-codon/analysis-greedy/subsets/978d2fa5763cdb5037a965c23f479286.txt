@@ -1,0 +1,10 @@
+Model selection results for subset: 978d2fa5763cdb5037a965c23f479286
+Subset alignment stored here: ./analysis/phylofiles/978d2fa5763cdb5037a965c23f479286.phy
+This subset contains the following data_blocks: nad5_2, nad1_2, cytb_2, cox1_2
+Number of columns in subset: 1819
+Models are organised according to their AICc scores
+
+Model           | Parameters      | lnL             | AICc             | AIC             | BIC            
+GTR+I+G         | 10              | -3617.511       | 7255.1436        | 7255.022        | 7310.0825      
+GTR+G           | 9               | -3641.943       | 7301.986         | 7301.886        | 7351.4404      
+GTR             | 8               | -3731.7095      | 7479.4985        | 7479.419        | 7523.4673      
