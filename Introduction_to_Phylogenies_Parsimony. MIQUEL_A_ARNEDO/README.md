@@ -283,11 +283,16 @@ To conduct Partition Bremer Support you can use a TNT script (pbsup.run) written
  
 ## F. Partial analyses
 
-1. To analyse only part of the characters
+To analyse only part of the characters use the command blocks;
 
-```blocks;``` Displays the defined partitions
-```blocks*; ```Saves partitions
-```blocks= Nn;``` Disables all characters that are not listed in Nn (if the list is headed by the "&", only the shared partitions are kept active)
+To display the defined partitions
+```blocks;``` 
+To define blocks to start at character(s) J K L
+```blocks J K L;```
+To save partitions
+```blocks*; ```
+To disable all characters that are not listed in Nn (if the list is headed by the "&", only the shared partitions are kept active)
+```blocks= Nn;``` 
 
 
 ## G. ILD incongruence test
