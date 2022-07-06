@@ -166,4 +166,13 @@ Once the output file has been generated, open the *bears_TEFBD.log* file using T
 
 7- Using [**FigTree**](http://tree.bio.ed.ac.uk/software/figtree/) to visualize the topology and ages
 Proceed as you have done before for the Node Calibrated analysis.
--  ![question](img/Tracer_NodeVsPrior.png)
+-  ![question](img/bears_TEFBD.mcc.tre.JPG)
+
+This analysis had run for 30,000 generations, a shorter analysis will probably look different. 
+
+<p align="center">
+- **How do fossil taxa relate with the living one?
+Which fossils belong to the MRCA of all living bears, and to Ursinae?
+Find major differences between ages and relationships of node calibrated and Total Evidence analysis**
+
+When there are sampled ancestors present in the tree, visualizing the tree can be fairly difficult in traditional tree viewers. We will make use of a browser-based tree viewer called IcyTree, created by Tim Vaughan. IcyTree has many unique options for visualizing phylogenetic trees and can produce publication-quality vector image files (i.e. SVG). Additionally, it correctly represents sampled ancestors on the tree as nodes, each with only one descendant.
