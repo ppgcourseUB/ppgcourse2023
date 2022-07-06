@@ -99,4 +99,10 @@ Immediately upon loading your log files, you will see the list of **Trace Files*
 Look through the various parameters and statistics in the list of **Traces**.
 - **Are there any parameters that have really low ESS? Why do you think that might be?**
 
- ![question](img/tracer_load_file.png)
+ ![question](img/Unconverged_Chains.png)
+
+Next, we can click over to the **Trace** window. This window shows us the samples for a given parameter at each iteration of the MCMC. The left side of the chain has a shaded portion that has been excluded as “burn-in”. Samples taken near the beginning of chain are often discarded or “burned” because the MCMC may not immediately begin sampling from the target posterior distribution, particularly if the starting condition of the chain is far from the region of highest posterior density. The presence of a trend or large leaps in a parameter value might indicate that your MCMC is not mixing well.
+
+Go to the *age_extant* parameter in the **Estimates** window.
+- **What is the mean and 95% highest posterior density of the age of the MRCA for all living bears? And of Ursinae?**
+-  ![question](img/Unconverged_Chains.png)
