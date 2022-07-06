@@ -262,6 +262,9 @@ Modified script *partition_finder.run*:
 # setting some variables:
 FOLDER="DATA/input_files"
 
+# loading the module
+module load partitionfinder
+
 # running PartitionFinder
 python PartitionFinder.py $FOLDER
 ```
