@@ -94,3 +94,7 @@ In this section, we will evaluate the *mixing* and *convergence* of our MCMC sim
 
  ![question](img/tracer_load_file.png)
 
+Immediately upon loading your log files, you will see the list of **Trace Files** on the left-hand side (you can load multiple files). The bottom left section, called **Traces**, provides a list of every parameter in the log file, along with the mean and the effective sample size (ESS) for the posterior sample of that parameter. The ESS statistic provides a measure of the number of independent draws in our sample for a given parameter. This quantity will typically be much smaller than the number of generations of the chain. In Tracer, poor to fair values for the ESS will be coloured red and yellow. You will likely see a lot of red and yellow numbers because the MCMC runs in this exercise are too short to effectively sample the posterior distributions of most parameters. A much longer analysis is provided in the output directory.
+
+Look through the various parameters and statistics in the list of **Traces**.
+Are there any parameters that have really low ESS? Why do you think that might be?
