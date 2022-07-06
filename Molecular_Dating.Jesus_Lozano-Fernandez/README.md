@@ -1,0 +1,3 @@
+Tutorial in a nutshell
+We are going to implement a node calibrated divergence time estimation and a total evidence analysis in the context of bear evolution; and to compare both outputs to infer the age of the MRCA of Ursinae, and assess the impact of these different methods, models and priors. For coherence with the Bayesian class, we are going to use also RevBayes, which is a flexible software with his own programming language similar to R, named Rev. Is out of the scope of this short tutorial to be able to fully understand the language, the models or the parameters. At the end of the class, you are expected to have a grasp of the main difference between methods, the utility of fossil and stratigraphic calibrations
+and the relevance of the prior assumptions. 
