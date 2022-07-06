@@ -57,7 +57,7 @@ We are also interested in the age of the most-recent-common ancestor (MRCA) of a
 
 ## Starting the analysis
 
-1- On the terminal, and start RevBayes by typing ```rb```
+1- On the terminal, start RevBayes by typing ```rb```
 RevBayes will open, then you will upload the master Rev script were all the needed information to perform the whole analysis is in there. Type the following and the analysis will automatically start:
 
 ```
@@ -136,4 +136,34 @@ https://revbayes.github.io/tutorials/fbd/#Intro-FBD [an extended analysis]
 
 In this exercise, we will combine different types of data from 18 species of extant and extinct bears to estimate a posterior distribution of calibrated time trees for this group. We have molecular sequence data for eight species, which represent all of the eight living bears. There is also available molecular sequence data for two recently extincted species, the sub-fossil specimens (*Arctodus simus*, *Ursus spelaeus*), but we haven’t included them for simplicity.
 
-The sequence alignment is the same as the we used one before and the morphological character matrix unites 18 taxa (both fossil and extant) with 62 binary (states 0 or 1) characters (Abella et al. 2012). For the fossil species, occurrence times are obtained from the literature or fossil databases. The fossil species used in this analysis are listed in ‘bears_taxa.tsv’ along with the age range for the species and relevant citation.
+The sequence alignment is the same as the we used one before and the morphological character matrix unites 18 taxa (both fossil and extant) with 62 binary (states 0 or 1) characters [Abella et al. 2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0048985). For the fossil species, occurrence times are obtained from the literature or fossil databases. The fossil species used in this analysis are listed in ‘bears_taxa.tsv’ along with the age range for the species and relevant citation.
+
+In the **`data`** folder, you will find the following files:
+* `data/bears_cytb.nex` # *an alignment in NEXUS format of 1,000 bp of cytochrome b sequences for 8 living bear species*
+* `data/bears_taxa.tsv` # *a tab-separated table listing every bear species (both fossil and extant) and their occurrence age ranges. For extant taxa, the minimum age is 0.0 (i.e. the present).*
+* * `data/bears_morphology.nex` # *a nexus file with scored morphology of living and fossils (not all data has been scored).*
+
+In the **`script`** folder, you will find the following files:
+* `scripts/sub_GTRG.Rev` # *Nucleotide sequence substitution model GTR + Γ*
+* `scripts/sub_Mk.Rev` # *Morphology character change model Mk*
+* `scripts/clock_relaxed_lognormal.Rev` # *Relaxed clock model Uncorrelated*
+* `scripts/clock_morpho.Rev` # *Morphology rate clock under global model*
+* `scripts/tree_TEFBD.Rev` # *Fossilized Birth Death tree prior model*
+* `scripts/MCMC_dating_ex5.Rev` # *Master Rev file (loads the data, the other scripts specifying models and monitors the output of the MCMC sampler)*
+
+## Starting the analysis
+
+5- On the terminal, start RevBayes by typing ```rb```
+
+RevBayes will open, then you will upload the master Rev script, that it contains all the information to perform the entire anaylsis. Type the following:
+```
+source("scripts/MCMC_dating_ex5.Rev")
+```
+6- Analysing results with [**Tracer**](http://tree.bio.ed.ac.uk/software/tracer/)
+Once the output file has been generated, open the *bears_TEFBD.log* file using Tracer. Go to the *age_extant* parameter in the **Estimates** window.
+
+- **What is the mean and 95% highest posterior density of the age of the MRCA of Ursinae? Are these estimates more precise than in the Node dating analysis?**
+
+7- Using [**FigTree**](http://tree.bio.ed.ac.uk/software/figtree/) to visualize the topology and ages
+Proceed as you have done before for the Node Calibrated analysis.
+-  ![question](img/Tracer_NodeVsPrior.png)
