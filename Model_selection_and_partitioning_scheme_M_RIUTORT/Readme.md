@@ -202,6 +202,9 @@ Here you have the content of this script:
 # setting some variables:
 FOLDER="DATA/input_files"
 
+# loading the modules
+module load partitionfinder
+
 # running PartitionFinder
 python PartitionFinder.py $FOLDER --raxml
 ```
