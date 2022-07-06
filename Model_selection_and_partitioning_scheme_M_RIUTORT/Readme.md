@@ -47,11 +47,11 @@ We will perform two analyses varying some of the options in the program, we will
 
 ### Files 
 
-Files are in the directory DATA/PartitionFinder
+Files are in the directory DATA/input_files
 
 ### Prepare command file
 
-The file *partition_finder.cfg* includes the options we select to run the PartitionFinder program . Open this file with `nano` to make some modifications for the different runs we are going to perform (for using nano in the cloud first load the module):
+The file *partition_finder.cfg* includes the options we select to run the PartitionFinder program. Open this file :
 
 1. Modifications for the first run:
 
@@ -168,17 +168,10 @@ In the first run use greedy:
 search = greedy;
 ```
 
-> **IMPORTANT NOTE:** ONCE FINISHED CHANGE THE NAME OF THE OUTPUT DIRECTORY SO THAT WHEN RUNNING THE SECOND ANALYSIS YOU DO NOT OVERWRITE THE FIRST ANALYSIS RESULTS
+Once done the changes, you can upload the files to the cloud to run this analysis
 
-In a second run substitute greedy by rcluster:
 
-```
-## SCHEMES, search: all | greedy | rcluster | hcluster | user ##
-[schemes]
-search = rcluster;
-```
-
-### Run the two first analyses
+### Run the first analysis
 
 To execute the program you have to submit the job script *partition_finder.run* using the `sbatch` command.
 Here you have the content of this script:
@@ -202,20 +195,36 @@ FOLDER="DATA/input_files"
 module load partitionfinder
 
 # running PartitionFinder
-PartitionFinder.py $FOLDER --raxml
+PartitionFinder.py $FOLDER --raxml -p 8
 ```
 
-> We are giving the ‘–-raxml’ command so that only the models of RAxML will be tested, this is going to do the run faster and you will be able to see the results immediately. I have also run another analysis wihtout the –raxml option, with beast at models command and greedy at the Schemes commad (it took more than one hour to run) for you to compare the results.
+> We are giving the ‘–-raxml’ command so that only the models of RAxML will be tested, this is going to do the run faster and you will be able to see the results immediately. We will also run another analysis wihtout the –raxml option, with beast at models command and greedy at the Schemes commad (it will take longer to run) to compare the results.
 
 If all is ok, the program will generate within your user directory a folder named “analysis”. 
 Within this folder you will find a textfile called “best_scheme.txt”; here you will find the results and the partition scheme and models to apply in RAxML format so that you can directly use it in that program to infer your tree.
+
+> **IMPORTANT NOTE:** ONCE FINISHED CHANGE THE NAME OF THE OUTPUT DIRECTORY SO THAT WHEN RUNNING THE SECOND ANALYSIS YOU DO NOT OVERWRITE THE FIRST ANALYSIS RESULTS 
+
+In a second run substitute greedy by rcluster in COMMAND 6 in the file partition_finder.cfg
+In the cloud you can edit the file partition_finder.cfg with `nano` to make the modification (for using nano in the cloud first load the nano module):
+
+
+```
+## SCHEMES, search: all | greedy | rcluster | hcluster | user ##
+[schemes]
+search = rcluster;
+```
+
+### Run the second analysis
+
+To execute the program you have to submit again the job script *partition_finder.run* using the `sbatch` command.
 
 > **IMPORTANT NOTE**: ONCE FINISHED THE SECOND ANALYSIS **CHANGE THE NAME** OF THE OUTPUT DIRECTORY **SO THAT WHEN RUNNING THE THIRD ANALYSIS YOU DO NOT OVERWRITE THE SECOND ANALYSIS RESULTS**
 
 
 ### Run the third analysis
 
-We must edit the partition_finder.cfg file again. Open the file and do the following changes:
+We must edit the partition_finder.cfg file again. Open the file with nano and do the following changes:
 
 COMMAND 3:
 
@@ -243,7 +252,7 @@ Make sure command 6 is set to greedy.
 search = greedy;
 ```
 
-Now, you can submit the a job script named *partition_finder2.run*:
+Now, you can submit the job script named *partition_finder2.run*:
 
 ```
 #!/bin/bash
@@ -264,7 +273,7 @@ FOLDER="DATA/input_files"
 module load partitionfinder
 
 # running PartitionFinder
-PartitionFinder.py $FOLDER
+PartitionFinder.py $FOLDER -p 8
 ```
 
 > Notice that we are not giving the ‘–-raxml’ command so now all models present in `BEAST` will be tested, which will take longer than in our previous analyses because `RAxML` only offers "GTR", "GTRGAMMA" and "GTRGAMMA+I", while `BEAST` has a longer list of possibilities.
