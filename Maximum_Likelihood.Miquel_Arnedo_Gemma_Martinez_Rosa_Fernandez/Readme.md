@@ -52,7 +52,11 @@ We will use the concatenated alignment of our 50 genes and use the model we obta
 
 `cd ../ultrafast_bootstrap`
 
-2.- Modify the **`ultrafast_iqtree.sh`** script to include the best substitution model where it says **MODEL**. You can use any command-line tool you know (such as nano or vim) or any text editor.
+2.- Modify the **`ultrafast_iqtree.sh`** script to include the best substitution model where it says **MODEL**.
+
+`vim ultrafast_iqtree.sh`
+
+Press **a** to start modifying the file. When you're finished, press **Escape** to exit the edit mode. To exit vim, type: **:wq**.
 
 `iqtree -s 50_genes.fa -m MODEL -bb 1000 -nt 8`
 
