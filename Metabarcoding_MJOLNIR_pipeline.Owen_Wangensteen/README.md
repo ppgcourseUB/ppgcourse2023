@@ -1,4 +1,12 @@
-<b>Data required</b>: Available from: https://drive.google.com/drive/folders/1zkX01xJov68FFObgbaNYehWD_3dAbDe3?usp=sharing 
+# Metabarcoding: the MJOLNIR pipeline
+
+In this session you will learn how to run the MJOLNIR pipeline to perform a metabarcoding analysis of a multiplexed amplicon library.
+
+##Data required:
+
+Available from: https://drive.google.com/drive/folders/1zkX01xJov68FFObgbaNYehWD_3dAbDe3?usp=sharing 
+
+## Background and description of the data set:
 
 The files MARKET_BARCODES_R1.fastq.gz and MARKET_BARCODES_R2.fastq.gz contain paired-end reads from an Illumina MiSeq run of a multiplexed library built from 80 samples of fish individuals taken from a fish market in Singapore. The extracted DNA from these individuals was amplified by PCR using the MiFish 12S metabarcoding primers: 
 - Forward primer: GTCGGTAAAACTCGTGCCAGC,
@@ -9,7 +17,7 @@ Individual  primers  were  tagged  in the 5' end with 7-bp twin-tags (both tags 
 We will run the MJOLNIR pipeline to retrieve the most abundant sequence in each sample with the goal of identifying the fish species.
 
 
-<b>Tasks</b>:
+##Tasks:
 
 a) Write the ngsfilter_MRKT.tsv file needed to demultiplex these 80 samples, in a format that is compatible with MJOLNIR. 
 
