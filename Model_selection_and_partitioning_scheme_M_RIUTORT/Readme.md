@@ -51,7 +51,10 @@ Files are in the directory DATA/input_files
 
 ### Prepare command file
 
-The file *partition_finder.cfg* includes the options we select to run the PartitionFinder program. Open this file :
+The file *partition_finder.cfg* includes the options we select to run the PartitionFinder program. 
+You have to upload the files to the cloud and then you can edit the file partition_finder.cfg with `nano` to make the modifications (for using nano in the cloud first load the nano module).
+
+Open the file partition_finder.cfg with nanos:
 
 1. Modifications for the first run:
 
@@ -168,7 +171,7 @@ In the first run use greedy:
 search = greedy;
 ```
 
-Once done the changes, you can upload the files to the cloud to run this analysis
+Once done the changes, you can run the first analysis.
 
 
 ### Run the first analysis
