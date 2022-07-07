@@ -123,9 +123,9 @@ Go to the *extant_mrca* parameter in the *Traces* left column, and then check th
 
 >**What is the mean and 95% highest posterior density of the age of the MRCA for all living bears? And of Ursinae?**</br>
 
-Now, upload the log files of the posterior samples of both chains of the analysis only under the priors (with no data),  `/bears_nodate_prior.log` and the ones including data `/bears_nodedate.log`. Compare for example the values of the age of the *extant_mrca*.
+Now, upload the log files of the posterior samples with both chains of the analysis only under the priors (with no data),  `/bears_nodate_prior.log` and the ones including data `/bears_nodedate.log`. Compare for example the values of the age of the *extant_mrca*.
 
--  ![question](img/Tracer_NodeVsPrior.png)
+![question](img/Tracer_NodeVsPrior.png)
 
 >**Are the prior densities driving the posteriors (ie are we over-constraining)?**</br>
 
@@ -151,7 +151,7 @@ https://revbayes.github.io/tutorials/fbd/#Intro-FBD [an extended analysis]
 
 ## Background
 
-In this exercise, we will combine different types of data from 18 species of extant and extinct bears to estimate a posterior distribution of calibrated time trees for this group. We have molecular sequence data for eight species, which represent all of the eight living bears. There is also available molecular sequence data for two recently extincted species, the sub-fossil specimens (*Arctodus simus*, *Ursus spelaeus*), but we haven’t included them for simplicity.
+In this exercise, we will combine different types of data from 18 species of living and extinct bears to estimate a posterior distribution of calibrated time trees for this group. We have molecular sequence data for eight species, which represent all of the eight living bears. There is also available molecular sequence data for two recently extincted species, the sub-fossil specimens (*Arctodus simus*, *Ursus spelaeus*), but we haven’t included them for simplicity.
 
 The sequence alignment is the same as the we used one before and the morphological character matrix unites 18 taxa (both fossil and extant) with 62 binary (states 0 or 1) characters from [Abella et al. 2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0048985). For the fossil species, occurrence times are obtained from the literature or fossil databases. The fossil species used in this analysis are listed in ‘bears_taxa.tsv’ along with the age range for the species and relevant citation.
 
