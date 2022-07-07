@@ -2,7 +2,7 @@
 # Tutorial in a nutshell
 
 
-Instructor: **Jesus Lozano-Fernandez**
+Instructors: **Jesus Lozano-Fernandez** & **Leandro Aristide**
 
 We are going to run a divergence time estimation analysis using a **NODE DATING** approach and a **TOTAL EVIDENCE ANALYSIS** in the context of bear evolution; compare the results of both methodologies to infer the age of the Most Recent Common Ancestor (MRCA) of Ursinae, and assess the impact of using different methods, models and priors. For coherence with the Bayesian class, we are going to use [**RevBayes**](https://revbayes.github.io), which is a flexible software with his own programming language similar to R, named Rev. Is out of the scope of this short tutorial to be able to fully understand the language, the models or the parameters. At the end of the class, you are expected to have a grasp of the main difference between methods, the utility of fossil and stratigraphic calibrations and the relevance of the prior assumptions. This tutorial is based on material available for learning divergence time estimation using RevBayes, available at [https://revbayes.github.io/tutorials/dating/](https://revbayes.github.io/tutorials/dating/). All the commands and scripts to run the exercises and the datasets has been already built and are in place, so you won't need to modify them, just running the analyses. Moreover, the output of previous analyses have been uploaded, in case you face some difficulties. We will, though, examine the input files, run the analyes together, and learn about the interpretation of results.
 
@@ -28,8 +28,7 @@ The tutorial contains four folders. `NodeDating/` and `TotalEvidence/` folders c
 
 # Exercise on NODE DATING
 
-* *Based on the 3rd exercise ‘Estimating speciation times using node dating’*
-https://revbayes.github.io/tutorials/dating/nodedate
+* Based on the 3rd exercise *‘Estimating speciation times using node dating’* of the [**RevBayes tutorials**](https://revbayes.github.io/tutorials/dating/nodedate)
 
 
 ## Background
