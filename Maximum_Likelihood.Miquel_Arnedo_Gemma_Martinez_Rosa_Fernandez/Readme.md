@@ -7,8 +7,10 @@ If you have any questions, contact us at marnedo@ub.edu or rosa.fernandez@ibe.up
 ***
 ## Context
 
-![bear_names](../Sensitivity_Analysis.Rosa_Fernandez_Gemma_Martinez/img/bear_names.png)
+We will be working with a matrix composed by 50 genes concatenated.
+
 ![data](../Sensitivity_Analysis.Rosa_Fernandez_Gemma_Martinez/img/data.PNG)
+![bear_names](../Sensitivity_Analysis.Rosa_Fernandez_Gemma_Martinez/img/bear_names.png)
 
 ***
 ## Data files
