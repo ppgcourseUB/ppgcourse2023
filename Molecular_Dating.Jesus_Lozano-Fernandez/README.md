@@ -44,8 +44,7 @@ In the **`data/`** folder, you will find the following files:
 In the **`scripts/`** folder, you will find the following files:
 * `scripts/sub_GTRG.Rev` # *Sequence substitution model GTR + Γ*
 * `scripts/clock_relaxed_lognormal.Rev` # *Relaxed clock model Uncorrelated*
-* `scripts/tree_BD.Rev` # *Birth Death tree prior (without calibrations)*
-* `scripts/tree_BD_nodedate.Rev` # *Birth Death tree prior WITH calibrations*
+* `scripts/tree_BD_nodedate.Rev` # *Birth Death tree prior with calibrations*
 * `scripts/MCMC_dating_ex3.Rev` # *Master Rev file (loads the data, the other scripts specifying models and monitors the output of the MCMC sampler)*
 * `scripts/MCMC_dating_ex3_prior.Rev` # *Master Rev file under the priors (not data)*
 
