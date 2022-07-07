@@ -34,9 +34,9 @@ https://revbayes.github.io/tutorials/dating/nodedate
 
 ## Background
 
-In this exercise we will use information from the fossil record to calibrate the molecular substitution rate to absolute time using node dating. This approach involves assigning probability densities that incorporate temporal information from the fossil record to particular nodes in the tree.
+In this exercise we will use information from the fossil record to calibrate the molecular substitution rate to absolute times using node dating techniques. This approach involves assigning probability densities that incorporate temporal information from the fossil record to particular nodes in the tree.
 
-For running this exercise, we should be inside the node dating folder and just should contain two folders: `data/` & `script/`.
+For running this exercise, we should be inside the `NodeDating/` folder, which just contains two folders: `data/` & `script/`.
 
 In the **`data`** folder, you will find the following files:
 * `data/bears_cytb.nex` # *an alignment in NEXUS format of 1,000 bp of cytochrome b sequences for 8 bear species*
