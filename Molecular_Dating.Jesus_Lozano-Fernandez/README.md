@@ -60,7 +60,7 @@ The file `/bears_taxa.tsv` contains information about the stratigraphic ranges f
 
 *The clock model*
 
-Remember the clock (or branch-rate) model describes how rates of substitution vary (or not) across the tree. We are going to use the uncorrelated exponential relaxed clock model. In this model rates for each branch will be drawn independently from an exponential distribution. `/clock_relaxed_lognormal.Rev`
+Remember the clock (or branch-rate) model describes how rates of substitution vary (or not) across the tree. We are going to use the uncorrelated lognormal relaxed clock model. In this model rates for each branch will be drawn independently from a lognormal distribution. `/clock_relaxed_lognormal.Rev`
 
 *The tree prior*
 
