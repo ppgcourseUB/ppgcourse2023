@@ -85,6 +85,11 @@ So far, we’ve been playing with the level of missing data to generate differen
 
 One of the most complete software we can run for this is **genesortR**, an R package that sorts a set of genes based on several properties. The full documentation can be found here: https://github.com/mongiardino/genesortR
 
+0.- We will also execute this part locally, but first we will have to load the required modules:
+
+`module purge`
+`module load r-adephylo r-phytools r-phangorn r-cowplot`
+
 1.- Let’s take our 50 orthogroups and analyze them with genesortR to see which ones are the most adequate to analyze. We will use species tree 1 for this analysis.
 
 Data and scripts are located in: `Bear_dataset_SensitivityAnalyses/GENESORTR`.
