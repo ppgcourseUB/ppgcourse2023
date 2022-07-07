@@ -157,7 +157,7 @@ q()
 If your want to run the analysis above without typing every command at the RevBayes prompt, you can source the script, as we learnt in *Lab_1*. Launch Source the `my_phylogenetic_analysis.Rev` script, which contains all commands above (OBS!! Remember the quotation marks!).
 
 ```
-source("my_phylogenetic_analysis.Rev`
+source("my_phylogenetic_analysis.Rev")
 ```
 
 ## Running the analysis in batch mode from the cluster
@@ -181,11 +181,11 @@ mpirun -np 8 rb-mpi my_phylogenetic_analysis.Rev
 
 ## Visualizing the phylogeny and clade support
 
-Once we quit RevBayes, we can visualize the output: the phylogeny and the clade statistical support (the *nodal posterior probabilities*), using the software *FigTree*, which you have used in previous classes. Open the file `bufo.trees` using FigTree and check clade support by clicking on *node labels: posterior* on the left pane.
+Once we quit RevBayes, we can visualize the output: the phylogeny and the clade statistical support (the *nodal posterior probabilities*), using the software [FigTree] (http://tree.bio.ed.ac.uk/software/figtree/). Open the file `bufo.trees` using `FigTree` and check clade support by clicking on *node labels: posterior* on the left pane.
 
 ## Evaluating stationarity and mixing of parameters
 
-We can also evaluate how well our MCMC analysis approximated the posterior distribution of each parameter in the model by using the software *Tracer*, which you know from previous classes. Open *Tracer* and read the output file `bufo.log`. Check the shape of the posterior distributions, the ESS values (should be > 200), and search for potential correlations between parameters.
+We can also evaluate how well our MCMC analysis approximated the posterior distribution of each parameter in the model by using the software [Tracer] (https://beast.community/tracer). Download `Tracer` into your computer (it does not work in the cluster) and open it by double clicking: it is a graphical programme. Use *Import Trace File* from the Tracer menu to read the output file `bufo.log`. Check the shape of the posterior distributions, the ESS values (should be > 200), and search for potential correlations between parameters.
 
 # Exercises
 
