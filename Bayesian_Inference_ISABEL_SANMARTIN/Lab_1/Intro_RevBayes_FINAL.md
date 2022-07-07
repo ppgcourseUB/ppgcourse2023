@@ -17,11 +17,34 @@ The RevBayes website also posts incredibly detailed [Tutorials](https://revbayes
 * RevBayes is a multi-purpose software, meaning that, in addition to phylogenetics, it can be used for molecular dating, trait evolution, diversification analysis, biogeography, epidemiology, etc.
 
 
-## Data description and access
+## Data description and access from the cluster
 
-First, create a folder on your home directory and name it `lab_1`
-Copy the `Intro.Rev` file from the pggcourse lab materials folder into the `lab_1` folder. 
-Copy the `myScript.sh` file from the pggcourse lab materials folder into the `lab_1` folder.
+We will be working in the cluster *interactively*
+
+First, access the data files and scripts for the practice. Access the lab cluster via the Terminal in MacOSX and Linux, or the Console in Windows machine, with the `ssh`, as you learnt at the *Intro to our cloud* practice.
+
+```
+ssh user@ec2-34-242-61-70.eu-west-1.compute.amazonaws.com
+```
+where the *user* are your credentials. It will ask for your password. Once inside, clone the entire folder *Bayesian_Inference_ISABEL_SANMARTIN* with the `svn` command. This will copy all files and folders in your home directory within the cluster.
+
+```
+svn export https://github.com/ppgcourseUB/ppgcourse2022/trunk//Bayesian_Inference_ISABEL_SANMARTIN
+```
+
+Check the contents of the folder. There are two subfolders named `Lab`. We will start with `Lab_1`, which introduces the RevBayes software and the `Rev` language. To see the contents of the folder, you need to move with the `cd` command
+
+```
+cd Lab_1
+ls
+```
+You would see that there are several files, including scripts and data we need for the practice: `Intro.Rev` and `myScript.sh`
+
+## Data description and access from your computer
+
+Alternatively, if you want to run RevBayes from your own computer, first, you need to download the software in the version that is appropriate for your operating system (see *Downloads* above).
+Next, access the pggcourse lab materials in Github [ppgcourse2022] (https://github.com/ppgcourseUB/ppgcourse2022), and download the scripts and files for the practice.
+OBS!! The scripts and  files should be downloaded into the folder containing the *RevBayes* executable (the `rb` binary in the Mac). Inside this folder, create a new folder `lab_1` and copy the `Intro.Rev` and `myScript.sh` files into this folder.
  
 ```
 mkdir lab_1
@@ -29,10 +52,29 @@ cp -p Intro.Rev lab_1/
 cp -p myScript.sh lab1/
 ```
 
+## Launching RevBayes from the cluster
+To launch RevBayes using the version already installed in the cluster, first load the module, using the commands you learnt in the *Intro* class:
 
-## Launching RevBayes
-Navigate to your `lab_1` directory. Launch RevBayes by typing `rb` into the command line. This should launch RevBayes and give you a command prompt (the `>` character); this means RevBayes is waiting for input.
+```
+module load revbayes/1.1.1-zjzfb6s
+```
+Then, launch RevBayes, type:
 
+```
+rb-mpi
+```
+
+(notice that the version installed in the cluster is the MPI version (message passage interface), which allows running the software using multiple threads or processors)
+
+This should launch RevBayes and give you a command prompt (the `>` character); this means RevBayes is waiting for input. 
+
+
+## Launching RevBayes from your computer
+Navigate to your `lab_1` directory. In Windows, simply double click on the executable. In MacOSX, launch RevBayes by typing `rb` into the command line (OBS: Because `rb` is a program (and unless you have set up the path), you need to launch it using the command below, which will ask for your administrator password:
+```
+./rb
+```
+This should launch RevBayes and give you a command prompt (the `>` character); this means RevBayes is waiting for input. 
 The _working directory_ is the directory that RevBayes is currently working in. When you tell RevBayes to look up a file in a particular path, the path you provide is interpreted _relative_ to the working directory. You can print the current working directory using the `getwd()` command.
 
 
@@ -129,32 +171,60 @@ q() # quitting RevBayes
 
 So far we've been using RevBayes *interactively*: by typing commands in line-by-line. Most often, however, we use *scripts*: a text file that contains a sequence of commands for the program to execute.
 
-You can *source* the contents of a script from RevBayes using the `source("name of file")` command (the quotation marks are critical!). Launch RevBayes with command  `rb` and source the `Intro.Rev` script that contains all commands above.
+You can *source* the contents of a script from RevBayes using the `source("name of file")` command (the quotation marks are critical!). Source the `Intro.Rev` script that contains all commands above (OBS: First, you need to launch RevBayes again with the command `rb-mpi` (cluster) or `rb` (your Terminal).
 
 ```
 source("Intro.Rev")
 ```
 
-Alternatively, you can run the script file from the Terminal (outside RevBayes) with the command `rb`. OBS: In this case, we don't need the quotation marks!)
+Alternatively, you can run the script file from the Terminal directly (outside RevBayes) using the command `rb`. OBS: In this case, we don't need the quotation marks!)
 
 ```
 rb Intro.Rev
 ```
 
-## Launching RevBayes with a bash file
-
-Finally, we can use a bash file if we are running the script within a cluster. Below is an example of a bash file to run the `Intro.Rev` script in RevBayes. Because we are running in a cluster, we need to include a command for the output to be saved. You can find this script `myScript.sh` in the `lab_1` folder.
+Or you can run it from a bash script from your Terminal. You can find an example of such a script on myScript.sh
 
 ```
 #!/bin/bash
-rb Intro.Rev > output.txt
+rb Intro.Rev
 exit
 ```
-To run this bash script, we can type:
-
+And you can run it, using
 ```
 bash myScript.sh
 ```
+
+## Launching RevBayes with a bash file
+
+Finally, we can use a bash file if we are running the script within a cluster. Below, is an example of a bash file to run the `Intro.Rev` script in RevBayes. Because we are running in a cluster, we need to include a command for the output to be saved. You can find this script `myScript-cluster.sh` in the `lab_1` folder.
+
+```
+#!/bin/bash                                                                                                             
+
+#SBATCH -p normal                                                                                                       
+#SBATCH -n 8                                                                                                            
+#SBATCH -c 1                                                                                                            
+#SBATCH --mem=6GB                                                                                                       
+#SBATCH --job-name orthofinder-job01                                                                           \        
+#SBATCH -o %j.out                                                                                                       
+#SBATCH -e %j.err                                                                                                       
+
+module load revbayes
+
+mpirun -np 8 rb-mpi Intro.Rev
+```
+And to submit the job to SLURM
+
+```
+sbatch myScript-cluster.sh
+```
+And to check the progress
+
+```
+squeue
+```
+The results are inside the *[filename].out* file. You can read it with the command `less`, or with a text processor program such as VIM or AWK
 
 ## Exercises
 
