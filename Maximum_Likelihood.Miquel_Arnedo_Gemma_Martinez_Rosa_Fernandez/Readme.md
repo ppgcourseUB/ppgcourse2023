@@ -44,6 +44,8 @@ We are including the most common site-homogeneous models and almost all the mixt
 >- **Which is the best model?**
 >- **Which kind of model is it?**
 
+You can take a look at the models in: http://www.iqtree.org/doc/Substitution-Models
+
 ***
 
 ## Bootstrap
