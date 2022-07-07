@@ -14,9 +14,10 @@ All files for this hands-on class are in the folder **Bear_dataset_ML** provided
 
 You can download the data executing the following command from your home directory:
 
-`svn export https://github.com/ppgcourseUB/ppgcourse2022/trunk/Maximum_Likelihood.Miquel_Arnedo_Gemma_Martinez_Rosa_Fernandez/Bear_dataset_ML
+```
+svn export https://github.com/ppgcourseUB/ppgcourse2022/trunk/Maximum_Likelihood.Miquel_Arnedo_Gemma_Martinez_Rosa_Fernandez/Bear_dataset_ML
 cd Bear_dataset_ML
-`
+```
 
 ***
 
@@ -40,9 +41,9 @@ We are including the most common site-homogeneous models and almost all the mixt
 
 3.- Check the 50_genes.fa.iqtree file.
 
-- **Which is the best model?**
+>- **Which is the best model?**
 
-- **Which kind of model is it?**
+>- **Which kind of model is it?**
 
 ***
 
@@ -115,9 +116,9 @@ You can check how long your running analyses have been executing in the queue sy
 
 Once finished (this may take a while), you can check the execution time in the **.log** files in each of the above folders. You can visualize the output trees in your preferred visualization software.
 
-- **Which bootstrap method is the slowest?**
+>- **Which bootstrap method is the slowest?**
 
-- **Which differences can you see in the bootstrap values?**
+>- **Which differences can you see in the bootstrap values?**
 
 ***
 
@@ -175,8 +176,8 @@ For executing the analysis run:
 
 `sbatch topology_test_using_tree.sh`
 
-- **Which of the 3 topologies is more probable?**
+>- **Which of the 3 topologies is more probable?**
 
-- **Does this result change with the different analyses?**
+>- **Does this result change with the different analyses?**
 
 ***
