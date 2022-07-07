@@ -4,20 +4,16 @@ We are going to program a Bayesian inference phylogenetic analysis in RevBayes u
 
 ## Data description and access
 
-We are going to reconstruct the phylogeny of genus *Bufo* using a molecular dataset with two loci.
-* First, create a folder on your home directory and name it `lab_2`. Inside this folder, create a second folder and name it `data`. Copy the *cytB.nex* and *16S.nex* files containing the sequences for these two mitochondrial markers from the pggcourse website into the `lab_2/data` folder. 
-* Additionally, copy the file `my_phylogenetics_analysis.Rev` in the `lab_2` folder; we will need it later.
- 
+We are going to reconstruct the phylogeny of genus *Bufo* using a molecular dataset with two loci. Move into the `Lab_2` folder, where you can find all scripts and files needed for the practice.  Inside this folder, create a second folder and name it `data`. Copy the *cytB.nex* and *16S.nex* files containing the sequences for these two mitochondrial markers from the pggcourse website into the `lab_2/data` folder. 
+
 ```
-mkdir lab_2
-cd lab_2
 mkdir data
-cp -p cytb.nex lab_2/data/
-cp -p 16s.nex lab2/data/
+cp -p cytb.nex data/
+cp -p 16s.nex data/
 ```
 
 ## Launching RevBayes
-Navigate to the `lab_2` directory. Launch RevBayes by typing `rb` into the command line. This should launch RevBayes and give you a command prompt (the `>` character); this means RevBayes is waiting for input.
+Launch RevBayes by typing `rb-mpi` in the cluster command line (or `./rb` if your are using the Terminal). This should launch RevBayes and give you a command prompt (the `>` character); this means RevBayes is waiting for input.
 
 ## Constructing the phylogenetic model *interactively*
 
@@ -156,6 +152,33 @@ map_tree = mapTree(treetrace,"output/bufo_MAP.tree")
 # exit the program
 q()
 ```
+
+## Running the analysis in script mode (inside RevBayes)
+If your want to run the analysis above without typing every command at the RevBayes prompt, you can source the script, as we learnt in *Lab_1*. Launch Source the `my_phylogenetic_analysis.Rev` script, which contains all commands above (OBS!! Remember the quotation marks!).
+
+```
+source("my_phylogenetic_analysis.Rev`
+```
+
+## Running the analysis in batch mode from the cluster
+Finally, we can use a bash file if we are running the script within the cluster. Below is an example of a bash file to run the script `my_phylogenetic_analysis.Rev`. Because we are running in a cluster, we need to include a command for the output to be saved. You can find this script `myScript-cluster.sh` inside `Lab_2` folder.
+
+```
+#!/bin/bash                                                                                                             
+
+#SBATCH -p normal                                                                                                       
+#SBATCH -n 8                                                                                                            
+#SBATCH -c 1                                                                                                            
+#SBATCH --mem=6GB                                                                                                       
+#SBATCH --job-name orthofinder-job01                                                                           \        
+#SBATCH -o %j.out                                                                                                       
+#SBATCH -e %j.err                                                                                                       
+
+module load revbayes
+
+mpirun -np 8 rb-mpi my_phylogenetic_analysis.Rev
+```
+
 ## Visualizing the phylogeny and clade support
 
 Once we quit RevBayes, we can visualize the output: the phylogeny and the clade statistical support (the *nodal posterior probabilities*), using the software *FigTree*, which you have used in previous classes. Open the file `bufo.trees` using FigTree and check clade support by clicking on *node labels: posterior* on the left pane.
