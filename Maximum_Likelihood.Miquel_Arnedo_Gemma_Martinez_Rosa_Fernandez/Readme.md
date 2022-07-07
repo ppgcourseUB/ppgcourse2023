@@ -12,6 +12,12 @@ For Maximum likelihood tree reconstruction, we will use the software IQ-TREE whi
 
 All files for this hands-on class are in the folder **Bear_dataset_ML** provided in the github repository. We will use a separate folder for each analysis to avoid overwritting any files.
 
+You can download the data executing the following command from your home directory:
+
+`svn export https://github.com/ppgcourseUB/ppgcourse2022/trunk/Maximum_Likelihood.Miquel_Arnedo_Gemma_Martinez_Rosa_Fernandez/Bear_dataset_ML
+cd Bear_dataset_ML
+`
+
 ***
 
 ## Model selection
