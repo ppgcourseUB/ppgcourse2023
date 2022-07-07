@@ -8,7 +8,7 @@ If you have any questions, contact us at marnedo@ub.edu or rosa.fernandez@ibe.up
 ## Context
 
 ![bear_names](../Sensitivity_Analysis.Rosa_Fernandez_Gemma_Martinez/img/bear_names.png)
-![data](../Sensitivity_Analysis.Rosa_Fernandez_Gemma_Martinez/img/data.png)
+![data](../Sensitivity_Analysis.Rosa_Fernandez_Gemma_Martinez/img/data.PNG)
 
 ***
 ## Data files
