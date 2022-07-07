@@ -7,7 +7,7 @@ If you have any questions, contact us at marnedo@ub.edu or rosa.fernandez@ibe.up
 ***
 ## Context
 
-We will be working with a matrix composed by 50 orthologous genes concatenated.
+We will be working with an alignment composed by 50 orthologous genes concatenated from 16 bears.
 
 ![data](../Sensitivity_Analysis.Rosa_Fernandez_Gemma_Martinez/img/data.PNG)
 ![bear_names](../Sensitivity_Analysis.Rosa_Fernandez_Gemma_Martinez/img/bear_names.png)
