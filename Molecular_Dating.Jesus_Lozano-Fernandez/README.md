@@ -22,11 +22,11 @@ We are going to run a divergence time estimation analysis using a **NODE DATING*
 
 ## Data description and access
 
-blabla
+The tutorial contains four folders. `NodeDating/` and `TotalEvidence/` folders contain the `data/` & `scripts/` subfolders to run the two exercises proposed. Within `Outuput_Exercises_Solved/`, you can find `output/` folders with the results of the proposed analyses that were previously ran (in case you experience problems or want to double check your results). A fourth `img/` folder  contains the images embedded in the `/README.md` file.
 
 ***
 
-## Exercise on NODE DATING
+# Exercise on NODE DATING
 
 * *Based on the 3rd exercise ‘Estimating speciation times using node dating’*
 https://revbayes.github.io/tutorials/dating/nodedate
@@ -50,7 +50,7 @@ In the **`scripts/`** folder, you will find the following files:
 * `scripts/MCMC_dating_ex3.Rev` # *Master Rev file (loads the data, the other scripts specifying models and monitors the output of the MCMC sampler)*
 * `scripts/MCMC_dating_ex3_prior.Rev` # *Master Rev file under the priors (not data)*
 
-## Justification for Models and Priors
+### Justification for Models and Priors
 
 *Calibrations*
 
@@ -72,14 +72,15 @@ We are also interested in the age of the most-recent-common ancestor (MRCA) of a
 
 ## Starting the analysis
 
-1- On the terminal, start RevBayes by typing ```rb```
+### 1- On the terminal, start RevBayes by typing ```rb```
 RevBayes will open, then you will upload the master Rev script were all the needed information to perform the whole analysis is in there. Type the following and the analysis will automatically start:
 
 ```
 source("scripts/MCMC_dating_ex3.Rev")
 ```
 
-2- By the time you are waiting for the results of this analyses, start a second analysis under the prior. It is always useful to examine the output of your MCMC analysis in the absence of information from the sequence data (i.e. without calculating the likelihood that comes from the substitution model). Type on the terminal ```rb```
+### 2- By the time you are waiting for the results of this analyses, start a second analysis under the prior.
+It is always useful to examine the output of your MCMC analysis in the absence of information from the sequence data (i.e. without calculating the likelihood that comes from the substitution model). Type on the terminal ```rb```
 
 ```
 source("scripts/MCMC_dating_ex3_prior.Rev")
@@ -103,7 +104,7 @@ When both analyses are finished, let’s check at the newly generated **`ouput/`
 
 
 
-3- Analysing results with [**Tracer**](http://tree.bio.ed.ac.uk/software/tracer/)
+### 3- Analysing results with [**Tracer**](http://tree.bio.ed.ac.uk/software/tracer/)
 Evaluate and Summarize Your Results
 In this section, we will evaluate the *mixing* and *convergence* of our MCMC simulation using the program **Tracer**.
 
@@ -128,7 +129,7 @@ Compare the values of the age of the *extant_mrca* of the analysis under the pri
 
 >**Are the prior densities driving the posteriors (ie are we over-constraining)?**</br>
 
-4- Using [**FigTree**](http://tree.bio.ed.ac.uk/software/figtree/) to visualize the topology and ages 
+### 4- Using [**FigTree**](http://tree.bio.ed.ac.uk/software/figtree/) to visualize the topology and ages 
 
 * In the newly generated folder `output/`, open using *FigTree* the file ended with *.mcc. (Maximum Clade Credibitilty tree, that summarises the results of Bayesian and shows the tree with the highest score of appearance on posterior trees).
 * Press Ok when you are asked to include the node/branches and let the name *label*. Click on *Node Labels* and then Display the *Posterior* probability, which will be a measure of support of each node.
@@ -141,7 +142,7 @@ Compare the values of the age of the *extant_mrca* of the analysis under the pri
 
 ***
 
-## Exercise on TOTAL EVIDENCE
+# Exercise on TOTAL EVIDENCE
 * *Based on the 5th exercise ‘Estimating speciation times using total-evidence dating’*
 
 https://revbayes.github.io/tutorials/dating/tefbd
@@ -169,18 +170,18 @@ In the **`scripts/`** folder, you will find the following files:
 
 ## Starting the analysis
 
-5- On the terminal, start RevBayes by typing ```rb```
+### 5- On the terminal, start RevBayes by typing ```rb```
 
 RevBayes will open, then you will upload the master Rev script, that it contains all the information to perform the entire anaylsis. Type the following:
 ```
 source("scripts/MCMC_dating_ex5.Rev")
 ```
-6- Analysing results with [**Tracer**](http://tree.bio.ed.ac.uk/software/tracer/)
+### 6- Analysing results with [**Tracer**](http://tree.bio.ed.ac.uk/software/tracer/)
 Once the output file has been generated, open the `/bears_TEFBD.log` file using **Tracer**. Go to the *age_extant* parameter in the *Estimates* window.
 
 >**What is the mean and 95% highest posterior density of the age of the MRCA of Ursinae? Are these estimates more precise than in the Node dating analysis?**</br>
 
-7- Using [**FigTree**](http://tree.bio.ed.ac.uk/software/figtree/) to visualize the topology and ages.
+### 7- Using [**FigTree**](http://tree.bio.ed.ac.uk/software/figtree/) to visualize the topology and ages.
 
 Proceed as you have done before for the Node Calibrated analysis.
 ![question](img/bears_TEFBD.mcc.tre.JPG)
