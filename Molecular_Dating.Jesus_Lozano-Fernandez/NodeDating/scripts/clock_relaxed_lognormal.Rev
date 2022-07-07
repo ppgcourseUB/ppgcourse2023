@@ -1,5 +1,5 @@
 ############################################################
-# Uncorrelated exponential model on molecular branch rates #
+# Uncorrelated lognormal model on molecular branch rates #
 ############################################################
 
 # The rate along each branch is drawn from an exponential prior #
