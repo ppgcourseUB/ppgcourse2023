@@ -54,8 +54,8 @@ In the **`scripts/`** folder, you will find the following files:
 *Calibrations*
 
 The file `/bears_taxa.tsv` contains information about the stratigraphic ranges for 20 bear species, including 12 extinct species. We’re not going to use all of the information from this file in this exercise, because the node dating approach to calibration limits the amount of data we can take advantage of, but we’ll use some of this information to constrain the age of two nodes We’re going to add two node calibrations: one on **the root** and one on the **internal node** for the clade Ursinae.
-* The oldest first appearance of a crown group bear in our dataset is Ursus americanus at 1.84 million of years ago (Ma).
-* We will take advantage of a previous estimate (∼49 Ma) for the age of caniforms, which is the clade containing bears and other “dog-like” mammals, from [dos Reis et al. 2012](https://royalsocietypublishing.org/doi/abs/10.1098/rspb.2012.0683). We will assume that the age of crown bears cannot be older than this.
+* The oldest first appearance of a crown group bear in our dataset is Ursus americanus at 1.84 million of years ago (Ma). This will be our minimum constrain for that clade.
+* We will take advantage of a previous estimate (∼49 Ma) for the age of caniforms, which is the clade containing bears and other “dog-like” mammals, from [dos Reis et al. 2012](https://royalsocietypublishing.org/doi/abs/10.1098/rspb.2012.0683). We will assume that the age of crown bears cannot be older than this, so this will be the maximum constrain for this clade.
 
 *The clock model*
 
@@ -63,7 +63,7 @@ Remember the clock (or branch-rate) model describes how rates of substitution va
 
 *The tree prior*
 
-Since all of the taxa included in the analysis in this exercise are living species we’ll use a birth-death model that doesn’t incorporate the fossil recovery process, however, we will add calibration information from the fossil record to generate timetrees on a non- arbitrary timescale. `/tree_BD_nodedate.Rev`
+Since all of the taxa included in the analysis in this exercise are living species we’ll use a birth-death model that doesn’t incorporate the fossil recovery process, however, we will add calibration information from the fossil record to generate timetrees on a non-arbitrary timescale. `/tree_BD_nodedate.Rev`
 
 *The master Rev script*
 
