@@ -2,7 +2,7 @@
 
 In this session you will learn how to run the MJOLNIR pipeline to perform a metabarcoding analysis of a multiplexed amplicon library.
 
-##Data required:
+## Data required:
 
 Available from: https://drive.google.com/drive/folders/1zkX01xJov68FFObgbaNYehWD_3dAbDe3?usp=sharing 
 
@@ -17,7 +17,7 @@ Individual  primers  were  tagged  in the 5' end with 7-bp twin-tags (both tags 
 We will run the MJOLNIR pipeline to retrieve the most abundant sequence in each sample with the goal of identifying the fish species.
 
 
-##Tasks:
+## Tasks:
 
 a) Write the ngsfilter_MRKT.tsv file needed to demultiplex these 80 samples, in a format that is compatible with MJOLNIR. 
 
