@@ -1,0 +1,13 @@
+Lmod has detected the following error: The following module(s) are unknown:
+"iq-tree/2.1.2"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "iq-tree/2.1.2"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+/var/spool/slurm/d/job01233/slurm_script: line 12: iqtree: command not found

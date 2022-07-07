@@ -1,0 +1,67 @@
+#nexus
+
+BEGIN Taxa;
+DIMENSIONS ntax=16;
+TAXLABELS
+[1] 'UrsusArctos_Margo'
+[2] 'UrsusArctos_Adelaide'
+[3] 'UrsusAmericanus_Noah'
+[4] 'UrsusAmericanus_Montana'
+[5] 'UrsusMaritimus_Maria'
+[6] 'UrsusMaritimus_Maripepa'
+[7] 'Ailuropoda_Siro'
+[8] 'Ailuropoda_Pepe'
+[9] 'UrsusAmericanus_Oskar'
+[10] 'Ailuropoda_Juan'
+[11] 'Ailuropoda_Luisa'
+[12] 'UrsusAmericanus_Summer'
+[13] 'UrsusMaritimus_Margaret'
+[14] 'UrsusArctos_Amparo'
+[15] 'UrsusArctos_Paco'
+[16] 'UrsusMaritimus_Joseph'
+;
+END; [Taxa]
+
+BEGIN Splits;
+DIMENSIONS ntax=16 nsplits=36;
+FORMAT labels=no weights=yes confidences=no intervals=no;
+MATRIX
+	100	 2,
+	100	 14,
+	100	 2 14,
+	100	 3,
+	100	 4,
+	100	 9,
+	100	 12,
+	97	 9 12,
+	100	 4 9 12,
+	100	 3 4 9 12,
+	100	 7,
+	100	 11,
+	3	 7 11,
+	100	 10,
+	99	 7 10 11,
+	100	 8,
+	100	 7 8 10 11,
+	100	 1 2 5 6 13 14 15 16,
+	100	 5,
+	100	 13,
+	100	 16,
+	100	 13 16,
+	66	 5 13 16,
+	100	 6,
+	100	 5 6 13 16,
+	100	 1 2 14 15,
+	100	 1 15,
+	100	 15,
+	100	 1,
+	90	 7 10,
+	34	 6 13 16,
+	3	 4 12,
+	7	 10 11,
+	1	 7 8 10,
+	0	 8 11,
+	0	 5 6,
+;
+END; [Splits]
+

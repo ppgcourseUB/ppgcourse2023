@@ -1,0 +1,68 @@
+IQ-TREE multicore version 1.6.12 for Linux 64-bit built Jul  3 2022
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    ip-192-168-1-102.eu-west-1.compute.internal (AVX512, FMA3, 184 GB RAM)
+Command: iqtree -s 50_genes.fa -z ../bear_species_trees_topologies.tre -m LG+C20+F+G -redo
+Seed:    345984 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Thu Jul  7 12:03:07 2022
+Kernel:  AVX+FMA - 1 threads (96 CPU cores detected)
+
+HINT: Use -nt option to specify number of threads because your CPU has 96 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading alignment file 50_genes.fa ... Fasta format detected
+Alignment most likely contains protein sequences
+Alignment has 16 sequences with 11259 columns, 6219 distinct patterns
+3023 parsimony-informative, 1801 singleton sites, 6435 constant sites
+                         Gap/Ambiguity  Composition  p-value
+   1  UrsusArctos_Margo         44.62%    passed     96.86%
+   2  UrsusArctos_Adelaide       2.19%    passed     99.74%
+   3  UrsusAmericanus_Noah      18.63%    passed     60.00%
+   4  UrsusAmericanus_Montana   14.56%    passed     65.53%
+   5  UrsusMaritimus_Maria       6.89%    passed     99.95%
+   6  UrsusMaritimus_Maripepa    4.72%    passed     87.30%
+   7  Ailuropoda_Siro            7.25%    passed     97.30%
+   8  Ailuropoda_Pepe           17.45%    passed     94.04%
+   9  UrsusAmericanus_Oskar     62.94%    passed     97.38%
+  10  Ailuropoda_Juan           55.48%    passed     44.95%
+  11  Ailuropoda_Luisa          69.54%    failed      1.79%
+  12  UrsusAmericanus_Summer    70.90%    passed     63.49%
+  13  UrsusMaritimus_Margaret   54.83%    passed     66.82%
+  14  UrsusArctos_Amparo        82.97%    passed      6.50%
+  15  UrsusArctos_Paco          47.45%    passed     18.09%
+  16  UrsusMaritimus_Joseph     85.88%    failed      2.00%
+WARNING: 7 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                     40.39%  2 sequences failed composition chi2 test (p-value<5%; df=19)
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.013 seconds
+Model LG+C20+F+G is alias for LG+POISSON+G+FMIX{C20pi1:1:0.0559910600,C20pi2:1:0.0514824870,C20pi3:1:0.0812922124,C20pi4:1:0.0721976867,C20pi5:1:0.0556718858,C20pi6:1:0.0331003080,C20pi7:1:0.0589501763,C20pi8:1:0.0263756889,C20pi9:1:0.0307584220,C20pi10:1:0.0376701125,C20pi11:1:0.0303058290,C20pi12:1:0.0808775576,C20pi13:1:0.0263349134,C20pi14:1:0.0579101455,C20pi15:1:0.0371248064,C20pi16:1:0.0586867766,C20pi17:1:0.0561479138,C20pi18:1:0.0349810886,C20pi19:1:0.0544937394,C20pi20:1:0.0596471901}+F+G
+
+NOTE: 1295 MB RAM (1 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -94724.065
+2. Current log-likelihood: -92214.352
+3. Current log-likelihood: -92192.894
+4. Current log-likelihood: -92191.748
+5. Current log-likelihood: -92191.636
+Optimal log-likelihood: -92191.608
+Mixture weights: 0.494 0.029 0.011 0.026 0.056 0.019 0.000 0.026 0.043 0.018 0.025 0.002 0.034 0.041 0.033 0.016 0.017 0.038 0.011 0.000 0.062
+Gamma shape alpha: 0.320
+Parameters optimization took 5 rounds (148.439 sec)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+Computing ML distances based on estimated model parameters... 0.079 sec
+Computing BIONJ tree...
+0.003 seconds
+Log-likelihood of BIONJ tree: -92338.784
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 2.239 second
+Computing log-likelihood of 98 initial trees ... 1911.404 seconds
+Current best score: -92184.230
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+BETTER TREE FOUND at iteration 1: -92176.791
+Iteration 10 / LogL: -92180.137 / Time: 0h:50m:51s

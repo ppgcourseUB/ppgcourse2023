@@ -9,4 +9,4 @@
 #module load
 module load iq-tree
 
-iqtree -s 50_genes.fa -m MODEL -bb 1000 -nt 8 -redo
+iqtree -s 50_genes.fa -m LG+C20+F+G -bb 1000 -nt 8 -redo
