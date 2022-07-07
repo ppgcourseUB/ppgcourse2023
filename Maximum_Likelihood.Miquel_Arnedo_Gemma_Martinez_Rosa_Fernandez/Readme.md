@@ -116,7 +116,6 @@ You can check how long your running analyses have been executing in the queue sy
 Once finished (this may take a while), you can check the execution time in the **.log** files in each of the above folders. You can visualize the output trees in your preferred visualization software.
 
 >- **Which bootstrap method is the slowest?**
-
 >- **Which differences can you see in the bootstrap values?**
 
 ***
@@ -176,7 +175,6 @@ For executing the analysis run:
 `sbatch topology_test_using_tree.sh`
 
 >- **Which of the 3 topologies is more probable?**
-
 >- **Does this result change with the different analyses?**
 
 ***
