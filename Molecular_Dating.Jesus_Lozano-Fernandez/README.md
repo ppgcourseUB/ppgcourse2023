@@ -33,7 +33,7 @@ The tutorial contains four folders. `NodeDating/` and `TotalEvidence/` folders c
 
 ## Background
 
-In this exercise we will use information from the fossil record to calibrate the molecular substitution rate to absolute times using node dating techniques. This approach involves assigning probability densities that incorporate temporal information from the fossil record to particular nodes in the tree.
+In this exercise we will use information from the fossil record to calibrate the molecular substitution rate to absolute times using node dating techniques. This approach involves assigning probability densities that incorporate temporal information from the fossil record to particular nodes in the tree. Node-dating analyses under a Bayesian framework allows to easily implement our prior beliefs as a distributions. In many Bayesian softwares, topology estimation and absolute dating based on molecular data are done independently. RevBayes allows a joint estimation.
 
 For running this exercise, we should be inside the `NodeDating/` folder, which just contains two folders: `data/` & `scripts/`.
 
