@@ -5,7 +5,12 @@
 If you have any questions, contact us at marnedo@ub.edu or rosa.fernandez@ibe.upf-csic.es
 
 ***
+## Context
 
+![bear_names](../Sensitivity_Analysis.Rosa_Fernandez_Gemma_Martinez/img/bear_names.png)
+![data](../Sensitivity_Analysis.Rosa_Fernandez_Gemma_Martinez/img/data.png)
+
+***
 ## Data files
 
 For Maximum likelihood tree reconstruction, we will use the software IQ-TREE which you have already installed in the cloud. For executing all the commands, we will use SLURM scripts.
