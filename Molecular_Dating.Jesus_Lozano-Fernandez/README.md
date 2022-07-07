@@ -131,7 +131,7 @@ Compare the values of the age of the *extant_mrca* of the analysis only under th
 
 ### 4- Using [**FigTree**](http://tree.bio.ed.ac.uk/software/figtree/) to visualize the topology and ages 
 
-* In the newly generated folder `output/`, open using *FigTree* the file ended with *.mcc. (Maximum Clade Credibitilty tree, that summarises the results of Bayesian and shows the tree with the highest score of appearance on posterior trees).
+* In the newly generated folder `output/`, open using *FigTree* the file ended with *.mcc.tre (Maximum Clade Credibitilty tree, that summarises in a single tree the results of MCMC analysis).
 * Press Ok when you are asked to include the node/branches and let the name *label*. Click on *Node Labels* and then Display the *Posterior* probability, which will be a measure of support of each node.
 * Click on Node Bars and Display the *age_95%_HPD*, so you’ll be able to be the 95% Highest Posterior Density interval over the nodes. You can play with the bar width and the Font size to make the figure to look clearer.
 * Lastly, add an *Scale Axis* and select a *Reverse axis*, so the present time will be on the right and the past time will be on the left.
