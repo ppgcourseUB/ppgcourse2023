@@ -38,12 +38,11 @@ In this exercise we will use information from the fossil record to calibrate the
 
 For running this exercise, we should be inside the `NodeDating/` folder, which just contains two folders: `data/` & `script/`.
 
-In the **`data`** folder, you will find the following files:
+In the **`data/`** folder, you will find the following files:
 * `data/bears_cytb.nex` # *an alignment in NEXUS format of 1,000 bp of cytochrome b sequences for 8 bear species*
-* `data/bears_taxa.tsv` # *a tab-separated table listing every bear species (both
-fossil and extant) and their occurrence age ranges. For extant taxa, the minimum age is 0.0 (i.e. the present).*
+* `data/bears_taxa.tsv` # *a tab-separated table listing every bear species (both living and fossil) and their occurrence age ranges. For living taxa, the minimum age is 0.0 (i.e. the present).*
 
-In the **`script`** folder, you will find the following files:
+In the **`scripts/`** folder, you will find the following files:
 * `scripts/sub_GTRG.Rev` # *Sequence substitution model GTR + Γ*
 * `scripts/clock_relaxed_lognormal.Rev` # *Relaxed clock model Uncorrelated*
 * `scripts/tree_BD_nodedate.Rev` # *Birth Death tree prior*
