@@ -113,7 +113,8 @@ In this section, we will evaluate the *mixing* and *convergence* of our MCMC sim
 Immediately upon loading your log files, you will see the list of **Trace Files** on the left-hand side (you can load multiple files). The bottom left section, called **Traces**, provides a list of every parameter in the log file, along with the mean and the effective sample size (ESS) for the posterior sample of that parameter. The ESS statistic provides a measure of the number of independent draws in our sample for a given parameter. This quantity will typically be much smaller than the number of generations of the chain. In Tracer, poor to fair values for the ESS will be coloured red and yellow. You will likely see a lot of red and yellow numbers because the MCMC runs in this exercise are too short to effectively sample the posterior distributions of most parameters. A much longer analysis is provided in the output directory.
 
 Look through the various parameters and statistics in the list of **Traces**.
-- **Are there any parameters that have really low ESS? Why do you think that might be?**
+ 
+>**Are there any parameters that have really low ESS? Why do you think that might be?**</br>
 
  ![question](img/Unconverged_Chains.png)
 
@@ -121,12 +122,12 @@ Next, we can click over to the **Trace** window. This window shows us the sample
 
 Go to the *age_extant* parameter in the **Estimates** window.
 
-- **What is the mean and 95% highest posterior density of the age of the MRCA for all living bears? And of Ursinae?**
+>**What is the mean and 95% highest posterior density of the age of the MRCA for all living bears? And of Ursinae?**</br>
 -  ![question](img/Tracer_NodeVsPrior.png)
 
 Compare the values of the age of the *extant_mrca* of the analysis under the priors `bears_nodate_prior.log` against the ones with data `bears_nodedate.log`.
 
-- **Are the prior densities driving the posteriors (ie are we over-constraining)?**
+>**Are the prior densities driving the posteriors (ie are we over-constraining)?**</br>
 
 4- Using [**FigTree**](http://tree.bio.ed.ac.uk/software/figtree/) to visualize the topology and ages 
 
@@ -137,7 +138,7 @@ Compare the values of the age of the *extant_mrca* of the analysis under the pri
 
 -  ![question](img/bears_nodedate.mcc.tre.JPG)
 
-- **Which is the Posterior Probability of the node leading to Ursinae and does agree the 95% HPD seeing here with the one in Tracer ?**
+>**Which is the Posterior Probability of the node leading to Ursinae and does agree the 95% HPD seeing here with the one in Tracer ?**</br>
 
 ***
 
@@ -178,7 +179,7 @@ source("scripts/MCMC_dating_ex5.Rev")
 6- Analysing results with [**Tracer**](http://tree.bio.ed.ac.uk/software/tracer/)
 Once the output file has been generated, open the *bears_TEFBD.log* file using Tracer. Go to the *age_extant* parameter in the **Estimates** window.
 
-- **What is the mean and 95% highest posterior density of the age of the MRCA of Ursinae? Are these estimates more precise than in the Node dating analysis?**
+>**What is the mean and 95% highest posterior density of the age of the MRCA of Ursinae? Are these estimates more precise than in the Node dating analysis?**</br>
 
 7- Using [**FigTree**](http://tree.bio.ed.ac.uk/software/figtree/) to visualize the topology and ages
 Proceed as you have done before for the Node Calibrated analysis.
@@ -186,9 +187,8 @@ Proceed as you have done before for the Node Calibrated analysis.
 
 This analysis had run for 30,000 generations, a shorter analysis will probably look different. 
 
-<p align="center">
-- **How do fossil taxa relate with the living one?
-Which fossils belong to the MRCA of all living bears, and to Ursinae?
-Find major differences between ages and relationships of node calibrated and Total Evidence analysis**
+>**How do fossil taxa relate with the living one?**</br>
+>**Which fossils belong to the MRCA of all living bears, and to Ursinae?**</br>
+>**Find major differences between ages and relationships of node calibrated and Total Evidence analysis**</br>
 
 When there are sampled ancestors present in the tree, visualizing the tree can be fairly difficult in traditional tree viewers. We will make use of a browser-based tree viewer called IcyTree, created by Tim Vaughan. IcyTree has many unique options for visualizing phylogenetic trees and can produce publication-quality vector image files (i.e. SVG). Additionally, it correctly represents sampled ancestors on the tree as nodes, each with only one descendant.
