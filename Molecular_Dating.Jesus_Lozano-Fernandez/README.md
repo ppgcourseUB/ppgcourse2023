@@ -109,7 +109,7 @@ In this section, we will evaluate the *mixing* and *convergence* of our MCMC sim
 
  ![question](img/tracer_load_file.png)
 
-Immediately upon loading your log files, you will see the list of Trace Files on the left-hand side (you can load multiple files). The bottom left section, called *Traces*, provides a list of every parameter in the log file, along with the mean and the effective sample size (ESS) for the posterior sample of that parameter. The ESS statistic provides a measure of the number of independent draws in our sample for a given parameter. This quantity will typically be much smaller than the number of generations of the chain. In Tracer, poor to fair values for the ESS will be coloured red and yellow. You will likely see a lot of red and yellow numbers because the MCMC runs in this exercise are too short to effectively sample the posterior distributions of most parameters. A much longer analysis is provided in the output directory.
+Immediately upon loading your log files, you will see the list of *Trace Files* on the left-hand side (you can load multiple files). The bottom left section, called *Traces*, provides a list of every parameter in the log file, along with the mean and the effective sample size (ESS) for the posterior sample of that parameter. The ESS statistic provides a measure of the number of independent draws in our sample for a given parameter. This quantity will typically be much smaller than the number of generations of the chain. In **Tracer**, poor to fair values for the ESS will be coloured red and yellow. You will likely see a lot of red and yellow numbers because the MCMC runs in this exercise are too short to effectively sample the posterior distributions of most parameters. A much longer analysis is provided in the output directory.
 
 Look through the various parameters and statistics in the list of *Traces*.
  
@@ -117,27 +117,27 @@ Look through the various parameters and statistics in the list of *Traces*.
 
  ![question](img/Unconverged_Chains.png)
 
-Next, we can click over to the **Trace** window. This window shows us the samples for a given parameter at each iteration of the MCMC. The left side of the chain has a shaded portion that has been excluded as “burn-in”. Samples taken near the beginning of chain are often discarded or “burned” because the MCMC may not immediately begin sampling from the target posterior distribution, particularly if the starting condition of the chain is far from the region of highest posterior density. The presence of a trend or large leaps in a parameter value might indicate that your MCMC is not mixing well.
+Next, we can click over to the *Trace* window. This window shows us the samples for a given parameter at each iteration of the MCMC. The left side of the chain has a shaded portion that has been excluded as “burn-in”. Samples taken near the beginning of chain are often discarded or “burned” because the MCMC may not immediately begin sampling from the target posterior distribution, particularly if the starting condition of the chain is far from the region of highest posterior density. The presence of a trend or large leaps in a parameter value might indicate that your MCMC is not mixing well.
 
-Go to the *age_extant* parameter in the **Estimates** window.
+Go to the *age_extant* parameter in the *Estimates* window.
 
 >**What is the mean and 95% highest posterior density of the age of the MRCA for all living bears? And of Ursinae?**</br>
 -  ![question](img/Tracer_NodeVsPrior.png)
 
-Compare the values of the age of the *extant_mrca* of the analysis under the priors `bears_nodate_prior.log` against the ones with data `bears_nodedate.log`.
+Compare the values of the age of the *extant_mrca* of the analysis under the priors `/bears_nodate_prior.log` against the ones with data `/bears_nodedate.log`.
 
 >**Are the prior densities driving the posteriors (ie are we over-constraining)?**</br>
 
 4- Using [**FigTree**](http://tree.bio.ed.ac.uk/software/figtree/) to visualize the topology and ages 
 
-* In the newly generated folder `output`, open using *FigTree* the file ended with *.mcc. (Maximum Clade Credibitilty tree, that summarises the results of Bayesian and shows the tree with the highest score of appearance on posterior trees).
+* In the newly generated folder `output/`, open using *FigTree* the file ended with *.mcc. (Maximum Clade Credibitilty tree, that summarises the results of Bayesian and shows the tree with the highest score of appearance on posterior trees).
 * Press Ok when you are asked to include the node/branches and let the name *label*. Click on *Node Labels* and then Display the *Posterior* probability, which will be a measure of support of each node.
 * Click on Node Bars and Display the *age_95%_HPD*, so you’ll be able to be the 95% Highest Posterior Density interval over the nodes. You can play with the bar width and the Font size to make the figure to look clearer.
 * Lastly, add an *Scale Axis* and select a *Reverse axis*, so the present time will be on the right and the past time will be on the left.
 
 -  ![question](img/bears_nodedate.mcc.tre.JPG)
 
->**Which is the Posterior Probability of the node leading to Ursinae and does agree the 95% HPD seeing here with the one in Tracer ?**</br>
+>**Which is the Posterior Probability of the node leading to Ursinae and does agree the 95% HPD seeing here with the one in Tracer?**</br>
 
 ***
 
