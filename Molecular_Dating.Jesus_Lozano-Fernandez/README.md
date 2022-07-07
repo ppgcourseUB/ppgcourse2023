@@ -22,7 +22,7 @@ We are going to run a divergence time estimation analysis using a **NODE DATING*
 
 ## Data description and access
 
-The tutorial contains four folders. `NodeDating/` and `TotalEvidence/` folders contain the `data/` & `scripts/` subfolders to run the two exercises proposed. Within `Outuput_Exercises_Solved/`, you can find `output/` folders with the results of the proposed analyses that were previously ran (in case you experience problems or want to double check your results). A fourth `img/` folder  contains the images embedded in the `/README.md` file.
+The tutorial contains four folders. `NodeDating/` and `TotalEvidence/` folders contain the `data/` & `scripts/` subfolders to run the two exercises proposed. Within `Outuput_Exercises_Solved/`, you can find `output/` folders with the results of a Node Dating and Total Evidence analyses that were previously ran (in case you experience problems or want to double check your results). A fourth `img/` folder  contains the images embedded in the `/README.md` file.
 
 ***
 
