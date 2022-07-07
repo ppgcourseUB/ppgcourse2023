@@ -186,6 +186,8 @@ Once we quit RevBayes, we can visualize the output: the phylogeny and the clade 
 ## Evaluating stationarity and mixing of parameters
 
 We can also evaluate how well our MCMC analysis approximated the posterior distribution of each parameter in the model by using the software `Tracer`  (https://beast.community/tracer). Download `Tracer` into your computer (it does not work in the cluster) and open it by double clicking: it is a graphical programme. Use *Import Trace File* from the Tracer menu to read the output file `bufo.log`. Check the shape of the posterior distributions, the ESS values (should be > 200), and search for potential correlations between parameters.
+![This is an image] (../images/Tracer.png)
+
 
 # Exercises
 
