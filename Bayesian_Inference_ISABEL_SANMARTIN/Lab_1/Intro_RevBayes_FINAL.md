@@ -38,7 +38,7 @@ Check the contents of the folder. There are two subfolders named `Lab`. We will 
 cd Lab_1
 ls
 ```
-You would see that there are several files, including scripts and data we need for the practice: `Intro.Rev` and `myScript.sh`
+You would see that there are several files, including scripts and data we need for the practice: `Intro.Rev`, `myScript.sh`, and `myScript-cluster.sh`
 
 ## Data description and access from your computer
 
