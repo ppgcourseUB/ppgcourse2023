@@ -125,7 +125,7 @@ Go to the *extant_mrca* parameter in the *Traces* left column, and then check th
 >**What is the mean and 95% highest posterior density of the age of the MRCA for all living bears? And of Ursinae?**</br>
 -  ![question](img/Tracer_NodeVsPrior.png)
 
-Compare the values of the age of the *extant_mrca* of the analysis under the priors `/bears_nodate_prior.log` against the ones with data `/bears_nodedate.log`.
+Compare the values of the age of the *extant_mrca* of the analysis only under the priors (with no data),  `/bears_nodate_prior.log` against the ones including data `/bears_nodedate.log`.
 
 >**Are the prior densities driving the posteriors (ie are we over-constraining)?**</br>
 
