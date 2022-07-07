@@ -42,8 +42,7 @@ We are including the most common site-homogeneous models and almost all the mixt
 3.- Check the 50_genes.fa.iqtree file.
 
 >- **Which is the best model?**
-
->- **Which kind of model is it?**
+- **Which kind of model is it?**
 
 ***
 
