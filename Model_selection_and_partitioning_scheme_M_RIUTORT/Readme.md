@@ -69,7 +69,7 @@ This command indicates to the program the name of the file with the data. We mus
 
 ```
 ## ALIGNMENT FILE ##
-alignment = bears_phylo.phy
+alignment = bears_com.phy
 ```
 
 COMMAND 2:
@@ -125,9 +125,9 @@ This is a very important command, here you define the data blocks you want to te
 CHRNA1_1= 1-362\3;
 CHRNA1_2 = 2-362\3;
 CHRNA1_3 = 3-362\3;
-FES_1 = 364-831\3;
-FES_2 = 365-831\3;
-FES_3 = 366-831\3;
+FES_1 = 363-831\3;
+FES_2 = 364-831\3;
+FES_3 = 365-831\3;
 IRBP_1 = 832-2111\3;
 IRBP_2 = 833-2111\3;
 IRBP_3 = 834-2111\3;
