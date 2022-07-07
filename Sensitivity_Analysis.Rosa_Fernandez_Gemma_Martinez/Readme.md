@@ -16,6 +16,13 @@ As mentioned in the first class, the scientific question we will try to answer t
 
  ![question](img/question.png)
 
+You can download the data executing the following command from your home directory:
+
+```
+svn export https://github.com/ppgcourseUB/ppgcourse2022/trunk/Sensitivity_Analysis.Rosa_Fernandez_Gemma_Martinez/Bear_dataset_SensitivityAnalyses
+cd Bear_dataset_SensitivityAnalyses
+```
+
 ***
 
 ## Section A. Techniques for data matrix construction
@@ -29,6 +36,12 @@ If you check the list of files in the folder, you’ll see that there are 50 ort
 There are also 3 python scripts. These scripts need the python libraries numpy and cogent. They are already installed in the cloud for the course, but you will need to install them in your computer to replicate these exercises.
 
 ### Taxon ocupancy
+
+0.- We will run this part locally. For that, we have to load the required modules and install one tool:
+
+`module load py-biopython`
+
+`pip3 install cogent3 `
 
 1.- Let’s explore the amount of missing data that we have in each taxon. For that, let’s run the script:
 
