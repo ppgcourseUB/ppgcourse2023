@@ -152,11 +152,11 @@ And go to that folder:
 
 2.- Let’s now run an analysis on the 50 individual gene trees:
 
-**`java -jar astral.5.7.8.jar -i bears_allTrees.tre`**
+**`astral -i bears_allTrees.tre`**
 
 You’ll see the output on the screen. To save it in an output file run:
 
-**`java -jar astral.5.7.8.jar -i bears_allTrees.tre 2> output_ASTRAL.txt`**
+**`astral -i bears_allTrees.tre 2> output_ASTRAL.txt`**
 
 Examine the output.
 
@@ -174,7 +174,7 @@ Let’s now score them with ASTRAL.
 
 Let’s score the first species tree. From the ASTRAL folder, run:
 
-**`java -jar astral.5.7.8.jar -i bears_allTrees.tre -q ../SPECIES_TREES/bear_species_tree1.tre 2> score_speciesTree1.txt`**
+**`astral -i bears_allTrees.tre -q ../SPECIES_TREES/bear_species_tree1.tre 2> score_speciesTree1.txt`**
 
 Do the same with species trees 2 and 3.
 
