@@ -104,7 +104,6 @@ Examples for region specification:
 - Every dataset is different, so dedicated cutoffs and filtering should be perform to assess robustness of your SNPs
 - Not a lot of tools support genotype likelihoods, but there are some (e.g. [ngsTools](https://github.com/mfumagalli/ngsTools))
 
-
 ## Exercise 1 - Data QC
 
 Even though GL are specially suitable for analyses of low coverage data, it is always advisable to perform QC checks and (if necessary) perform mild filtering. ANGSD can perform some basic filtering of the data:
@@ -141,9 +140,10 @@ ANGSD can extract some QC info. You can use this bacth file to send the job usin
 #SBATCH --mem=6G                                                                                                        
 #SBATCH --cpus-per-task=8 
 
-# directories
+# directories and commands
 DATA=/data/datasets/Calling_variants_from_low-coverage_ngs_data/
-REF=$DATA/hs37d5.fa.gz                                                                                             
+REF=$DATA/hs37d5.fa.gz
+ls $DATA/*.bam | sort -t "." -k 5,5 > samples.bam_list
 
 # module load                                                                                                           
 module load angsd   
