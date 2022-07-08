@@ -148,7 +148,7 @@ REF=$DATA/hs37d5.fa.gz
 module load angsd   
 
 # running the program
-angsd -b samples.bam_list -ref $REF -r 11:21000000-22000000 -out 1000G_QC -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -C 50 -baq 1 -minQ 0 -doCounts 1 -doQsDist 1 -doDepth 1 -maxDepth 500 -nThreads 8
+angsd -b $DATA/samples.bam_list -ref $REF -r 11:21000000-22000000 -out 1000G_QC -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -C 50 -baq 1 -minQ 0 -doCounts 1 -doQsDist 1 -doDepth 1 -maxDepth 500 -nThreads 8
 ```
 
 and then we can plot them:
