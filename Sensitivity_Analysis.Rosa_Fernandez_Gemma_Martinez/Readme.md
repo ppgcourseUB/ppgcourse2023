@@ -142,13 +142,14 @@ We have selected 50 orthologous groups and have run individual gene trees with I
 
 **`cat *tree>bears_allTrees.tre`**
 
-Let’s move them to the ASTRAL folder (If the folder does not exist, create it):
+Let’s create a folder called ASTRAL and move them at folder:
 
-**`mv bears_allTrees.tre ../ASTRAL`**
+**`mkdir ALSTRAL`**
+**`mv bears_allTrees.tre ASTRAL`**
 
 And go to that folder:
 
-**`cd ../ASTRAL`**
+**`cd ASTRAL`**
 
 2.- Let’s now run an analysis on the 50 individual gene trees:
 
@@ -163,6 +164,9 @@ Examine the output.
 - **What is the optimal tree inferred by ASTRAL?**
 
 - **What is the final normalized quartet score?** (tip: the normalized quartet score is the proportion of input gene tree quartet trees satisfied by the species tree. This is a number between zero and 1. The highest the number, the less discordant your gene trees are.
+
+> **Note**. If you install ALSTRAL in your computer, most probably you will need to invoke it through java, similar to this:
+> **`java -jar astral.5.7.8.jar -i bears_allTrees.tre 2> output_ASTRAL.txt`**
 
 3.- Visualize the tree in your preferred software or online in iToL or phylo.io (just copy-paste the newick tree and click ‘Render’).
 
