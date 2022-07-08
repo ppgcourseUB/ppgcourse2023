@@ -16,6 +16,9 @@ MAP_FILE=data/CEU/CEU_filled.map
 IHS_FILE=CEU
 NORM_IHS_FILE=CEU.ihs.out
 
+# modules
+module load selscan
+
 # iHS computation
 selscan --ihs --hap $HAP_FILE --map $MAP_FILE --out $IHS_FILE --threads 8
 
