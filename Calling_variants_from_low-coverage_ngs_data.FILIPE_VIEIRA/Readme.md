@@ -358,7 +358,7 @@ $ANGSD/angsd -doPost
 
 If you have a population, you can use `-doPost 1` (frequencies under HWE as prior) but here, since we have individuals from different populations, we will use `-doPost 2` (uniform prior). Replace the angsd command in your batch script with this one):
 ```
-angsd -b samples.bam_list -ref $REF -r 11:21000000-22000000 -out 1000G_CG_MAF -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -C 50 -baq 1 -minMapQ 20 -minQ 20 -minInd 5 -doCounts 1  -setMinDepth 30 -setMaxDepth 150 -GL 2 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -doPost 2 -doGeno 3 -doBcf 1 -nThreads 8
+angsd -b $DATA/samples.bam_list -ref $REF -r 11:21000000-22000000 -out 1000G_CG_MAF -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -C 50 -baq 1 -minMapQ 20 -minQ 20 -minInd 5 -doCounts 1  -setMinDepth 30 -setMaxDepth 150 -GL 2 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -doPost 2 -doGeno 3 -doBcf 1 -nThreads 8
 ```
 Parameter | Meaning
 --- | ---
