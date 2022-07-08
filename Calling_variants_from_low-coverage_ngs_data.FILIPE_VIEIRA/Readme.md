@@ -162,7 +162,7 @@ Remember that to visualize the plot you must download the file to your computer 
 Should we use all samples? And which values would you choose as sensible thresholds on quality score and depth (minimum and maximum)?
 
 
-## Exercise 3 - Genotype likelihoods
+## Exercise 2 - Genotype likelihoods
 
 Now we are ready to calculate the ***genotype likelihoods*** for each site at each individual.
 
