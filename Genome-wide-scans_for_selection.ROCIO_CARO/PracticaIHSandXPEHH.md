@@ -47,27 +47,34 @@ The required input files are:
 Once we have all the input files ready, we can send the job as follows:
 
 ```bash
-#!/bin/bash
-#SBATCH -J iHS_tutorial
+#!/bin/bash     
+
+# define names
+#SBATCH --job-name=selscan
+#SBATCH --error selscan-%j.err
+#SBATCH --output selsan-%j.out 
+
+# memory and CPUs request
+#SBATCH --mem=6G
 #SBATCH --cpus-per-task=8
-#SBATCH --mem=6GB
-#SBATCH -o iHS_tutorial.out
-#SBATCH -e iHS_tutorial.err
 
-module load selscan/v1.2.0a
 
-# Computing iHS for Utah residents (CEPH) with Northern and Western European ancestry
-HAP_FILE=CEU.recode.vcf.hap
-MAP_FILE=CEU_filled.map
+#### For CEU #### 
+HAP_FILE=data/CEU/CEU.recode.vcf.hap
+MAP_FILE=data/CEU/CEU_filled.map
 IHS_FILE=CEU
+
+# iHS computation
 selscan --ihs --hap $HAP_FILE --map $MAP_FILE --out $IHS_FILE --threads 8
 
-# Computing iHS for Yoruba in Ibadan, Nigeria
-HAP_FILE=YRI.recode.vcf.hap
-MAP_FILE=YRI_filled.map
+
+#### For YRI ####
+HAP_FILE=data/YRI/YRI.recode.vcf.hap
+MAP_FILE=data/YRI/YRI_filled.map
 IHS_FILE=YRI
-selscan --ihs --hap $HAP_FILE --map $MAP_FILE --out $IHS_FILE --threads 8
 
+# iHS computation
+selscan --ihs --hap $HAP_FILE --map $MAP_FILE --out $IHS_FILE --threads 8
 ```
 
 The option --threads is used to parallelize jobs and speed up the process. Check in your own servers the capacity of the system.
@@ -148,19 +155,21 @@ Note that **--hap** and **--ref** must contain the same loci. In this case, the 
 Once we have all the input files ready, we can compute XP-EHH as:
 
 ```bash
-#!/bin/bash
-#SBATCH -J XPEHH_tutorial
-#SBATCH --cpus-per-task=8
-#SBATCH --mem=6GB
-#SBATCH -o XPEHH_tutorial.out
-#SBATCH -e XPEHH_tutorial.err
+#!/bin/bash     
 
-module load selscan/v1.2.0a
+# define names
+#SBATCH --job-name=selscan
+#SBATCH --error selscan-%j.err
+#SBATCH --output selsan-%j.out 
+
+# memory and CPUs request
+#SBATCH --mem=6G
+#SBATCH --cpus-per-task=8
 
 # XPEHH computation for YRI vs CEU
-HAP1=YRI.recode.vcf.hap
-HAP2=CEU.recode.vcf.hap
-MAP=CEU_filled.map
+HAP1=data/YRI/YRI.recode.vcf.hap
+HAP2=data/CEU/CEU.recode.vcf.hap
+MAP=data/CEU/CEU_filled.map
 XPEHH_FILE=YRIvsCEU
 selscan --xpehh --hap $HAP1 --ref $HAP2 --map $MAP --out $XPEHH_FILE --threads 8
 ```
