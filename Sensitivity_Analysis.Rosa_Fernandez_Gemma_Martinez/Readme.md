@@ -142,7 +142,7 @@ We have selected 50 orthologous groups and have run individual gene trees with I
 
 **`cat *tree>bears_allTrees.tre`**
 
-Let’s move them to the ASTRAL folder:
+Let’s move them to the ASTRAL folder (If the folder does not exist, create it):
 
 **`mv bears_allTrees.tre ../ASTRAL`**
 
