@@ -172,8 +172,10 @@ angsd -b samples.bam_list -ref $REF -r 11:21000000-22000000 -out 1000G_QC -uniqu
 
 and then we can plot them:
 ```
-Rscript scripts/plotQC.R 1000G_QC
+Rscript Scripts/plotQC.R 1000G_QC
 ```
+
+Remember that to visualize the plot you must download the file to your computer and open it locally.
 
 >**QUESTION**
 Should we use all samples? And which values would you choose as sensible thresholds on quality score and depth (minimum and maximum)?
@@ -212,9 +214,9 @@ For most applications and data, GATK and SAMtools models should give similar res
 >**QUESTION**
 How many genotype likelihoods do we expect per position? Why?
 
-To calculate GL, we can:
+To calculate GL, we can modify our batch script by replacing the `angsd` command with:
 ```
-$ANGSD/angsd -b samples.bam_list -ref $REF -r 11:21000000-22000000 -out 1000G_GL -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -C 50 -baq 1 -minMapQ 20 -minQ 20 -minInd 5 -doCounts 1  -setMinDepth 30 -setMaxDepth 150 -GL 2 -doGlf 4
+angsd -b samples.bam_list -ref $REF -r 11:21000000-22000000 -out 1000G_GL -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -C 50 -baq 1 -minMapQ 20 -minQ 20 -minInd 5 -doCounts 1  -setMinDepth 30 -setMaxDepth 150 -GL 2 -doGlf 4 -nThreads 8
 ```
 Parameter | Meaning
 --- | ---
@@ -273,9 +275,9 @@ $ANGSD/angsd -doMajorMinor
         -skipTriallelic 0
 ```
 
-A possible command line to estimate allele frequencies might be:
+A possible command line to estimate allele frequencies might be (replace the angsd command in your batch fiile accordingly):
 ```
-$ANGSD/angsd -b samples.bam_list -ref $REF -r 11:21000000-22000000 -out 1000G_GL_MAF -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -C 50 -baq 1 -minMapQ 20 -minQ 20 -minInd 5 -doCounts 1  -setMinDepth 30 -setMaxDepth 150 -GL 2 -doMajorMinor 1 -doMaf 1
+angsd -b samples.bam_list -ref $REF -r 11:21000000-22000000 -out 1000G_GL_MAF -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -C 50 -baq 1 -minMapQ 20 -minQ 20 -minInd 5 -doCounts 1  -setMinDepth 30 -setMaxDepth 150 -GL 2 -doMajorMinor 1 -doMaf 1 -nThreads 8
 ```
 Parameter | Meaning
 --- | ---
@@ -373,9 +375,9 @@ $ANGSD/angsd -doPost
         4: Using reference panel as prior (still in development), requires a site file with chr pos major minor af ac an
 ```
 
-If you have a population, you can use `-doPost 1` (frequencies under HWE as prior) but here, since we have individuals from different populations, we will use `-doPost 2` (uniform prior):
+If you have a population, you can use `-doPost 1` (frequencies under HWE as prior) but here, since we have individuals from different populations, we will use `-doPost 2` (uniform prior). Replace the angsd command in your batch script with this one):
 ```
-$ANGSD/angsd -b samples.bam_list -ref $REF -r 11:21000000-22000000 -out 1000G_CG_MAF -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -C 50 -baq 1 -minMapQ 20 -minQ 20 -minInd 5 -doCounts 1  -setMinDepth 30 -setMaxDepth 150 -GL 2 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -doPost 2 -doGeno 3 -doBcf 1
+angsd -b samples.bam_list -ref $REF -r 11:21000000-22000000 -out 1000G_CG_MAF -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -C 50 -baq 1 -minMapQ 20 -minQ 20 -minInd 5 -doCounts 1  -setMinDepth 30 -setMaxDepth 150 -GL 2 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -doPost 2 -doGeno 3 -doBcf 1 -nThreads 8
 ```
 Parameter | Meaning
 --- | ---
@@ -389,10 +391,10 @@ What information do they have?
 How many sites have at least one missing genotype?
 
 You can control how to set missing genotype when their confidence is low with `-postCutoff`.
-For instance, we can set as missing genotypes when their (highest) genotype posterior probability is below 0.95:
+For instance, we can set as missing genotypes when their (highest) genotype posterior probability is below 0.95, in this case the line to replace with in the script would be:
 
 ```
-$ANGSD/angsd -b samples.bam_list -ref $REF -r 11:21000000-22000000 -out 1000G_CG_MAF -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -C 50 -baq 1 -minMapQ 20 -minQ 20 -minInd 5 -doCounts 1  -setMinDepth 30 -setMaxDepth 150 -GL 2 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -doGeno 3 -doPost 2 -postCutoff 0.95
+angsd -b samples.bam_list -ref $REF -r 11:21000000-22000000 -out 1000G_CG_MAF -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -C 50 -baq 1 -minMapQ 20 -minQ 20 -minInd 5 -doCounts 1  -setMinDepth 30 -setMaxDepth 150 -GL 2 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -doGeno 3 -doPost 2 -postCutoff 0.95 -nThreads 8
 ```
 
 Setting this threshold depends on the mean sequencing depth of your data, as well as your application.
@@ -400,9 +402,9 @@ For some analyses you need to work only with high quality genotypes (e.g. measur
 
 
 ## Exta Exercises - PCA and ngsAdmix
-One of the most common exploratory analyses done, is probably a PCA plot and, right after, probably an admixture plot. ANGSD (and some extra tools) can do some of these analyses:
+One of the most common exploratory analyses done, is probably a PCA plot and, right after, probably an admixture plot. ANGSD (and some extra tools) can do some of these analyses. Use the same template batch script and replace the angsd command with:
 ```
-$ANGSD/angsd -b samples.bam_list -ref $REF -r 11:21000000-22000000 -out 1000G_GL_PCA -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -C 50 -baq 1 -minMapQ 20 -minQ 20 -minInd 5 -doCounts 1  -setMinDepth 30 -setMaxDepth 150 -GL 2 -doGlf 2 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -doIBS 1 -doCov 1 -makeMatrix 1 -minMaf 0.05
+angsd -b samples.bam_list -ref $REF -r 11:21000000-22000000 -out 1000G_GL_PCA -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -C 50 -baq 1 -minMapQ 20 -minQ 20 -minInd 5 -doCounts 1  -setMinDepth 30 -setMaxDepth 150 -GL 2 -doGlf 2 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -doIBS 1 -doCov 1 -makeMatrix 1 -minMaf 0.05 -nThreads 8
 ```
 Parameter | Meaning
 --- | ---
@@ -417,13 +419,35 @@ Parameter | Meaning
 R --vanilla --slave -e 'm <- as.matrix(read.table("1000G_GL_PCA.ibsMat")); mds <- cmdscale(as.dist(m)); plot(mds,lwd=2,ylab="Dist",xlab="Dist",main="multidimensional scaling",col=rep(1:3,each=5)); m <- as.matrix(read.table("1000G_GL_PCA.covMat")); e <- eigen(m); plot(e$vectors[,1:2],lwd=2,ylab="PC 2",xlab="PC 1",main="Principal components",col=rep(1:3,each=5),pch=16)'
 mv Rplots.pdf 1000G_GL_PCA.pdf
 ```
+Remember that to visualize this pdf file you must download the file to your computer and open it locally.
 
 **ngsAdmix**
 ```
-NGSadmix -likes 1000G_GL_PCA.beagle.gz -K 3 -P 4 -o 1000G_GL -minMaf 0.05
+Here you have a template batch script to run `MGSadmix` in the cluster:
+
+```
+#!/bin/bash                                                                                                             
+
+# define names                                                                                                          
+#SBATCH --job-name=ngsadmix                                                                                        
+#SBATCH --error ngsadmix-%j.err                                                                                     
+#SBATCH --output ngsadmix-%j.out                                                                                    
+
+# memory and CPUs request                                                                                               
+#SBATCH --mem=6G                                                                                                        
+#SBATCH --cpus-per-task=8   
+
+# module load                                                                                                           
+module load angsd         
+
+# running the program
+NGSadmix -likes 1000G_GL_PCA.beagle.gz -K 3 -P 4 -o 1000G_GL -minMaf 0.05 -P 8
+```
+
 R --vanilla --slave -e 'admix <- t(as.matrix(read.table("1000G_GL.qopt"))); barplot(admix,col=1:3,space=0.01,border=NA,xlab="Individuals",ylab="admixture")'
 mv Rplots.pdf 1000G_GL_PCA.admix.pdf
 ```
+Again, to visualize this pdf file you must download the file to your computer and open it locally.
 
 >**QUESTION**
 What output files were created?
