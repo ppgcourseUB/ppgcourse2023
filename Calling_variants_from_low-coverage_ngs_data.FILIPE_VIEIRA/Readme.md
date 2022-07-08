@@ -426,6 +426,7 @@ module load angsd
 NGSadmix -likes 1000G_GL_PCA.beagle.gz -K 3 -P 4 -o 1000G_GL -minMaf 0.05 -P 8
 ```
 
+```
 R --vanilla --slave -e 'admix <- t(as.matrix(read.table("1000G_GL.qopt"))); barplot(admix,col=1:3,space=0.01,border=NA,xlab="Individuals",ylab="admixture")'
 mv Rplots.pdf 1000G_GL_PCA.admix.pdf
 ```
