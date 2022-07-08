@@ -2,7 +2,7 @@
 
 # Linkage disequilibrium based methods to detect positive selection
 
-Instructor: **Rocío Caro Consuegra**
+**Instructor:** Rocío Caro Consuegra
 
 
 
