@@ -404,7 +404,7 @@ mv Rplots.pdf 1000G_GL_PCA.pdf
 Remember that to visualize this pdf file you must download the file to your computer and open it locally.
 
 **ngsAdmix**
-```
+
 Here you have a template batch script to run `MGSadmix` in the cluster:
 
 ```
