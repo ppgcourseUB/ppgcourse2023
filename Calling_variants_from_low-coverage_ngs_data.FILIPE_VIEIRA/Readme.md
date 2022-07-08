@@ -143,7 +143,6 @@ ANGSD can extract some QC info. You can use this bacth file to send the job usin
 # directories and commands
 DATA=/data/datasets/Calling_variants_from_low-coverage_ngs_data/
 REF=$DATA/hs37d5.fa.gz
-ls $DATA/*.bam | sort -t "." -k 5,5 > samples.bam_list
 
 # module load                                                                                                           
 module load angsd   
@@ -425,6 +424,8 @@ module load angsd
 # running the program
 NGSadmix -likes 1000G_GL_PCA.beagle.gz -K 3 -P 4 -o 1000G_GL -minMaf 0.05 -P 8
 ```
+
+Then,
 
 ```
 R --vanilla --slave -e 'admix <- t(as.matrix(read.table("1000G_GL.qopt"))); barplot(admix,col=1:3,space=0.01,border=NA,xlab="Individuals",ylab="admixture")'
