@@ -1,0 +1,184 @@
+IQ-TREE 2.1.2 COVID-edition built Apr 19 2021
+
+Input file name: concat_data.fa
+User tree file name: ../ultrafast/concat_data.fa.treefile
+Type of analysis: ModelFinder + tree reconstruction
+Random seed number: 566285
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Bui Quang Minh, Heiko A. Schmidt, Olga Chernomor, Dominik Schrempf,
+Michael D. Woodhams, Arndt von Haeseler, and Robert Lanfear (2020)
+IQ-TREE 2: New models and efficient methods for phylogenetic inference
+in the genomic era. Mol. Biol. Evol., in press.
+https://doi.org/10.1093/molbev/msaa015
+
+To cite ModelFinder please use: 
+
+Subha Kalyaanamoorthy, Bui Quang Minh, Thomas KF Wong, Arndt von Haeseler,
+and Lars S Jermiin (2017) ModelFinder: Fast model selection for
+accurate phylogenetic estimates. Nature Methods, 14:587–589.
+https://doi.org/10.1038/nmeth.4285
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 16 sequences with 11259 amino-acid sites
+Number of constant sites: 6435 (= 57.1543% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 6435 (= 57.1543% of all sites)
+Number of parsimony informative sites: 3023
+Number of distinct site patterns: 6219
+
+ModelFinder
+-----------
+
+Best-fit model according to BIC: LG+R3
+
+List of models sorted by BIC scores: 
+
+Model                  LogL         AIC      w-AIC        AICc     w-AICc         BIC      w-BIC
+LG+R3            -92649.386  185364.772 +      0.4  185364.972 +    0.403  185606.627 +    0.999
+LG+R4            -92646.982  185363.965 +    0.599  185364.189 +    0.596  185620.477 - 0.000982
+LG+I+G4          -92673.622  185409.244 - 8.82e-11  185409.421 - 8.99e-11  185636.441 - 3.35e-07
+LG+G4            -92722.929  185505.859 - 9.24e-32  185506.024 - 9.47e-32  185725.726 - 1.37e-26
+LG+F+R3          -92637.549  185379.098 -  0.00031  185379.589 -  0.00027  185760.202 - 4.48e-34
+LG+R2            -92834.268  185730.536 - 1.51e-80  185730.713 - 1.53e-80  185957.733 - 5.73e-77
+rtREV+F+R3       -92940.460  185984.920 - 8.69e-136  185985.412 - 7.56e-136  186366.024 - 1.25e-165
+JTTDCMut+F+R3    -92981.625  186067.251 - 1.15e-153  186067.742 -   1e-153  186448.355 - 1.66e-183
+JTT+F+R3         -93003.247  186110.494 - 4.69e-163  186110.986 - 4.08e-163  186491.598 - 6.77e-193
+JTTDCMut+R3      -93119.075  186304.150 - 4.16e-205  186304.350 - 4.19e-205  186546.005 - 1.04e-204
+JTT+R3           -93137.057  186340.113 - 6.45e-213  186340.313 - 6.5e-213  186581.968 - 1.61e-212
+WAG+F+R3         -93125.671  186355.343 - 3.18e-216  186355.835 - 2.77e-216  186736.447 - 4.6e-246
+WAG+R3           -93248.802  186563.603 - 1.9e-261  186563.803 - 1.92e-261  186805.458 - 4.75e-261
+LG+I             -93338.258  186736.515 - 5.4e-299  186736.681 - 5.53e-299  186956.383 - 8.01e-294
+mtInv+F+R3       -93236.935  186577.870 - 1.52e-264  186578.362 - 1.32e-264  186958.974 - 2.19e-294
+mtZOA+F+R3       -93250.372  186604.745 - 2.22e-270  186605.236 - 1.93e-270  186985.849 - 3.2e-300
+Dayhoff+F+R3     -93300.399  186704.797 - 4.17e-292  186705.289 - 3.63e-292  187085.901 - 6.03e-322
+DCMut+F+R3       -93304.744  186713.487 - 5.4e-294  186713.979 - 4.7e-294  187094.591 - 9.88e-324
+VT+R3            -93394.376  186854.752 -        0  186854.952 -        0  187096.606 - 4.94e-324
+VT+F+R3          -93375.208  186854.415 -        0  186854.907 -        0  187235.519 -        0
+rtREV+R3         -93645.203  187356.406 -        0  187356.606 -        0  187598.260 -        0
+cpREV+F+R3       -93562.543  187229.085 -        0  187229.577 -        0  187610.189 -        0
+cpREV+R3         -93677.137  187420.275 -        0  187420.475 -        0  187662.129 -        0
+mtMet+F+R3       -93675.087  187454.174 -        0  187454.666 -        0  187835.278 -        0
+Dayhoff+R3       -93797.101  187660.202 -        0  187660.402 -        0  187902.057 -        0
+DCMut+R3         -93802.539  187671.078 -        0  187671.278 -        0  187912.933 -        0
+mtREV+F+R3       -93780.195  187664.391 -        0  187664.883 -        0  188045.495 -        0
+mtART+F+R3       -93855.203  187814.406 -        0  187814.898 -        0  188195.510 -        0
+Blosum62+R3      -93989.409  188044.819 -        0  188045.019 -        0  188286.673 -        0
+PMB+F+R3         -93957.614  188019.227 -        0  188019.719 -        0  188400.331 -        0
+Blosum62+F+R3    -93971.792  188047.585 -        0  188048.076 -        0  188428.689 -        0
+PMB+R3           -94115.572  188297.143 -        0  188297.343 -        0  188538.998 -        0
+FLU+F+R3         -94196.541  188497.082 -        0  188497.574 -        0  188878.186 -        0
+HIVb+F+R3        -94379.192  188862.384 -        0  188862.876 -        0  189243.488 -        0
+FLU+R3           -94677.724  189421.448 -        0  189421.648 -        0  189663.303 -        0
+mtVer+F+R3       -94635.672  189375.344 -        0  189375.836 -        0  189756.448 -        0
+HIVb+R3          -94860.559  189787.119 -        0  189787.319 -        0  190028.973 -        0
+mtMAM+F+R3       -94980.178  190064.355 -        0  190064.847 -        0  190445.459 -        0
+mtZOA+R3         -96359.978  192785.956 -        0  192786.156 -        0  193027.810 -        0
+LG               -96819.646  193697.292 -        0  193697.447 -        0  193909.831 -        0
+HIVw+F+R3        -96736.670  193577.339 -        0  193577.831 -        0  193958.443 -        0
+mtMet+R3         -97475.101  195016.203 -        0  195016.403 -        0  195258.057 -        0
+mtREV+R3         -97648.160  195362.320 -        0  195362.520 -        0  195604.175 -        0
+mtART+R3         -97673.644  195413.289 -        0  195413.489 -        0  195655.143 -        0
+mtInv+R3         -98009.436  196084.871 -        0  196085.071 -        0  196326.726 -        0
+HIVw+R3          -98211.054  196488.107 -        0  196488.307 -        0  196729.962 -        0
+mtVer+R3         -98523.363  197112.725 -        0  197112.925 -        0  197354.580 -        0
+mtMAM+R3         -98934.175  197934.349 -        0  197934.549 -        0  198176.204 -        0
+
+AIC, w-AIC   : Akaike information criterion scores and weights.
+AICc, w-AICc : Corrected AIC scores and weights.
+BIC, w-BIC   : Bayesian information criterion scores and weights.
+
+Plus signs denote the 95% confidence sets.
+Minus signs denote significant exclusion.
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: LG+R3
+
+State frequencies: (model)
+
+Model of rate heterogeneity: FreeRate with 3 categories
+Site proportion and rates:  (0.5540,0.0680) (0.3297,1.2789) (0.1163,4.6497)
+
+ Category  Relative_rate  Proportion
+  1         0.0680         0.5540
+  2         1.2789         0.3297
+  3         4.6497         0.1163
+
+USER TREE
+---------
+
+Log-likelihood of the tree: -92648.3808 (s.e. 717.2594)
+Unconstrained log-likelihood (without tree): -92610.2447
+Number of free parameters (#branches + #model parameters): 33
+Akaike information criterion (AIC) score: 185362.7617
+Corrected Akaike information criterion (AICc) score: 185362.9616
+Bayesian information criterion (BIC) score: 185604.6161
+
+Total tree length (sum of branch lengths): 1.8642
+Sum of internal branch lengths: 0.7781 (41.7402% of tree length)
+
+NOTE: Tree is UNROOTED although outgroup taxon 'UrsusArctos_Margo' is drawn at root
+
++--------UrsusArctos_Margo
+|
+|              +--------UrsusArctos_Adelaide
+|    +---------| (100)
+|    |         +---UrsusArctos_Amparo
++----| (100)
+|    |                            +-------------UrsusAmericanus_Noah
+|    |             +--------------| (100)
+|    |             |              |    +-------UrsusAmericanus_Montana
+|    |             |              +----| (100)
+|    |             |                   |  +-------UrsusAmericanus_Oskar
+|    |             |                   +--| (97)
+|    |             |                      +--------UrsusAmericanus_Summer
+|    |     +-------| (100)
+|    |     |       |                         +--------Ailuropoda_Siro
+|    |     |       |                      +--| (81)
+|    |     |       |                      |  +------------Ailuropoda_Juan
+|    |     |       |                   +--| (97)
+|    |     |       |                   |  +----------Ailuropoda_Luisa
+|    |     |       +-------------------| (100)
+|    |     |                           +---------Ailuropoda_Pepe
+|    +-----| (100)
+|          |             +--------UrsusMaritimus_Maria
+|          |          +--| (67)
+|          |          |  |      +--UrsusMaritimus_Margaret
+|          |          |  +------| (100)
+|          |          |         +--UrsusMaritimus_Joseph
+|          +----------| (100)
+|                     +--------UrsusMaritimus_Maripepa
+|
++---------UrsusArctos_Paco
+
+Tree in newick format:
+
+(UrsusArctos_Margo:0.0728239311,((UrsusArctos_Adelaide:0.0681464834,UrsusArctos_Amparo:0.0370065198)100:0.0764202257,(((UrsusAmericanus_Noah:0.1094156713,(UrsusAmericanus_Montana:0.0663498832,(UrsusAmericanus_Oskar:0.0651067236,UrsusAmericanus_Summer:0.0730281999)97:0.0288589342)100:0.0410212463)100:0.1175570330,(((Ailuropoda_Siro:0.0711071284,Ailuropoda_Juan:0.1027297803)81:0.0122728653,Ailuropoda_Luisa:0.0869314051)97:0.0218331061,Ailuropoda_Pepe:0.0808730819)100:0.1523944157)100:0.0670612756,((UrsusMaritimus_Maria:0.0730767346,(UrsusMaritimus_Margaret:0.0144661954,UrsusMaritimus_Joseph:0.0197806327)100:0.0597916012)67:0.0186095221,UrsusMaritimus_Maripepa:0.0690091597)100:0.0885664726)100:0.0503477053)100:0.0434027707,UrsusArctos_Paco:0.0762515049);
+
+
+USER TREES
+----------
+
+See concat_data.fa.trees for trees with branch lengths.
+
+Tree      logL    deltaL
+-------------------------
+  1 -92653.52306       0
+  2  -92928.8593  275.34
+  3 -92929.07936  275.56
+
+
+TIME STAMP
+----------
+
+Date and time: Fri Jul  1 13:31:21 2022
+Total CPU time used: 34.823 seconds (0h:0m:34s)
+Total wall-clock time used: 41.275 seconds (0h:0m:41s)
+

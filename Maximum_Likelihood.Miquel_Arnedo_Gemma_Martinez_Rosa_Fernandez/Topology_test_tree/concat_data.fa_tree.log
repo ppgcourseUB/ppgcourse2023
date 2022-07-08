@@ -1,0 +1,152 @@
+IQ-TREE multicore version 2.1.2 COVID-edition for Linux 64-bit built Apr 19 2021
+Developed by Bui Quang Minh, James Barbetti, Nguyen Lam Tung,
+Olga Chernomor, Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    c211-20 (AVX512, FMA3, 251 GB RAM)
+Command: iqtree2 -s concat_data.fa -z ../SPECIES_TREES/bear_species_trees_topologies.tre -te ../ultrafast/concat_data.fa.treefile
+Seed:    566285 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Fri Jul  1 13:19:31 2022
+Kernel:  AVX+FMA - 1 threads (1 CPU cores detected)
+
+Reading alignment file concat_data.fa ... Fasta format detected
+Alignment most likely contains protein sequences
+Alignment has 16 sequences with 11259 columns, 6219 distinct patterns
+3023 parsimony-informative, 1801 singleton sites, 6435 constant sites
+                         Gap/Ambiguity  Composition  p-value
+   1  UrsusArctos_Margo         44.62%    passed     96.86%
+   2  UrsusArctos_Adelaide       2.19%    passed     99.74%
+   3  UrsusAmericanus_Noah      18.63%    passed     60.00%
+   4  UrsusAmericanus_Montana   14.56%    passed     65.53%
+   5  UrsusMaritimus_Maria       6.89%    passed     99.95%
+   6  UrsusMaritimus_Maripepa    4.72%    passed     87.30%
+   7  Ailuropoda_Siro            7.25%    passed     97.30%
+   8  Ailuropoda_Pepe           17.45%    passed     94.04%
+   9  UrsusAmericanus_Oskar     62.94%    passed     97.38%
+  10  Ailuropoda_Juan           55.48%    passed     44.95%
+  11  Ailuropoda_Luisa          69.54%    failed      1.79%
+  12  UrsusAmericanus_Summer    70.90%    passed     63.49%
+  13  UrsusMaritimus_Margaret   54.83%    passed     66.82%
+  14  UrsusArctos_Amparo        82.97%    passed      6.50%
+  15  UrsusArctos_Paco          47.45%    passed     18.09%
+  16  UrsusMaritimus_Joseph     85.88%    failed      2.00%
+WARNING: 7 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                     40.39%  2 sequences failed composition chi2 test (p-value<5%; df=19)
+
+Reading input tree file ../ultrafast/concat_data.fa.treefile ...
+Perform fast likelihood tree search using LG+I+G model...
+Estimate model parameters (epsilon = 5.000)
+Time for fast ML tree search: 3.339 seconds
+
+NOTE: ModelFinder requires 154 MB RAM!
+ModelFinder will test up to 546 protein models (sample size: 11259) ...
+ No. Model         -LnL         df  AIC          AICc         BIC
+  1  LG            96819.646    29  193697.292   193697.447   193909.831
+  2  LG+I          93338.258    30  186736.515   186736.681   186956.383
+  3  LG+G4         92722.929    30  185505.859   185506.024   185725.726
+  4  LG+I+G4       92673.622    31  185409.244   185409.421   185636.441
+  5  LG+R2         92834.268    31  185730.536   185730.713   185957.733
+  6  LG+R3         92649.386    33  185364.772   185364.972   185606.627
+  7  LG+R4         92646.982    35  185363.965   185364.189   185620.477
+ 19  LG+F+R3       92637.549    52  185379.098   185379.589   185760.202
+ 32  WAG+R3        93248.802    33  186563.603   186563.803   186805.458
+ 45  WAG+F+R3      93125.671    52  186355.343   186355.835   186736.447
+ 58  JTT+R3        93137.057    33  186340.113   186340.313   186581.968
+ 71  JTT+F+R3      93003.247    52  186110.494   186110.986   186491.598
+ 84  JTTDCMut+R3   93119.075    33  186304.150   186304.350   186546.005
+ 97  JTTDCMut+F+R3 92981.625    52  186067.251   186067.743   186448.355
+110  DCMut+R3      93802.539    33  187671.078   187671.278   187912.933
+123  DCMut+F+R3    93304.744    52  186713.487   186713.979   187094.591
+136  VT+R3         93394.376    33  186854.752   186854.952   187096.606
+149  VT+F+R3       93375.208    52  186854.415   186854.907   187235.519
+162  PMB+R3        94115.572    33  188297.143   188297.343   188538.998
+175  PMB+F+R3      93957.614    52  188019.227   188019.719   188400.331
+188  Blosum62+R3   93989.409    33  188044.819   188045.019   188286.673
+201  Blosum62+F+R3 93971.792    52  188047.585   188048.076   188428.689
+214  Dayhoff+R3    93797.101    33  187660.202   187660.402   187902.057
+227  Dayhoff+F+R3  93300.399    52  186704.797   186705.289   187085.901
+240  mtREV+R3      97648.160    33  195362.320   195362.520   195604.175
+253  mtREV+F+R3    93780.195    52  187664.391   187664.883   188045.495
+266  mtART+R3      97673.644    33  195413.289   195413.489   195655.143
+279  mtART+F+R3    93855.203    52  187814.406   187814.898   188195.510
+292  mtZOA+R3      96359.978    33  192785.956   192786.156   193027.810
+305  mtZOA+F+R3    93250.372    52  186604.745   186605.236   186985.849
+318  mtMet+R3      97475.101    33  195016.203   195016.403   195258.057
+331  mtMet+F+R3    93675.087    52  187454.174   187454.666   187835.278
+344  mtVer+R3      98523.363    33  197112.725   197112.925   197354.580
+357  mtVer+F+R3    94635.672    52  189375.344   189375.836   189756.448
+370  mtInv+R3      98009.436    33  196084.871   196085.071   196326.726
+383  mtInv+F+R3    93236.935    52  186577.870   186578.362   186958.974
+396  mtMAM+R3      98934.175    33  197934.349   197934.549   198176.204
+409  mtMAM+F+R3    94980.178    52  190064.355   190064.847   190445.459
+422  HIVb+R3       94860.559    33  189787.119   189787.319   190028.973
+435  HIVb+F+R3     94379.192    52  188862.384   188862.876   189243.488
+448  HIVw+R3       98211.054    33  196488.107   196488.307   196729.962
+461  HIVw+F+R3     96736.670    52  193577.339   193577.831   193958.443
+474  FLU+R3        94677.724    33  189421.448   189421.648   189663.303
+487  FLU+F+R3      94196.541    52  188497.082   188497.574   188878.186
+500  rtREV+R3      93645.203    33  187356.406   187356.606   187598.260
+513  rtREV+F+R3    92940.460    52  185984.920   185985.412   186366.024
+526  cpREV+R3      93677.137    33  187420.275   187420.475   187662.129
+539  cpREV+F+R3    93562.543    52  187229.085   187229.577   187610.189
+Akaike Information Criterion:           LG+R4
+Corrected Akaike Information Criterion: LG+R4
+Bayesian Information Criterion:         LG+R3
+Best-fit model: LG+R3 chosen according to BIC
+
+All model information printed to concat_data.fa.model.gz
+CPU time for ModelFinder: 664.146 seconds (0h:11m:4s)
+Wall-clock time for ModelFinder: 668.392 seconds (0h:11m:8s)
+
+NOTE: 46 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -92649.386
+2. Current log-likelihood: -92649.299
+3. Current log-likelihood: -92649.214
+4. Current log-likelihood: -92649.139
+5. Current log-likelihood: -92649.062
+6. Current log-likelihood: -92648.995
+7. Current log-likelihood: -92648.931
+8. Current log-likelihood: -92648.873
+9. Current log-likelihood: -92648.819
+10. Current log-likelihood: -92648.769
+11. Current log-likelihood: -92648.723
+12. Current log-likelihood: -92648.682
+13. Current log-likelihood: -92648.644
+14. Current log-likelihood: -92648.609
+15. Current log-likelihood: -92648.577
+16. Current log-likelihood: -92648.550
+17. Current log-likelihood: -92648.522
+18. Current log-likelihood: -92648.501
+19. Current log-likelihood: -92648.478
+20. Current log-likelihood: -92648.460
+21. Current log-likelihood: -92648.444
+22. Current log-likelihood: -92648.429
+23. Current log-likelihood: -92648.416
+24. Current log-likelihood: -92648.404
+25. Current log-likelihood: -92648.393
+Optimal log-likelihood: -92648.381
+Site proportion and rates:  (0.554,0.068) (0.330,1.279) (0.116,4.650)
+Parameters optimization took 25 rounds (34.875 sec)
+BEST SCORE FOUND : -92648.381
+Total tree length: 1.864
+
+Total number of iterations: 0
+CPU time used for tree search: 0.000 sec (0h:0m:0s)
+Wall-clock time used for tree search: 0.000 sec (0h:0m:0s)
+Total CPU time used: 34.823 sec (0h:0m:34s)
+Total wall-clock time used: 34.936 sec (0h:0m:34s)
+
+Reading trees in ../SPECIES_TREES/bear_species_trees_topologies.tre ...
+3 trees detected
+Tree 1 / LogL: -92653.523
+Tree 2 / LogL: -92928.859
+Tree 3 / LogL: -92929.079
+Time for evaluating all trees: 6.335 sec.
+
+Analysis results written to: 
+  IQ-TREE report:                concat_data.fa.iqtree
+  Maximum-likelihood tree:       concat_data.fa.treefile
+  Evaluated user trees:          concat_data.fa.trees
+  Screen log file:               concat_data.fa.log
+
+Date and Time: Fri Jul  1 13:31:21 2022
