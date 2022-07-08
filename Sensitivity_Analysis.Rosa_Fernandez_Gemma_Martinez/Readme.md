@@ -31,6 +31,10 @@ Let’s create different matrices with different taxon occupancy to account for 
 
 The data is located in the folder: `Bear_dataset_SensitivityAnalyses/MISSING_DATA`
 
+Go to that folder:
+
+`cd Bear_dataset_SensitivityAnalyses/MISSING_DATA`
+
 If you check the list of files in the folder, you’ll see that there are 50 orthologous genes (`number.fa`). They’re already aligned.
 
 There are also 3 python scripts. These scripts need the python libraries numpy and cogent. They are already installed in the cloud for the course, but you will need to install them in your computer to replicate these exercises.
@@ -71,9 +75,27 @@ We’ll now have two folders called `Decisive_genes3` and `NonDecisive_genes3`. 
 
 4.- Feel free to play now or at the end of the class with these scripts to create different matrices, run some trees and see how the topology and the support for each node/lineage changes. 
 
-To do so, first you will need to concatenate the genes selected for each matrix. Let’s try the software phyutility with this command:
+To do so, first you will need to concatenate the genes selected for each matrix. To build the matrix we will use the software **`catsequences`**. Let's download it:
 
-`phyutility -concat -in *.fa -out (any_name).fasta`
+`cd; cd Bear_dataset_SensitivityAnalyses/`
+`git clone https://github.com/ChrisCreevey/catsequences.git`
+`cd catsequences`
+`cc catsequences.c -o catsequences -lm`
+
+We have to create a file with the list of genes that we’d like to concatenate. Let’s create a file with the list of decisive genes. For that, go the folder containing your decisive genes (orthologs_3_fasta)
+
+`cd; cd Bear_dataset_SensitivityAnalyses/`
+`cd MISSING_DATA/orthologs_min_3_fasta`
+
+and execute the following command:
+
+`ls *.fa > list_decisive_genes.txt`
+
+To concatenate the genes, run the following command:
+
+../../catsequences/catsequences list_decisive_genes.txt
+
+It will create two files: one with the information of the partitions (**`allseqs.partitions.txt`**) and the other one with a concatenated fasta with all genes (**`allseqs.fas`**). This is your matrix!
 
 Once the genes are concatenated, use one of the phylogenetic inference programs that you learned in the previous days to run a quick tree and test how the phylogeny varies depending on the genes that you include. 
 
