@@ -19,27 +19,7 @@ According to its website *ANGSD is a software for analyzing next generation sequ
 
 For the exercises we are going to use mapped data (BAM files) from chr11 of the 1000 Genomes Consortium.
 
-**NOTICE that the data to be used in this practice is already available on the server. We have downloaded them to a shared folder (/xxxxx) before the session, to avoid excessive download traffic during class. In any case, here you have the commands that we have used for that, in case you want to replicate it on your computer.**
-
-```
-cd Data/
-wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz
-wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz.fai
-
-cut -f 1,2 samples.annot | tail -n +2 | parallel --dryrun --colsep "\t" -j 10 "wget -c ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/data/{1}/alignment/{1}.chrom11.ILLUMINA.bwa.{2}.*" | bash
-touch *.bai
-cd ../
- 
-ls Data/*.bam | sort -t "." -k 5,5 > samples.bam_list
-```
-
-Set variables and files:
-```
-WD=`pwd`
-DATA=$WD/Data
-REF=$DATA/hs37d5.fa.gz
-```
-
+**NOTICE that the data to be used in this practice is already available on the server. We have downloaded them to a shared folder (/data/datasets/Calling_variants_from_low-coverage_ngs_data/) before the session, to avoid excessive download traffic during class.**
 
 ## Intro to ANGSD
 
@@ -162,8 +142,7 @@ ANGSD can extract some QC info. You can use this bacth file to send the job usin
 #SBATCH --cpus-per-task=8 
 
 # directories
-WD=`pwd`
-DATA=$WD/Data
+DATA=/data/datasets/Calling_variants_from_low-coverage_ngs_data/
 REF=$DATA/hs37d5.fa.gz                                                                                             
 
 # module load                                                                                                           
