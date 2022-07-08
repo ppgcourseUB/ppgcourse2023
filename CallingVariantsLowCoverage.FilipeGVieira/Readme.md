@@ -1,5 +1,7 @@
 # Variant calling from high-throughput (low-coverage) sequencing data
 
+**Instructor**: Filipe G. Vieira
+
 In this session you will learn how to do:
 * calculate genotype likelihoods
 * allele frequency estimation
@@ -17,7 +19,7 @@ According to its website *ANGSD is a software for analyzing next generation sequ
 
 For the exercises we are going to use mapped data (BAM files) from chr11 of the 1000 Genomes Consortium.
 
-**NOTICE that the data to be used in this practice is already available on the server. We have downloaded them to a shared folder before the session, to avoid excessive download traffic during class.**. In any case, here you have the commands that we have used for that, in case you want to replicate it on your computer.**
+**NOTICE that the data to be used in this practice is already available on the server. We have downloaded them to a shared folder (/xxxxx) before the session, to avoid excessive download traffic during class. In any case, here you have the commands that we have used for that, in case you want to replicate it on your computer.**
 
 ```
 cd Data/
