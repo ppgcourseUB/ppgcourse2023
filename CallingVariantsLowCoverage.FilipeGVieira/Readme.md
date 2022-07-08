@@ -35,8 +35,6 @@ Set variables and files:
 WD=`pwd`
 DATA=$WD/Data
 REF=$DATA/hs37d5.fa.gz
-ANGSD="/path/to/angsd"
-NGSTOOLS="/path/to/ngsTools"
 ```
 
 
@@ -46,7 +44,7 @@ First, we will learn **how to build a command line in ANGSD**, with the specific
 
 To see a full list of options in ANGSD type:
 ```
-$ANGSD/angsd
+angsd
 ```
 and you should see something like
 ```
@@ -146,13 +144,35 @@ Parameter | Meaning
 -setMinDepth 30 | minimum total depth
 -setMaxDepth 150 | maximum total depth
 
-ANGSD can extract some QC info:
+ANGSD can extract some QC info. You can use this bacth file to send the job using `sbath`:
+
 ```
-$ANGSD/angsd -b samples.bam_list -ref $REF -r 11:21000000-22000000 -out 1000G_QC -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -C 50 -baq 1 -minQ 0 -doCounts 1 -doQsDist 1 -doDepth 1 -maxDepth 500
+#!/bin/bash                                                                                                             
+
+# define names                                                                                                          
+#SBATCH --job-name=angsd                                                                                         
+#SBATCH --error angsd-%j.err                                                                                     
+#SBATCH --output angsd-%j.out                                                                                    
+
+# memory and CPUs request                                                                                               
+#SBATCH --mem=6G                                                                                                        
+#SBATCH --cpus-per-task=8 
+
+# directories
+WD=`pwd`
+DATA=$WD/Data
+REF=$DATA/hs37d5.fa.gz                                                                                             
+
+# module load                                                                                                           
+module load angsd   
+
+# running the program
+angsd -b samples.bam_list -ref $REF -r 11:21000000-22000000 -out 1000G_QC -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -C 50 -baq 1 -minQ 0 -doCounts 1 -doQsDist 1 -doDepth 1 -maxDepth 500 -nThreads 8
 ```
+
 and then we can plot them:
 ```
-Rscript $NGSTOOLS/Scripts/plotQC.R 1000G_QC
+Rscript scripts/plotQC.R 1000G_QC
 ```
 
 >**QUESTION**
