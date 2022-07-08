@@ -1,6 +1,6 @@
 #!/bin/bash     
-                                                                                                 
-# define names                                                                                                                                         
+
+# define names
 #SBATCH --job-name=selscan
 #SBATCH --error selscan-%j.err
 #SBATCH --output selsan-%j.out 
