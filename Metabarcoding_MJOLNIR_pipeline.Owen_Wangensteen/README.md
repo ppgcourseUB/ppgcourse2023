@@ -16,6 +16,8 @@ Individual  primers  were  tagged  in the 5' end with 7-bp twin-tags (both tags 
 
 We will run the MJOLNIR pipeline to retrieve the most abundant sequence in each sample with the goal of identifying the fish species.
 
+Note that this workflow is not strictly "metabarcoding". SInce the initial samples are DNA extracted from individual fish tissues, and not from environmental samples. This procedure should more properly be called "high-throughput barcoding". However, the bioinformatics pipeline is mostly identical.
+
 
 ## Tasks:
 
