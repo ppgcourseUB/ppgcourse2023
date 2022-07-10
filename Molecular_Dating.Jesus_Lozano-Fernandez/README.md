@@ -81,19 +81,27 @@ We are also interested in the age of the most-recent-common ancestor (MRCA) of a
 
 ## Starting the analysis
 
-### 1- On the terminal, start RevBayes by typing ```rb```
+### 1- On the terminal, start RevBayes by typing ```rb``` or launch it with a bash file in the cluster
 RevBayes will open, then you will upload the master Rev script were all the needed information to perform the whole analysis is in there. Type the following and the analysis will automatically start:
 
 ```
 source("scripts/MCMC_dating_ex3.Rev")
 ```
 
-### 2- By the time you are waiting for the results of this analyses, start a second analysis under the prior.
-It is always useful to examine the output of your MCMC analysis in the absence of information from the sequence data (i.e. without calculating the likelihood that comes from the substitution model). Type on the terminal ```rb```
+Alternatively, submit the job to SLURM using the bash file
 
+```
+sbatch myScript-cluster.sh
+```
+
+### 2- By the time you are waiting for the results of this analyses, start a second analysis under the prior.
+It is always useful to examine the output of your MCMC analysis in the absence of information from the sequence data (i.e. without calculating the likelihood that comes from the substitution model). Type on the terminal ```rb``` 
 ```
 source("scripts/MCMC_dating_ex3_prior.Rev")
 ```
+Alternatively, you can launch it on the cluster by changing in the `/myScript-cluster.sh` file "MCMC_dating_ex3.Rev" by "MCMC_dating_ex3_prior.Rev".
+
+--
 
 When both analyses are finished, let’s check at the newly generated **`ouput/`** folder, which will contain:
 * `/bears_nodedate.log` # *log file of the posterior samples of both chains*
@@ -186,6 +194,12 @@ In the **`scripts/`** folder, you will find the following files:
 RevBayes will open, then you will upload the master Rev script, that it contains all the information to perform the entire anaylsis. Type the following:
 ```
 source("scripts/MCMC_dating_ex5.Rev")
+```
+
+Alternatively, submit the job to SLURM using the bash file
+
+```
+sbatch myScript-cluster.sh
 ```
 ### 6- Analysing results with [**Tracer**](http://tree.bio.ed.ac.uk/software/tracer/)
 Once the output file has been generated, open the `/bears_TEFBD.log` file using **Tracer**. Go to the *age_extant* parameter in the *Estimates* window.
