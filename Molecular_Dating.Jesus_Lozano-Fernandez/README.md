@@ -20,10 +20,20 @@ We are going to run a divergence time estimation analysis using a **NODE DATING*
 
 ***
 
-## Data description and access
+## Data description and access from the cluster
 
 The tutorial contains four folders. `NodeDating/` and `TotalEvidence/` folders contain the `data/` & `scripts/` subfolders to run the two exercises proposed. Within `Outuput_Exercises_Solved/`, you can find `output/` folders with the results of a Node Dating and Total Evidence analyses that were previously ran (in case you experience problems or want to double check your results). A fourth `img/` folder  contains the images embedded in the `/README.md` file.
 
+The exercises could be run on your computer or in the cluster *interactively*. To run it interactively, you can have access to the lab cluster via the Terminal in MacOSX and Linux, or the Console in Windows machine, with the `ssh`, as you learnt at the *Intro to our cloud* practice.
+
+```
+ssh user@ec2-34-242-61-70.eu-west-1.compute.amazonaws.com
+```
+where the *user* are your credentials. It will ask for your password. Once inside, clone the entire folder *Molecular_Dating.Jesus_Lozano-Fernandez* with the `svn` command. This will copy all files and folders in your home directory within the cluster.
+
+```
+svn export https://github.com/ppgcourseUB/ppgcourse2022/trunk/Molecular_Dating.Jesus_Lozano-Fernandez
+```
 ***
 
 # Exercise on NODE DATING
