@@ -57,6 +57,7 @@ In the **`scripts/`** folder, you will find the following files:
 * `scripts/tree_BD_nodedate.Rev` # *Birth Death tree prior with calibrations*
 * `scripts/MCMC_dating_ex3.Rev` # *Master Rev file (loads the data, the other scripts specifying models and monitors the output of the MCMC sampler)*
 * `scripts/MCMC_dating_ex3_prior.Rev` # *Master Rev file under the priors (not data)*
+* `scripts/myScript-cluster.sh` # *bash file tu run the Master Rev file in the cluster*
 
 ### Justification for Models and Priors
 
@@ -176,6 +177,7 @@ In the **`scripts/`** folder, you will find the following files:
 * `scripts/clock_morpho.Rev` # *Morphology rate clock under global model*
 * `scripts/tree_TEFBD.Rev` # *Fossilized Birth Death tree prior model*
 * `scripts/MCMC_dating_ex5.Rev` # *Master Rev file (loads the data, the other scripts specifying models and monitors the output of the MCMC sampler)*
+* `scripts/myScript-cluster.sh` # *bash file tu run the Master Rev file in the cluster*
 
 ## Starting the analysis
 
