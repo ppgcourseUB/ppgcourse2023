@@ -1,0 +1,21 @@
+#!/bin/bash
+
+##Script to simulate samples for validation
+
+#SBATCH -p normal                
+#SBATCH -c 8                     
+#SBATCH --mem=6GB
+#SBATCH --job-name fsc2709-ex02                
+#SBATCH -o %j.out              
+#SBATCH -e %j.err
+
+# modules
+module load fastsimcoal2
+
+# setting variables and creating folders
+INPUT=../input_files/SNP_for_validation
+cd $INPUT
+
+# running fastsimcoal2
+fsc2709 -i ppgcourse_bestmodel_maxL.par -n100 -s0 -C8 -B8
+

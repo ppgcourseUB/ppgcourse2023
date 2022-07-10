@@ -1,0 +1,19 @@
+// Search ranges and rules file
+// ****************************
+
+[PARAMETERS]
+//#isInt? #name   #dist.#min  #max 
+//all Ns are in number of haploid individuals
+1  YI       unif  50460  100000   output
+1  YA       unif 91900 103000 output
+0  IN        unif  0.02  0.06 output
+
+[RULES]
+
+YI < YA
+
+[COMPLEX PARAMETERS]
+
+0  TI =  YI / 29      output
+0  TA =  YA / 29      output
+
