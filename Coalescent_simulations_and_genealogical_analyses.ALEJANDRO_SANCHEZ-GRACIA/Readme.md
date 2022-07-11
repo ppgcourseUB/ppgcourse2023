@@ -365,18 +365,18 @@ FILES="*.arp"
 
 for f in $FILES
 do
-	grep "^[0-9]" $f | perl -p -e  's/^/>/g' |  perl -p -e 's/\t[0-9]+//g' | perl -p -e 's/\t/\r/g' > model0.fas
+        grep "^[0-9]" $f | perl -p -e  's/^/>/g' |  perl -p -e 's/\t[0-9]+//g' | perl -p -e 's/\t/\r/g' > model0.fas
         iqtree -s model0.fas -pre $f -nt 8 -redo
 done
 
 
-# iqtree model 1
-cd ../input_files/DNA_for_predictive/ppgcourse_model1
+# iqtree model 1                                                                                                                                  
+cd ../ppgcourse_model1
 FILES="*.arp"
 
 for f in $FILES
 do
-	grep "^[0-9]" $f | perl -p -e  's/^/>/g' |  perl -p -e 's/\t[0-9]+//g' | perl -p -e 's/\t/\r/g' > model1.fas
+        grep "^[0-9]" $f | perl -p -e  's/^/>/g' |  perl -p -e 's/\t[0-9]+//g' | perl -p -e 's/\t/\r/g' > model1.fas
         iqtree -s model1.fas -pre $f -nt 8 -redo
 done
 ```
