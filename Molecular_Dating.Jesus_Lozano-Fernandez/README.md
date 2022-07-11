@@ -218,3 +218,21 @@ This analysis had run for 30,000 generations, a shorter analysis will probably l
 >**Find major differences between ages and relationships of node calibrated and Total Evidence analysis**</br>
 
 When there are sampled ancestors present in the tree, visualizing the tree can be fairly difficult in traditional tree viewers. We will make use of a browser-based tree viewer called **[IcyTree](https://icytree.org)**, created by Tim Vaughan. IcyTree has many unique options for visualizing phylogenetic trees and can produce publication-quality vector image files (i.e. SVG). Additionally, it correctly represents sampled ancestors on the tree as nodes, each with only one descendant.
+
+### Extra: Example of the commands employed to run a Node-Dated analysis using **PhyloBayes**
+
+```
+pb -d bears_cytb.phy -T bears.tree -cal bears_taxa_calib -r bears.outgroup -gtr -sb -bd -ln -rp 10 10 bears_chain1
+```
+
+In which the following options mean:
+* `-d` *#followed by a file with alignment*
+* `-T` *#followed by a file with a constrained topology*
+* `-cal` *#followed by a file with a set of dated calibrations between taxa*
+* `-r` *#followed by a file with the outgroups; imposing a basal split*
+* `-gtr` *#Sequence substitution model GTR, by default with 4 gamma categories or rate substitution*
+* `-sb` *#soft bounds under birth-death-priors, by default 5% of the total probability allocated outside of the bound)*
+* `-bd` *#birth death prior on divergence times*
+* `-ln` *#log-normal autocorrelated relaxed clock & uniform prior*
+* `-rp X X` *#root prior (gamma prior of mean X and standard deviation of X)*
+* #name of the output
