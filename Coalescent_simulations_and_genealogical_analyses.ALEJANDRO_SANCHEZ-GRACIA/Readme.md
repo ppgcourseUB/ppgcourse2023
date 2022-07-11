@@ -332,13 +332,13 @@ INPUT=../input_files/DNA_for_predictive
 cd $INPUT
 
 # executing fastsimcoal2 for model0
-fsc2709 -i ppgcourse_model0.par -n1 -c8 -B8
+fsc2709 -i ppgcourse_model0.par -n5 -c8 -B8
 
 # executing fastsimcoal2 for model1
-fsc2709 -i ppgcourse_model1.par -n1 -c8 -B8
+fsc2709 -i ppgcourse_model1.par -n5 -c8 -B8
 ```
 
-This script launches a run that generates 10 replicates of a DNA fragment under the specified demographic models and chromosomal configuration set in the input filee. 
+This script launches a run that generates 5 replicates of a DNA fragment under the specified demographic models and chromosomal configuration set in the input filee. 
 
 Now, you can for example estimate the phylogenetic trees with the alleles of the three sampled populations using the program IQTree. To do that, you need to convert the “\*arp” files into FASTA files and run `IQTree`. Use the script "iqtree.run" in the folder "scripts" to submit these jobs using `sbatch`.
 
@@ -381,7 +381,7 @@ do
 done
 ```
 
-To be able to visualize the generated trees (one for each model) you need to execute the program Figtree in your personal computers.<br/><br/>
+To be able to visualize the generated trees (one for each model) you need to execute the program `Figtree` in your personal computers.<br/><br/>
 
 </br>
 
