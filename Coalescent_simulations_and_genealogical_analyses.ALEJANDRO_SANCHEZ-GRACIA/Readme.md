@@ -201,12 +201,12 @@ To find the best model, you should select the runs with the highest likelihood f
 model 0:
 
 ```bash
- grep -v "MaxEstLhood" ../input_files/SFS_for_inference/run0*/ppgcourse_model0/ppgcourse_model0.bestlhoods | awk '{print "For model 0, replicate "NR " has the highest MaxEstLhood:",$3}'| sort -k 2 | head -1
+ grep -v "MaxEstLhood" ../input_files/SFS_for_inference/run0*/ppgcourse_model0/ppgcourse_model0.bestlhoods | sort -k 3 | head -1 | awk '{print "For model 0, replicate "NR " has the highest MaxEstLhood:",$3}'
 ```
 model 1:
 
 ```bash
- grep -v "MaxEstLhood" ../input_files/SFS_for_inference/run1*/ppgcourse_model1/ppgcourse_model1.bestlhoods | awk '{print "For model 1, replicate "NR " has the highest MaxEstLhood:",$6}'| sort -k 2 | head -1
+ grep -v "MaxEstLhood" ../input_files/SFS_for_inference/run1*/ppgcourse_model1/ppgcourse_model1.bestlhoods | sort -k 3 | head -1 | awk '{print "For model 1, replicate "NR " has the highest MaxEstLhood:",$6}'
 ```
 You can now calculate the AIC for each model.
 
