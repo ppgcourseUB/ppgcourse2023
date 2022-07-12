@@ -16,6 +16,8 @@ echo \#SBATCH --ntasks=9 >> ./run_slim_conditions.sh
 echo \#SBATCH --mem=12GB >> ./run_slim_conditions.sh
 echo \#SBATCH --partition=normal >> ./run_slim_conditions.sh
 echo \# >> ./run_slim_conditions.sh
+echo module load SLiM >> ./run_slim_conditions.sh
+echo >> ./run_slim_conditions.sh
 
 #fixed paraneters
 Ne=500; L=500000; ngenes=100;
