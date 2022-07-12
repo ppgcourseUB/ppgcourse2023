@@ -14,7 +14,7 @@ One of the most common purposes for a cluster is to enable a number of users to 
 
 ## Our cluster
 
-> The infrastructure you will be using runs on a public cloud provider, and has been set up as a small computing cluster as described above. We will use it in our course mainly **to exemplify a computing cluster environment and allow the participants to familiarize with it**, given that many of the computer programs that will be used during the course are often run on computing clusters in real-case scenarios. Because of this, please keep in mind that ours is just a '***lab***' computing cluster. This means that **the computing resources are limited and the environment is simplified in some aspects compared to a typical real production-level computing cluster**. 
+The infrastructure you will be using runs on a public cloud provider, and has been set up as a small computing cluster as described above. We will use it in our course mainly **to exemplify a computing cluster environment and allow the participants to familiarize with it**, given that many of the computer programs that will be used during the course are often run on computing clusters in real-case scenarios. Because of this, please keep in mind that ours is just a '***lab***' computing cluster. This means that **the computing resources are limited and the environment is simplified in some aspects compared to a typical real production-level computing cluster**. 
 
     
 ## Accessing the cluster
