@@ -3,7 +3,6 @@
 #SBATCH --job-name=9slims
 #SBATCH -o %j.out
 #SBATCH -e %j.err
-#SBATCH --nodes=2
 #SBATCH --ntasks=9
 #SBATCH --mem=12GB
 #SBATCH --partition=normal
