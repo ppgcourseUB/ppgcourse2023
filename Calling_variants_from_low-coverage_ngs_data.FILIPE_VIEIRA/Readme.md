@@ -197,7 +197,7 @@ How many genotype likelihoods do we expect per position? Why?
 
 To calculate GL, we can modify our batch script by replacing the `angsd` command with:
 ```
-angsd -b s$DATA/amples.bam_list -ref $REF -r 11:21000000-22000000 -out 1000G_GL -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -C 50 -baq 1 -minMapQ 20 -minQ 20 -minInd 5 -doCounts 1  -setMinDepth 30 -setMaxDepth 150 -GL 2 -doGlf 4 -nThreads 8
+angsd -b $DATA/samples.bam_list -ref $REF -r 11:21000000-22000000 -out 1000G_GL -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -C 50 -baq 1 -minMapQ 20 -minQ 20 -minInd 5 -doCounts 1  -setMinDepth 30 -setMaxDepth 150 -GL 2 -doGlf 4 -nThreads 8
 ```
 Parameter | Meaning
 --- | ---
