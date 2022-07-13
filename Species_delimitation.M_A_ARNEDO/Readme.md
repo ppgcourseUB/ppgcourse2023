@@ -222,7 +222,7 @@ Specifies the model and the parameters and priors used, and effectively “drive
 
 Additionally, a file specifying the heredity scalar (eg. 0.25 for mtDNA or 1 for diploid nucDNA) may be included.
 
-To run the program in the cluster, submit this batch file using `sbatch` (**Please do not launch the `mptp` command from the control node**):
+To run the program in the cluster, submit this batch file using `sbatch` (**Please do not launch the `bpp` command from the control node**):
 
 ```bash
 #!/bin/bash
