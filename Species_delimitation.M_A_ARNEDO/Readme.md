@@ -77,9 +77,8 @@ module load r-ape r-mass r-rncl
 Then, you can run the script bears_gmyc.R:
 
 ```
-Rscript bears_gmyc.R
+Rscript ./sp_data/bears_gmyc.R
 ```
-
 
 `splits` incorporates support values from the GMYC clusters, based on the AIC. The function `gmyc.support` calculates support values of the GMYC-delimited species by using the multimodel comparison approach described by Burnham & Anderson (2002). The support value of a node is defined as the sum of Akaike weights of candidate delimitation models in which the node is included. Only models included in the p% confidence set obtained by `confset.gmyc` are used for calculation. For further details, see *Fujisawa, T., & Barraclough, T. G. (2013). Delimiting species using single-locus data and the Generalized Mixed Yule Coalescent approach: a revised method and evaluation on simulated data sets. Systematic Biology, 62(5), 707–724. http://doi.org/10.1093/sysbio/syt033.*
 
