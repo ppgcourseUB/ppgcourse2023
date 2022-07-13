@@ -104,7 +104,7 @@ First run to get the best_minbr value:
 module load mptp
 
 # running the program
-mptp --tree_file bears_c1_root.treefile --minbr_auto bears_c1.fasta --output_file bears_c1_best_minbr.out
+mptp --tree_file ./sp_data/bears_c1_root.treefile --minbr_auto ./sp_data/bears_c1.fasta --output_file bears_c1_best_minbr.out
 ```
 
 > --mcmc Support values for the delimitation    
@@ -135,7 +135,7 @@ Main run:
 module load mptp
 
 # running the program
-mptp --seed 767 --multi --tree_file bears_c1_root.treefile --outgroup NC009970_Melursus_ursinus --outgroup_crop --minbr 0.0006459066 --mcmc 50000000 --mcmc_startnull --mcmc_runs 3 --mcmc_log 1000000 --mcmc_burnin 2000000 --output_file bears_c1_nout_mptpt.out
+mptp --seed 767 --multi --tree_file ./sp_data/bears_c1_root.treefile --outgroup NC009970_Melursus_ursinus --outgroup_crop --minbr 0.0006459066 --mcmc 50000000 --mcmc_startnull --mcmc_runs 3 --mcmc_log 1000000 --mcmc_burnin 2000000 --output_file bears_c1_nout_mptpt.out
 ```
 
 > mptp: runs the executable  
