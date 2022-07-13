@@ -6,6 +6,7 @@
 
 + ABGD, available at http://wwwabi.snv.jussieu.fr/public/abgd/
 Automatic identification of the barcoding gap (Puillandre et al., 2012). ABGD requires users to provide several parameters: the genetic distance (for example, Jukes-Cantor or p-distances), a prior limit on intraspecific diversity (P), and a proxy for minimum width of barcoding gaps (X). For each set of user parameters, it returns two constraints: a "primary partition" and a "recursive" one obtained after applying its algorithm recursively.
+ATTENTION: This approach has recently been superseded by ASAP (Assemble species by automatic partitioning; Puillandre et al., 2021), available at https://bioinfo.mnhn.fr/abi/public/asap/![image](https://user-images.githubusercontent.com/105917473/178789240-4ef4aa11-7d23-42ac-9061-84e2dac7d77b.png)
 + GMYC can be run in R environment with SPLITS package package v 1.0-19 avialbale at https://rdrr.io/rforge/splits/. 
 It can also be run on-line at: https://species.h-its.org/gmyc/
 There is a Bayesian version bGMYC that allows uncertainty measures to be assigned to the constraint: R package available at: https://nreid.github.io/software/
