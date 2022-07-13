@@ -212,6 +212,6 @@ To run the program in the cluster, submit this batch file using `sbatch` (**Plea
 module load bpp
 
 # running the program
-bpp --cfile bears_A10.bpp.ctl # remember to add this line to the *.ctl file: Threads = 8 1 1
+bpp --cfile sp_data/BPP/inputs/bears_A10.bpp.ctl 
 ```
 See BPP_tutorial.pdf for further details.
