@@ -30,10 +30,10 @@
 #
 #######################################################################################
 
-if(!require("nls2")){
-  install.packages("nls2")
-  library("nls2")
-}
+#if(!require("nls2")){
+#  install.packages("nls2")
+#  library("nls2")
+#}
 
 # Get a CI using Monte Carlo simulation based upon a fitted model.  This is necessary because
 # getting confidence intervals for non-linear models is a complicated business, apparently.

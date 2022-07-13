@@ -46,7 +46,7 @@ echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \
 
 # CONDITION 2:
 #No background selection. BENEFICIAL SELECTION. No change Ne. No sweep
-FILEOUT="'./02_slim_SFS_WBGS.txt'"
+FILEOUT="'./02_slim_SFS_PSL.txt'"
 Neb=500; nsweeps=0;
 rec_rate=1e-4
 rate_ben=0.005; s_backg_ben=0.005;
@@ -56,20 +56,20 @@ echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \
 
 # CONDITION 3:
 #Strong BACKGROUND SELECTION. BENEFICIAL SELECTION. POPULATION REDUCTION. No sweep.
-FILEOUT="'./03_slim_SFS_BGS_RED.txt'"
+FILEOUT="'./03_slim_SFS_BGS_PSL_RED.txt'"
 Neb=200; nsweeps=0;
 rec_rate=1e-4
-rate_ben=0.05; s_backg_ben=0;
+rate_ben=0.05; s_backg_ben=0.005;
 rate_del=8; s_backg_del=-1.0;
 
 echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim\& >> ./run_slim_conditions.sh
 
 # CONDITION 4:
 #Strong BACKGROUND SELECTION. BENEFICIAL SELECTION. POPULATION EXPANSION. No sweep.
-FILEOUT="'./04_slim_SFS_BGS_EXP.txt'"
+FILEOUT="'./04_slim_SFS_BGS_PSL_EXP.txt'"
 Neb=2500; nsweeps=0;
 rec_rate=1e-4
-rate_ben=0.05; s_backg_ben=0;
+rate_ben=0.05; s_backg_ben=0.005;
 rate_del=8; s_backg_del=-1.0;
 
 echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim\& >> ./run_slim_conditions.sh
