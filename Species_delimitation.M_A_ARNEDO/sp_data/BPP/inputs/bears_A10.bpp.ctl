@@ -17,7 +17,7 @@ speciesmodelprior = 1  * 0: uniform LH; 1:uniform rooted trees; 2: uniformSLH; 3
   species&tree = 10  thibetanus americanus deningeri spelaeusA ingressus spelaeusB arctosA arctosB arctosC maritimus
                     6 4 1 8 1 1 37 7 5 19
                  ((thibetanus, americanus), ((deningeri, (spelaeusA, (ingressus, spelaeusB))), (arctosA, (arctosB, (arctosC, maritimus)))));
-        diploid =   0  0  0  0  0  0  0  0  0  0
+        phase =   0  0  0  0  0  0  0  0  0  0
 
        usedata = 1            # 0: no data prior 1:seq like
          nloci = 12          # number of data sets in seqfile
