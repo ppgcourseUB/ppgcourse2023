@@ -438,7 +438,7 @@ There are two ways to run the R code:
 
 1. The first one is just run the batch script _run\_Rresults.sh_, which contains the scripts for doing the analysis.
 	```
-	sh run_Rresults.sh
+	sbatch run_Rresults.sh
 	```
 	This script contains the two scripts used for the analysis:
 	
