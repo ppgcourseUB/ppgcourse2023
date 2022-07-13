@@ -68,11 +68,7 @@ To use this approach, we first need to infer a phylogenetic tree form our data, 
 
 2. Using `BEAST`, which incorporates the time estimations as a parameter of the analysis. If you choose this option, it is better to use a coalescent prior, to minimize type 1 error.
 
-We will use the first option and will run all the analyses using a **R script (*bears_gmyc.R*)**. This script has the following dependencies: R packages `splits`, `paran`, `mass` and `rncl`. You can either run this analysis in your personal computers, and in that case you must install the packages in your laptops before running the script, or, if the analysis is not computationally demanding, you can run it exceptionally in the control node using these commands:
-
-```bash
-module load r-ape r-mass r-rncl
-```
+We will use the first option and will run all the analyses using a **R script (*bears_gmyc.R*)**. Before submitting the batch scritp with `sbatch`, you need to install some R packages:
 
 Then, in the R console, type:
 
@@ -82,9 +78,22 @@ install.packages("splits", repos="http://R-Forge.R-project.org", dependencies=TR
 quit()
 ```
 
-After doing that, you can now run the script bears_gmyc.R:
+After doing that, you can now submmit the job using the script *gmyc.run*:
 
 ```bash
+#!/bin/bash
+#
+#SBATCH --job-name=GMYC
+#SBATCH -o %j.out
+#SBATCH -e %j.err
+#SBATCH --mem=6GB
+#SBATCH -c 1
+#SBATCH --partition=normal
+
+
+module load r-ape r-mass r-rncl
+
+
 Rscript ./sp_data/bears_gmyc.R
 ```
 
