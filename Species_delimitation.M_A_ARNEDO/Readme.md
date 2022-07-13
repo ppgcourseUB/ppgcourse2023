@@ -74,6 +74,12 @@ We will use the first option and will run all the analyses using a **R script (*
 module load r-ape r-mass r-rncl
 ```
 
+
+```
+
+```
+
+
 Then, you can run the script bears_gmyc.R:
 
 ```
