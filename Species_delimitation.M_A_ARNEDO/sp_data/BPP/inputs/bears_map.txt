@@ -1,0 +1,10 @@
+1	thibetanus
+2	americanus
+3	deningeri
+4	spelaeusA
+5	ingressus
+6	spelaeusB
+7	arctosA
+8	arctosB
+9	arctosC
+10	maritimus
