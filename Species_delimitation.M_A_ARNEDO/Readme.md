@@ -70,13 +70,13 @@ To use this approach, we first need to infer a phylogenetic tree form our data, 
 
 We will use the first option and will run all the analyses using a **R script (*bears_gmyc.R*)**. This script has the following dependencies: R packages `splits`, `paran`, `mass` and `rncl`. You can either run this analysis in your personal computers, and in that case you must install the packages in your laptops before running the script, or, if the analysis is not computationally demanding, you can run it exceptionally in the control node using these commands:
 
-```
+```bash
 module load r-ape r-mass r-rncl
 ```
 
 Then, in the R console, type:
 
-```
+```R
 install.packages("paran", dependencies=TRUE)
 install.packages("splits", repos="http://R-Forge.R-project.org", dependencies=TRUE)
 quit()
@@ -84,7 +84,7 @@ quit()
 
 After doing that, you can now run the script bears_gmyc.R:
 
-```
+```bash
 Rscript ./sp_data/bears_gmyc.R
 ```
 
@@ -103,7 +103,7 @@ You have different alternatives to run `(m)PTP`. There is an online service avai
 
 First run to get the best_minbr value:
 
-```
+```bash
 #!/bin/bash
 
 ##Script to submit bpp jobs
@@ -134,7 +134,7 @@ Additional options
 
 Main run:
 
-```
+```bash
 #!/bin/bash
 
 ##Script to submit bpp jobs
@@ -211,7 +211,7 @@ Additionally, a file specifying the heredity scalar (eg. 0.25 for mtDNA or 1 for
 
 To run the program in the cluster, submit this batch file using `sbatch` (**Please do not launch the `mptp` command from the control node**):
 
-```
+```bash
 #!/bin/bash
 
 ##Script to submit bpp jobs
