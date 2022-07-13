@@ -39,7 +39,7 @@ BPP output files (outfile, mcmcfile)
 
 ## Aim
 
-Become familiar with the use of different types of programs for species delimitation. Perform different types of quantitative species delimitation analyses in bears (Ursus) using single and multilocus approaches from unique markers. 
+Become familiar with the use of different types of programs for species delimitation. Perform different types of quantitative species delimitation analyses in bears (_Ursus_) using single and multilocus approaches from unique markers. 
 
 ## Procedure
 
