@@ -326,7 +326,7 @@ FILEOUT="'./01_slim_SFS_BGS.txt'"
 Neb=500; nsweeps=0;
 rec_rate=1e-4
 rate_ben=0; s_backg_ben=0;
-rate_del=8; s_backg_del=-0.1;
+rate_del=8; s_backg_del=-0.05;
 
 echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim\& >> ./run_slim_conditions.sh
 
@@ -335,7 +335,7 @@ echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \
 FILEOUT="'./02_slim_SFS_PSL.txt'"
 Neb=500; nsweeps=0;
 rec_rate=1e-4
-rate_ben=0.005; s_backg_ben=0.005;
+rate_ben=0.05; s_backg_ben=0.005;
 rate_del=0; s_backg_del=0;
 
 echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim\& >> ./run_slim_conditions.sh
@@ -345,8 +345,8 @@ echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \
 FILEOUT="'./03_slim_SFS_BGS_PSL_RED.txt'"
 Neb=200; nsweeps=0;
 rec_rate=1e-4
-rate_ben=0.05; s_backg_ben=0.005;
-rate_del=8; s_backg_del=-1.0;
+rate_ben=0.5; s_backg_ben=0.005;
+rate_del=8; s_backg_del=-0.05
 
 echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim\& >> ./run_slim_conditions.sh
 
@@ -355,8 +355,8 @@ echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \
 FILEOUT="'./04_slim_SFS_BGS_PSL_EXP.txt'"
 Neb=2500; nsweeps=0;
 rec_rate=1e-4
-rate_ben=0.05; s_backg_ben=0.005;
-rate_del=8; s_backg_del=-1.0;
+rate_ben=0.5; s_backg_ben=0.005;
+rate_del=8; s_backg_del=-0.05;
 
 echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim\& >> ./run_slim_conditions.sh
 
@@ -366,7 +366,7 @@ FILEOUT="'./05_slim_SFS_BGS_PSL.txt'"
 Neb=500; nsweeps=0;
 rec_rate=1e-4
 rate_ben=0.05; s_backg_ben=0.005;
-rate_del=8; s_backg_del=-1.0;
+rate_del=8; s_backg_del=-0.05;
 
 echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim\& >> ./run_slim_conditions.sh
 
@@ -376,7 +376,7 @@ FILEOUT="'./06_slim_SFS_BGS_PSM.txt'"
 Neb=500; nsweeps=0;
 rec_rate=1e-4
 rate_ben=0.5; s_backg_ben=0.005;
-rate_del=8; s_backg_del=-1.0;
+rate_del=8; s_backg_del=-0.05;
 
 echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim\& >> ./run_slim_conditions.sh
 
@@ -386,7 +386,7 @@ FILEOUT="'./07_slim_SFS_BGS_PSH.txt'"
 Neb=500; nsweeps=0;
 rec_rate=1e-4
 rate_ben=2; s_backg_ben=0.005;
-rate_del=8; s_backg_del=-1.0;
+rate_del=8; s_backg_del=-0.05;
 
 echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim\& >> ./run_slim_conditions.sh
 
@@ -396,7 +396,7 @@ FILEOUT="'./08_slim_SFS_BGS_PSM_SW.txt'"
 Neb=500; nsweeps=10;
 rec_rate=1e-4
 rate_ben=0.5; s_backg_ben=0.005;
-rate_del=8; s_backg_del=-1.0;
+rate_del=8; s_backg_del=-0.05;
 
 echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim\& >> ./run_slim_conditions.sh
 
@@ -494,8 +494,8 @@ intervals <- 50
 #read files from slim output
 slim_files <- system("ls *_slim_SFS_*.txt",intern=T)
 #Define data frame to keep results from SFS
-Alpha.results <- array(0,dim=c(length(slim_files),4))
-colnames(Alpha.results) <- c("scenario","alpha.real","alpha.mkt","alpha.assym")
+Alpha.results <- array(0,dim=c(length(slim_files),6))
+colnames(Alpha.results) <- c("scenario","alpha.real","alpha.mkt","alpha.assym","alphaAs.CIL","alphaAs.CIH")
 Alpha.results <- as.data.frame(Alpha.results)
 
 ```
@@ -555,6 +555,8 @@ for(f in slim_files) {
   Alpha.results$alpha.real[i] <- true.alpha
   Alpha.results$alpha.mkt[i] <- aa$alpha_original
   Alpha.results$alpha.assym[i] <- aa$alpha_asymptotic
+  Alpha.results$alphaAs.CIL[i] <- aa$CI_low
+  Alpha.results$alphaAs.CIH[i] <- aa$CI_high
   
   i <- i + 1
 }
@@ -645,8 +647,8 @@ colnames(Theta.results) <- c("scenario","Theta.FuLi.Nsyn","Theta.FuLi.Syn",
                              "Theta.FayWu.Nsyn","Theta.FayWu.Syn")
 Theta.results <- as.data.frame(Theta.results)
 
-Alpha.theta.results <- array(0,dim=c(length(slim_files),4))
-colnames(Alpha.theta.results) <- c("scenario","alpha.real","alpha.mkt","alpha.assym")
+Alpha.theta.results <- array(0,dim=c(length(slim_files),6))
+colnames(Alpha.theta.results) <- c("scenario","alpha.real","alpha.mkt","alpha.assym","alphaAs.CIL","alphaAs.CIH")
 Alpha.theta.results <- as.data.frame(Alpha.theta.results)
 ```
 Functions to estimate variability and definitions of arrays.
@@ -735,6 +737,7 @@ for(f in slim_files) {
     lines(x=x,y=aa$a+aa$b*exp(-aa$c*x),type="l",col="red")
   }
   
+  Theta.results$scenario[i] <- f
   Theta.results$Theta.FuLi.Nsyn[i]  <- Theta.FuLi.Nsyn
   Theta.results$Theta.FuLi.Syn[i]   <- Theta.FuLi.Syn
   Theta.results$Theta.Watt.Nsyn[i]  <- Theta.Watt.Nsyn
@@ -748,7 +751,9 @@ for(f in slim_files) {
   Alpha.theta.results$alpha.real[i] <- true.alpha
   Alpha.theta.results$alpha.mkt[i] <- aa$alpha_original
   Alpha.theta.results$alpha.assym[i] <- aa$alpha_asymptotic
-  
+  Alpha.theta.results$alphaAs.CIL[i] <- aa$CI_low
+  Alpha.theta.results$alphaAs.CIH[i] <- aa$CI_high
+
   i <- i + 1
 }
 dev.off()
