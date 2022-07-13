@@ -90,9 +90,7 @@ After doing that, you can now submmit the job using the script *gmyc.run*:
 #SBATCH -c 1
 #SBATCH --partition=normal
 
-
 module load r-ape r-mass r-rncl
-
 
 Rscript ./sp_data/bears_gmyc.R
 ```
