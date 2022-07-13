@@ -17,8 +17,8 @@ The objectives of this practical session are:
 
 ## Forward Simulator: *Slim*
 1.	We will simulate a number of different scenarios using [*Slim*](https://messerlab.org/slim/) (Messer, Genetics 2013, Haller and Messer, MBE 2017, [Haller and Messer, MBE 2019](https://academic.oup.com/mbe/article/36/3/632/5229931?login=true)). Slim is a forward simulator that allows to simulate many selective positions at the same time in complex demographic patterns. Slim has a **graphical interface** (we will see an example on the practical class) but to speed up the simulation analysis we will use the **command line** program in the practical session. 
-2. The simulator contains an extended manual and many "recipes" or examples for many different user, including complex metapopulation models in spatial context, non-Wright-Fischer models and also allows the use of phenotypic traits and QTLs in relation to the genotypes. 
-3. The simulator is designed in a very versatile way, which allows to include new functions, debugging code and controling variable using *Eidos*. *Slim* also allows to output trees, genomes, mutations and substitutions at any step in the simulation.
+2. The simulator contains an extended manual and many "recipes" or examples for many different uses, including complex metapopulation models in spatial context, non-Wright-Fischer models and also is able to work with phenotypic traits and QTLs in relation to the genotypes. 
+3. The simulator is designed in a very versatile way, allows to include new functions, debugging code and controling variable using *Eidos* environment. *Slim* also can output trees, genomes, mutations and substitutions at any step in the simulation.
 
 If your computer allows it, download [*Slim*](https://messerlab.org/slim/). Start the graphical interface application and open the initial recipe 4.1 - A basic neutral simulation. Understand the basic commands included. Use the Simulation panel to "Dump Population State" and see the output of all genomes, mutations and substitutions at the current population.
 
