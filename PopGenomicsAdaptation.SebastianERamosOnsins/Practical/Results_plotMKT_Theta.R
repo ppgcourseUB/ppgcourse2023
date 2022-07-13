@@ -66,8 +66,8 @@ colnames(Theta.results) <- c("scenario","Theta.FuLi.Nsyn","Theta.FuLi.Syn",
                              "Theta.FayWu.Nsyn","Theta.FayWu.Syn")
 Theta.results <- as.data.frame(Theta.results)
 
-Alpha.theta.results <- array(0,dim=c(length(slim_files),4))
-colnames(Alpha.theta.results) <- c("scenario","alpha.real","alpha.mkt","alpha.assym")
+Alpha.theta.results <- array(0,dim=c(length(slim_files),6))
+colnames(Alpha.theta.results) <- c("scenario","alpha.real","alpha.mkt","alpha.assym","alphaAs.CIL","alphaAs.CIH")
 Alpha.theta.results <- as.data.frame(Alpha.theta.results)
 
 ############################
@@ -153,7 +153,7 @@ for(f in slim_files) {
     lines(x=x,y=aa$a+aa$b*exp(-aa$c*x),type="l",col="red")
   }
   
-  Theta.results$scenario <- f
+  Theta.results$scenario[i] <- f
   Theta.results$Theta.FuLi.Nsyn[i]  <- Theta.FuLi.Nsyn
   Theta.results$Theta.FuLi.Syn[i]   <- Theta.FuLi.Syn
   Theta.results$Theta.Watt.Nsyn[i]  <- Theta.Watt.Nsyn
@@ -167,6 +167,8 @@ for(f in slim_files) {
   Alpha.theta.results$alpha.real[i] <- true.alpha
   Alpha.theta.results$alpha.mkt[i] <- aa$alpha_original
   Alpha.theta.results$alpha.assym[i] <- aa$alpha_asymptotic
+  Alpha.theta.results$alphaAs.CIL[i] <- aa$CI_low
+  Alpha.theta.results$alphaAs.CIH[i] <- aa$CI_high
   
   i <- i + 1
 }

@@ -33,8 +33,8 @@ intervals <- 50
 #read files from slim output
 slim_files <- system("ls *_slim_SFS_*.txt",intern=T)
 #Define data frame to keep results from SFS
-Alpha.results <- array(0,dim=c(length(slim_files),4))
-colnames(Alpha.results) <- c("scenario","alpha.real","alpha.mkt","alpha.assym")
+Alpha.results <- array(0,dim=c(length(slim_files),6))
+colnames(Alpha.results) <- c("scenario","alpha.real","alpha.mkt","alpha.assym","alphaAs.CIL","alphaAs.CIH")
 Alpha.results <- as.data.frame(Alpha.results)
 
 ############################
@@ -92,6 +92,8 @@ for(f in slim_files) {
   Alpha.results$alpha.real[i] <- true.alpha
   Alpha.results$alpha.mkt[i] <- aa$alpha_original
   Alpha.results$alpha.assym[i] <- aa$alpha_asymptotic
+  Alpha.results$alphaAs.CIL[i] <- aa$CI_low
+  Alpha.results$alphaAs.CIH[i] <- aa$CI_high
   
   i <- i + 1
 }
