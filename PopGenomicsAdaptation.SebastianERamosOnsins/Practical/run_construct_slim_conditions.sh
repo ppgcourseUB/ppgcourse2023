@@ -13,7 +13,7 @@ echo \#SBATCH --job-name=9slims >> ./run_slim_conditions.sh
 echo \#SBATCH -o %j.out >> ./run_slim_conditions.sh
 echo \#SBATCH -e %j.err >> ./run_slim_conditions.sh
 echo \#SBATCH --ntasks=9 >> ./run_slim_conditions.sh
-echo \#SBATCH --mem=12GB >> ./run_slim_conditions.sh
+echo \#SBATCH --mem=6GB >> ./run_slim_conditions.sh
 echo \#SBATCH --partition=normal >> ./run_slim_conditions.sh
 echo \# >> ./run_slim_conditions.sh
 echo module load SLiM >> ./run_slim_conditions.sh
