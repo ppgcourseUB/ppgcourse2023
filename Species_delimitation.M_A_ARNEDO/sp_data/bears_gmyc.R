@@ -1,13 +1,3 @@
-##Set the working directory to the folder where you have the data
-
-# setwd("/home/alumne/ppgcourse/ppgdata/sd")
-
-##Install paran package
-install.packages("paran", dependencies=TRUE)
-
-##Install the Splits package
-install.packages("splits", repos="http://R-Forge.R-project.org", dependencies=TRUE)
-
 ##Load the package
 library(splits)
 
