@@ -433,23 +433,51 @@ The estimation of alpha can be calculated with several methods. Here we will com
 
 ### Estimate alpha using the SFS and Fixations
 
-We will use R code for this step. The code contains some functions, the definition of arrays to keep the data, the calculation and the plot of the results and write the tables. First, we have to load few libraries to run the asymptotic approach:
+We will use R code for this step. The code contains some functions, the definition of arrays to keep the data, the calculation and the plot of the results and write the tables. 
+There are two ways to run the R code:
 
-```
-module load r-mass r-proto
-```
-It is also necessary to install the library nls2. In this cluster, the easiest way is to open the R application and install the package manually and quit:
+1. The first one is just run the batch script _run\_Rresults.sh_, which contains the scripts for doing the analysis.
+	```
+	sh run_Rresults.sh
+	```
+	This script contains the two scripts used for the analysis:
+	
+	```
+	\#!/bin/bash
+	\#
+	\#SBATCH --job-name=2runRplots
+	\#SBATCH -o %j.out
+	\#SBATCH -e %j.err
+	\#SBATCH --ntasks=2
+	\#SBATCH --mem=12GB
+	\#SBATCH --partition=normal
+	\#
+	module load R
+	module load r-mass r-proto
+	
+	srun --ntasks 1 --exclusive --mem-per-cpu=1GB R --vanilla < ./Results_plotMKT.R&
+	srun --ntasks 1 --exclusive --mem-per-cpu=1GB R --vanilla < ./Results_plotMKT_Theta.R&
+	wait
+	
+	```
+	
+2. In case the batch is not working, then we have to load few libraries to run the asymptotic approach:
 
-```
-% R
-
-R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
-Copyright (C) 2020 The R Foundation for Statistical Computing
-...
-> install.packages("nls2")
-...
-> quit()
-```
+	```
+	module load r-mass r-proto
+	```
+	It is also necessary to install the library nls2. In this cluster, the easiest way is to open the R application and install the package manually and quit:
+	
+	```
+	% R
+	
+	R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
+	Copyright (C) 2020 The R Foundation for Statistical Computing
+	...
+	> install.packages("nls2")
+	...
+	> quit()
+	```
 
 The R code for estimating alpha (file _Results\_plotMKT.R_) is the following: 
 
