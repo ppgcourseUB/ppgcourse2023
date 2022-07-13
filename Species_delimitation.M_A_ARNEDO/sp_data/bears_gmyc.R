@@ -2,7 +2,7 @@
 library(splits)
 
 ###read the ML tree
-bears_c1_MLtree<- read.tree (file="bears_c1_root.treefile")
+bears_c1_MLtree<- read.tree (file="./sp_data/bears_c1_root.treefile")
 
 ##Make the tree ultrametric
 ##There are multiple ways to linearise your tree, either by using your ML preferred tree, or by using infernce methods that already incoporate time estimaiton, eg. BEAST
