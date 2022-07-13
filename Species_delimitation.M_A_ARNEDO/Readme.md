@@ -25,7 +25,7 @@ The last version of BPP now also implements the multispecies-coalescing-with-int
     1. bears_c1.fasta
 mtDNA cox1 gene from 90 taxa (1,545 bp) in FASTA format of specimens belonging to the Ursus genus, using the Sloth bear as outgroup (NC009970_Melursus_ursinus)
     2. bears_c1_root.treefile
-Preferred ML tree inferred with IQ-TREE (full codon partition)
+Preferred ML tree inferred with `IQ-TREE` (full codon partition)
 
 + Multi-locus validation
     1. bears_bpp.txt
@@ -86,33 +86,7 @@ You have different alternatives to run `(m)PTP`. There is an online service avai
 
 + Here you have the commands to implement mPTP with MCMC support in a batch file to submit the jobs in the cluster (**Please do not launch the `mptp` command from the control node**):
 
-```
-#!/bin/bash
-
-##Script to submit bpp jobs
-
-#SBATCH -p normal
-#SBATCH -c 8
-#SBATCH --mem=6GB
-#SBATCH --job-name mptp-1
-#SBATCH -o %j.out
-#SBATCH -e %j.err
-
-# modules
-module load mptp
-
-# running the program
-mptp --seed 767 --multi --tree_file bears_c1_root.treefile --outgroup NC009970_Melursus_ursinus --outgroup_crop --minbr 0.0006459066 --mcmc 50000000 --mcmc_startnull --mcmc_runs 3 --mcmc_log 1000000 --mcmc_burnin 2000000 --output_file bears_c1_nout_mptpt.out
-```
-
-> mptp: runs the executable  
-> --seeds: random number generator  
-> --tree_file: define tree file   
-> --multi: use one lambda per coalescent (mPTP, this is default. Alternatively, one lambda for all coalescents –single = PTP)    
-> --outgroup: define out group     
-> --outgroup_crop: and remove it    
-> --minbr: Set minimum branch length, you can select the value by running a preliminary analysis using the following command line:    
-> --output_file: Name of the output file    
+First run to get the best_minbr value:
 
 ```
 #!/bin/bash
@@ -141,7 +115,37 @@ mptp --tree_file bears_c1_root.treefile --minbr_auto bears_c1.fasta --output_fil
 Additional options
 --mcmc_startnull	Start each run with the null model (one single species)   
 --mcmc_startrandom	Start each run with a random delimitation (default)  
---mcmc_startml	Start each run with the delimitation obtained by the Maximum-likelihood heuristic    
+--mcmc_startml	Start each run with the delimitation obtained by the Maximum-likelihood heuristic
+
+Main run:
+
+```
+#!/bin/bash
+
+##Script to submit bpp jobs
+
+#SBATCH -p normal
+#SBATCH -c 8
+#SBATCH --mem=6GB
+#SBATCH --job-name mptp-1
+#SBATCH -o %j.out
+#SBATCH -e %j.err
+
+# modules
+module load mptp
+
+# running the program
+mptp --seed 767 --multi --tree_file bears_c1_root.treefile --outgroup NC009970_Melursus_ursinus --outgroup_crop --minbr 0.0006459066 --mcmc 50000000 --mcmc_startnull --mcmc_runs 3 --mcmc_log 1000000 --mcmc_burnin 2000000 --output_file bears_c1_nout_mptpt.out
+```
+
+> mptp: runs the executable  
+> --seeds: random number generator  
+> --tree_file: define tree file   
+> --multi: use one lambda per coalescent (mPTP, this is default. Alternatively, one lambda for all coalescents –single = PTP)    
+> --outgroup: define out group     
+> --outgroup_crop: and remove it    
+> --minbr: Set minimum branch length, you can select the value by running a preliminary analysis using the following command line:    
+> --output_file: Name of the output file    
 
 + **\#Output Files For maximum likelihood delimitation:**   
   1. **output_filename.txt**: contains information about the run:     
