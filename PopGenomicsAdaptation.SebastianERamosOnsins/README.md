@@ -279,7 +279,7 @@ s4 100000 late() {
 ```
 The step s4 finish the simulation and collects the Site Frequency Spectrum (SFS) for a sample in synonymous and nonsynonymous positions, plus the number of fixations and the number of true beneficial fixations.
 
-##Run Simulations under Different Selective Scenarios
+## Run Simulations under Different Selective Scenarios
 
 Here, we will simulate different selective scenarios in order to evaluate the ability to detect the proportion of beneficial substitutions under the defined conditions. Nine different scenarios are defined in the script "**run\_construct\_slim\_conditions.sh**", although the user can modify the conditions if desired (but be careful to not include unrealistic or never-finish conditions!). 
 
@@ -300,7 +300,7 @@ echo module load SLiM >> ./run_slim_conditions.sh
 echo >> ./run_slim_conditions.sh
 
 ```
-slurm parameters, and next the conditions for simulations:
+These are slurm parameters, and next the conditions for simulations:
 
 ```
 #fixed paraneters
@@ -425,11 +425,11 @@ nsyn	321	152	88	72	40	40	28	25	26	32	17	22	23	21	19	12	13	12	16	7	10	19	10	14	9	
 syn	263	116	79	78	71	35	32	25	42	23	21	20	12	19	15	18	16	11	16	20	12	15	19	7	9	17	6	11	10	7	9	8	10	10	8	2	7	12	12	6	9	4	8	7	6	6	5	5	6	166666	1552	166666	0	
 ```
 
-##Estimating the proportion of Beneficial Substitutions (alpha) from Simulation Data
+## Estimating the proportion of Beneficial Substitutions (alpha) from Simulation Data
 
 The estimation of alpha can be calculated with several methods. Here we will compare the real value of alpha (real alpha = fixed beneficial substitutions / fixed nonsynonymous substitutions) with other two estimates: the MKT standard alpha (alpha = 1 - Ks/Ps * Pn/Kn) and the asymptotic alpha ([Messer and Petrov 2013](https://www.pnas.org/doi/full/10.1073/pnas.1220835110)). Here you can find a web version of the asymptotic alpha estimation performed by [Haller and Messer](http://benhaller.com/messerlab/asymptoticMK.html). we will use a R code version performed by HAller and Messer ([Haller and Messer 2017](http://dx.doi.org/10.1534/g3.117.039693)) to estimate the alpha values.
 
-###Estimate alpha using the SFS and Fixations
+### Estimate alpha using the SFS and Fixations
 
 We will use R code for this step. The code contains some functions, the definition of arrays to keep the data, the calculation and the plot of the results and write the tables. First, we have to load few libraries to run the asymptotic approach:
 
@@ -568,7 +568,7 @@ To run all from command line, do:
 R --vanilla < ./Results_plotMKT.R
 ```
 
-###Estimate alpha using the levels of Variability
+### Estimate alpha using the levels of Variability
 
 Alpha estimates are not very accurated if few sections of the genome are used. A different approach can be to use summary statistics for the SFS, such as estimates of variability that weight differentially the contribution of each frequency. These estimators, like Fu & Li, Watterson, Tajima and Fay & Wu are good estimators of the real variability under the SNM, but under violations of the stationary model the estimators can give very different results. 
 
@@ -762,7 +762,7 @@ To run all from command line, do:
 R --vanilla < ./Results_plotMKT_Theta.R
 ```
 
-##Comparison of Results
+## Comparison of Results
 
 Make a Table with all results to compare the methods used and their approach to the true value. Discuss the results.
 
