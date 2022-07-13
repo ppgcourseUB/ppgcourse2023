@@ -70,7 +70,7 @@ To use this approach, we first need to infer a phylogenetic tree form our data, 
 
 We will use the first option and will run all the analyses using a **R script (*bears_gmyc.R*)**. Before submitting the batch scritp with `sbatch`, you need to install some R packages:
 
-Then, in the R console, type:
+In the R console, type:
 
 ```R
 install.packages("paran", dependencies=TRUE)
