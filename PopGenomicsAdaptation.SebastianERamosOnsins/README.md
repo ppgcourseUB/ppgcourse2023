@@ -12,7 +12,8 @@ The objectives of this practical session are:
 
 * To familiarize with the forward-simulator *Slim*. Understanding how it works and be able to construct your own code.
 * Run different scenarios containing positive and/or negative selection, plus some demographic effects that can affect the detection of beneficial mutations.
-* Estimate the proportion of beneficial substitutions using different methods, and contrast with the real value per scenario.
+* Estimate the proportion of beneficial substitutions using different methods
+* Contrast estimates with the real value per scenario.
 
 ## Forward Simulator: *Slim*
 1.	We will simulate a number of different scenarios using [*Slim*](https://messerlab.org/slim/) (Messer, Genetics 2013, Haller and Messer, MBE 2017, [Haller and Messer, MBE 2019](https://academic.oup.com/mbe/article/36/3/632/5229931?login=true)). Slim is a forward simulator that allows to simulate many selective positions at the same time in complex demographic patterns. Slim has a **graphical interface** (we will see an example on the practical class) but to speed up the simulation analysis we will use the **command line** program in the practical session. 
