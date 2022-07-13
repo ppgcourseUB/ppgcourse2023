@@ -1,6 +1,6 @@
 ##Set the working directory to the folder where you have the data
 
-setwd("/home/alumne/ppgcourse/ppgdata/sd")
+# setwd("/home/alumne/ppgcourse/ppgdata/sd")
 
 ##Install paran package
 install.packages("paran", dependencies=TRUE)
