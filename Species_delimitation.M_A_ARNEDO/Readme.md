@@ -78,7 +78,7 @@ install.packages("splits", repos="http://R-Forge.R-project.org", dependencies=TR
 quit()
 ```
 
-After doing that, you can now submmit the job using the script *gmyc.run*:
+After doing that, you can now submit the job using the script *gmyc.run*:
 
 ```bash
 #!/bin/bash
