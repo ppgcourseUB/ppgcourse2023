@@ -3,6 +3,8 @@
 
 Instructor: **Sebastian E. Ramos-Onsins**
 
+Date: July 13th 2022
+
 In this practical session we will focus on the effect of positive and negative selection on the polymorphism and the divergence at functional and neutral positions across the genome. We will simulate a number of different evolutionary scenarios and analyze the different observed patterns.
 
 The objectives of this practical session are:
@@ -281,16 +283,21 @@ The step s4 finish the simulation and collects the Site Frequency Spectrum (SFS)
 
 Here, we will simulate different selective scenarios in order to evaluate the ability to detect the proportion of beneficial substitutions under the defined conditions. Nine different scenarios are defined in the script "**run\_construct\_slim\_conditions.sh**", although the user can modify the conditions if desired (but be careful to not include unrealistic or never-finish conditions!). 
 
-Please modify the name of the job to identify yours.
+You can modify the name of the job to identify yours.
 
 ```
 #header for run in slurm
-echo #!/bin/bash > ./run_slim_conditions.sh
-echo #SBATCH -p normal > ./run_slim_conditions.sh
-echo #SBATCH --job-name-USER > ./run_slim_conditions.sh 
-echo #SBATCH -o %j.out > ./run_slim_conditions.sh
-echo #SBATCH -e %j.err > ./run_slim_conditions.sh
-echo module load slim > ./run_slim_conditions.sh
+echo \#!/bin/bash > ./run_slim_conditions.sh
+echo \# >> ./run_slim_conditions.sh
+echo \#SBATCH --job-name=9slims >> ./run_slim_conditions.sh
+echo \#SBATCH -o %j.out >> ./run_slim_conditions.sh
+echo \#SBATCH -e %j.err >> ./run_slim_conditions.sh
+echo \#SBATCH --ntasks=9 >> ./run_slim_conditions.sh
+echo \#SBATCH --mem=12GB >> ./run_slim_conditions.sh
+echo \#SBATCH --partition=normal >> ./run_slim_conditions.sh
+echo \# >> ./run_slim_conditions.sh
+echo module load SLiM >> ./run_slim_conditions.sh
+echo >> ./run_slim_conditions.sh
 
 #fixed paraneters
 Ne=500; L=500000; ngenes=100;
@@ -305,7 +312,7 @@ rec_rate=1e-4;
 rate_ben=0; s_backg_ben=0;
 rate_del=0; s_backg_del=0;
 
-echo slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim > ./run_slim_conditions.sh
+echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim\& >> ./run_slim_conditions.sh
 
 # CONDITION 1:
 #Strong BACKGROUND SELECTION. No beneficial selection. No change Ne. No sweep
@@ -315,37 +322,37 @@ rec_rate=1e-4
 rate_ben=0; s_backg_ben=0;
 rate_del=8; s_backg_del=-0.1;
 
-echo slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim >> ./run_slim_conditions.sh
+echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim\& >> ./run_slim_conditions.sh
 
 # CONDITION 2:
 #No background selection. BENEFICIAL SELECTION. No change Ne. No sweep
-FILEOUT="'./02_slim_SFS_WBGS.txt'"
+FILEOUT="'./02_slim_SFS_PSL.txt'"
 Neb=500; nsweeps=0;
 rec_rate=1e-4
 rate_ben=0.005; s_backg_ben=0.005;
 rate_del=0; s_backg_del=0;
 
-echo slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim >> ./run_slim_conditions.sh
+echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim\& >> ./run_slim_conditions.sh
 
 # CONDITION 3:
 #Strong BACKGROUND SELECTION. BENEFICIAL SELECTION. POPULATION REDUCTION. No sweep.
-FILEOUT="'./03_slim_SFS_BGS_RED.txt'"
+FILEOUT="'./03_slim_SFS_BGS_PSL_RED.txt'"
 Neb=200; nsweeps=0;
 rec_rate=1e-4
-rate_ben=0.05; s_backg_ben=0;
+rate_ben=0.05; s_backg_ben=0.005;
 rate_del=8; s_backg_del=-1.0;
 
-echo slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim >> ./run_slim_conditions.sh
+echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim\& >> ./run_slim_conditions.sh
 
 # CONDITION 4:
 #Strong BACKGROUND SELECTION. BENEFICIAL SELECTION. POPULATION EXPANSION. No sweep.
-FILEOUT="'./04_slim_SFS_BGS_EXP.txt'"
+FILEOUT="'./04_slim_SFS_BGS_PSL_EXP.txt'"
 Neb=2500; nsweeps=0;
 rec_rate=1e-4
-rate_ben=0.05; s_backg_ben=0;
+rate_ben=0.05; s_backg_ben=0.005;
 rate_del=8; s_backg_del=-1.0;
 
-echo slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim >> ./run_slim_conditions.sh
+echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim\& >> ./run_slim_conditions.sh
 
 # CONDITION 5:
 #Strong BACKGROUND SELECTION. SMALL PROPORTION BENEFICIAL SELECTION. No change Ne. No sweep.
@@ -355,7 +362,7 @@ rec_rate=1e-4
 rate_ben=0.05; s_backg_ben=0.005;
 rate_del=8; s_backg_del=-1.0;
 
-echo slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim >> ./run_slim_conditions.sh
+echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim\& >> ./run_slim_conditions.sh
 
 # CONDITION 6:
 #Strong BACKGROUND SELECTION. MIDDLE PROPORTION BENEFICIAL SELECTION. No change Ne. No sweep.
@@ -365,7 +372,7 @@ rec_rate=1e-4
 rate_ben=0.5; s_backg_ben=0.005;
 rate_del=8; s_backg_del=-1.0;
 
-echo slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim >> ./run_slim_conditions.sh
+echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim\& >> ./run_slim_conditions.sh
 
 # CONDITION 7:
 #Strong BACKGROUND SELECTION. HIGH PROPORTION BENEFICIAL SELECTION. No change Ne. No sweep.
@@ -375,7 +382,7 @@ rec_rate=1e-4
 rate_ben=2; s_backg_ben=0.005;
 rate_del=8; s_backg_del=-1.0;
 
-echo slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim >> ./run_slim_conditions.sh
+echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim\& >> ./run_slim_conditions.sh
 
 # CONDITION 8:
 #Strong BACKGROUND SELECTION. BENEFICIAL SELECTION. No change Ne. SWEEPS.
@@ -385,10 +392,11 @@ rec_rate=1e-4
 rate_ben=0.5; s_backg_ben=0.005;
 rate_del=8; s_backg_del=-1.0;
 
-echo slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim >> ./run_slim_conditions.sh
+echo srun --ntasks 1 --exclusive --mem-per-cpu=1GB slim -t -m -d \"Ne=$Ne\" -d \"L=$L\" -d \"Neb=$Neb\" -d \"mut_rate=$mut_rate\" -d \"rec_rate=$rec_rate\" -d \"ngenes=$ngenes\" -d \"rate_ben=$rate_ben\" -d \"rate_del=$rate_del\" -d \"s_backg_ben=$s_backg_ben\" -d \"s_backg_del=$s_backg_del\" -d \"nsweeps=$nsweeps\" -d \"freq_sel_init=0.05\" -d \"freq_sel_end=0.95\" -d \"s_beneficial=0.1\" -d \"ind_sample_size=$ind_sample_size\" -d \"out_sample_size=$out_sample_size\" -d \"file_output1=$FILEOUT\" ./slim_template.slim\& >> ./run_slim_conditions.sh
 
+echo wait >> ./run_slim_conditions.sh
 ```
-The script run in shell directly:
+The script runs in shell directly:
 
 ```
 sh  ./run\_construct\_slim\_conditions.sh
@@ -396,7 +404,7 @@ sh  ./run\_construct\_slim\_conditions.sh
 This command creates a new script named "*run_slim_conditions.sh*".This file will be run in the cluster using slurm.
  
 ```
-sbatch ./run\_construct\_slim\_conditions.sh
+sbatch ./run\_slim\_conditions.sh
 ```
 and check the progress with:
 
@@ -405,7 +413,7 @@ squeue
 ```
 The results will be separated in nine different files, one for each simulation condition. The files will start with the name "[number]\_slim\_SFS\_\*.txt". You can see using the command *more*, *less*, *cat* or using a text editor such as *nano*.
 
-The results will be the SFS of nonsynonymous and synonymous sites. The output will be similar to this:
+The results will be the SFS of nonsynonymous and synonymous sites. The nine outputs will be similar to this:
 
 ```
 SFS	fr1 	fr2 	fr3 	fr4 	fr5 	fr6 	fr7 	fr8 	fr9 	fr10 	fr11 	fr12 	fr13 	fr14 	fr15 	fr16 	fr17 	fr18 	fr19 	fr20 	fr21 	fr22 	fr23 	fr24 	fr25 	fr26 	fr27 	fr28 	fr29 	fr30 	fr31 	fr32 	fr33 	fr34 	fr35 	fr36 	fr37 	fr38 	fr39 	fr40 	fr41 	fr42 	fr43 	fr44 	fr45 	fr46 	fr47 	fr48 	fr49	PosP	Fixed	PosF	FixBen
@@ -415,9 +423,342 @@ syn	263	116	79	78	71	35	32	25	42	23	21	20	12	19	15	18	16	11	16	20	12	15	19	7	9	1
 
 ##Estimating the proportion of Beneficial Substitutions (alpha) from Simulation Data
 
+The estimation of alpha can be calculated with several methods. Here we will compare the real value of alpha (real alpha = fixed beneficial substitutions / fixed nonsynonymous substitutions) with other two estimates: the MKT standard alpha (alpha = 1 - Ks/Ps * Pn/Kn) and the asymptotic alpha ([Messer and Petrov 2013](https://www.pnas.org/doi/full/10.1073/pnas.1220835110)). Here you can find a web version of the asymptotic alpha estimation performed by [Haller and Messer](http://benhaller.com/messerlab/asymptoticMK.html). we will use a R code version performed by HAller and Messer ([Haller and Messer 2017](http://dx.doi.org/10.1534/g3.117.039693)) to estimate the alpha values.
 
+###Estimate alpha using the SFS and Fixations
 
+We will use R code for this step. The code contains some functions, the definition of arrays to keep the data, the calculation and the plot of the results and write the tables. First, we have to load few libraries to run the asymptotic approach:
 
 ```
 module load r-mass r-proto
 ```
+It is also necessary to install the library nls2. In this cluster, the easiest way is to open the R application and install the package manually and quit:
+
+```
+% R
+
+R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+...
+> install.packages("nls2")
+...
+> quit()
+```
+
+The R code for estimating alpha (file _Results\_plotMKT.R_) is the following: 
+
+
+```
+source("./asymptoticMK_local.R")
+
+############################################
+# FUNCTIONS
+############################################
+
+#calculation of alpha from standard equation
+calc.alpha <- function(Ps,Ds,Pn,Dn) {
+  alpha <- 1 - (Ds/Dn)*(Pn/Ps)
+  return(alpha)
+} 
+# D0,P0 are neutral, Di, Pi are functional
+#define distribution of allele frequencies from smaller intervals (to avoid zeros)
+calc2.daf <- function(tab.dat,nsam,intervals) {
+  daf.red <- data.frame(daf=as.numeric(sprintf("%.3f",c(c(0:(intervals-1))/intervals,1))),Pi=0,P0=0)
+  tab.dat <- rbind(tab.dat,c(0,0))
+  for(i in c(1:intervals)) {
+    daf.red$Pi[i] <- sum(tab.dat[(as.integer(daf.red$daf[i]*nsam)+1):(as.integer(daf.red$daf[i+1]*nsam)),1])
+    daf.red$P0[i] <- sum(tab.dat[(as.integer(daf.red$daf[i]*nsam)+1):(as.integer(daf.red$daf[i+1]*nsam)),2])
+  }
+  daf.red <- daf.red[-(intervals+1),]
+  return(daf.red)
+}
+
+```
+There are first the functions to estimate alpha and estimate the SFS under less intervals than initially obtained (for nsam=25*2 there are 49 intervals, but many may be void if few variants are obtaied)
+
+```
+############################################
+# DEFINITIONS
+############################################
+
+pdf("Plots_scenarios_alpha.pdf")
+#define sample and size of sfs (to avoid zeros)
+nsam <- 25*2
+intervals <- 50
+#read files from slim output
+slim_files <- system("ls *_slim_SFS_*.txt",intern=T)
+#Define data frame to keep results from SFS
+Alpha.results <- array(0,dim=c(length(slim_files),4))
+colnames(Alpha.results) <- c("scenario","alpha.real","alpha.mkt","alpha.assym")
+Alpha.results <- as.data.frame(Alpha.results)
+
+```
+Just define some parameters and the arrys with data to keep.
+
+```
+############################
+#RUN
+############################
+for(f in slim_files) {
+  dat.sfs <- read.table(file=f,header=T,row.names=1)
+
+  ############################
+  # USING SFS
+  ############################
+  #calc daf and div
+  tab.dat <- t(dat.sfs[,1:(nsam-1)])
+  daf <- calc2.daf(tab.dat,nsam,intervals)
+  #to avoid ZERO values, instead (or in addition) of doing less intervals, add 1 to freqs=0
+  daf[daf[,2]==0,2] <- 1
+  daf[daf[,3]==0,3] <- 1
+  #calc div
+  divergence <- data.frame(mi=dat.sfs[1,nsam+2],Di=dat.sfs[1,nsam+1],m0=dat.sfs[2,nsam+2],D0=dat.sfs[2,nsam+1])
+  
+  #estimate MKTa from SFS
+  aa <- NULL
+  tryCatch(
+    {
+      aa <- asymptoticMK(d0=divergence$D0, d=divergence$Di, xlow=0.1, xhigh=0.9, df=daf, true_alpha=NA, output="table")
+    },
+    error = function(e) {
+      message(sprintf("Error calculating MKTa for observed data in file %s",f))
+    }
+  )
+  aa
+  aa$alpha_asymptotic
+  aa$alpha_original
+  true.alpha <- dat.sfs[1,nsam+3] / dat.sfs[1,nsam+1]
+  true.alpha
+  #calculate alpha for each frequency separately (assumed same nsam at Syn and Nsyn)
+  alpha.mkt.daf <- calc.alpha(Ps=daf[,3],Ds=divergence[1,4],Pn=daf[,2],Dn=divergence[1,2])
+  alpha.mkt.daf
+  
+  #Plot results
+  plot(x=daf[,1],y=alpha.mkt.daf,type="p",pch=20,xlim=c(0,1),ylim=c(min(-1,alpha.mkt.daf),1),
+       main=sprintf("ALPHA: %s \nTrue=%.3f MKTa=%.3f MKT=%.3f",f,true.alpha,aa$alpha_asymptotic,aa$alpha_original),
+       xlab="Freq",ylab="alpha")
+  abline(h=0,col="grey")
+  abline(v=c(0.1,0.9),col="grey")
+  abline(h=true.alpha,col="blue")
+  if(aa$model=="linear") abline(a=aa$a,b=aa$b,col="red")
+  if(aa$model=="exponential") {
+    x=seq(1:19)/20
+    lines(x=x,y=aa$a+aa$b*exp(-aa$c*x),type="l",col="red")
+  }
+  Alpha.results$scenario[i] <- f
+  Alpha.results$alpha.real[i] <- true.alpha
+  Alpha.results$alpha.mkt[i] <- aa$alpha_original
+  Alpha.results$alpha.assym[i] <- aa$alpha_asymptotic
+  
+  i <- i + 1
+}
+dev.off()
+write.table(x=Alpha.results,file="Alpha.results.txt",row.names=F,quote=F)
+
+```
+The code reads the data, includes SFS and divergence values in data frames and runs the the asymptotic function. The plots contain the true alpha, the MKT standard alpha and the asymptotic alpha for each condition. Also tables with results are kept for posterior comparison.
+
+To run all from command line, do:
+
+```
+R --vanilla < ./Results_plotMKT.R
+```
+
+###Estimate alpha using the levels of Variability
+
+Alpha estimates are not very accurated if few sections of the genome are used. A different approach can be to use summary statistics for the SFS, such as estimates of variability that weight differentially the contribution of each frequency. These estimators, like Fu & Li, Watterson, Tajima and Fay & Wu are good estimators of the real variability under the SNM, but under violations of the stationary model the estimators can give very different results. 
+
+Fu & Li is based on singletons to estimate variability, Watterson on the number of polymorhic variants, Tajima on the pairwise number of differences, and Fay & Wu mainly weights high frequency variants. Using these four estimates, it is similar to obtain average values for sections of the SFS. This is the code for this approach:
+
+```
+source("./asymptoticMK_local.R")
+
+############################################
+# FUNCTIONS
+############################################
+
+#calculation of alpha from standard equation
+calc.alpha <- function(Ps,Ds,Pn,Dn) {
+  alpha <- 1 - (Ds/Dn)*(Pn/Ps)
+  return(alpha)
+} 
+#calculation of different theta estimators
+CalcThetaUnfolded <- function(sfs,w) {
+  th <- 0
+  for(i in 1:length(sfs)) {
+    th <- th + w[i] * i * sfs[i]
+  }
+  th <- th/(sum(w))
+  return(th)
+}
+#weights to estimate watterson estimate (based on the number of variants under SNM)
+weight.watt.unfolded <-function(nsam) {
+  w <- array(0,dim=c(floor(nsam-1)))
+  for(i in 1:length(w)) {
+    w[i] <- 1/i
+  }
+  w
+}
+#weights to estimate tajima (nucleotide diversity, PI) estimate
+weight.taj.unfolded <-function(nsam) {
+  w <- array(0,dim=c(floor(nsam-1)))
+  for(i in 1:length(w)) {
+    w[i] <- nsam-i
+  }
+  w
+}
+#weights to estimate fu&li estimate (singletons)
+weight.fuli.unfolded <-function(nsam) {
+  w <- array(0,dim=c(floor(nsam-1)))
+  w[1] <- 1
+  w
+}
+#weights to estimate fay&wu estimate (based on high frequencies)
+weight.fw.unfolded <- function(nsam) {
+  w <- array(0,dim=c(floor(nsam-1)))
+  for(i in 1:length(w)) {
+    w[i] <- i
+  }
+  w
+}
+
+############################################
+# DEFINITIONS
+############################################
+
+pdf("Plots_scenarios_alpha_Theta.pdf")
+#define sample and size of sfs (to avoid zeros)
+nsam <- 25*2
+#read files from slim output
+slim_files <- system("ls *_slim_SFS_*.txt",intern=T)
+#Define data frame to keep results from variability estimates
+Theta.results <- array(0,dim=c(length(slim_files),9))
+colnames(Theta.results) <- c("scenario","Theta.FuLi.Nsyn","Theta.FuLi.Syn",
+                             "Theta.Watt.Nsyn","Theta.Watt.Syn",
+                             "Theta.Taji.Nsyn","Theta.Taji.Syn",
+                             "Theta.FayWu.Nsyn","Theta.FayWu.Syn")
+Theta.results <- as.data.frame(Theta.results)
+
+Alpha.theta.results <- array(0,dim=c(length(slim_files),4))
+colnames(Alpha.theta.results) <- c("scenario","alpha.real","alpha.mkt","alpha.assym")
+Alpha.theta.results <- as.data.frame(Alpha.theta.results)
+```
+Functions to estimate variability and definitions of arrays.
+
+```
+############################
+#RUN
+############################
+i <- 1
+#f <- slim_files[i]
+for(f in slim_files) {
+  dat.sfs <- read.table(file=f,header=T,row.names=1)
+  #calc div
+  divergence <- data.frame(mi=dat.sfs[1,nsam+2],Di=dat.sfs[1,nsam+1],m0=dat.sfs[2,nsam+2],D0=dat.sfs[2,nsam+1])
+
+  #############################################
+  #Estimation of alpha from theta estimators
+  #############################################
+  #Theta estimators are LIKE summary of sections of the SFS: 
+  #It is useful for non-massive datasets
+  #Fu&Li based on singletons
+  #Watterson based on variants (mainly on variants at lower frequency)
+  #Tajima weighting more on intermediate frequencies
+  #Fay and Wu weighting more on higher frequencies
+  
+  #weights
+  w.fuli <- weight.fuli.unfolded(nsam)
+  w.watt <- weight.watt.unfolded(nsam)
+  w.taj  <- weight.taj.unfolded(nsam)
+  w.fayw <- weight.fw.unfolded(nsam)
+  
+  #Different Estimates of Variability;
+  Theta.FuLi.Nsyn  <- CalcThetaUnfolded(sfs=as.numeric(dat.sfs[1,1:(nsam-1)]),w=w.fuli)
+  Theta.FuLi.Syn   <- CalcThetaUnfolded(sfs=as.numeric(dat.sfs[2,1:(nsam-1)]),w=w.fuli)
+  Theta.Watt.Nsyn  <- CalcThetaUnfolded(sfs=as.numeric(dat.sfs[1,1:(nsam-1)]),w=w.watt)
+  Theta.Watt.Syn   <- CalcThetaUnfolded(sfs=as.numeric(dat.sfs[2,1:(nsam-1)]),w=w.watt)
+  Theta.Taji.Nsyn  <- CalcThetaUnfolded(sfs=as.numeric(dat.sfs[1,1:(nsam-1)]),w=w.taj)
+  Theta.Taji.Syn   <- CalcThetaUnfolded(sfs=as.numeric(dat.sfs[2,1:(nsam-1)]),w=w.taj)
+  Theta.FayWu.Nsyn <- CalcThetaUnfolded(sfs=as.numeric(dat.sfs[1,1:(nsam-1)]),w=w.fayw)
+  Theta.FayWu.Syn  <- CalcThetaUnfolded(sfs=as.numeric(dat.sfs[2,1:(nsam-1)]),w=w.fayw)
+  
+  #Estimates of standard alpha based on different estimates of variability
+  alpha.mkt.FuLi <- calc.alpha(Ps=Theta.FuLi.Syn,Ds=divergence[1,4],Pn=Theta.FuLi.Nsyn,Dn=divergence[1,2])
+  alpha.mkt.Watt <- calc.alpha(Ps=Theta.Watt.Syn,Ds=divergence[1,4],Pn=Theta.Watt.Nsyn,Dn=divergence[1,2])
+  alpha.mkt.Taji <- calc.alpha(Ps=Theta.Taji.Syn,Ds=divergence[1,4],Pn=Theta.Taji.Nsyn,Dn=divergence[1,2])
+  alpha.mkt.FayWu <- calc.alpha(Ps=Theta.FayWu.Syn,Ds=divergence[1,4],Pn=Theta.FayWu.Nsyn,Dn=divergence[1,2])
+  
+  #Assymptotic estimation APPROACH
+  daf.theta <- array(0,dim=c(4,3))
+  colnames(daf.theta)  <- c("daf","Pi","P0")
+  #the variability estimates substitute the values on daf
+  daf.theta[,2] <- sapply(c(Theta.FuLi.Nsyn,Theta.Watt.Nsyn,Theta.Taji.Nsyn,Theta.FayWu.Nsyn),round,4)
+  daf.theta[,3] <- sapply(c(Theta.FuLi.Syn, Theta.Watt.Syn, Theta.Taji.Syn, Theta.FayWu.Syn ),round,4)
+  daf.theta <- as.data.frame(daf.theta)
+  #estimate mean frequency values for each estimate...
+  daf.theta[1,1] <- 1/sum(w.fuli) * sum(w.fuli*c(1:(nsam-1))) * 1/nsam
+  daf.theta[2,1] <- 1/sum(w.watt) * sum(w.watt*c(1:(nsam-1))) * 1/nsam
+  daf.theta[3,1] <- 1/sum(w.taj)  * sum(w.taj *c(1:(nsam-1))) * 1/nsam
+  daf.theta[4,1] <- 1/sum(w.fayw) * sum(w.fayw*c(1:(nsam-1))) * 1/nsam
+  aa <- NULL
+  tryCatch(
+    {
+      aa <- asymptoticMK(d0=divergence$D0, d=divergence$Di, xlow=0, xhigh=1, df=daf.theta, true_alpha=NA, output="table")
+    },
+    error = function(e) {
+      message(sprintf("Error calculating MKTa for observed data in file %s",f))
+    }
+  )
+  aa
+  aa$alpha_asymptotic
+  aa$alpha_original
+  true.alpha <- dat.sfs[1,nsam+3] / dat.sfs[1,nsam+1]
+  true.alpha
+  alpha.mkt.daf.theta <- c(alpha.mkt.FuLi,alpha.mkt.Watt,alpha.mkt.Taji,alpha.mkt.FayWu)
+  
+  #PLOT results
+  plot(x=daf.theta[,1],y=alpha.mkt.daf.theta,type="p",xlim=c(0,1),ylim=c(min(-1,alpha.mkt.daf.theta),1),
+       main=sprintf("ALPHA from Theta: %s \nTrue=%.3f MKTa=%.3f MKT=%.3f",f,true.alpha,aa$alpha_asymptotic,aa$alpha_original),
+       xlab="Freq",ylab="alpha")
+  abline(h=0,col="grey")
+  abline(v=c(0,1),col="grey")
+  abline(h=true.alpha,col="blue")
+  if(aa$model=="linear") abline(a=aa$a,b=aa$b,col="red")
+  if(aa$model=="exponential") {
+    x=seq(1:19)/20
+    lines(x=x,y=aa$a+aa$b*exp(-aa$c*x),type="l",col="red")
+  }
+  
+  Theta.results$Theta.FuLi.Nsyn[i]  <- Theta.FuLi.Nsyn
+  Theta.results$Theta.FuLi.Syn[i]   <- Theta.FuLi.Syn
+  Theta.results$Theta.Watt.Nsyn[i]  <- Theta.Watt.Nsyn
+  Theta.results$Theta.Watt.Syn[i]   <- Theta.Watt.Syn
+  Theta.results$Theta.Taji.Nsyn[i]  <- Theta.Taji.Nsyn
+  Theta.results$Theta.Taji.Syn[i]   <- Theta.Taji.Syn
+  Theta.results$Theta.FayWu.Nsyn[i] <- Theta.FayWu.Nsyn
+  Theta.results$Theta.FayWu.Syn[i]  <- Theta.FayWu.Syn
+  
+  Alpha.theta.results$scenario[i] <- f
+  Alpha.theta.results$alpha.real[i] <- true.alpha
+  Alpha.theta.results$alpha.mkt[i] <- aa$alpha_original
+  Alpha.theta.results$alpha.assym[i] <- aa$alpha_asymptotic
+  
+  i <- i + 1
+}
+dev.off()
+write.table(x=Theta.results,file="Theta.results.txt",row.names=F,quote=F)
+write.table(x=Alpha.theta.results,file="Alpha.theta.results.txt",row.names=F,quote=F)
+```
+Calculation of variability for each estimator in _Nonsynonymous and Synonymous positions. Estimation of alphas and keep results.
+
+
+To run all from command line, do:
+
+```
+R --vanilla < ./Results_plotMKT_Theta.R
+```
+
+##Comparison of Results
+
+Make a Table with all results to compare the methods used and their approach to the true value. Discuss the results.
+
