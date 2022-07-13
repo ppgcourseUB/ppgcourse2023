@@ -74,15 +74,7 @@ We will use the first option and will run all the analyses using a **R script (*
 module load r-ape r-mass r-rncl
 ```
 
-Then, in the R console, type:
-
-```
-install.packages("paran")'
-install.packages("splits", repos = "http://R-Forge.R-project.org")'
-quit()
-```
-
-And now, you can run the script bears_gmyc.R:
+Then, you can run the script bears_gmyc.R:
 
 ```
 Rscript bears_gmyc.R
