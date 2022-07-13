@@ -1,9 +1,10 @@
 # Population Genomics for Adaptation
-## The Detection of the Proportion of Beneficial Substitutions
 
 Instructor: **Sebastian E. Ramos-Onsins**
 
 Date: July 13th 2022
+
+## The Detection of the Proportion of Beneficial Substitutions
 
 In this practical session we will focus on the effect of positive and negative selection on the polymorphism and the divergence at functional and neutral positions across the genome. We will simulate a number of different evolutionary scenarios and analyze the different observed patterns.
 
