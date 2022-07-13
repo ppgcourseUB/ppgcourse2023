@@ -153,6 +153,7 @@ for(f in slim_files) {
     lines(x=x,y=aa$a+aa$b*exp(-aa$c*x),type="l",col="red")
   }
   
+  Theta.results$scenario <- f
   Theta.results$Theta.FuLi.Nsyn[i]  <- Theta.FuLi.Nsyn
   Theta.results$Theta.FuLi.Syn[i]   <- Theta.FuLi.Syn
   Theta.results$Theta.Watt.Nsyn[i]  <- Theta.Watt.Nsyn
