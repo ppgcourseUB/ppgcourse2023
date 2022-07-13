@@ -68,12 +68,28 @@ To use this approach, we first need to infer a phylogenetic tree form our data, 
 
 2. Using `BEAST`, which incorporates the time estimations as a parameter of the analysis. If you choose this option, it is better to use a coalescent prior, to minimize type 1 error.
 
-We will use the first option and will run all the analyses using a **R script (*bears_gmyc.R*)**. This script the following dependencies: R packages `splits`, `paran`, `mass` and `rncl`
+We will use the first option and will run all the analyses using a **R script (*bears_gmyc.R*)**. This script has the following dependencies: R packages `splits`, `paran`, `mass` and `rncl`. You can either run this analysis in your personal computers, and in that case you must install the packages in your laptops before running the script, or, if the analysis is not computationally demanding, you can run it exceptionally in the control node using these commands:
+
+```
+module load r-ape r-mass r-rncl
+```
+
+Then, in the R console, type:
+
+```
+install.packages("paran")'
+install.packages("splits", repos = "http://R-Forge.R-project.org")'
+quit()
+```
+
+And now, you can run the script bears_gmyc.R:
+
+```
+Rscript bears_gmyc.R
+```
+
 
 `splits` incorporates support values from the GMYC clusters, based on the AIC. The function `gmyc.support` calculates support values of the GMYC-delimited species by using the multimodel comparison approach described by Burnham & Anderson (2002). The support value of a node is defined as the sum of Akaike weights of candidate delimitation models in which the node is included. Only models included in the p% confidence set obtained by `confset.gmyc` are used for calculation. For further details, see *Fujisawa, T., & Barraclough, T. G. (2013). Delimiting species using single-locus data and the Generalized Mixed Yule Coalescent approach: a revised method and evaluation on simulated data sets. Systematic Biology, 62(5), 707–724. http://doi.org/10.1093/sysbio/syt033.*
-
-If you decide to run this R script in the cluster, please, use this batch file to submit the job:
-
 
 
 **1.3. Evolutionary criteria: the mPTP model**
