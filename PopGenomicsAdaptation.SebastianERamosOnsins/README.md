@@ -1,4 +1,4 @@
-# Population Genomics to Adaptation
+# Population Genomics for Adaptation
 ## The Detection of the Proportion of Beneficial Substitutions
 
 Instructor: **Sebastian E. Ramos-Onsins**
@@ -299,6 +299,10 @@ echo \# >> ./run_slim_conditions.sh
 echo module load SLiM >> ./run_slim_conditions.sh
 echo >> ./run_slim_conditions.sh
 
+```
+slurm parameters, and next the conditions for simulations:
+
+```
 #fixed paraneters
 Ne=500; L=500000; ngenes=100;
 mut_rate=1e-6;
