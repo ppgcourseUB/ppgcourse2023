@@ -1,0 +1,17 @@
+#!/bin/bash                                                                                                            
+
+##This is a script to run BPP v 4.4.1                                                        
+
+#SBATCH -p normal                                                                                      
+#SBATCH -c 2                                                                                                     
+#SBATCH --mem=6GB                                                                                       
+#SBATCH --job-name BPP_species_del                                                                            
+#SBATCH -o bears_sp_del.out                                                          
+#SBATCH -e bears_sp_del.err                                                      
+
+#module loadding. Check available modules with `module avail` 
+module load bpp/4.4.1
+
+#running BPP v 4.4.1
+
+bpp --cfile bears_A10.bpp.ctl

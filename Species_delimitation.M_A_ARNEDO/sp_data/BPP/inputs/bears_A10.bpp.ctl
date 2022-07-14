@@ -4,7 +4,6 @@
       Imapfile = bears_map.txt
        outfile = bears_out.txt
       mcmcfile = bears_mcmc.txt
-      Threads = 8 1 1
 
  *speciesdelimitation = 0        # fixed species tree
 *speciesdelimitation = 1 0 2    # species delimitation rjMCMC algorithm0 and finetunee
