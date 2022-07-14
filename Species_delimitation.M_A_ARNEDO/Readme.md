@@ -135,10 +135,9 @@ module load mptp
 mptp --tree_file ./sp_data/bears_c1_root.treefile --minbr_auto ./sp_data/bears_c1.fasta --output_file bears_c1_best_minbr.out
 ```
 
-> --mcmc Support values for the delimitation    
-> --mcmc_runs Perform multiple MCMC runs   
-> --mcmc_log Log samples and create SVG plot of log-likelihoods      
-> --mcmc_burnin Ignore all MCMC steps below threshold    
+> --tree_file: define tree file  
+> --minbr_auto: Automaticaly selects the best value for the data
+> --output_file: Name of the output file    
 
 Additional options
 --mcmc_startnull	Start each run with the null model (one single species)   
@@ -167,13 +166,15 @@ mptp --seed 767 --multi --tree_file ./sp_data/bears_c1_root.treefile --outgroup 
 ```
 
 > mptp: runs the executable  
-> --seeds: random number generator  
-> --tree_file: define tree file   
+> --seeds: random number generator   
 > --multi: use one lambda per coalescent (mPTP, this is default. Alternatively, one lambda for all coalescents –single = PTP)    
 > --outgroup: define out group     
 > --outgroup_crop: and remove it    
 > --minbr: Set minimum branch length, you can select the value by running a preliminary analysis using the following command line:    
-> --output_file: Name of the output file    
+> --mcmc Support values for the delimitation    
+> --mcmc_runs Perform multiple MCMC runs   
+> --mcmc_log Log samples and create SVG plot of log-likelihoods      
+> --mcmc_burnin Ignore all MCMC steps below threshold    
 
 + **\#Output Files For maximum likelihood delimitation:**   
   1. **output_filename.txt**: contains information about the run:     
