@@ -225,21 +225,22 @@ Additionally, a file specifying the heredity scalar (eg. 0.25 for mtDNA or 1 for
 To run the program in the cluster, submit this batch file using `sbatch` (**Please do not launch the `bpp` command from the control node**):
 
 ```bash
-#!/bin/bash
+#!/bin/bash                                                                                                            
 
-##Script to submit bpp jobs
+##This is a script to run BPP v 4.4.1                                                        
 
-#SBATCH -p normal
-#SBATCH -c 8
-#SBATCH --mem=6GB
-#SBATCH --job-name bpp-1
-#SBATCH -o %j.out
-#SBATCH -e %j.err
+#SBATCH -p normal                                                                                      
+#SBATCH -c 2                                                                                                     
+#SBATCH --mem=6GB                                                                                       
+#SBATCH --job-name BPP_species_del                                                                            
+#SBATCH -o bears_sp_del.out                                                          
+#SBATCH -e bears_sp_del.err                                                      
 
-# modules
-module load bpp
+#module loadding. Check available modules with `module avail` 
+module load bpp/4.4.1
 
-# running the program
-bpp --cfile sp_data/BPP/inputs/bears_A10.bpp.ctl 
+#running BPP v 4.4.1
+
+bpp --cfile bears_A10.bpp.ctl 
 ```
 See BPP_tutorial.pdf for further details.
