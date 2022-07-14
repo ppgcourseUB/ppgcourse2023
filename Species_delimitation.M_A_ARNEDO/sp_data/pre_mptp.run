@@ -1,0 +1,16 @@
+#!/bin/bash
+
+##Script to submit bpp jobs
+
+#SBATCH -p normal
+#SBATCH -c 8
+#SBATCH --mem=6GB
+#SBATCH --job-name mptp-1
+#SBATCH -o %j.out
+#SBATCH -e %j.err
+
+# modules
+module load mptp
+
+# running the program
+mptp --tree_file bears_c1_root.treefile --minbr_auto bears_c1.fasta --output_file bears_c1_best_minbr.out

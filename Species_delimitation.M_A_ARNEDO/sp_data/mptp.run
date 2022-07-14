@@ -1,0 +1,19 @@
+#!/bin/bash
+
+##Script to submit bpp jobs
+
+#SBATCH -p normal
+#SBATCH -c 8
+#SBATCH --mem=6GB
+#SBATCH --job-name mptp-1
+#SBATCH -o %j.out
+#SBATCH -e %j.err
+
+# modules
+module load mptp
+
+# running the program
+mptp --seed 767 --multi --tree_file bears_c1_root.treefile --outgroup NC009970_Melursus_ursinus --outgroup_crop --minbr 0.0006459066 --mcmc 50000000 --mcmc_startnull --mcmc_runs 3 --mcmc_log 1000000 --mcmc_burnin 2000000 --output_file bears_c1_nout_mptpt.out
+
+
+
