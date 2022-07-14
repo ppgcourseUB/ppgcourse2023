@@ -15,6 +15,14 @@ The objectives of this practical session are:
 * Estimate the proportion of beneficial substitutions using different methods
 * Contrast estimates with the real value per scenario.
 
+## Get scripts for this session
+
+First of all, download the scripts and the manual for the practical session!
+
+```
+svn export https://github.com/ppgcourseUB/ppgcourse2022/trunk/PopGenomicsAdaptation.SebastianERamosOnsins
+```
+
 ## Forward Simulator: *Slim*
 1.	We will simulate a number of different scenarios using [*Slim*](https://messerlab.org/slim/) (Messer, Genetics 2013, Haller and Messer, MBE 2017, [Haller and Messer, MBE 2019](https://academic.oup.com/mbe/article/36/3/632/5229931?login=true)). Slim is a forward simulator that allows to simulate many selective positions at the same time in complex demographic patterns. Slim has a **graphical interface** (we will see an example on the practical class) but to speed up the simulation analysis we will use the **command line** program in the practical session. 
 2. The simulator contains an extended manual and many "recipes" or examples for many different uses, including complex metapopulation models in spatial context, non-Wright-Fischer models and also is able to work with phenotypic traits and QTLs in relation to the genotypes. 
@@ -452,6 +460,7 @@ There are two ways to run the R code:
 	\#SBATCH --mem=12GB
 	\#SBATCH --partition=normal
 	\#
+	module load R
 	module load r-mass r-proto
 	
 	srun --ntasks 1 --exclusive --mem-per-cpu=1GB R --vanilla < ./Results_plotMKT.R&
@@ -463,7 +472,7 @@ There are two ways to run the R code:
 2. In case the batch is not working, then we have to load few libraries to run the asymptotic approach:
 
 	```
-    module load R   
+    module R
 	module load r-mass r-proto
 	```
 	It is also necessary to install the library nls2. In this cluster, the easiest way is to open the R application and install the package manually and quit:
