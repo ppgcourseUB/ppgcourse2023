@@ -16,7 +16,7 @@ We are performing our tests on publicly available sequencing data generated for 
 
 ### Selscan
 
-There are multiple softwares that you can used to compute LD-based selection scans, but we are focusing on Selscan (Szpiech et al., 2014; https://github.com/szpiech/selscan).
+There are multiple softwares that you can use to compute LD-based selection scans, but we are focusing on Selscan (Szpiech et al., 2014; https://github.com/szpiech/selscan).
 
 #### iHS: integrated haplotype score
 
