@@ -32,7 +32,7 @@
 
 if(!require("nls2")){
   install.packages("nls2",lib="./",repos="https://cloud.r-project.org")
-  library("nls2")
+  library("nls2",lib.loc = "./")
 }
 
 # Get a CI using Monte Carlo simulation based upon a fitted model.  This is necessary because

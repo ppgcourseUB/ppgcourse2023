@@ -452,7 +452,6 @@ There are two ways to run the R code:
 	\#SBATCH --mem=12GB
 	\#SBATCH --partition=normal
 	\#
-	module load R
 	module load r-mass r-proto
 	
 	srun --ntasks 1 --exclusive --mem-per-cpu=1GB R --vanilla < ./Results_plotMKT.R&
@@ -464,6 +463,7 @@ There are two ways to run the R code:
 2. In case the batch is not working, then we have to load few libraries to run the asymptotic approach:
 
 	```
+    module load R   
 	module load r-mass r-proto
 	```
 	It is also necessary to install the library nls2. In this cluster, the easiest way is to open the R application and install the package manually and quit:
