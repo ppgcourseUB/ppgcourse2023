@@ -139,11 +139,6 @@ mptp --tree_file ./sp_data/bears_c1_root.treefile --minbr_auto ./sp_data/bears_c
 > --minbr_auto: Automaticaly selects the best value for the data
 > --output_file: Name of the output file    
 
-Additional options
---mcmc_startnull	Start each run with the null model (one single species)   
---mcmc_startrandom	Start each run with a random delimitation (default)  
---mcmc_startml	Start each run with the delimitation obtained by the Maximum-likelihood heuristic
-
 Main run:
 
 ```bash
@@ -170,11 +165,15 @@ mptp --seed 767 --multi --tree_file ./sp_data/bears_c1_root.treefile --outgroup 
 > --multi: use one lambda per coalescent (mPTP, this is default. Alternatively, one lambda for all coalescents –single = PTP)    
 > --outgroup: define out group     
 > --outgroup_crop: and remove it    
-> --minbr: Set minimum branch length, you can select the value by running a preliminary analysis using the following command line:    
+> --minbr: Set minimum branch length, use the value estimated in the former analysis   
 > --mcmc Support values for the delimitation    
 > --mcmc_runs Perform multiple MCMC runs   
 > --mcmc_log Log samples and create SVG plot of log-likelihoods      
 > --mcmc_burnin Ignore all MCMC steps below threshold    
+Additional options
+--mcmc_startnull	Start each run with the null model (one single species)   
+--mcmc_startrandom	Start each run with a random delimitation (default)  
+--mcmc_startml	Start each run with the delimitation obtained by the Maximum-likelihood heuristic
 
 + **\#Output Files For maximum likelihood delimitation:**   
   1. **output_filename.txt**: contains information about the run:     
