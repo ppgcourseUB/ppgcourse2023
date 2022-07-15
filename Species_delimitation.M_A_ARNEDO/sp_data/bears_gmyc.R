@@ -28,8 +28,14 @@ bears_c1_MLchrono_nout <-drop.tip(bears_c1_MLchrono,outgroup)
 ## Run the single threshold GMYC model
 bears_gmyc <- gmyc(bears_c1_MLchrono_nout, method="single", interval=c(0, 100))
 
+## Send results to a log file
+sink("myfile.log", append=TRUE, split=TRUE)
+
 ## Summarize results
 summary.gmyc(bears_gmyc)
+
+## Close log file
+sink()
 
 ## Generate a list with the group assignments
 bears_gmyc_groups<-spec.list(bears_gmyc) 
