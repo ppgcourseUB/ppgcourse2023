@@ -2,7 +2,7 @@
 
 **Instructors**: Gemma I. Martínez Redondo & Rosa Fernández
 
-If you have any questions, contact us at rosa.fernandez@ibe.upf-csic.es
+If you have any questions, contact us at rosa.fernandez@ibe.upf-csic.es or gemma.martinez@ibe.upf-csic.es
 
 ***
 
