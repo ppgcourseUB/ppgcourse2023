@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# define names
+#SBATCH --job-name=cdhit
+#SBATCH --error cdhit-%j.err
+#SBATCH --output cdhit-%j.out
+
+# memory and CPUs request
+#SBATCH --mem=6G
+#SBATCH --cpus-per-task=8
+
+# module load
+module load cdhit
+
+cd-hit-est -i ./4trinity/Trinity.fasta -o ./5cdhit/Trinity_cdhit.fasta -c 0.9 -M 0 -T 8 > ./5cdhit/Trinity_cdhit.err
