@@ -51,7 +51,7 @@ fastqc -t 8 ./0data/reads.left.fq.gz ./0data/reads.right.fq.gz -o ./1QC
 
 To launch `FastQC` script in the cluster write on the terminal:
 ```
-sbatch scripts/fastqc.run
+sbatch scripts/fastQC.run
 ```
 
 Use "s_jobs" command to check the state of the process. To check the results you need to download the files on a local computer. WARNING: mind to change the paths accordingly
