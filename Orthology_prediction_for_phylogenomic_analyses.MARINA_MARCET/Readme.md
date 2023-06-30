@@ -6,7 +6,7 @@ The objective of this practice is to learn how to use [OrthoFinder](https://geno
 
 ***
 
-## Software desrciption and hints
+## Software description and hints
 
 For this practice we will use [OrthoFinder](https://github.com/davidemms/OrthoFinder). You can find a full description on the program in the provided link. It is important to understand that OrthoFinder is a pipeline that uses different programs and that some of the steps can be performed by different programs. For instance, the first step is an all against all homology search that can be done using either BlastP or Diamond.
 
@@ -60,7 +60,7 @@ orthofinder -f proteomes -og -t 8 -a 2
 
 > Note that one of the options is `-S` which determines how the homology search will be done. `Diamond` is very fast, much faster than `Blast`, but is less sensitive when running with distantly related species. Consider this when running `OrthoFinder`.
 
-3.- Once `OrthoFinder` has finished, you will find that in the folder proteomes there will be a new folder called OrthoFinder and within it will be a file called Results_Jul06. The results of `OrthoFinder` can be found there sorted in different folders. New runs of `OrthoFinder` will generate new folders called Results_Jul06_1, Results_Jul06_2, ... 
+3.- Once `OrthoFinder` has finished, you will find that in the folder proteomes there will be a new folder called OrthoFinder and within it will be a file called Results_Jul05. The results of `OrthoFinder` can be found there sorted in different folders. New runs of `OrthoFinder` will generate new folders called Results_Jul05_1, Results_Jul05_2, ... 
 
 Go to the folder and focus on the folder called *Orthogroups*. In this folder you will find several files of interest:
 
@@ -88,11 +88,11 @@ Go to the folder and focus on the folder called *Orthogroups*. In this folder yo
 
 Replace the running line in the script *launch_orthofinder.run* with (**remember to also change job name!**):
 
-`orthofinder -b proteomes/OrthoFinder/Results_Jul06/ -I 3.0 -og`
+`orthofinder -b proteomes/OrthoFinder/Results_Jul05/ -I 3.0 -og`
 
 > Note that we are using `-b` instead of `-f` and we are providing previously calculated results, this will avoid having to re-calculate the all-vs-all comparison. Also we are changing the inflation parameter using `-I` and setting it to 3.0. At this point we are only interested in comparing the orthogroups, the `-og` parameter will stop the run of orthoFinder after it calculates orthogroups. This is a time-saving trick if you want to assess different inflation parameters and how they affect your orthogroups.
 
-This will generate a second folder which will be called *Results_Jul06_1* where the new results of `OrthoFinder` can be found.
+This will generate a second folder which will be called *Results_Jul05_1* where the new results of `OrthoFinder` can be found.
 
 2.- Repeat this step with an inflation parameter of 5.0
 
@@ -114,7 +114,7 @@ Orthogroups can contain duplications which means we can have a mix of orthologs 
 
 Replace the running line in the script *launch_orthofinder.run* with (**remember to also change job name!**):
 
-`orthofinder -fg proteomes/OrthoFinder/Results_Jul06/`
+`orthofinder -fg proteomes/OrthoFinder/Results_Jul05/`
 
 > In this case the -fg option is telling `OrthoFinder` to use the orthogroups previously calculated to run the analaysis for orthology
 
