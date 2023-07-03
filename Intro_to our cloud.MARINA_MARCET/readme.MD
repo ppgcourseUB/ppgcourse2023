@@ -1,6 +1,6 @@
 # Intro to our cloud
 
-Instructor: Àngel Blanco García
+Instructor: Marina Marcet
 
 
 In this session we will get you started on how to use the cloud computing infrastructure available for this course.
