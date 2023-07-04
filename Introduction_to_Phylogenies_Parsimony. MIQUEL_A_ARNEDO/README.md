@@ -82,7 +82,7 @@ Enter mxram 200 to set memory usage to 200 MB or whatever is realistic and neces
 
 3. Read the data matrix: 
 
-```procedure input_file_name.tnt; ```you can abbreviate the commands to the maximum unambiguous letter, here  ```p input_file_name.tnt; ```
+```procedure input_file_name.tnt; ``` you can abbreviate the commands to the maximum unambiguous letter, here  ```p input_file_name.tnt; ```
 
 
 + For <ins>**exhaustive searches</ins>**
@@ -98,7 +98,7 @@ Enter mxram 200 to set memory usage to 200 MB or whatever is realistic and neces
 TNT reports the number of trees found and the steps (Best Score), and the number of replicates (repls) that found the shortest tree. If the repls that found the Best score tree are less than 20% of the total repls. increase the number of repls. (e.g. by an order of magnitude). If any of the rpls. has reached the maximum number of Tree to save per replication (overflow) then, conduct a new round of searching but selecting the trees in RAM
 
 To visualize trees:```tplot;```
-```tplot N;:```cshow tree(s) N
+```tplot N;:``` show tree(s) N
 ```tplot *N;:``` show tree(s) N in parenthetical notation
 ```naked=;``` show tree diagrams without numbers (default)
 ```naked-;``` show tree diagrams with numbers 
