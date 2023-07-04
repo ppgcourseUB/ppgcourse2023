@@ -302,7 +302,7 @@ To disable all characters that are not listed in Nn (if the list is headed by th
 The Incongruence Length Difference (ILD) test can detect cases of inconsistency between data partitions and can be implemented in TNT through the ILDtntk.run script (http://phylo.wikidot.com/tntwiki#TNT_scripts). Please, note that the script can only compare two partitions simultaneously.
 
 ```
-> run ildtntk.run XX YY ZZ;
+run ildtntk.run XX YY ZZ;
 ```
 runs the script, if the script is not in the same folder as the TNT executable, then write the full path
 XX: defines the number of characters of the first partition. 
