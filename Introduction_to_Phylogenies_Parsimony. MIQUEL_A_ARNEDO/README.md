@@ -63,8 +63,12 @@ TAXNAME +N: increases the length of the taxa labels to N characters
 For the terminal commands, we used some of the explanations provided by [Alexander Schmidt-Lebuhn](https://www.anbg.gov.au/cpbr/staff/schmidt-lebuhn-alexander_staff.html) available at http://phylobotanist.blogspot.com/2015/03/parsimony-analysis-in-tnt-using-command.html
  
 **Although you can run any analyses in TNT using sequential commands, the easiest and fastest way is to wrap up a series of commands in small scripts using a text editor**. Then, name them using the extension .run. You can run the scripts within TNT using ```run file_name.run```. 
-Try this:  
-```p your_matrix; aquickie;```
+
+As an example, TNT includes a “one-shot analysis” that can be run with the script "aquickie.run". It includes a search strategy and node support using resampling. 
+
+To run it from the command line type
+
+```proc filename.tnt ; aquickie;```
 
 ## A. Search for the shortest tree with TNT
 
@@ -146,20 +150,8 @@ If you have generated a consensus tree and you only one to export the consensus 
 
 + For <ins>**New technology Search</ins>**
 
-The heuristic strategy is highly inefficient and only justified when you have a small number of terminals (>100). Alternatively, the best strategy is to combine a selection of tree search shortcuts collectively known as New Technology Searches. This is an example:
-+ <ins>***Check driven search
-• Combine options (check box): sectorial search, tree fusing, and tree drifting
-• Initial addseqs= 50; 
-• Initial level=15; 
-• Stabilize consensus 5 times (with a default factor of 75)
+The heuristic strategy is highly inefficient and only justified when you have a small number of terminals (>100). Alternatively, the best strategy is to combine a selection of tree search shortcuts collectively known as New Technology Searches. Below you can find an example of a combination of different search strategies optimized for large datasets (>100 taxa). It conducts a new technology tree search combining ratchet, fuse, drift, and automatic stopping criteria, runs an additional round of branch swapping on shortest trees, makes the consensus, and saves it in NEXUS with branch lengths
 
-TNT includes a “one-shot analysis” that can be run with the script "aquickie.run". It includes a search strategy and node support using resampling. 
-
-To run it from the command line type
-
-```proc filename.tnt ; aquickie ;```
-
-Below you can find an example of a combination of different search strategies optimised for large datasets (>100 taxa). It conducts a new technology tree search combining ratchet, fuse, drift, and automatic stopping criteria, runs an additional round of branch swapping on shortest trees, makes the consensus, and save it in NEXUS with branch lengths 
 ```
 xmult=hits 10 noupdate nocss replic 10 ratchet 10 fuse 1 drift 5 hold 100 noautoconst keepall;
 bbreak = tbr ;
@@ -247,7 +239,7 @@ piwe-;
 
 You can use different resampling methods: boot=bootstrap, jak=jackknife, sym=symetrical resampling (recommended when using differential weighting)
 
-An example of a assessing node support using Jackknife
+An example of assessing node support using Jackknife
 ```
 ttags -;
 ttags =;
@@ -258,6 +250,9 @@ ttags ;
 export - boots.tre; proc/;
 ttags -;
 ```
+
+Note: by default, TNT provides two support indexes, the absolute frequencies and the ‘Group present/Contradicted’, which measures the support as the difference in frequency between the group
+and its most frequent contradictory group. GC values of -1, 0, and 1 indicate (respectively) maximum contradiction, indifference, and maximum support.
 
 ## E.  Node support: Bremer support
 
@@ -271,10 +266,8 @@ An example for assessing Bremer support to  tree nodes. Perform branch-swapping,
 ```
 ttags-;
 ttags=;
-hold 10000;
-sub 50;
-bbreak = tbr ;
-collapse=3;
+hold 10000 sub 50 bbreak = tbr ;
+collapse 3;
 bsupport;
 keep 1;
 ttags );
@@ -284,11 +277,11 @@ ttags-;
 ```
 Alternatively, to avoid collapsing the RAM with very suboptimal trees, conduct the suboptimal search step by step, as follows:
 ```
-*hold 1000 ; sub 1 ; find * ; <enter>*</br>
-*hold 2000 ; sub 3 ; find * ; <enter>*</br>
-*hold 4000 ; sub 5 ; find * ; <enter>*</br>
-collapse=3;
-*bsupport;*
+hold 1000 ; sub 1 ; find * ; <enter>*</br>
+hold 2000 ; sub 3 ; find * ; <enter>*</br>
+hold 4000 ; sub 5 ; find * ; <enter>*</br>
+collapse 3;
+bsupport;
 ```
 
 To conduct Partition Bremer Support you can use a TNT script (pbsup.run) written by Carlos Peña and available at https://github.com/carp420/pbsup.run. Please refer to that github site to conduct the analysis.
@@ -321,3 +314,7 @@ YY: the number of replications to do, the more the better, minimum 1000, but you
 ZZ the search algorithms to use when calculating length for each partition in each replication (default: 1 random addition sequence + SPR), e.g:
 
 ```mult 15 =tbr hold 20```
+
+For instance, to test possible incongruence between the nuclear and the mitochondrial genes use the following command line (1000 permutations)
+
+```run ildtntk.run 3530 8043 1000 mult 15 =tbr hold 20;```
