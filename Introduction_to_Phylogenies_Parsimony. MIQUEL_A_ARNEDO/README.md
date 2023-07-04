@@ -150,10 +150,10 @@ To run it from the command line type
 
 Below you can fins an example of a combination of different search strategies optimised for large datasets (>100 taxa). It conducts a new technology tree search combining ratchet, fuse, drift and automatic stopping criteria, runs an additonal round of branch swapping on shortest trees, makes the consensus and save it in NEXUS with branch lenthgs 
 ```
-> xmult=hits 10 noupdate nocss replic 10 ratchet 10 fuse 1 drift 5 hold 100 noautoconst keepall;
->bbreak = tbr ;
->nelsen * ;
->tchoose / ;
+xmult=hits 10 noupdate nocss replic 10 ratchet 10 fuse 1 drift 5 hold 100 noautoconst keepall;
+bbreak = tbr ;
+nelsen * ;
+tchoose / ;
 ttags = ;
 blength *;
 ttags );
