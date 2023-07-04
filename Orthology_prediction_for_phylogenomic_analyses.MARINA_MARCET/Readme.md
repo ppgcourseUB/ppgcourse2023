@@ -126,7 +126,7 @@ Now, to correctly predict orthologous relationships a species tree is needed as 
 - Based on your knowledge on how bears have evolved, is the tree correct?
 ```
 
-2.- If the tree is not rooted correctly, re-root the tree by clicking on the branch and pressing on re-root (make sure you press on the branch and not on the species name!). Now export the newick (find the button on the upper right part of the image, press on export nwk). Save the file into your folder and run orthofinder again with the option -s speciesTree_file.
+2.- If the tree is not rooted correctly, re-root the tree by clicking on the branch and pressing on re-root (make sure you press on the branch and not on the species name!). Now export the newick (find the button download on the upper right part of the image, press on Export as text and save the file). Save the file into your folder and run orthofinder again with the option -s speciesTree_file.
 
 Replace the running line in the script *launch_orthofinder.run* with (**remember to also change job name!**):
 
