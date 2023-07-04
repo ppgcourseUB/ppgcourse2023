@@ -34,6 +34,10 @@ We will investigate the phylogenetic relationships of bears—Family [Ursidae](h
 
 TNT uses it own format. Supposedly, also accepts NEXUS format, although it is a little bit picky! (e.g. use the simple NEXUS format in Mesquite). Having the sequences in fasta format as well will help you to recode the gaps as absence/presence characters (with Seqedit).
 
+You can dowload the dataset in different format using the following instructions
+```
+svn export https://github.com/ppgcourseUB/ppgcourse2023/trunk/Introduction_to_Phylogenies_Parsimony.%20MIQUEL_A_ARNEDO/bears_2023_data
+```
 Below you will find the instruction to conduct some basic analyses using parsimony as an optimality criterion for phylogenetic inference. We have included the instructions and commands for running analyses using the terminal (Linux, MAC and windows).
 
 You can find complete information on the commands used by TNT at http://phylo.wikidot.com/tntwiki#TNT_scripts
