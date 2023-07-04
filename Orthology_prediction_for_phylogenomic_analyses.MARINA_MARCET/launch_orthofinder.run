@@ -13,4 +13,4 @@
 module load orthofinder
 
 #running orthofinder
-orthofinder -f proteomes -t 8 -a 2
+orthofinder -f proteomes -t 8 -a 2 -og
