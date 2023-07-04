@@ -148,7 +148,7 @@ We are now going to play a bit with the data we have generated in the different 
 - 1.2.- Which kind of orthologous relationships are most common between bears (one-to-one? many-to-one?). Can you think of a scenario in which this could be different?
 ```
 
-2.- We will analyse the orthogroup OG0000001 which should contain protein A0A7N5K5T5_AILME. If for some reason it does not search for the orthogroup that contains this protein and analyse that one.
+2.- We will analyse the orthogroup OG0000001 which should contain protein A0A7N5K5T5_AILME. If for some reason it does not, search for the orthogroup that contains this protein and analyse that one.
 
 ```diff
 - 2.1.- Go to the first set of results and check how many members this family has. Can you tell only from the orthogroup information which proteins are orthologs and which ones are paralogs?
