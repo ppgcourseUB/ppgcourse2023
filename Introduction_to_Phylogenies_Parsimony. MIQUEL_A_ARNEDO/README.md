@@ -146,8 +146,8 @@ If you have generated a consensus tree and you only one to export the consensus 
 
 + For <ins>**New technology Search</ins>**
 
-This is a collection of strategies that can be combined in different ways. A possible example:
-• Check driven search
+The heuristic strategy is highly inefficient and only justified when you have a small number of terminals (>100). Alternatively, the best strategy is to combine a selection of tree search shortcuts collectively known as New Technology Searches. This is an example:
++ <ins>***Check driven search
 • Combine options (check box): sectorial search, tree fusing, and tree drifting
 • Initial addseqs= 50; 
 • Initial level=15; 
