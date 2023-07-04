@@ -136,6 +136,7 @@ ttags );
 export> consensus_tree.tre ;
 ttags -;
 ```
+Note that the "ttag" command controls the information that is added as labels to the tree nodes/branches
 
 If you have generated a consensus tree and you only one to export the consensus tree, use the following
 
