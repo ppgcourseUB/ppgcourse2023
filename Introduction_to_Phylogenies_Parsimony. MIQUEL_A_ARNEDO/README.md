@@ -34,7 +34,7 @@ We will investigate the phylogenetic relationships of bears—Family [Ursidae](h
 
 TNT uses it own format. Supposedly, also accepts NEXUS format, although it is a little bit picky! (e.g. use the simple NEXUS format in Mesquite). Having the sequences in fasta format as well will help you to recode the gaps as absence/presence characters (with Seqedit).
 
-You can download (to local or cluster) the dataset in different formats using the following instructions
+You can download (to local or cluster) the dataset in different formats using the following instructions (alternatively download it from the Campus Virtual at (https://campusvirtual.ub.edu/mod/folder/view.php?id=4480052)
 ```
 svn export https://github.com/ppgcourseUB/ppgcourse2023/trunk/Introduction_to_Phylogenies_Parsimony.%20MIQUEL_A_ARNEDO/bears_2023_data
 ```
