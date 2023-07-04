@@ -109,26 +109,26 @@ To select an outgroup (in case it is not the first taxon in the matrix):
 
 ```outgroup N;``` where N is the order of the taxon
 ```taxname=;```turns on the name labels, so you can use the terminal name instead
-```outgroup NC_009492_Ailuropoda_melanoleuc;```
+```outgroup Ailuropoda_melanoleuca;```
 ```reroot;``` enforces the new root
 
-To save the trees in a file
-14. The file remains open and will store any other tree obtained.
-15. If you want to stop saving trees, close the file
+If you found more than one shortest tree, make the strict consensus
+
+```nelsen*;``` Calculate strict consensus tree, * keep consensus as last tree in memory
+
+To save the trees in a file in TNT format
 
 ```tsave file_name.tre;``` open tree files (with + at the end, append)
 ```save;```save trees to file (previously opened with "tsave"), 
 ```save N;``` save N tree(s)
 ```save /``` close tree file
 
-If you found more than one shortest tree, make the consensus
+Alternatively, export the tree in NEXUS format to open them with FIGTREE or any other tree visualizing tools. We will use the command line. Write the instruction  
 
-```nelsen*;```Calculate strict consensus tree, * keep consensus as last tree in memory
+```taxname =;``` To record the names of the taxa instead of numbers
+```export - file_name.tre``` Export the tree in NEXUS format. Nnote the use of "-", otherwise it exports the data matrix
 
-Alternatively, export the tree in NEXUS format to open them with FIGTREE. We will use the command line. Write the instruction taxname =; To record the names of the taxa instead of numbers, and then export file_name;
-
-```tchoose /;``` select the last memory tree, discard the rest 
-to save the consensus tree with branch lengths in nexus format 
+If you want to export the trees with branch lengths in nexus format 
 ```
 ttags = ;
 blength *;
@@ -136,6 +136,12 @@ ttags );
 export> consensus_tree.tre ;
 ttags -;
 ```
+
+If you have generated a consensus tree and you only one to export the consensus tree, use the following
+
+```tchoose /;``` select the last memory tree, discard the rest, and then proceed as above
+
+
 
 + For <ins>**New technology Search</ins>**
 
