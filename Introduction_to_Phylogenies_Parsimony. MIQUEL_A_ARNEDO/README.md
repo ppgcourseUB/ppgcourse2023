@@ -287,7 +287,7 @@ collapse 3;
 bsupport;
 ```
 
-To conduct Partition Bremer Support you can use a TNT script (pbsup.run) written by Carlos Peña and available at https://github.com/carlosp420/pbsup.run. Please refer to that github site to conduct the analysis. You have all the files required to run the script available at the bears data file  
+To conduct Partition Bremer Support you can use a TNT script (pbsup.run) written by Carlos Peña and available at https://github.com/carlosp420/pbsup.run. Please refer to that GitHub site to conduct the analysis. You have all the files required to run the script available in the bears_2023_data/PBS folder  
 
  
 ## F. Partial analyses
