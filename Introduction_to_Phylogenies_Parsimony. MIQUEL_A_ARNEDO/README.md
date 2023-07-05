@@ -303,21 +303,20 @@ To save partitions
 To disable all characters that are not listed in Nn (if the list is headed by the "&", only the shared partitions are kept active)
 ```blocks= Nn;``` 
 
-In our bears example, partitions correspond to the following genes and positions:
+In our bear example, partitions correspond to the following genes and positions:
 nuclear genes<enter>
- 	CHRNA1 = 1-362<enter>
-	FES = 363-831<enter>
-	IRBP = 832-2111<enter>
-	MC4R = 2112-3110<enter>
-	RNASE1 = 3111-3530<enter>
-mt genes<enter>
-	mt12S = 3531-4517<enter>
-	mt16S = 4518-6107<enter>
-	mtCOX1 = 6108-7652<enter>
-	mtCYTB = 7653-8787<enter>
-	mtNAD1 = 8788-9743<enter>
-	mtNAD5 = 9744-11573<enter>
-
+ 	CHRNA1 = 1-362
+	FES = 363-831
+ 	IRBP = 832-2111
+  	MC4R = 2112-3110
+   	RNASE1 = 3111-3530
+mt genes
+	mt12S = 3531-4517
+ 	mt16S = 4518-6107
+  	mtCOX1 = 6108-7652
+   	mtCYTB = 7653-8787
+    	mtNAD1 = 8788-9743
+     	mtNAD5 = 9744-11573
 
 If I wish to analyze the nuclear data only:
 ```
