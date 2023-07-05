@@ -1,0 +1,160 @@
+beep -;
+mxram 2000;
+macro*15 2000;
+macro=;  
+macreport-;
+silent = all ;  
+lquote[ ;  
+
+if ( argnumber < 1 )
+        silent -console;
+	quote &10&10&32   /-----------------------------------------------\;
+	quote &32   |     You need to give an argument in this way: |;
+	quote &32   |                                               |;
+        quote &32   |           tnt*> pbsup N.,                     |;
+	quote &32   |                                               |;
+	quote &32   |     where N is the the number of partitions   |;
+	quote &32   |     in your matrix.                           |;
+	quote &32   \-----------------------------------------------/&10&10;
+        proc/; 
+end
+
+/*****************************************************************************\
+ This TNT script gets Partitioned Bremer Support (PBS) values from
+ any number of partitions.
+
+ 1) Your matrix should be in a file called dataset.tnt
+ 2) PBS values will be taken for the nodes of your strict consensus tree which
+    should be called base.tre
+ 3) All your most parsimonious trees should be in a file called alltrees.tre
+ 4) After getting the PBS values for each node, this script will write a temporary
+    file called pbs.tmp that will have the PBS values found so far, just in case
+    your computer crashes or someone turns it off, so you won't have to start all
+    over again
+ 5) The output file is called pbs.out and it is actually a tree file in
+    parentethical notation. It will have all the PBS values attached to the
+    respective nodes.
+
+ Carlos Pena 2006-09-29
+
+ Added commands mxram and macro* to increase RAM memory allocation for big datasets [Carlos Pena 2012-02-16]
+\*****************************************************************************/
+
+rseed 0;
+macseed 0; 
+loop 0 maxvars 
+   set #1 0 ;
+stop
+
+/** get data **/
+p dataset.tnt;
+
+/** search parameters **/
+hold 1000;
+
+mult=replic 100 tbr;
+sec: slack 20 ;
+
+/** declare your variables **/
+var= 10 misbrems[ (2*(ntax+1)) ] + mislengths[ (2*(ntax+1)) ];
+
+/** get your strict consensus tree, from which the nodes will be taken from **/
+keep0;
+p base.tre ;
+ttag - ;
+ttag * 0 ;
+
+/** get all your most parsimonious trees and get average lengths for each partition **/
+keep 0;
+p alltrees.tre;
+
+report - ; 
+
+loop 1 %1
+	cc ]. [@#1 . ;
+	set 1 0;
+	
+	loop 0 ntrees
+		set 1 += length[#2] ;
+	stop;
+
+	set 1 /= (ntrees+1);
+	set mislengths[#1] '1';
+	macfloat 1;
+	le;
+        silent - console;
+        quote *****THE AVERAGE LENGTH OF TREE IN PARTITION #1 IS 'mislengths[#1]' &10;
+        silent = all ; 
+stop;
+
+/** do constrained searches **/
+keep 0;
+p base.tre;
+silent - console ; 
+quote &10&10&10----------------------&10Starting to search ... ; 
+silent = all ; 
+set 3 nnodes[ntrees] - ( ntax+2 ) ;
+set 2 1 ; 
+
+loop (ntax+2) nnodes[ntrees]
+
+   progress '2' '3' Doing group '2' of '3' ;
+   set 2 ++ ; 
+
+   keep0;
+   proc base.tre;
+   if ( numdes[0 #1] == ntax ) continue ; end 
+   force - [@0 #1];
+   const=;
+   cc [. ;
+   keep0;
+   xmult;
+   bb;
+
+	/** get bremer supports for each partition **/
+	loop 1 %1
+		cc ]. [@#2 . ;
+		set 1 0;
+		loop 0 ntrees
+			set 1 += length[#3] ;
+		stop;
+		set 1 /= (ntrees+1);
+		macfloat 1;
+		set misbrems[#1] '1'-'mislengths[#2]';
+                ttags +#1 'misbrems[#1]',;
+	stop;
+
+	/** save the results so far in temporary file, in case           **/
+	/** your analysis crashes you won't have to start all over again **/
+   silent - file ;
+   log pbs.tmp;
+   ttag/;
+   quote proc/.,;
+   silent = all ;  
+   log/;
+stop;
+
+/** attach Partitioned Bremer Support to strict consensus tree and save it **/
+sil - all ;
+report= ; 
+log pbs.out;
+ttag /;
+quote proc/.,;
+log /;
+
+quote -         /----------------------------------------------\;
+quote -         |                                              |;
+quote -         |                                              |;
+quote -         |                                              |;
+quote -         |        The analysis has been finished.       |;
+quote -         |      The file pbs.out is actually a          |;
+quote -         |      TREEfile in parentethical notation      |;
+quote -         |        Reading data file and then pbs.out,   |;
+quote -         |      you can display results with the        |;
+quote -         |      &34ttag.,&34  command (or selecting     |;
+quote -         |      Trees/MultipleTags/ShowSave).           |;
+quote -         |                                              |;
+quote -         |                                              |;
+quote -         \----------------------------------------------/;
+
+proc/;
