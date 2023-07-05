@@ -68,7 +68,10 @@ As an example, TNT includes a “one-shot analysis” that can be run with the s
 
 To run it from the command line type
 
-```proc filename.tnt ; aquickie;```
+```
+proc filename.tnt; 
+taxname= aquickie;
+```
 
 ## A. Search for the shortest tree with TNT
 
@@ -289,7 +292,7 @@ To conduct Partition Bremer Support you can use a TNT script (pbsup.run) written
  
 ## F. Partial analyses
 
-To analyse only part of the characters use the command blocks;
+To analyse only part of the characters use the command ```blocks```;
 
 To display the defined partitions
 ```blocks;``` 
@@ -300,6 +303,31 @@ To save partitions
 To disable all characters that are not listed in Nn (if the list is headed by the "&", only the shared partitions are kept active)
 ```blocks= Nn;``` 
 
+In our bears example, partitions correspond to the following genes and positions:
+nuclear genes
+ 	CHRNA1 = 1-362
+	FES = 363-831
+	IRBP = 832-2111
+	MC4R = 2112-3110
+	RNASE1 = 3111-3530
+mt genes
+	mt12S = 3531-4517
+	mt16S = 4518-6107
+	mtCOX1 = 6108-7652
+	mtCYTB = 7653-8787
+	mtNAD1 = 8788-9743
+	mtNAD5 = 9744-11573
+
+
+If I wish to analyze the nuclear data only:
+```
+blocks 3531;
+blocks*;
+blocks= 0;
+``` 
+
+If, instead, I just one to analyze the mitochondrial genes, simply:
+```blocks= 1;```
 
 ## G. ILD incongruence test
 
