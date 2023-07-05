@@ -1,0 +1,153 @@
+macro= ;
+if(argnumber < 2 )
+      quote *
+       THIS PROGRAM PERFORMS A TEST FOR THE SIGNIFICANCE
+       OF INCONGRUENCE BETWEEN TWO DATA SETS.  THE TEST
+       IS DESCRIBED BY FARRIS ET AL. (CLADISTICS 10:315-319).
+       THE TWO DATA SETS MUST BE GIVEN AS ONE, INDICATING
+       AS FIRST ARGUMENT THE NUMBER OF CHARACTERS THAT
+       CORRESPOND TO THE FIRST DATA SET.
+       OTHER ARGUMENTS ARE:
+            1) NUMBER OF CHARACTERS THAT CORRESPOND TO THE FIRST DATA SET.
+            2)   the number of replications to do
+            3-9) the search algorithms to use when calculating
+                 length for each partition in each replication
+                 (default: 1 random addition sequence + SPR).
+
+       -- This version has some modifications by Martin Ramirez (2006),
+       added to the original version by Pablo Goloboff, distributed with TNT
+       ;
+       p/;
+       end;
+var =
+   0 nc_one
+   1 real_sum
+   2 part_one
+   3 part_two
+   4 this_sum
+   5 percentage
+   6 a
+   7 b
+   8 c
+   9 numreps1
+   10 search
+   11 num_char
+   12 both_parts
+   13 size_a
+   14 size_b
+   ;
+if(ntax < 0)
+     quote * MUST READ DATA FIRST !
+     ;
+     p/;
+     end
+
+if(%1 > nchar)
+    set num_char nchar ;
+     quote * FIRST DATA SET CAN HAVE UP TO 'num_char' CHARS.!!
+     ;
+     p/;
+     end;
+
+watch-
+report-
+silent=all ;
+
+if ( argnumber < 3 )
+
+     set search $ mu5=ho200., ;
+else
+  set numreps1 %2 ;
+  if ( argnumber < 3 )
+      set search $ %3 %4 %5 %6 %7 %8 %9., ;
+  else set search $ mu5=ho200.,; end
+  end
+end
+
+loop 0 nchar
+    if ( !isact[#1] ) errmsg For ILD test, all characters must be active ; end
+stop
+
+set a %1 - 1 ;
+set size_a 'a' + 1 ;
+set size_b ( nchar - 'a' ) ;
+ccode]. [ 0.'a';
+$search ;
+best ;
+set real_sum score[0];    silent - buffer ; quote activate 0.'a' ... replicate 0, (size a = 'size_a'): , 'real_sum' ; silent = buffer ;
+ccode]. [ %1.;
+$search ;
+best ;
+set real_sum += score[0] ;  silent - buffer ; quote activate %1. ... replicate 0, (size b = 'size_b'): , 'real_sum' ; silent = buffer ;
+ccode[. ;
+$search ;
+best ;
+set both_parts score[0] ;
+
+            sil - buffer ;
+            quote both_parts = 'both_parts'  real_sum = 'real_sum' ;
+            sil = all ;
+
+/*
+if ( 'real_sum' == 'both_parts' )
+    sil - all ;
+    quote *
+    MATRICES ARE PERFECTLY CONGRUENT
+    NO NEED TO RUN REPLICATES (PARTITIONS SHARE OPTIMAL TREES)
+    ;
+    set percentage 0 ;
+    p/;
+end
+*/
+
+
+
+
+set percentage 0;
+
+loop 1 %2
+    progress #1 %2 Doing ILD test... ;
+    keep 0 ;
+    rseed * ;
+    cc[.;
+    loop 1 %1
+        set b getrandom[0 nchar] ;
+        if(isact['b']) cc ] 'b';
+        else setloop #2; end;
+        stop;
+    $search ;
+    best ;
+    set part_one score[0] ;
+    loop 0 nchar
+        if(isact[#2]) cc] #2;
+        else cc[ #2; end
+        stop;
+    $search ;
+    best ;
+    set part_two score[0];
+    set this_sum 'part_one'+'part_two';
+    set percentage += ('this_sum' >  'real_sum') ;
+    silent - buffer ; quote replicate #1 , 'this_sum' , 'real_sum' ; silent = buffer ;
+    stop
+
+set percentage ( ( 'percentage' * 100 ) / ( %2 + 1 ) ) ;
+progress/;
+report= ;
+macfloat 1 ;
+sil - all ;
+if('percentage' >= 95)
+quote *
+   MATRICES ARE SIGNIFICANTLY INCONGRUENT
+   AT THE 'percentage' o/o CONFIDENCE LEVEL
+   ;
+else
+quote *
+   INCONGRUENCE BETWEEN MATRICES NON-SIGNIFICANT
+   (AT THE 'percentage' o/o CONFIDENCE LEVEL)
+   ;
+end
+cc[.;
+proc/;
+
+
+
