@@ -1,8 +1,8 @@
 # MAXIMUM LIKELIHOOD
 
-**Instructors**: Miquel Arnedo, Gemma I. Martínez Redondo & Rosa Fernández
+**Instructors**: Jesus Lozano-Fernandez & Mattia Giacomelli
 
-If you have any questions, contact us at marnedo@ub.edu or rosa.fernandez@ibe.upf-csic.es
+If you have any questions, contact us at jesus.lozano@ub.edu or mattia.giacomelli@bristol.ac.uk
 
 ***
 ## Context
