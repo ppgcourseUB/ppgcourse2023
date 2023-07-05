@@ -7,6 +7,6 @@
 #SBATCH --time=0-1:0
 
 #module load
-module load iq-tree/2.1.2
+module load iq-tree
 
 iqtree -s 50_genes.fa -z ../bear_species_trees_topologies.tre -n 0 -redo
