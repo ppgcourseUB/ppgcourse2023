@@ -43,7 +43,7 @@ You would see that there are several files, including scripts and data we need f
 ## Data description and access from your computer
 
 Alternatively, if you want to run RevBayes from your own computer, first, you need to download the software in the version that is appropriate for your operating system (see *Downloads* above).
-Next, access the pggcourse lab materials in Github [ppgcourse2022] (https://github.com/ppgcourseUB/ppgcourse2022), and download the scripts and files for the practice.
+Next, access the pggcourse lab materials in Github [ppgcourse2022] (https://github.com/ppgcourseUB/ppgcourse2023), and download the scripts and files for the practice.
 OBS!! The scripts and  files should be downloaded into the folder containing the *RevBayes* executable (the `rb` binary in the Mac). Inside this folder, create a new folder `lab_1` and copy the `Intro.Rev` and `myScript.sh` files into this folder.
  
 ```
