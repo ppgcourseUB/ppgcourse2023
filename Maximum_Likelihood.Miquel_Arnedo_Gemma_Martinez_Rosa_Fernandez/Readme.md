@@ -109,7 +109,7 @@ We will use the concatenated alignment of our 50 genes and use the model we obta
 
 2.- Modify the **`non_parametric_iqtree.sh`** script to include the best substitution model where it says **MODEL**.
 
-`iqtree -s 50_genes.fa -m MODEL -b 50 -nt 8 -redo`
+`iqtree -s 50_genes.fa -m MODEL -b 10 -nt 8 -redo`
 
 For executing the analysis run:
 
