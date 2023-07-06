@@ -7,7 +7,7 @@ If you have any questions, contact us at jesus.lozano@ub.edu or mattia.giacomell
 ***
 ## Context
 
-We will be working with an alignment composed by 50 orthologous genes concatenated from 16 bears.
+We will be working with an alignment composed by 50 orthologous genes concatenated from 16 bears, 4 individuals for each of the 4 species.
 
 ![data](../Sensitivity_Analysis.Rosa_Fernandez_Gemma_Martinez/img/data.PNG)
 ![bear_names](../Sensitivity_Analysis.Rosa_Fernandez_Gemma_Martinez/img/bear_names.png)
@@ -40,7 +40,7 @@ If you take at look at the **`model_finder.sh`** file you can see the whole list
 
 `iqtree -s 50_genes.fa -m MF -mset LG+F+G,WAG+F+G,JTT+F+G,GTR20 -madd LG+C20+F+G,LG+C10+F+G,LG+C30+F+G,LG+C40+F+G,LG+C50+F+G,LG+C60+F+G,C10,C20,C30,C40,C50,C60,EX2,EX3,EHO,LG4M,LG4X -redo`
 
-We are including the most common site-homogeneous models and almost all the mixture models available.
+We are including the four most common site-homogeneous models and almost all the mixture models available.
 
 2.- For executing the analysis run:
 
@@ -57,7 +57,7 @@ You can take a look at the models in: http://www.iqtree.org/doc/Substitution-Mod
 
 ## Bootstrap
 
-Let’s test now the differences in the bootstrap value assignment methods. We will first compare the execution time of 3 methods: ultrafast bootstrap, SH-alrt and non-parametric bootstrap.
+Let’s test now the differences in the bootstrap value assignment methods to assess the support of nodes. We will first compare the execution time of 3 methods: ultrafast bootstrap, SH-alrt (Shimodaira-Hasegawa approximate likelihood-ratio test) and non-parametric bootstrap.
 
 We will use the concatenated alignment of our 50 genes and use the model we obtained as the best one in the previous exercise.
 
@@ -147,7 +147,7 @@ Go to the folder:
 
 `cd ../topology_test_model`
 
-Modify the **`topology_test_model.sh`** script to include the best substitution model where it says **MODEL**. You can use any command-line tool you know (such as nano or vim) or any text editor.
+Modify the **`topology_test_model.sh`** script to include the best substitution model where it says **MODEL**. You can use any command-line tool you know (such as emacs or vim) or any text editor.
 
 `iqtree -s 50_genes.fa -z ../bear_species_trees_topologies.tre -m MODEL -redo`
 
