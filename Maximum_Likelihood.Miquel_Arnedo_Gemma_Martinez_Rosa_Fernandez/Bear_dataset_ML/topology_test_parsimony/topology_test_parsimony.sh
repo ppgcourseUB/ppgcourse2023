@@ -4,7 +4,7 @@
 #SBATCH --mem=6G
 #SBATCH -o slurm.%j.%x.out
 #SBATCH -e slurm.%j.%x.err
-#SBATCH --time=0-1:0
+#SBATCH --time=0-2:0
 
 #module load
 module load iq-tree
