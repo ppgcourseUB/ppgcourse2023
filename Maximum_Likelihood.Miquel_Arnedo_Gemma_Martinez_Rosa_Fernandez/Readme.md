@@ -131,7 +131,7 @@ Once finished (this may take a while), you can check the execution time in the *
 
 ## Topology test
 
-Another interesting feature of IQ-TREE are the tree toplogy tests. IQ-TREE can compute the log-likelihoods of some tree topologies. In this case, we will test which of the 3 topologies of the species tree is more probable given our dataset of 50 genes.
+Another interesting feature of IQ-TREE are the tree toplogy tests. IQ-TREE can compute the log-likelihoods of some tree topologies. In this case, we will test which of the 3 topologies of the species tree is more probable given our dataset of 50 genes. Besides just comparing the log-likelihoods of different topologies, as we are doing here, there are tests that can significantly reject certain topologies (outputing p-values), such as KH, SH and AU tests.
 
  ![topologies](../Sensitivity_Analysis.Rosa_Fernandez_Gemma_Martinez/img/topologies.png)
 
