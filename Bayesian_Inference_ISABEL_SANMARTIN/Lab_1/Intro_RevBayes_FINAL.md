@@ -187,7 +187,7 @@ Or you can run it from a bash script from your Terminal. You can find an example
 
 ```
 #!/bin/bash
-rb-mpi Intro.Rev
+rb Intro.Rev
 exit
 ```
 And you can run it, using
