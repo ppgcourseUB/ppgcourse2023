@@ -29,7 +29,7 @@ ssh user@ec2-34-242-61-70.eu-west-1.compute.amazonaws.com
 where the *user* are your credentials. It will ask for your password. Once inside, clone the entire folder *Bayesian_Inference_ISABEL_SANMARTIN* with the `svn` command. This will copy all files and folders in your home directory within the cluster.
 
 ```
-svn export https://github.com/ppgcourseUB/ppgcourse2022/trunk//Bayesian_Inference_ISABEL_SANMARTIN
+svn export https://github.com/ppgcourseUB/ppgcourse2023/trunk//Bayesian_Inference_ISABEL_SANMARTIN
 ```
 
 Check the contents of the folder. There are two subfolders named `Lab`. We will start with `Lab_1`, which introduces the RevBayes software and the `Rev` language. To see the contents of the folder, you need to move with the `cd` command
@@ -180,7 +180,7 @@ source("Intro.Rev")
 Alternatively, you can run the script file from the Terminal directly (outside RevBayes) using the command `rb`. OBS: In this case, we don't need the quotation marks!)
 
 ```
-rb Intro.Rev
+rb-mpi Intro.Rev
 ```
 
 Or you can run it from a bash script from your Terminal. You can find an example of such a script on myScript.sh
