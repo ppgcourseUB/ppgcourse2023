@@ -1,4 +1,4 @@
 
 #!/bin/bash
-./rb-mpi Intro.Rev
+rb Intro.Rev
 exit
