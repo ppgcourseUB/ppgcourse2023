@@ -22,7 +22,7 @@ We are going to work with **three different consoles/terminals**:
 1. Retrieve the **input data** and the **scripts** for this session:  
  
 ```bash
-svn export https://github.com/ppgcourseUB/ppgcourse2022/trunk/Adaptive_differentiation_and_covariates_association.SARA_GUIRAO-RICO
+svn export https://github.com/ppgcourseUB/ppgcourse2023/trunk/Adaptive_differentiation_and_covariates_association.SARA_GUIRAO-RICO
 ```
 
 * The folder has two main subfolders:
@@ -33,7 +33,7 @@ svn export https://github.com/ppgcourseUB/ppgcourse2022/trunk/Adaptive_different
 2. Retrieve also the **precomputed results** (previously obtained results; for a matter of visualization or just in case we cannot compute them) and **download them in your laptop**
 
 ```bash
-scp -r user@ec2-52-16-103-220.eu-west-1.compute.amazonaws.com:/data/datasets/BayPass/results .
+scp -r username@ec2-99-81-228-243.eu-west-1.compute.amazonaws.com:/data/datasets/BayPass/results .
 ```
 
 * The files in the results folder are classified in subfolders according to the model/process (e.g., CORE, STDis,...) and for each in turn, in simulations or plot subfolders.
@@ -43,7 +43,7 @@ scp -r user@ec2-52-16-103-220.eu-west-1.compute.amazonaws.com:/data/datasets/Bay
 ```bash
 mkdir my_results
 cd my_results
-scp user@ec2-52-16-103-220.eu-west-1.compute.amazonaws.com:/data/datasets/BayPass/baypass_utils.R .
+scp username@ec2-99-81-228-243.eu-west-1.compute.amazonaws.com:/data/datasets/BayPass/baypass_utils.R .
 ```
 
 4. Start a **new R session** and **install** and **upload** the **R libraries**
@@ -118,7 +118,7 @@ g_baypass -npop 52 -gfile hgdp.geno -nthreads 8 -seed 15263 -outprefix hgdp_core
 cd my_results
 
 #Copy the CORE Model results
-scp user@ec2-52-16-103-220.eu-west-1.compute.amazonaws.com:/home/user/Adaptive_differentiaion_and_covariates_association.SARA_GUIRAO-RICO/input/hgdp_core_s* .
+scp username@ec2-99-81-228-243.eu-west-1.compute.amazonaws.com:/home/username/Adaptive_differentiaion_and_covariates_association.SARA_GUIRAO-RICO/input/hgdp_core_s* .
 ```
 3. **Sanity Check**. 
 
@@ -379,8 +379,8 @@ g_baypass -npop 52 -gfile G.hgdp_pods_1000 -nthreads 8 -outprefix hgdp_pod_1000
 
 ```bash
 cd my_results
-scp user@ec2-52-16-103-220.eu-west-1.compute.amazonaws.com:/home/user/Adaptive_differentiaion_and_covariates_association.SARA_GUIRAO-RICO/input/G.hgdp_pods_1000 .
-scp user@ec2-52-16-103-220.eu-west-1.compute.amazonaws.com:/home/user/Adaptive_differentiaion_and_covariates_association.SARA_GUIRAO-RICO/input/hgdp_pod_1000_* .
+scp username@ec2-99-81-228-243.eu-west-1.compute.amazonaws.com:/home/username/Adaptive_differentiaion_and_covariates_association.SARA_GUIRAO-RICO/input/G.hgdp_pods_1000 .
+scp username@ec2-99-81-228-243.eu-west-1.compute.amazonaws.com:/home/username/Adaptive_differentiaion_and_covariates_association.SARA_GUIRAO-RICO/input/hgdp_pod_1000_* .
 
 cd my_results
 scp ../results/CORE_Model/simulations/100000/*_100000* .
@@ -503,7 +503,7 @@ g_baypass -npop 52 -gfile hgdp.geno -efile covariates -scalecov -nthreads 8 -out
 
 ```bash
 cd my_results
-scp user@ec2-52-16-103-220.eu-west-1.compute.amazonaws.com:/home/user/Adaptive_differentiaion_and_covariates_association.SARA_GUIRAO-RICO/input/hgdp_stdis_* .
+scp username@ec2-99-81-228-243.eu-west-1.compute.amazonaws.com:/home/username/Adaptive_differentiaion_and_covariates_association.SARA_GUIRAO-RICO/input/hgdp_stdis_* .
 ```
 3. **Inspect** the obtained **results** (**R in your laptop**).
 
@@ -656,7 +656,7 @@ g_baypass -npop 52 -gfile G.hgdp_pods_10000 -efile covariates -scalecov -nthread
 
 ```bash
 cd my_results
-scp user@ec2-52-16-103-220.eu-west-1.compute.amazonaws.com:/home/user/Adaptive_differentiaion_and_covariates_association.SARA_GUIRAO-RICO/input/*_10000* .
+scp username@ec2-99-81-228-243.eu-west-1.compute.amazonaws.com:/home/username/Adaptive_differentiaion_and_covariates_association.SARA_GUIRAO-RICO/input/*_10000* .
 ```
 :no_entry:
 
@@ -864,7 +864,7 @@ g_baypass -npop 52 -gfile hgdp.geno -contrastfile covariates_eu -efile covariate
 
 ```bash
 cd my_results
-scp user@ec2-52-16-103-220.eu-west-1.compute.amazonaws.com:/home/user/Adaptive_differentiaion_and_covariates_association.SARA_GUIRAO-RICO/input/hgdp_contrast_* .
+scp username@ec2-99-81-228-243.eu-west-1.compute.amazonaws.com:/home/username/Adaptive_differentiaion_and_covariates_association.SARA_GUIRAO-RICO/input/hgdp_contrast_* .
 
 ```
 
@@ -964,8 +964,8 @@ g_baypass -npop 52 -gfile G.hgdp_C2_10000_pods -contrastfile covariates_eu -efil
 
 ```bash
 cd my_results
-scp user@ec2-52-16-103-220.eu-west-1.compute.amazonaws.com:/home/user/Adaptive_differentiaion_and_covariates_association.SARA_GUIRAO-RICO/input/*_contrast_10000* . 
-scp user@ec2-52-16-103-220.eu-west-1.compute.amazonaws.com:/home/user/Adaptive_differentiaion_and_covariates_association.SARA_GUIRAO-RICO/input/*C2_10000* .
+scp username@ec2-99-81-228-243.eu-west-1.compute.amazonaws.com:/home/username/Adaptive_differentiaion_and_covariates_association.SARA_GUIRAO-RICO/input/*_contrast_10000* . 
+scp username@ec2-99-81-228-243.eu-west-1.compute.amazonaws.com:/home/username/Adaptive_differentiaion_and_covariates_association.SARA_GUIRAO-RICO/input/*C2_10000* .
 ```
 
 4.4. **Sanity Check** (**R in your laptop**).
