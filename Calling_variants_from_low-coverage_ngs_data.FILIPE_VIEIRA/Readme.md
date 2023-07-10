@@ -385,7 +385,7 @@ Setting this threshold depends on the mean sequencing depth of your data, as wel
 For some analyses you need to work only with high quality genotypes (e.g. measure of proportion of shared SNPs for gene flow estimate), while for others you can be more relaxed (e.g. estimate of overall nucleotide diversity).
 
 
-## Exta Exercises - PCA and ngsAdmix
+## Extra Exercises - PCA and ngsAdmix
 One of the most common exploratory analyses done, is probably a PCA plot and, right after, probably an admixture plot. ANGSD (and some extra tools) can do some of these analyses. Use the same template batch script and replace the angsd command with:
 ```
 angsd -b $DATA/samples.bam_list -ref $REF -r 11:21000000-22000000 -out 1000G_GL_PCA -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -C 50 -baq 1 -minMapQ 20 -minQ 20 -minInd 5 -doCounts 1  -setMinDepth 30 -setMaxDepth 150 -GL 2 -doGlf 2 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -doIBS 1 -doCov 1 -makeMatrix 1 -minMaf 0.05 -nThreads 8
