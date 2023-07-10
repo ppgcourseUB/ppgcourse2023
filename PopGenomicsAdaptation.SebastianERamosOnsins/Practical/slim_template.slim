@@ -1,5 +1,5 @@
 // command line including necessary parameters:
-// slim -t -m -d "Ne=500" -d "L=30000" -d "Neb=500" -d "mut_rate=1e-6" -d "rec_rate=1e-4" -d "ngenes=2" -d "rate_ben=0.1,1" -d "rate_del=8" -d "s_backg_ben=0.005" -d "s_backg_del=-1" -d "nsweeps=1" -d "freq_sel_init=0.05" -d "freq_sel_end=0.95" -d "s_beneficial=0.1" -d "ind_sample_size=25" -d "out_sample_size=1" -d "file_output1='~/slim.test_file.txt'" ./slim_template.slim
+// slim -t -m -d "Ne=1000" -d "L=500000" -d "Neb=500" -d "mut_rate=1e-6" -d "rec_rate=1e-4" -d "ngenes=100" -d "rate_ben=0.05,1" -d "rate_del=8.95" -d "s_backg_ben=+5.0/(2*Ne)" -d "s_backg_del=-5.0/(2*Ne)" -d "nsweeps=0" -d "freq_sel_init=0.05" -d "freq_sel_end=0.95" -d "s_beneficial=0.1" -d "ind_sample_size=50" -d "out_sample_size=1" -d "file_output1='~/slim.test_file.txt'" ./slim_template.slim
 
 // set up a simple neutral simulation
 initialize() {
@@ -11,18 +11,19 @@ initialize() {
 		
 		defineConstant("mut_rate",1e-6);	
 		defineConstant("rec_rate",1e-4);
-		defineConstant("ngenes",100); //number of independent genes
+		defineConstant("ngenes",1000); //number of independent genes
 
-		defineConstant("rate_ben",0.5); //rate beneficial mutations versus neutral (1) and deleterious
-		defineConstant("rate_del",8); //rate deleterious mutations versus neutral (1) annd benficial
-		defineConstant("s_backg_ben",+0.005);	//s of beneficial background 
-		defineConstant("s_backg_del",-0.05);	//s of deleteriious background 
+		defineConstant("rate_ben",0.05); //rate beneficial mutations versus neutral (1) and deleterious
+		defineConstant("rate_del",8.95); //rate deleterious mutations versus neutral (1) annd benficial
+		defineConstant("s_backg_ben",+5.0/(2*Ne));	//s of beneficial background 
+		defineConstant("s_backg_del",-5.0/(2*Ne));	//s of deleterious background 
 
 		defineConstant("nsweeps",0); //if >0, define number of sweeps frequencies to start and end plus strength 
 		defineConstant("freq_sel_init",0.05);
 		defineConstant("freq_sel_end",0.5);
 		defineConstant("s_beneficial",0.1);
 		
+		//defineConstant("missing_prop",0); //proportion of positions/genome that are lost
 		defineConstant("ind_sample_size",25); //number of samples to use
 		defineConstant("out_sample_size",1); //number of outgroup samples to use
 		defineConstant("file_output1","~/slim.test_file.txt"); //name of output file
@@ -54,9 +55,9 @@ initialize() {
 	initializeMutationTypeNuc("m1", 0.5, "f", 0.0);
 	// m2 mutation type: (deleterious)
 	if(s_backg_del==0) {initializeMutationTypeNuc("m2", 1.0, "f", s_backg_del);}
-	else { initializeMutationTypeNuc("m2", 1.0, "g", s_backg_del, 0.2);}
+	else { initializeMutationTypeNuc("m2", 0.5, "g", s_backg_del, 0.206);}
 	// m3 mutation type: (beneficial)
-	initializeMutationTypeNuc("m3", 0.5, "f", s_backg_ben);
+	initializeMutationTypeNuc("m3", 0.5, "e", s_backg_ben);
 
 	// g1 genomic element type: (synonymous) uses m1 for all mutations
 	initializeGenomicElementType("g1", m1, 1.0,mmJukesCantor(mut_rate/3));
@@ -72,22 +73,22 @@ initialize() {
 }
 
 //START SIMULATION
-1{
+1 early() {
 	sim.addSubpop("p1", Ne); //create initial population and run up to equilibrium for 10Ne gen.
-	sim.rescheduleScriptBlock(s1, start=tsplit, end=tsplit); //split OUTG
-	sim.rescheduleScriptBlock(s2, start=tne, end=tne); //Sudden change Ne
-	sim.rescheduleScriptBlock(s3, start=tsweep, end=tsweep); //possible sweeep
-	sim.rescheduleScriptBlock(s4, start=tend, end=tend); //end simulation. Print data
+	community.rescheduleScriptBlock(s1, start=tsplit, end=tsplit); //split OUTG
+	community.rescheduleScriptBlock(s2, start=tne, end=tne); //option to sudden change Ne
+	community.rescheduleScriptBlock(s3, start=tsweep, end=tsweep); //option to possible sweeep
+	community.rescheduleScriptBlock(s4, start=tend, end=tend); //end simulation. Print data
 }
 
-// Split de p1 in the generation 5000
-s1 50000 { sim.addSubpopSplit("p2", Ne, p1); }
+// Split  p1 in the generation 10Ne gen
+s1 50000 early() { sim.addSubpopSplit("p2", Ne, p1); }
 
 // Sudden Change in population size
-s2 97500 { p2.setSubpopulationSize(Neb); }
+s2 97500 early() { p2.setSubpopulationSize(Neb); }
 
 //if required, force a strong selective sweep in n different positions. Can be successful or not
-s3 98000 {	
+s3 98000 early() {	
 	if(nsweeps) {
 		muts = sim.mutations;
 		muts = muts[muts.mutationType==m3]; //added: look only at positive mutations
@@ -110,7 +111,7 @@ s3 98000 {
 s4 100000 late() {
 	//OUTPUT
 	// Select no samples from the outgroup and ni samples of the target population and output
-	// obtain random samples of genomes from the three subpopulations
+	// obtain random samples of genomes from the  subpopulations
 	g_1 = sample(p2.genomes,2*ind_sample_size,F);
 	g_2 = sample(p1.genomes,2*out_sample_size,F);
 	//Concatenate the 2 samples
