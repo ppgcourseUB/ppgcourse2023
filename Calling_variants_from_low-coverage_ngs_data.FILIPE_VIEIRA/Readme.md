@@ -291,7 +291,7 @@ chromo  position        major   minor   ref     knownEM nInd
 11      21014265        T       A       T       0.000004        8
 
 ```
-where `knownEM` specifies the algorithm used to estimate the (minor) allele frequency which is given under that column. The columns are: `chromosome`, `position`, `major allele`, `minor allele`, `reference allele`, `allele frequency`, `p-value for SNP calling` (if -SNP-pval was called), `number of individuals with data`.
+where `knownEM` specifies the algorithm used to estimate the (minor) allele frequency which is given under that column. The columns are: `chromosome`, `position`, `major allele`, `minor allele`, `reference allele`, `allele frequency`, and `number of individuals with data`.
 
 You can notice that many sites have low allele frequency, probably reflecting the fact that that site is monomorphic. So, we may be interested in looking at allele frequencies only for sites that are actually variable in our sample or, in other words, perform **SNP calling**.
 
@@ -303,7 +303,9 @@ There are two main ways to call SNPs using ANGSD:
         -minMaf         0.000000        (Remove sites with MAF below)
         -SNP_pval       1.000000        (Remove sites with a pvalue larger)
 ```
-Therefore we can consider assigning as SNPs sites whose estimated allele frequency is above a certain threhsold (e.g. the frequency of a singleton) or whose probability of being variable is above a specified value.
+Therefore we can consider assigning as SNPs sites whose estimated allele frequency is above a certain threhsold (e.g. the frequency of a singleton) or whose probability of being variable is above a specified value. Choose one and added to the above command with a resonable value.
+
+Now the output has an extra column with the `p-value for SNP calling` (`pK-EM`).
 
 >**QUESTION**
 Try calling SNPs and record how many sites are predicted to be variable for several scenario (e.g. vary cut-off and method).
