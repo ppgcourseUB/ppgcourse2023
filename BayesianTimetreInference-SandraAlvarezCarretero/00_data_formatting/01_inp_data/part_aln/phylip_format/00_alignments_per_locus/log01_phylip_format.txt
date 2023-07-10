@@ -1,0 +1,2 @@
+Parsing locus 1: cytb_aln
+There are 1 loci visited to generate summary statistics

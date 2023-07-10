@@ -1,0 +1,86 @@
+# Loading trees from 'cytb-1/C1.trees'...
+# Loading trees from 'cytb-2/C1.trees'...
+# [ seed = 7054387023604986717    pseudocount = 1    blocksize = 57 ]
+
+Support for the different predicates: 
+
+1/6:
+urs_arc urs_mar | ail_mel hel_mal mel_urs tre_orn urs_ame urs_thi 
+   PP1-1 = 0.999       (1=2815  0=3)  [3 !!]
+   PP1-2 = 0.999       (1=2836  0=3)  [3 !!]
+   PP1   = 0.999       (1=5651  0=6)  [6 !!]
+
+  LOD1-1 = 2.848
+  LOD1-2 = 2.851
+  LOD1   = 2.849
+
+  RNe1 = inf
+
+
+2/6:
+hel_mal mel_urs urs_ame urs_arc urs_mar urs_thi | ail_mel tre_orn 
+   PP1-1 = 0.997       (1=2811  0=7)  [4 !!]
+   PP1-2 = 0.994       (1=2822  0=17)  [10 !!]
+   PP1   = 0.995       (1=5633  0=24)  [14 !]
+
+  LOD1-1 = 2.546
+  LOD1-2 = 2.195       ACT = 2.162          Ne = 1313.072
+  LOD1   = 2.336       ACT = 2.239          Ne = 2527.059
+
+  RNe1 = inf
+
+
+3/6:
+hel_mal urs_ame urs_thi | ail_mel mel_urs tre_orn urs_arc urs_mar 
+   PP1-1 = 0.980       (1=2763  0=55)  [52]
+   PP1-2 = 0.981       (1=2787  0=52)  [46]
+   PP1   = 0.981       (1=5550  0=107)  [98]
+
+  LOD1-1 = 1.693       ACT = 1.106          Ne = 2548.332
+  LOD1-2 = 1.721       ACT = 1.278          Ne = 2221.323
+  LOD1   = 1.707       ACT = 1.190          Ne = 4755.247
+
+  RNe1 = inf
+
+
+4/6:
+urs_ame urs_thi | ail_mel hel_mal mel_urs tre_orn urs_arc urs_mar 
+   PP1-1 = 0.964       (1=2717  0=101)  [97]
+   PP1-2 = 0.960       (1=2725  0=114)  [101]
+   PP1   = 0.962       (1=5442  0=215)  [198]
+
+  LOD1-1 = 1.426       ACT = 1.000          Ne = 2818.000
+  LOD1-2 = 1.375       ACT = 1.000          Ne = 2839.000
+  LOD1   = 1.399       ACT = 1.000          Ne = 5657.000
+
+  RNe1 = inf
+
+
+5/6:
+hel_mal urs_ame urs_arc urs_mar urs_thi | ail_mel mel_urs tre_orn 
+   PP1-1 = 0.443       (1=1247  0=1571)  [662]
+   PP1-2 = 0.424       (1=1204  0=1635)  [680]
+   PP1   = 0.433       (1=2451  0=3206)  [1342]
+
+  LOD1-1 = -0.100       ACT = 1.143          Ne = 2466.224
+  LOD1-2 = -0.133       ACT = 1.130          Ne = 2512.983
+  LOD1   = -0.117       ACT = 1.114          Ne = 5077.238
+
+  RNe1 = inf
+
+
+6/6:
+hel_mal mel_urs urs_ame urs_thi | ail_mel tre_orn urs_arc urs_mar 
+   PP1-1 = 0.370       (1=1043  0=1775)  [640]
+   PP1-2 = 0.374       (1=1061  0=1778)  [662]
+   PP1   = 0.372       (1=2104  0=3553)  [1302]
+
+  LOD1-1 = -0.231       ACT = 1.000          Ne = 2818.000
+  LOD1-2 = -0.224       ACT = 1.077          Ne = 2636.209
+  LOD1   = -0.227       ACT = 1.051          Ne = 5383.883
+
+  RNe1 = inf
+
+
+ASDSF[min=0.100] = 0.004     MSDSF = 0.013
+min Ne = 2527.059    (partition = 2)

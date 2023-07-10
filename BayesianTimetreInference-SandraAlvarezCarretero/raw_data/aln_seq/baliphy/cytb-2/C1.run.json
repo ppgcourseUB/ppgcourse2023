@@ -1,0 +1,94 @@
+{
+    "command": [
+        "bali-phy",
+        "../unaln_raw.fasta",
+        "-S",
+        "hky85+Rates.gamma[5]",
+        "-n",
+        "cytb"
+    ],
+    "directory": "/mnt/c/Users/sandr/Sync/01_Workshops/PPG_BCN/ClockDating/raw_data/unaln_seq/baliphy",
+    "environment": {},
+    "hostname": "sandra",
+    "imodels": [
+        {
+            "extracted": [
+                [
+                    "rs07:log_rate",
+                    {
+                        "extracted": [],
+                        "main": "~laplace[-4,0.707]"
+                    }
+                ],
+                [
+                    "rs07:mean_length",
+                    {
+                        "extracted": [],
+                        "main": "~shifted_exponential[10,1]"
+                    }
+                ]
+            ],
+            "main": "rs07"
+        }
+    ],
+    "partitions": [
+        {
+            "alphabet": "DNA",
+            "filename": "../unaln_raw.fasta",
+            "imodel": 0,
+            "range": "",
+            "scale": 0,
+            "smodel": 0
+        }
+    ],
+    "pid": 825,
+    "program": {
+        "arch": "linux x86_64",
+        "build-date": "Aug 24 2021 22:48:02",
+        "compiler": "gcc 9.3.0 x86_64",
+        "name": "bali-phy",
+        "revision": "[grafted, HEAD, tag: 3.6.1 commit 898b7c9]  (Aug 24 2021 18:40:50)",
+        "version": "3.6.1"
+    },
+    "scales": [
+        {
+            "extracted": [],
+            "main": "~gamma[0.5,2]"
+        }
+    ],
+    "seed": 13938349338662270357,
+    "smodels": [
+        {
+            "extracted": [
+                [
+                    "hky85:kappa",
+                    {
+                        "extracted": [],
+                        "main": "~log_normal[log[2],0.25]"
+                    }
+                ],
+                [
+                    "hky85:pi",
+                    {
+                        "extracted": [],
+                        "main": "~symmetric_dirichlet_on[letters[@a],1]"
+                    }
+                ],
+                [
+                    "Rates.gamma:alpha",
+                    {
+                        "extracted": [],
+                        "main": "~log_laplace[6,2]"
+                    }
+                ]
+            ],
+            "main": "hky85+Rates.gamma[5]"
+        }
+    ],
+    "start time": "Tue Jul  4 18:47:33 2023",
+    "subdirectory": "cytb-2",
+    "tree": {
+        "lengths": "~iid[num_branches[tree],gamma[0.5,div[2,num_branches[tree]]]]",
+        "topology": "uniform"
+    }
+}

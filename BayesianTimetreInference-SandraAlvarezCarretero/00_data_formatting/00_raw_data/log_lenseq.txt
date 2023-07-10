@@ -1,0 +1,8 @@
+Taxa: ail_mel	Length of sequence: 1140
+Taxa: hel_mal	Length of sequence: 1140
+Taxa: mel_urs	Length of sequence: 1140
+Taxa: tre_orn	Length of sequence: 1140
+Taxa: urs_ame	Length of sequence: 1140
+Taxa: urs_arc	Length of sequence: 1140
+Taxa: urs_mar	Length of sequence: 1140
+Taxa: urs_thi	Length of sequence: 1140

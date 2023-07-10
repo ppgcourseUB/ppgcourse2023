@@ -1,0 +1,31 @@
+# n_trees = 5657   n_topologies = 40   n_splits/(Leaves-3) = 8
+# n_splits = 40   Leaves = 8
+
+Topology support: 
+
+MAP-0 = ('ail_mel','tre_orn',('mel_urs',(('hel_mal',('urs_ame','urs_thi')),('urs_arc','urs_mar'))));
+   PP = 0.413116       LOD = -0.152424     (count = 2337)
+
+95% credible set contains 4 topologies.
+
+
+partition support: 
+
+   PP = 0.998939       LOD = 2.9071       pi = urs_arc urs_mar | ail_mel hel_mal mel_urs tre_orn urs_ame urs_thi 
+
+
+   PP = 0.995757       LOD = 2.35288       pi = hel_mal mel_urs urs_ame urs_arc urs_mar urs_thi | ail_mel tre_orn 
+
+
+   PP = 0.981085       LOD = 1.71095       pi = hel_mal urs_ame urs_thi | ail_mel mel_urs tre_orn urs_arc urs_mar 
+
+
+   PP = 0.961994       LOD = 1.40138       pi = urs_ame urs_thi | ail_mel hel_mal mel_urs tre_orn urs_arc urs_mar 
+
+
+   PP = 0.433269       LOD = -0.116578       pi = hel_mal urs_ame urs_arc urs_mar urs_thi | ail_mel mel_urs tre_orn 
+
+
+   PP = 0.371929       LOD = -0.227465       pi = hel_mal mel_urs urs_ame urs_thi | ail_mel tre_orn urs_arc urs_mar 
+
+

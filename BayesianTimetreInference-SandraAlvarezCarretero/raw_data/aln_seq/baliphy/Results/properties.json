@@ -1,0 +1,17 @@
+{
+  "burnin": 281,
+  "subsample": 1,
+  "until": null,
+  "prune": null,
+  "input_files": [
+    "../unaln_raw.fasta"
+  ],
+  "alignment_file_names": [
+    [
+      "cytb-1/C1.P1.fastas"
+    ],
+    [
+      "cytb-2/C1.P1.fastas"
+    ]
+  ]
+}

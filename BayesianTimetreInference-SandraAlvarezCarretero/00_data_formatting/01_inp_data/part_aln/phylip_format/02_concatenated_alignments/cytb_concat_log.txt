@@ -1,0 +1,8 @@
+Length for species ail_mel is: 1140
+Length for species hel_mal is: 1140
+Length for species mel_urs is: 1140
+Length for species tre_orn is: 1140
+Length for species urs_ame is: 1140
+Length for species urs_arc is: 1140
+Length for species urs_mar is: 1140
+Length for species urs_thi is: 1140
