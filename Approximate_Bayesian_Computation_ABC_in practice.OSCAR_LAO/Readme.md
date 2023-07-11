@@ -446,7 +446,7 @@ In the Bayesian paradigm, models are also parameters. This means that we can use
 
    Looks like our data comes from a normal distribution (in fact, they were generated from a N(10,5)). Try to repeat the analysis but now setting corr = TRUE. **What is doing this parameter?**
 
-   * _Task 1.2_. We have run the abc without paying so much attention to the summary statistics. Lets check how the different sum stats look like
+   * _Task 2.2_. We have run the abc without paying so much attention to the summary statistics. Lets check how the different sum stats look like
 
        ```R
        pairs(sim.sumstat[1:1000,])
