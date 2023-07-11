@@ -2,7 +2,7 @@
 
 **Instructor:** Oscar Lao
 
-### 1. Parameter estimation given a model
+## 1. Parameter estimation given a model
 
 Given an observed number of heads and tails from a coin, determine the posterior probability of the frequency of heads.Assume we throw 50 times a coin, recording each time if we get head (1) or tail (0):
 
@@ -296,7 +296,7 @@ mean(abs(diff.mean.real))
 ```
 
 
-### 2. Model comparison using abc
+## 2. Model comparison using abc
 
 ```R
 rm(list=ls())
@@ -648,7 +648,7 @@ In the Bayesian paradigm, models are also parameters. This means that we can use
 
    We can see that the observed data falls within the cloud, but not close to the center (0,0)...**KEY MESSAGE:** Check always the performance of the posterior on simulated data. At least with the summary statistics you use!!!! BEWARE YOUR PRIOR DISTRIBUTIONS!!!!!!
 
-# 3. Special case with demographic models
+## 3. Special case with demographic models
 
 Following the ABC paradigm, you will need:
 
