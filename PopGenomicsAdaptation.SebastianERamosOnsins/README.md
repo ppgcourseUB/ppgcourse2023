@@ -2,7 +2,7 @@
 
 Instructor: **Sebastian E. Ramos-Onsins**
 
-Date: July 13th 2022
+Date: July 11th 2023
 
 ## The Detection of the Proportion of Beneficial Substitutions
 
@@ -451,7 +451,13 @@ for(f in slim_files) {
   ############################
   # USING SFS
   ############################
-  #calc daf and div  tab.dat <- t(dat.sfs[,1:(nsam-1)])  mn <- seq(from=(1-(nsam-1)/nsam)/2,to=(nsam-1)/nsam,by=1-((nsam-1)/nsam))  daf <- data.frame(daf=as.numeric(sprintf("%.3f",mn)),Pi=0,P0=0)  daf$Pi <- tab.dat[,1]  daf$P0 <- tab.dat[,2]  #calc div
+  #calc daf and div
+  tab.dat <- t(dat.sfs[,1:(nsam-1)])
+  mn <- seq(from=(1-(nsam-1)/nsam)/2,to=(nsam-1)/nsam,by=1-((nsam-1)/nsam))
+  daf <- data.frame(daf=as.numeric(sprintf("%.3f",mn)),Pi=0,P0=0)
+  daf$Pi <- tab.dat[,1]
+  daf$P0 <- tab.dat[,2]
+  #calc div
   divergence <- data.frame(mi=dat.sfs[1,nsam+2],Di=dat.sfs[1,nsam+1],m0=dat.sfs[2,nsam+2],D0=dat.sfs[2,nsam+1])
   
   #estimate MKTa from SFS
