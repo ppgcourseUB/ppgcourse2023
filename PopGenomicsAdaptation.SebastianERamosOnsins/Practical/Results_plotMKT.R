@@ -9,27 +9,15 @@ calc.alpha <- function(Ps,Ds,Pn,Dn) {
   alpha <- 1 - (Ds/Dn)*(Pn/Ps)
   return(alpha)
 } 
-# D0,P0 are neutral, Di, Pi are functional
-#define distribution of allele frequencies from smaller intervals (to avoid zeros)
-calc2.daf <- function(tab.dat,nsam,intervals) {
-  daf.red <- data.frame(daf=as.numeric(sprintf("%.3f",c(c(0:(intervals-1))/intervals,1))),Pi=0,P0=0)
-  tab.dat <- rbind(tab.dat,c(0,0))
-  for(i in c(1:intervals)) {
-    daf.red$Pi[i] <- sum(tab.dat[(as.integer(daf.red$daf[i]*nsam)+1):(as.integer(daf.red$daf[i+1]*nsam)),1])
-    daf.red$P0[i] <- sum(tab.dat[(as.integer(daf.red$daf[i]*nsam)+1):(as.integer(daf.red$daf[i+1]*nsam)),2])
-  }
-  daf.red <- daf.red[-(intervals+1),]
-  return(daf.red)
-}
 
 ############################################
 # DEFINITIONS
 ############################################
+# D0,P0 are neutral, Di, Pi are functional
 
 pdf("Plots_scenarios_alpha.pdf")
 #define sample and size of sfs (to avoid zeros)
 nsam <- 25*2
-intervals <- 50
 #read files from slim output
 slim_files <- system("ls *_slim_SFS_*.txt",intern=T)
 #Define data frame to keep results from SFS
@@ -50,7 +38,10 @@ for(f in slim_files) {
   ############################
   #calc daf and div
   tab.dat <- t(dat.sfs[,1:(nsam-1)])
-  daf <- calc2.daf(tab.dat,nsam,intervals)
+  mn <- seq(from=(1-(nsam-1)/nsam)/2,to=(nsam-1)/nsam,by=1-((nsam-1)/nsam))
+  daf <- data.frame(daf=as.numeric(sprintf("%.3f",mn)),Pi=0,P0=0)
+  daf$Pi <- tab.dat[,1]
+  daf$P0 <- tab.dat[,2]
   #to avoid ZERO values, instead (or in addition) of doing less intervals, add 1 to freqs=0
   daf[daf[,2]==0,2] <- 1
   daf[daf[,3]==0,3] <- 1
@@ -61,7 +52,7 @@ for(f in slim_files) {
   aa <- NULL
   tryCatch(
     {
-      aa <- asymptoticMK(d0=divergence$D0, d=divergence$Di, xlow=0.1, xhigh=0.9, df=daf, true_alpha=NA, output="table")
+      aa <- asymptoticMK(d0=divergence$D0, d=divergence$Di, xlow=0.025, xhigh=0.975, df=daf, true_alpha=NA, output="table")
     },
     error = function(e) {
       message(sprintf("Error calculating MKTa for observed data in file %s",f))
@@ -81,7 +72,7 @@ for(f in slim_files) {
        main=sprintf("ALPHA: %s \nTrue=%.3f MKTa=%.3f MKT=%.3f",f,true.alpha,aa$alpha_asymptotic,aa$alpha_original),
        xlab="Freq",ylab="alpha")
   abline(h=0,col="grey")
-  abline(v=c(0.1,0.9),col="grey")
+  abline(v=c(0.025,0.975),col="grey")
   abline(h=true.alpha,col="blue")
   if(aa$model=="linear") abline(a=aa$a,b=aa$b,col="red")
   if(aa$model=="exponential") {

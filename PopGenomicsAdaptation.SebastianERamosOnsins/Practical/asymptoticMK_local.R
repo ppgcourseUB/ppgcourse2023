@@ -40,13 +40,7 @@ if(!require("nls2")){
 # Thanks to Andrej-Nikolai Spiess (http://www.dr-spiess.de) for this code.
 # See: https://www.r-bloggers.com/predictnls-part-1-monte-carlo-simulation-confidence-intervals-for-nls-models/
 # Or, if that link goes stale: http://stats.stackexchange.com/a/251501/141766
-predictNLS <- function(
-object, 
-newdata,
-level = 0.95, 
-nsim = 10000,
-...
-)
+predictNLS <- function(object, newdata,level = 0.95, nsim = 10000,...)
 {
   require(MASS, quietly = TRUE)
    
@@ -224,7 +218,7 @@ closeOutputDevice <- function(output, plotNum)
 #	asymptoticMK() function for use in R on a local machine
 #
 #
-asymptoticMK <- function(d0, d, xlow, xhigh, df, true_alpha=NA, output="table",force_linear=F,force_exp=F, ...)
+asymptoticMK <- function(d0, d, xlow, xhigh, df, true_alpha=NA, output="table",force_linear=FALSE,force_exp=FALSE, ...)
 {
 	require(nls2)
 	require(MASS)
@@ -344,7 +338,7 @@ asymptoticMK <- function(d0, d, xlow, xhigh, df, true_alpha=NA, output="table",f
 		alpha_1_low <- ci_pred[6]
 		alpha_1_high <- ci_pred[7]
 		
-		if ((alpha_1_low < -100) || (alpha_1_high > 100))
+		if (((alpha_1_low < -100) || (alpha_1_high > 100)) && force_exp==F)
 			linear_better <- TRUE
 	}
 	
@@ -533,7 +527,7 @@ asymptoticMK <- function(d0, d, xlow, xhigh, df, true_alpha=NA, output="table",f
 #######################################################################################
 
 
-asymptoticMK.Drosophila <- function(xlow=0.1, xhigh=0.9, output="table", force_linear=F,force_exp=F, ...)
+asymptoticMK.Drosophila <- function(xlow=0.1, xhigh=0.9, output="table", force_linear=FALSE,force_exp=FALSE, ...)
 {
 	# This would read the dataset from a file on disk:
 	#
@@ -550,7 +544,7 @@ asymptoticMK.Drosophila <- function(xlow=0.1, xhigh=0.9, output="table", force_l
 	
 	d0 <-  159058
 	
-	asymptoticMK(d0=d0, d=d, df=data.frame(f=f, p=p, p0=p0, row.names=NULL), xlow=xlow, xhigh=xhigh, output=output, force_linear=F,force_exp=F, ...)
+	asymptoticMK(d0=d0, d=d, df=data.frame(f=f, p=p, p0=p0, row.names=NULL), xlow=xlow, xhigh=xhigh, output=output, force_linear=FALSE,force_exp=FALSE, ...)
 }
 
 # To just get a table of results, with no plots and no verbose analysis, do:
