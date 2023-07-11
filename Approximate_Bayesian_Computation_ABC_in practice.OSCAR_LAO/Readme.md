@@ -655,23 +655,23 @@ In the Bayesian paradigm, models are also parameters. This means that we can use
 Following the ABC paradigm, you will need:
 
 1) A demographic simulator to generate genomic data.
-    a. Frequency based data
-    b. Structural variants
-    c. Sequence based data
-    d. ...
-    Popular simulators: msprime, fsc,...
+    a. Frequency based data   
+    b. Structural variants    
+    c. Sequence based data    
+    d. ...   
+    Popular simulators: msprime, fsc,...   
 
  2) Define demographic models, and parameters. Define prior distributions
 
  3) Define a set of summary statistics.
-    a. Related to SFS
-    b. Related to LD
-    c. Versions based on deep learning can take as input the sequence
-    d. ...
+    a. Related to SFS   
+    b. Related to LD   
+    c. Versions based on deep learning can take as input the sequence   
+    d. ...  
 
  4) Define the number of simulations. Depends on the computational complexity of models and computational resources. Can take DAYS.
 
-If you want to implement these approaches for your problem, please contact us: oscar.lao@ibe.upf-csic.es
+ If you want to implement these approaches for your problem, please contact us: oscar.lao@ibe.upf-csic.es
 
 
 
