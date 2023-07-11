@@ -54,7 +54,7 @@ initialize() {
 	initializeMutationTypeNuc("m1", 0.5, "f", 0.0);
 	// m2 mutation type: (deleterious)
 	if(s_backg_del==0) {initializeMutationTypeNuc("m2", 1.0, "f", s_backg_del);}
-	else { initializeMutationTypeNuc("m2", 1.0, "f", s_backg_del);}
+	else { initializeMutationTypeNuc("m2", 0.5, "f", s_backg_del);}
 	// m3 mutation type: (beneficial)
 	initializeMutationTypeNuc("m3", 0.5, "f", s_backg_ben);
 
@@ -72,22 +72,22 @@ initialize() {
 }
 
 //START SIMULATION
-1{
+1 early() {
 	sim.addSubpop("p1", Ne); //create initial population and run up to equilibrium for 10Ne gen.
-	sim.rescheduleScriptBlock(s1, start=tsplit, end=tsplit); //split OUTG
-	sim.rescheduleScriptBlock(s2, start=tne, end=tne); //Sudden change Ne
-	sim.rescheduleScriptBlock(s3, start=tsweep, end=tsweep); //possible sweeep
-	sim.rescheduleScriptBlock(s4, start=tend, end=tend); //end simulation. Print data
+	community.rescheduleScriptBlock(s1, start=tsplit, end=tsplit); //split OUTG
+	community.rescheduleScriptBlock(s2, start=tne, end=tne); //Sudden change Ne
+	community.rescheduleScriptBlock(s3, start=tsweep, end=tsweep); //possible sweeep
+	community.rescheduleScriptBlock(s4, start=tend, end=tend); //end simulation. Print data
 }
 
 // Split de p1 in the generation 5000
-s1 50000 { sim.addSubpopSplit("p2", Ne, p1); }
+s1 50000 early() { sim.addSubpopSplit("p2", Ne, p1); }
 
 // Sudden Change in population size
-s2 97500 { p2.setSubpopulationSize(Neb); }
+s2 97500 early() { p2.setSubpopulationSize(Neb); }
 
 //if required, force a strong selective sweep in n different positions. Can be successful or not
-s3 98000 {	
+s3 98000 early() {	
 	if(nsweeps) {
 		muts = sim.mutations;
 		muts = muts[muts.mutationType==m3]; //added: look only at positive mutations
