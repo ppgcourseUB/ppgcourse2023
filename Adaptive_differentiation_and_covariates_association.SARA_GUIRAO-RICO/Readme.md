@@ -45,7 +45,8 @@ mkdir my_results
 cd my_results
 scp username@ec2-99-81-228-243.eu-west-1.compute.amazonaws.com:/data/datasets/BayPass/baypass_utils.R .
 ```
-
+	*  The baypass_utils.R file contains six R functions (R Core Team, 2015) (simulate.baypass(); plot.omega(); fmd.dist(); geno2YN() and simulate.PC.correlated.covariate() that may helpful to interpret some of the results obtained with BAYPASS.
+ 
 4. Start a **new R session** and **install** and **upload** the **R libraries**
 
 ```R
