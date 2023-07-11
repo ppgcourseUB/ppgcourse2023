@@ -75,8 +75,9 @@ To run this model (using allele count data) you will need:
 
 > *  For more specifications see [BayPass manual](https://www1.montpellier.inra.fr/CBGP/software/baypass/files/BayPass_manual_2.3.pdf) 
 
-1. Run BayPass under the **CORE Model** 
-:warning: The **CORE model** should be run with **three different seeds** by submit the jobs' scripts "run_core_model_seed1.sh", "run_core_model_seed2.sh" and "run_core_model_seed3.sh" using the **sbatch command** but here we are going to run it only with one for a matter of time:
+1. Run BayPass under the **CORE Model**
+ 
+:warning: The **CORE model** should be run with **three different seeds** by submit the jobs' scripts "run_core_model_seed1.sh", "run_core_model_seed2.sh" and "run_core_model_seed3.sh" using the **sbatch command** but **here we are going to run it only with one** for a matter of time:
 
 ```bash
 #Run the CORE Model from the scripts subfolder
