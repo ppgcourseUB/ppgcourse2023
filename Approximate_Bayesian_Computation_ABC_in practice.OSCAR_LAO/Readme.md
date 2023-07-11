@@ -521,8 +521,8 @@ In the Bayesian paradigm, models are also parameters. This means that we can use
       }
       else
       {
-    ```
-    # In probability of 0.3, pick model 1. HOWEVER, THE PRIOR IS FAAAAR AWAY FROM THE REGION WHERE THE PARAMETERS FROM THE OBSERVED DATA WERE GENERATED. The prior distribution of the mean is REALLY far away from the REAL value we used for generating our data...
+
+     # In probability of 0.3, pick model 1. HOWEVER, THE PRIOR IS FAAAAR AWAY FROM THE REGION WHERE THE PARAMETERS FROM THE OBSERVED DATA WERE GENERATED. The prior distribution of the mean is REALLY far away from the REAL value we used for generating our data...
     
     mean.sim <- runif(1,100,200);
     sd.sim <- runif(1,1,10);
