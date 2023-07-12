@@ -256,7 +256,7 @@ plot(hgdp_s1.snp.res$log10.1.pval.,ylab=expression('XtXst '*italic(P)*'-value (-
 dev.off()
 ```
 ```diff
-- QUESTION: Where are the two putative outliers (red points)?
+- QUESTION: Where are the two putative outliers (red and blue points)?
 ```
 
 6.1. Inspect the *P*-values associated two the two putative outliers.
