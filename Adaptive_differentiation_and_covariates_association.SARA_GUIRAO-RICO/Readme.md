@@ -225,7 +225,7 @@ head(hgdp_s1.snp.res)
 pdf(file="XtXst_core_model.pdf")
 plot(hgdp_s1.snp.res$XtXst, xlab="SNP", ylab="XtXst", main="XtXst Seed 1")
 	points(x= 2334, y=hgdp_s1.snp.res[hgdp_s1.snp.res[,1] == 2334, ]$XtXst, col = "red", pch=20)
-	points(x= 2335, y=hgdp_s1.snp.res[hgdp_s1.snp.res[,1] == 2335, ]$XtXst, col = "red", pch=20)
+	points(x= 2335, y=hgdp_s1.snp.res[hgdp_s1.snp.res[,1] == 2335, ]$XtXst, col = "blue", pch=20)
 dev.off()
 ```
 ```diff
@@ -247,11 +247,11 @@ pdf("omega_XTXst_and_Pvals.pdf")
 layout(matrix(1:2,2,1))
 plot(hgdp_s1.snp.res$XtXst,xlab="SNP", ylab="XtXst", main="XtXst" )
 	points(x=2334, y=hgdp_s1.snp.res[hgdp_s1.snp.res[,1]==2334, ]$XtXst, col="red", pch=20)
-	points(x=2335, y=hgdp_s1.snp.res[hgdp_s1.snp.res[,1]==2335, ]$XtXst, col="red", pch=20)
+	points(x=2335, y=hgdp_s1.snp.res[hgdp_s1.snp.res[,1]==2335, ]$XtXst, col="blue", pch=20)
 plot(hgdp_s1.snp.res$log10.1.pval.,ylab=expression('XtXst '*italic(P)*'-value (-log10 scale)'), 
     	xlab="SNP", main=expression('XtXst '*italic(P)*'-value'))
 	points(x=2334, y=hgdp_s1.snp.res[hgdp_s1.snp.res[,1]==2334, ]$log10.1.pval., col="red", pch=20)
-	points(x=2335, y=hgdp_s1.snp.res[hgdp_s1.snp.res[,1]==2335, ]$log10.1.pval., col="red", pch=20)
+	points(x=2335, y=hgdp_s1.snp.res[hgdp_s1.snp.res[,1]==2335, ]$log10.1.pval., col="blue", pch=20)
 	abline(h=3,lty=2) #correspods to a P-value theshold = 0.001
 dev.off()
 ```
@@ -343,6 +343,8 @@ simu.hgdp_1000 <- simulate.baypass(omega.mat=omega_s1, nsnp=1000,
 
 #Close R session
 q()
+
+cd ../scripts
 ```
 
 > * The G.hgdp_pods_1000 file is now the new genotype input file resulting from the simulation process.  
@@ -522,19 +524,19 @@ layout(matrix(1:3,3,1))
 plot(hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1,]$BF.dB.,
 	xlab="SNP",ylab="BFis (in dB)")
 	points(x=2334, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1 & hgdp_stdis.snp.res[,2]==2334, ]$BF.dB., col="red", pch=20)
-	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1 & hgdp_stdis.snp.res[,2]==2335, ]$BF.dB., col="red", pch=20)
+	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1 & hgdp_stdis.snp.res[,2]==2335, ]$BF.dB., col="blue", pch=20)
 	abline(h=10,lty=2, col="green") #strong evidence
 	abline(h=15,lty=2, col="blue")  #very strong evidence
 	abline(h=20,lty=2, col="red")   #decesive evidence
 plot(hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1,]$eBPis,
 	xlab="SNP",ylab="eBPis")
 	points(x=2334, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1 & hgdp_stdis.snp.res[,2]==2334, ]$eBPis, col="red", pch=20)
-	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1 & hgdp_stdis.snp.res[,2]==2335, ]$eBPis, col="red", pch=20)
+	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1 & hgdp_stdis.snp.res[,2]==2335, ]$eBPis, col="blue", pch=20)
 	abline(h=3,lty=2, col="red")   #Pval = 0.001
 plot(hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1] == 1,]$Beta_is,
 	xlab="SNP",ylab=expression(beta~"coefficient"))
 	points(x=2334, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1 & hgdp_stdis.snp.res[,2]==2334, ]$Beta_is, col="red", pch=20)
-	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1 & hgdp_stdis.snp.res[,2]==2335, ]$Beta_is, col="red", pch=20)
+	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1 & hgdp_stdis.snp.res[,2]==2335, ]$Beta_is, col="blue", pch=20)
 	mtext("STDis MODEL: Latitude",side=3,line=- 2,outer=TRUE)
 dev.off()
 
@@ -544,19 +546,19 @@ layout(matrix(1:3,3,1))
 plot(hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2,]$BF.dB.,
 	xlab="SNP",ylab="BFis (in dB)")
 	points(x=2334, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2 & hgdp_stdis.snp.res[,2]==2334, ]$BF.dB., col="red", pch=20)
-	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2 & hgdp_stdis.snp.res[,2]==2335, ]$BF.dB., col="red", pch=20)
+	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2 & hgdp_stdis.snp.res[,2]==2335, ]$BF.dB., col="blue", pch=20)
 	abline(h=10,lty=2, col="green") #strong evidence
 	abline(h=15,lty=2, col="blue")  #very strong evidence
 	abline(h=20,lty=2, col="red")   #decesive evidence
 plot(hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1] == 2,]$eBPis,
 	xlab="SNP",ylab="eBPis")
 	points(x=2334, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2 & hgdp_stdis.snp.res[,2]==2334, ]$eBPis, col="red", pch=20)
-	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2 & hgdp_stdis.snp.res[,2]==2335, ]$eBPis, col="red", pch=20)
+	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2 & hgdp_stdis.snp.res[,2]==2335, ]$eBPis, col="blue", pch=20)
 	abline(h=3,lty=2, col="red")   #Pval=0.001
 plot(hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2,]$Beta_is,
 	xlab="SNP",ylab=expression(beta~"coefficient"))
 	points(x=2334, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2 & hgdp_stdis.snp.res[,2]==2334, ]$Beta_is, col="red", pch=20)
-	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2 & hgdp_stdis.snp.res[,2]==2335, ]$Beta_is, col="red", pch=20)
+	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2 & hgdp_stdis.snp.res[,2]==2335, ]$Beta_is, col="blue", pch=20)
 	mtext("STDis MODEL: Longitude",side=3,line=- 2,outer=TRUE)
 dev.off()
 
@@ -566,19 +568,19 @@ layout(matrix(1:3,3,1))
 plot(hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3,]$BF.dB.,
 	xlab="SNP",ylab="BFis (in dB)")
 	points(x=2334, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3 & hgdp_stdis.snp.res[,2]==2334, ]$BF.dB., col="red", pch=20)
-	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3 & hgdp_stdis.snp.res[,2]==2335, ]$BF.dB., col="red", pch=20)
+	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3 & hgdp_stdis.snp.res[,2]==2335, ]$BF.dB., col="blue", pch=20)
 	abline(h=10,lty=2, col="green") #strong evidence
 	abline(h=15,lty=2, col="blue")  #very strong evidence
 	abline(h=20,lty=2, col="red")   #decesive evidence
 plot(hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3,]$eBPis,
 	xlab="SNP",ylab="eBPis")
 	points(x=2334, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3 & hgdp_stdis.snp.res[,2]==2334, ]$eBPis, col="red", pch=20)
-	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3 & hgdp_stdis.snp.res[,2]==2335, ]$eBPis, col="red", pch=20)
+	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3 & hgdp_stdis.snp.res[,2]==2335, ]$eBPis, col="blue", pch=20)
 	abline(h=3,lty=2, col="red")   #Pval=0.001
 plot(hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3,]$Beta_is,
 xlab="SNP",ylab=expression(beta~"coefficient"))
 	points(x=2334, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3 & hgdp_stdis.snp.res[,2]==2334, ]$Beta_is, col="red", pch=20)
-	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3 & hgdp_stdis.snp.res[,2]==2335, ]$Beta_is, col="red", pch=20)
+	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3 & hgdp_stdis.snp.res[,2]==2335, ]$Beta_is, col="blue", pch=20)
 	mtext("STDis MODEL: European origin",side=3,line=- 2,outer=TRUE)
 dev.off()
 ```
@@ -622,6 +624,8 @@ simu.hgdp_10000 <- simulate.baypass(omega.mat=omega_s1, nsnp=10000,
 	
 # close R session
 q()
+
+cd ../scripts
 ```
 ⚠️ We are not running the part between the two :no_entry: symbols for a matter of time ( it takes about ~ 25 mins). Instead, we are going to use the precomputed files in the results folder
 
@@ -722,20 +726,20 @@ plot(hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1,]$BF.dB.,
     ylab="Calibrated BF", xlab="SNP")
 	abline(h=hgdp_stdis_10000_pods_BF_thresh_lat,lty=2)
 	points(x=2334, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1 & hgdp_stdis.snp.res[,2]==2334, ]$BF.dB., col="red", pch=20)
-	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1 & hgdp_stdis.snp.res[,2]==2335, ]$BF.dB., col="red", pch=20)
+	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1 & hgdp_stdis.snp.res[,2]==2335, ]$BF.dB., col="blue", pch=20)
 
 plot(hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1,]$eBPis,
     ylab="Calibrated eBPis", xlab="SNP")
 	abline(h=hgdp_stdis_10000_pods_eBPis_thresh_lat,lty=2)
 	points(x=2334, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1 & hgdp_stdis.snp.res[,2]==2334, ]$eBPis, col="red", pch=20)
-	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1 & hgdp_stdis.snp.res[,2]==2335, ]$eBPis, col="red", pch=20)
+	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1 & hgdp_stdis.snp.res[,2]==2335, ]$eBPis, col="blue", pch=20)
 
 plot(hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1,]$Beta_is,
     ylab="Calibrated Beta", xlab="SNP")
 	abline(h=hgdp_stdis_10000_pods_Beta_is_thresh1_lat,lty=2)
 	abline(h=hgdp_stdis_10000_pods_Beta_is_thresh2_lat,lty=2)
 	points(x=2334, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1 & hgdp_stdis.snp.res[,2]==2334, ]$Beta_is, col = "red", pch=20)
-	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1 & hgdp_stdis.snp.res[,2]==2335, ]$Beta_is, col="red", pch=20)
+	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==1 & hgdp_stdis.snp.res[,2]==2335, ]$Beta_is, col="blue", pch=20)
 	mtext("STDis Model: Latitude",side=3,line=-1.5,outer=TRUE)
 dev.off()
 
@@ -756,20 +760,20 @@ plot(hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2,]$BF.dB.,
     ylab="Calibrated BF", xlab="SNP")
 	abline(h=hgdp_stdis_10000_pods_BF_thresh_lon,lty=2)
 	points(x=2334, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2 & hgdp_stdis.snp.res[,2]==2334, ]$BF.dB., col="red", pch=20)
-	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2 & hgdp_stdis.snp.res[,2]==2335, ]$BF.dB., col="red", pch=20)
+	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2 & hgdp_stdis.snp.res[,2]==2335, ]$BF.dB., col="blue", pch=20)
 
 plot(hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2,]$eBPis,
     ylab="Calibrated eBPis", xlab="SNP")
 	abline(h=hgdp_stdis_10000_pods_eBPis_thresh_lon,lty=2)
 	points(x=2334, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2 & hgdp_stdis.snp.res[,2]==2334, ]$eBPis, col="red", pch=20)
-	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2 & hgdp_stdis.snp.res[,2]==2335, ]$eBPis, col="red", pch=20)
+	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2 & hgdp_stdis.snp.res[,2]==2335, ]$eBPis, col="blue", pch=20)
 
 plot(hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2,]$Beta_is,
     ylab="Calibrated Beta", xlab="SNP")
 	abline(h=hgdp_stdis_10000_pods_Beta_is_thresh1_lon,lty=2)
 	abline(h=hgdp_stdis_10000_pods_Beta_is_thresh2_lon,lty=2)
 	points(x=2334, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2 & hgdp_stdis.snp.res[,2]==2334, ]$Beta_is, col="red", pch=20)
-	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2 & hgdp_stdis.snp.res[,2]==2335, ]$Beta_is, col="red", pch=20)
+	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==2 & hgdp_stdis.snp.res[,2]==2335, ]$Beta_is, col="blue", pch=20)
 	mtext("STDis Model: Longitude",side=3,line=- 1.5,outer=TRUE)
 dev.off()
 
@@ -790,20 +794,20 @@ plot(hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3,]$BF.dB.,
     ylab="Calibrated BF", xlab="SNP")
 	abline(h=hgdp_stdis_10000_pods_BF_thresh_eu,lty=2)
 	points(x=2334, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3 & hgdp_stdis.snp.res[,2]==2334, ]$BF.dB., col="red", pch=20)
-	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3 & hgdp_stdis.snp.res[,2]==2335, ]$BF.dB., col="red", pch=20)
+	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3 & hgdp_stdis.snp.res[,2]==2335, ]$BF.dB., col="blue", pch=20)
 
 plot(hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3,]$eBPis,
     ylab="Calibrated eBPis", xlab="SNP")
 	abline(h=hgdp_stdis_10000_pods_eBPis_thresh_eu,lty=2)
 	points(x=2334, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3 & hgdp_stdis.snp.res[,2]==2334, ]$eBPis, col="red", pch=20)
-	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3 & hgdp_stdis.snp.res[,2]==2335, ]$eBPis, col="red", pch=20)
+	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3 & hgdp_stdis.snp.res[,2]==2335, ]$eBPis, col="blue", pch=20)
 
 plot(hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3,]$Beta_is,
     ylab="Calibrated Beta", xlab="SNP")
 	abline(h=hgdp_stdis_10000_pods_Beta_is_thresh1_eu,lty=2)
 	abline(h=hgdp_stdis_10000_pods_Beta_is_thresh2_eu,lty=2)
 	points(x=2334, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3 & hgdp_stdis.snp.res[,2]==2334, ]$Beta_is, col="red", pch=20)
-	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3 & hgdp_stdis.snp.res[,2]==2335, ]$Beta_is, col="red", pch=20)
+	points(x=2335, y=hgdp_stdis.snp.res[hgdp_stdis.snp.res[,1]==3 & hgdp_stdis.snp.res[,2]==2335, ]$Beta_is, col="blue", pch=20)
 	mtext("STDis Model: European Origin",side=3,line=- 1.5,outer=TRUE)
 dev.off()
 ```
@@ -928,6 +932,8 @@ simu.C2.10000 <- simulate.baypass(omega.mat=omega_contrast,nsnp=10000,
 
 # close R session
 q()
+
+cd ../scripts
 ```
 
 4.2. Run the **STDis and contrast Models with the 10,000 PODs as input** by submit the job script "run_stdis_contrast_10000_simulations.sh" using the **sbatch command**.  
@@ -1017,9 +1023,8 @@ plot(covariates_eu.bf,covariates_eu.C2$M_C2,
 	xlab="calibrated BF",ylab="calibrated C2")
 	abline(h=pod.c2_10000_thresh,lty=2) #
 	abline(v=pod.BF_10000_thresh,lty=2) #
-	points(x=covariates_eu.bf.all[covariates_eu.bf.all[,2]==2334, ]$BF.dB., 
-	y=covariates_eu.C2[covariates_eu.C2[ ,2 ]==2334, ]$M_C2, col="red", pch=20)
-	points(x=covariates_eu.bf.all[covariates_eu.bf.all[,2]==2335, ]$BF.dB., y=covariates_eu.C2[covariates_eu.C2[ ,2 ]==2335, ]$M_C2, col="red", pch=20)
+	points(x=covariates_eu.bf.all[covariates_eu.bf.all[,2]==2334, ]$BF.dB., y=covariates_eu.C2[covariates_eu.C2[ ,2 ]==2334, ]$M_C2, col="red", pch=20)
+	points(x=covariates_eu.bf.all[covariates_eu.bf.all[,2]==2335, ]$BF.dB., y=covariates_eu.C2[covariates_eu.C2[ ,2 ]==2335, ]$M_C2, col="blue", pch=20)
 dev.off()
 ```
 
@@ -1039,7 +1044,7 @@ plot(covariates_eu.bf,covariates_eu.C2$log10.1.pval.,
 	points(x=covariates_eu.bf.all[covariates_eu.bf.all[,2]==2334, ]$BF.dB., 
 		y=covariates_eu.C2[covariates_eu.C2[ ,2 ]==2334, ]$log10.1.pval., col="red", pch=20)
 	points(x=covariates_eu.bf.all[covariates_eu.bf.all[,2]==2335, ]$BF.dB., 
-		y=covariates_eu.C2[covariates_eu.C2[ ,2 ]==2335, ]$log10.1.pval., col="red", pch=20)
+		y=covariates_eu.C2[covariates_eu.C2[ ,2 ]==2335, ]$log10.1.pval., col="blue", pch=20)
 dev.off()
 ```
 ```diff
