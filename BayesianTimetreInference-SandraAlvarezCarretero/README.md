@@ -1,5 +1,9 @@
 # Bayesian timetree inference
 
+**DISCLAIMER**: This tutorial is based on a phylogenetics tool that I am working on at the moment, which I am still developing and is yet to be published. While some of the scripts/tools that you will find here have been validated and used in published research ([Álvarez-Carretero et al., 2022](https://doi.org/10.1038/s41586-021-04341-1)), I am actively implementing new features as part of the current workflow of this pipeline as well as developing new scripts/tools. In other words, the code is not stable and I am still validating the new features. If you want to use the tools that I have developed as part of this tutorial/pipeline, please first contact me at <a href="mailto:sandra.ac93@gmail.com"><b>sandra.ac93@gmail.com</b></a>. Thank you :)
+
+**NOTE**: In case you stop having access to this repository, and thus to this tutorial, please note that I have created a repository in my personal GitHub account to host these resources: [**MolClockDat-tutorial**](https://github.com/sabifo4/MolClockDat-tutorial).
+
 ## Overview
 
 During this practical session, we will use various in-house scripts and tools together with `BASEML` and `MCMCtree`, two programs that are part of the `PAML` software ([Yang 2007](https://pubmed.ncbi.nlm.nih.gov/17483113/)), to run a **Bayesian analysis for timetree inference** using a **node-dating approach** and an **approximation to the likelihood calculation** implemented in `MCMCtree` ([dos Reis and Yang, 2011](https://academic.oup.com/mbe/article/28/7/2161/1051613)) to speed up such analysis.
